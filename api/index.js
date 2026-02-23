@@ -1,6 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 
+// Get the actual project root path
+const getProjectRoot = () => {
+    // In Vercel, files are at /var/task
+    // In local, they're in the current directory
+    let root = process.cwd();
+    if (fs.existsSync(path.join(root, 'styles.css'))) {
+        return root;
+    }
+    if (fs.existsSync(path.join(root, '..', 'styles.css'))) {
+        return path.join(root, '..');
+    }
+    if (fs.existsSync(path.join(root, '../..', 'styles.css'))) {
+        return path.join(root, '../..');
+    }
+    return root;
+};
+
+const projectRoot = getProjectRoot();
+
 module.exports = (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -14,7 +33,7 @@ module.exports = (req, res) => {
     }
 
     try {
-        // Map URL paths to HTML files
+        // Map URL paths to files
         let filePath;
         const pathname = req.url.split('?')[0]; // Remove query string
 
@@ -27,8 +46,8 @@ module.exports = (req, res) => {
         } else if (pathname === '/terms') {
             filePath = 'terms.html';
         } else if (pathname.startsWith('/assets/') || pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)$/)) {
-            // Serve static files
-            filePath = pathname.substring(1); // Remove leading /
+            // Serve static files - strip leading slash
+            filePath = pathname.substring(1);
         } else if (pathname.startsWith('/api/')) {
             // API routes should be handled by specific handlers
             return res.status(404).json({ error: 'API endpoint not found' });
@@ -37,13 +56,13 @@ module.exports = (req, res) => {
             filePath = 'index.html';
         }
 
-        // Read the file from the project root
-        const fullPath = path.join(process.cwd(), filePath);
+        // Construct full path
+        const fullPath = path.join(projectRoot, filePath);
         
         // Security: prevent directory traversal
         const resolvedPath = path.resolve(fullPath);
-        const rootPath = path.resolve(process.cwd());
-        if (!resolvedPath.startsWith(rootPath)) {
+        const resolvedRoot = path.resolve(projectRoot);
+        if (!resolvedPath.startsWith(resolvedRoot)) {
             res.status(400).json({ error: 'Invalid path' });
             return;
         }
@@ -52,7 +71,7 @@ module.exports = (req, res) => {
         if (!fs.existsSync(fullPath)) {
             // If it's not a static asset, serve index.html (SPA)
             if (!pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)$/)) {
-                const indexPath = path.join(process.cwd(), 'index.html');
+                const indexPath = path.join(projectRoot, 'index.html');
                 if (fs.existsSync(indexPath)) {
                     const content = fs.readFileSync(indexPath, 'utf8');
                     res.setHeader('Content-Type', 'text/html; charset=utf-8');
