@@ -26,12 +26,12 @@ module.exports = (req, res) => {
             filePath = 'privacy.html';
         } else if (pathname === '/terms') {
             filePath = 'terms.html';
-        } else if (pathname.startsWith('/assets/')) {
-            // Serve assets
-            filePath = pathname.substring(1); // Remove leading /
-        } else if (pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)$/)) {
+        } else if (pathname.startsWith('/assets/') || pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)$/)) {
             // Serve static files
             filePath = pathname.substring(1); // Remove leading /
+        } else if (pathname.startsWith('/api/')) {
+            // API routes should be handled by specific handlers
+            return res.status(404).json({ error: 'API endpoint not found' });
         } else {
             // Default to index.html for SPA routing
             filePath = 'index.html';
@@ -41,7 +41,9 @@ module.exports = (req, res) => {
         const fullPath = path.join(process.cwd(), filePath);
         
         // Security: prevent directory traversal
-        if (!path.resolve(fullPath).startsWith(path.resolve(process.cwd()))) {
+        const resolvedPath = path.resolve(fullPath);
+        const rootPath = path.resolve(process.cwd());
+        if (!resolvedPath.startsWith(rootPath)) {
             res.status(400).json({ error: 'Invalid path' });
             return;
         }
@@ -62,35 +64,64 @@ module.exports = (req, res) => {
             return;
         }
 
-        // Read and serve the file
-        const content = fs.readFileSync(fullPath, 'utf8');
+        // Determine if file is binary
+        const isBinary = filePath.match(/\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/);
+
+        // Read the file
+        const content = isBinary 
+            ? fs.readFileSync(fullPath)
+            : fs.readFileSync(fullPath, 'utf8');
         
-        // Set appropriate content type
+        // Set appropriate content type and cache headers
         let contentType = 'text/plain';
+        let cacheControl = 'public, max-age=3600';
+
         if (filePath.endsWith('.html')) {
             contentType = 'text/html; charset=utf-8';
+            cacheControl = 'public, max-age=3600';
         } else if (filePath.endsWith('.js')) {
             contentType = 'application/javascript; charset=utf-8';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.css')) {
             contentType = 'text/css; charset=utf-8';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.json')) {
             contentType = 'application/json';
+            cacheControl = 'public, max-age=3600';
         } else if (filePath.match(/\.(jpg|jpeg)$/)) {
             contentType = 'image/jpeg';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.png')) {
             contentType = 'image/png';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.gif')) {
             contentType = 'image/gif';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.svg')) {
             contentType = 'image/svg+xml';
+            cacheControl = 'public, max-age=31536000, immutable';
         } else if (filePath.endsWith('.ico')) {
             contentType = 'image/x-icon';
+            cacheControl = 'public, max-age=31536000, immutable';
+        } else if (filePath.endsWith('.woff')) {
+            contentType = 'font/woff';
+            cacheControl = 'public, max-age=31536000, immutable';
+        } else if (filePath.endsWith('.woff2')) {
+            contentType = 'font/woff2';
+            cacheControl = 'public, max-age=31536000, immutable';
+        } else if (filePath.endsWith('.ttf')) {
+            contentType = 'font/ttf';
+            cacheControl = 'public, max-age=31536000, immutable';
+        } else if (filePath.endsWith('.eot')) {
+            contentType = 'application/vnd.ms-fontobject';
+            cacheControl = 'public, max-age=31536000, immutable';
         }
 
         res.setHeader('Content-Type', contentType);
+        res.setHeader('Cache-Control', cacheControl);
         res.status(200).send(content);
     } catch (error) {
         console.error('Error serving file:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server error', message: error.message });
     }
 };
