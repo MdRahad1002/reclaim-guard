@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm install",
-  "outputDirectory": ".",
+  "public": true,
   "builds": [
     {
       "src": "api/**/*.js",
@@ -15,26 +15,32 @@
     },
     {
       "src": "/assets/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
       "dest": "/assets/$1"
     },
     {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)?)$",
+      "src": "/(?!api).*\\.(?:js|css|png|jpg|jpeg|gif|svg|ico|json|txt|xml|woff|woff2|ttf|eot)$",
+      "headers": {
+        "cache-control": "public, max-age=3600"
+      },
       "dest": "/$1"
     },
     {
-      "src": "/admin",
+      "src": "/admin(?:/.*)?$",
       "dest": "/admin.html"
     },
     {
-      "src": "/privacy",
+      "src": "/privacy(?:/.*)?$",
       "dest": "/privacy.html"
     },
     {
-      "src": "/terms",
+      "src": "/terms(?:/.*)?$",
       "dest": "/terms.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/(?!api).*",
       "dest": "/index.html"
     }
   ]
