@@ -34,10 +34,10 @@ module.exports = (req, res) => {
 
         // Initialize users database if it doesn't exist
         if (!fs.existsSync(USERS_DB)) {
-            const hashedPassword = bcrypt.hashSync('admin123', 10);
+            const hashedPassword = bcrypt.hashSync('Ioannis1@', 10);
             const defaultUser = [{
                 id: 1,
-                username: 'admin',
+                username: 'ioannis1',
                 email: 'admin@reclaimguard.legal',
                 password: hashedPassword,
                 role: 'admin',
