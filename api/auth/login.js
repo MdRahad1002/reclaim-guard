@@ -1,42 +1,3 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const fs = require('fs');
-const path = require('path');
-
-const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
-
-// Use /tmp for serverless environment
-const DATA_DIR = '/tmp/data';
-const USERS_DB = path.join(DATA_DIR, 'users.json');
-
-// Ensure data directory exists
-if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-}
-
-// Initialize users database if it doesn't exist
-if (!fs.existsSync(USERS_DB)) {
-    const hashedPassword = bcrypt.hashSync('admin123', 10);
-    const defaultUser = [{
-        id: 1,
-        username: 'admin',
-        email: 'admin@reclaimguard.legal',
-        password: hashedPassword,
-        role: 'admin',
-        createdAt: new Date().toISOString()
-    }];
-    fs.writeFileSync(USERS_DB, JSON.stringify(defaultUser, null, 2));
-}
-
-const readUsers = () => {
-    try {
-        const data = fs.readFileSync(USERS_DB, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        return [];
-    }
-};
-
 module.exports = (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -55,6 +16,45 @@ module.exports = (req, res) => {
     }
 
     try {
+        const bcrypt = require('bcryptjs');
+        const jwt = require('jsonwebtoken');
+        const fs = require('fs');
+        const path = require('path');
+
+        const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
+
+        // Use /tmp for serverless environment
+        const DATA_DIR = '/tmp/data';
+        const USERS_DB = path.join(DATA_DIR, 'users.json');
+
+        // Ensure data directory exists
+        if (!fs.existsSync(DATA_DIR)) {
+            fs.mkdirSync(DATA_DIR, { recursive: true });
+        }
+
+        // Initialize users database if it doesn't exist
+        if (!fs.existsSync(USERS_DB)) {
+            const hashedPassword = bcrypt.hashSync('admin123', 10);
+            const defaultUser = [{
+                id: 1,
+                username: 'admin',
+                email: 'admin@reclaimguard.legal',
+                password: hashedPassword,
+                role: 'admin',
+                createdAt: new Date().toISOString()
+            }];
+            fs.writeFileSync(USERS_DB, JSON.stringify(defaultUser, null, 2));
+        }
+
+        const readUsers = () => {
+            try {
+                const data = fs.readFileSync(USERS_DB, 'utf8');
+                return JSON.parse(data);
+            } catch (error) {
+                return [];
+            }
+        };
+
         const { username, password } = req.body;
 
         if (!username || !password) {
