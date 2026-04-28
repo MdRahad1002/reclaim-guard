@@ -1038,7 +1038,13 @@ function toggleLanguage() {
 
 // Run on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initI18n);
+  document.addEventListener('DOMContentLoaded', () => {
+    initI18n();
+    const btn = document.getElementById('langSwitcher');
+    if (btn) btn.addEventListener('click', toggleLanguage);
+  });
 } else {
   initI18n();
+  const btn = document.getElementById('langSwitcher');
+  if (btn) btn.addEventListener('click', toggleLanguage);
 }
