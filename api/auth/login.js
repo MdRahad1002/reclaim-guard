@@ -98,9 +98,9 @@ module.exports = async (req, res) => {
 
         const user = users.find(u => u.username === username);
 
-        // Always run bcrypt to prevent timing attacks
-        const DUMMY_HASH = '$2a$10$invaliddummyhashfortimingx00000000000000000000000000000';
-        const validPassword = user ? bcrypt.compareSync(password, user.password) : (bcrypt.compareSync(password, DUMMY_HASH), false);
+        // Always run bcrypt to prevent timing attacks (dummy hash is a known-valid 60-char hash)
+        const DUMMY_HASH = '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy';
+        const validPassword = user ? bcrypt.compareSync(password, user.password) : (bcrypt.compareSync('_', DUMMY_HASH), false);
 
         if (!user || !validPassword) {
             record.attempts = (record.attempts || 0) + 1;
