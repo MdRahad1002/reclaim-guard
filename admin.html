@@ -300,8 +300,170 @@
             font-weight: 600;
         }
 
-        .logout-btn:hover {
-            background: rgba(255,255,255,0.3);
+        .btn-delete {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+
+        .btn-delete:hover {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 14px;
+            width: 560px;
+            max-width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 36px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .modal-box h2 {
+            margin: 0 0 24px;
+            font-size: 1.4rem;
+            color: #1B2B44;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px; right: 20px;
+            background: none; border: none;
+            font-size: 1.6rem; cursor: pointer;
+            color: #999;
+            line-height: 1;
+        }
+
+        .modal-close:hover { color: #333; }
+
+        .modal-field {
+            margin-bottom: 14px;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .modal-field strong { color: #333; margin-right: 6px; }
+
+        .modal-field .msg-box {
+            background: #f5f7fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 6px;
+            white-space: pre-wrap;
+            color: #555;
+        }
+
+        .modal-form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal-form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .modal-form-group select,
+        .modal-form-group textarea,
+        .modal-form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid #ddd;
+            border-radius: 7px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .modal-form-group select:focus,
+        .modal-form-group textarea:focus,
+        .modal-form-group input:focus {
+            outline: none;
+            border-color: #1B2B44;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .modal-btn {
+            padding: 11px 24px;
+            border: none;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-btn-primary { background: #1B2B44; color: white; }
+        .modal-btn-primary:hover { background: #0f1d30; }
+        .modal-btn-secondary { background: #f0f0f0; color: #333; }
+        .modal-btn-secondary:hover { background: #e0e0e0; }
+        .modal-btn-danger { background: #ffebee; color: #d32f2f; }
+        .modal-btn-danger:hover { background: #d32f2f; color: white; }
+
+        .priority-high { color: #d32f2f; font-weight: 700; }
+        .priority-medium { color: #f57c00; font-weight: 600; }
+        .priority-low { color: #388e3c; }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-logo h2 {
+            color: #1B2B44;
+            font-size: 1.5rem;
+            margin: 10px 0 4px;
+        }
+
+        .login-logo p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1B2B44;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 20000;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast.success { background: #2e7d32; }
+        .toast.error { background: #c62828; }
+
+        @keyframes slideIn {
+            from { transform: translateX(120%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
         @media (max-width: 768px) {
@@ -327,7 +489,7 @@
         <div class="admin-header">
             <div>
                 <h1>📊 Admin Dashboard</h1>
-                <p style="margin: 5px 0 0 0; opacity: 0.9;">ReclaimGuard Legal - Lead Management</p>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;" id="adminUser">ReclaimGuard Legal — Lead Management</p>
             </div>
             <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
@@ -335,20 +497,20 @@
         <!-- Stats -->
         <div class="admin-stats">
             <div class="stat-card">
-                <h3 id="totalLeads">0</h3>
+                <h3 id="totalLeads">—</h3>
                 <p>Total Leads</p>
             </div>
             <div class="stat-card">
-                <h3 id="newLeads">0</h3>
+                <h3 id="newLeads">—</h3>
                 <p>New (Last 7 Days)</p>
             </div>
             <div class="stat-card">
-                <h3 id="qualifiedLeads">0</h3>
+                <h3 id="qualifiedLeads">—</h3>
                 <p>Qualified Leads</p>
             </div>
             <div class="stat-card">
-                <h3 id="avgAmount">€0</h3>
-                <p>Average Loss Amount</p>
+                <h3 id="highValueLeads">—</h3>
+                <p>High-Value (€5k+)</p>
             </div>
         </div>
 
@@ -388,7 +550,7 @@
                 </div>
                 <div class="filter-item">
                     <label>Search</label>
-                    <input type="text" id="searchInput" placeholder="Name, email, phone..." oninput="applyFilters()">
+                    <input type="text" id="searchInput" placeholder="Name, email, phone..." oninput="debounceFilter()">
                 </div>
             </div>
         </div>
@@ -397,7 +559,7 @@
         <div class="leads-table">
             <div class="table-header">
                 <h2>All Leads</h2>
-                <button class="export-btn" onclick="exportToCSV()">📥 Export to CSV</button>
+                <button class="export-btn" onclick="exportToCSV()">📥 Export CSV</button>
             </div>
             <div class="table-container">
                 <table>
@@ -415,105 +577,26 @@
                         </tr>
                     </thead>
                     <tbody id="leadsTableBody">
-                        <!-- Sample Data -->
-                        <tr>
-                            <td>Nov 25, 2025</td>
-                            <td>John Smith</td>
-                            <td>
-                                john.smith@email.com<br>
-                                <small style="color: #666;">+44 7700 900123</small>
-                            </td>
-                            <td class="amount-high">€5,000+</td>
-                            <td>Crypto Scam</td>
-                            <td>Within 7 days</td>
-                            <td>Crypto</td>
-                            <td><span class="status-badge status-new">New</span></td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn btn-view" onclick="viewLead(1)">View</button>
-                                    <button class="action-btn btn-edit" onclick="editStatus(1)">Edit</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nov 24, 2025</td>
-                            <td>Sarah Johnson</td>
-                            <td>
-                                s.johnson@email.com<br>
-                                <small style="color: #666;">+44 7700 900456</small>
-                            </td>
-                            <td class="amount-medium">€1,000-5,000</td>
-                            <td>Fake Trading</td>
-                            <td>1-4 weeks</td>
-                            <td>Card</td>
-                            <td><span class="status-badge status-contacted">Contacted</span></td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn btn-view" onclick="viewLead(2)">View</button>
-                                    <button class="action-btn btn-edit" onclick="editStatus(2)">Edit</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nov 23, 2025</td>
-                            <td>Michael Brown</td>
-                            <td>
-                                m.brown@email.com<br>
-                                <small style="color: #666;">+44 7700 900789</small>
-                            </td>
-                            <td class="amount-high">€5,000+</td>
-                            <td>Bank Transfer</td>
-                            <td>1-3 months</td>
-                            <td>Bank Transfer</td>
-                            <td><span class="status-badge status-qualified">Qualified</span></td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn btn-view" onclick="viewLead(3)">View</button>
-                                    <button class="action-btn btn-edit" onclick="editStatus(3)">Edit</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nov 22, 2025</td>
-                            <td>Emma Wilson</td>
-                            <td>
-                                emma.w@email.com<br>
-                                <small style="color: #666;">+44 7700 900321</small>
-                            </td>
-                            <td class="amount-low">€0-250</td>
-                            <td>Card Fraud</td>
-                            <td>3+ months</td>
-                            <td>Card</td>
-                            <td><span class="status-badge status-unqualified">Unqualified</span></td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn btn-view" onclick="viewLead(4)">View</button>
-                                    <button class="action-btn btn-edit" onclick="editStatus(4)">Edit</button>
-                                </div>
-                            </td>
-                        </tr>
+                        <tr><td colspan="9" style="text-align:center;padding:40px;color:#bbb;">Loading leads...</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn">Previous</button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">Next</button>
-            </div>
+            <div class="pagination" id="pagination"></div>
         </div>
     </div>
 
     <script>
-        const API_URL = 'http://localhost:3000/api';
-        let authToken = localStorage.getItem('adminToken');
+        // ─── CONFIG ───────────────────────────────────────────────
+        const API_URL = '/api';
+        const PAGE_SIZE = 20;
+
+        let authToken  = localStorage.getItem('adminToken');
         let currentLeads = [];
         let currentFilters = {};
+        let currentPage = 1;
+        let filterTimer = null;
 
-        // Check authentication on load
+        // ─── BOOT ─────────────────────────────────────────────────
         window.addEventListener('DOMContentLoaded', () => {
             if (!authToken) {
                 showLoginModal();
@@ -522,166 +605,384 @@
             }
         });
 
-        // Login modal
+        // ─── AUTH ─────────────────────────────────────────────────
         function showLoginModal() {
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-            `;
-            modal.innerHTML = `
-                <div style="background: white; padding: 40px; border-radius: 12px; width: 400px; max-width: 90%;">
-                    <h2 style="margin: 0 0 20px 0; text-align: center;">Admin Login</h2>
-                    <form id="loginForm">
-                        <div style="margin-bottom: 15px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Username</label>
-                            <input type="text" id="username" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            overlay.id = 'loginOverlay';
+            overlay.innerHTML = `
+                <div class="modal-box" style="width:420px;">
+                    <div class="login-logo">
+                        <div style="font-size:2.5rem;">🔐</div>
+                        <h2>Admin Login</h2>
+                        <p>ReclaimGuard Legal Dashboard</p>
+                    </div>
+                    <form id="loginForm" autocomplete="off">
+                        <div class="modal-form-group">
+                            <label>Username</label>
+                            <input type="text" id="loginUser" required autocomplete="username">
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Password</label>
-                            <input type="password" id="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+                        <div class="modal-form-group">
+                            <label>Password</label>
+                            <input type="password" id="loginPass" required autocomplete="current-password">
                         </div>
-                        <button type="submit" style="width: 100%; padding: 12px; background: #1B2B44; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
-                            Login
-                        </button>
-                        <p style="margin-top: 15px; font-size: 0.85rem; color: #666; text-align: center;">
-                            Default: admin / admin123
-                        </p>
+                        <div class="modal-actions" style="margin-top:8px;">
+                            <button type="submit" class="modal-btn modal-btn-primary" style="width:100%;justify-content:center;">Sign In</button>
+                        </div>
+                        <div id="loginError" style="color:#c62828;margin-top:12px;text-align:center;font-size:0.9rem;display:none;"></div>
                     </form>
-                    <div id="loginError" style="color: #d32f2f; margin-top: 10px; text-align: center; display: none;"></div>
                 </div>
             `;
-            document.body.appendChild(modal);
-
+            document.body.appendChild(overlay);
             document.getElementById('loginForm').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                await login(username, password, modal);
+                await doLogin(
+                    document.getElementById('loginUser').value,
+                    document.getElementById('loginPass').value
+                );
             });
+            document.getElementById('loginUser').focus();
         }
 
-        async function login(username, password, modal) {
+        async function doLogin(username, password) {
+            const errEl = document.getElementById('loginError');
+            errEl.style.display = 'none';
             try {
-                const response = await fetch(`${API_URL}/auth/login`, {
+                const res = await fetch(`${API_URL}/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })
                 });
-
-                const data = await response.json();
-
-                if (response.ok) {
+                const data = await res.json();
+                if (res.ok) {
                     authToken = data.token;
                     localStorage.setItem('adminToken', authToken);
-                    modal.remove();
+                    document.getElementById('loginOverlay').remove();
+                    document.getElementById('adminUser').textContent =
+                        `Logged in as ${data.user.username} · ReclaimGuard Legal`;
                     loadDashboard();
                 } else {
-                    document.getElementById('loginError').textContent = data.error || 'Login failed';
-                    document.getElementById('loginError').style.display = 'block';
+                    errEl.textContent = data.error || 'Login failed. Check credentials.';
+                    errEl.style.display = 'block';
                 }
-            } catch (error) {
-                document.getElementById('loginError').textContent = 'Server connection error';
-                document.getElementById('loginError').style.display = 'block';
+            } catch {
+                errEl.textContent = 'Cannot reach server. Is it running?';
+                errEl.style.display = 'block';
             }
         }
 
         async function verifyToken() {
             try {
-                const response = await fetch(`${API_URL}/auth/verify`, {
+                const res = await fetch(`${API_URL}/auth/verify`, {
                     headers: { 'Authorization': `Bearer ${authToken}` }
                 });
-
-                if (response.ok) {
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('adminUser').textContent =
+                        `Logged in as ${data.user.username} · ReclaimGuard Legal`;
                     loadDashboard();
                 } else {
                     localStorage.removeItem('adminToken');
                     authToken = null;
                     showLoginModal();
                 }
-            } catch (error) {
-                console.error('Token verification failed:', error);
+            } catch {
                 showLoginModal();
             }
         }
 
+        function logout() {
+            if (!confirm('Logout from admin dashboard?')) return;
+            localStorage.removeItem('adminToken');
+            location.reload();
+        }
+
+        // ─── DASHBOARD ────────────────────────────────────────────
         async function loadDashboard() {
             await Promise.all([loadStats(), loadLeads()]);
         }
 
         async function loadStats() {
             try {
-                const response = await fetch(`${API_URL}/stats`, {
+                const res = await fetch(`${API_URL}/stats`, {
                     headers: { 'Authorization': `Bearer ${authToken}` }
                 });
-
-                const data = await response.json();
-                if (response.ok) {
+                const data = await res.json();
+                if (res.ok) {
                     document.getElementById('totalLeads').textContent = data.stats.total;
                     document.getElementById('newLeads').textContent = data.stats.last7Days;
                     document.getElementById('qualifiedLeads').textContent = data.stats.qualified;
-                    document.getElementById('avgAmount').textContent = 'N/A';
+                    document.getElementById('highValueLeads').textContent = data.stats.highValue;
                 }
-            } catch (error) {
-                console.error('Error loading stats:', error);
-            }
+            } catch {/* silent */}
         }
 
         async function loadLeads() {
             try {
                 const params = new URLSearchParams(currentFilters);
-                const response = await fetch(`${API_URL}/leads?${params}`, {
+                const res = await fetch(`${API_URL}/leads?${params}`, {
                     headers: { 'Authorization': `Bearer ${authToken}` }
                 });
-
-                const data = await response.json();
-                if (response.ok) {
+                const data = await res.json();
+                if (res.ok) {
                     currentLeads = data.leads;
-                    renderLeadsTable(data.leads);
+                    currentPage = 1;
+                    renderTable();
+                    renderPagination();
                 }
-            } catch (error) {
-                console.error('Error loading leads:', error);
-                document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 40px; color: #999;">Error loading leads</td></tr>';
+            } catch {
+                document.getElementById('leadsTableBody').innerHTML =
+                    '<tr><td colspan="9" style="text-align:center;padding:40px;color:#c62828;">⚠ Failed to load leads. Check server connection.</td></tr>';
             }
         }
 
-        function renderLeadsTable(leads) {
+        // ─── TABLE ────────────────────────────────────────────────
+        function renderTable() {
             const tbody = document.getElementById('leadsTableBody');
-            
-            if (leads.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 40px; color: #999;">No leads found</td></tr>';
+            const start = (currentPage - 1) * PAGE_SIZE;
+            const page  = currentLeads.slice(start, start + PAGE_SIZE);
+
+            if (currentLeads.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:60px;color:#bbb;">No leads found matching your filters.</td></tr>';
                 return;
             }
 
-            tbody.innerHTML = leads.map(lead => `
+            tbody.innerHTML = page.map(lead => `
                 <tr>
-                    <td>${new Date(lead.createdAt).toLocaleDateString()}</td>
-                    <td>${lead.name}</td>
+                    <td style="white-space:nowrap;">${fmtDate(lead.createdAt)}</td>
+                    <td><strong>${esc(lead.name)}</strong>
+                        ${lead.priority === 'high' ? ' <span class="priority-high" title="High value">★</span>' : ''}</td>
                     <td>
-                        ${lead.email}<br>
-                        <small style="color: #666;">${lead.phone || 'N/A'}</small>
+                        <a href="mailto:${esc(lead.email)}" style="color:inherit;">${esc(lead.email)}</a><br>
+                        <small style="color:#888;">${esc(lead.phone || '—')}</small>
                     </td>
-                    <td class="amount-${getAmountClass(lead.amount)}">${lead.amount}</td>
-                    <td>${formatFraudType(lead.scamType)}</td>
-                    <td>${lead.when || 'N/A'}</td>
-                    <td>${lead.payment || 'N/A'}</td>
+                    <td class="amount-${getAmountClass(lead.amount)}">${esc(lead.amount)}</td>
+                    <td>${fmtFraudType(lead.scamType)}</td>
+                    <td style="white-space:nowrap;">${esc(lead.when || '—')}</td>
+                    <td>${esc(lead.payment || '—')}</td>
                     <td><span class="status-badge status-${lead.status}">${lead.status}</span></td>
                     <td>
                         <div class="actions">
-                            <button class="action-btn btn-view" onclick="viewLead(${lead.id})">View</button>
-                            <button class="action-btn btn-edit" onclick="editLead(${lead.id})">Edit</button>
+                            <button class="action-btn btn-view"   onclick="viewLead(${lead.id})">View</button>
+                            <button class="action-btn btn-edit"   onclick="editLead(${lead.id})">Edit</button>
+                            <button class="action-btn btn-delete" onclick="deleteLead(${lead.id},'${esc(lead.name)}')">Del</button>
                         </div>
                     </td>
                 </tr>
             `).join('');
+        }
+
+        function renderPagination() {
+            const total = currentLeads.length;
+            const pages = Math.ceil(total / PAGE_SIZE);
+            const pg = document.getElementById('pagination');
+            if (pages <= 1) { pg.innerHTML = ''; return; }
+
+            let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹ Prev</button>`;
+            for (let i = 1; i <= pages; i++) {
+                html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+            }
+            html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next ›</button>`;
+            pg.innerHTML = html;
+        }
+
+        function goPage(n) {
+            const pages = Math.ceil(currentLeads.length / PAGE_SIZE);
+            if (n < 1 || n > pages) return;
+            currentPage = n;
+            renderTable();
+            renderPagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ─── FILTERS ──────────────────────────────────────────────
+        function applyFilters() {
+            currentFilters = {};
+            const status    = document.getElementById('filterStatus').value;
+            const fraudType = document.getElementById('filterFraudType').value;
+            const amount    = document.getElementById('filterAmount').value;
+            const search    = document.getElementById('searchInput').value.trim();
+            if (status)    currentFilters.status    = status;
+            if (fraudType) currentFilters.fraudType = fraudType;
+            if (amount)    currentFilters.amount    = amount;
+            if (search)    currentFilters.search    = search;
+            loadLeads();
+        }
+
+        function debounceFilter() {
+            clearTimeout(filterTimer);
+            filterTimer = setTimeout(applyFilters, 350);
+        }
+
+        // ─── VIEW MODAL ───────────────────────────────────────────
+        async function viewLead(id) {
+            try {
+                const res  = await fetch(`${API_URL}/leads/${id}`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                const data = await res.json();
+                if (!res.ok) { showToast('Cannot load lead details', 'error'); return; }
+                const l = data.lead;
+                openModal(`
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                    <h2>Lead #${l.id} — ${esc(l.name)}</h2>
+                    <div class="modal-field"><strong>Email:</strong> <a href="mailto:${esc(l.email)}">${esc(l.email)}</a></div>
+                    <div class="modal-field"><strong>Phone:</strong> ${esc(l.phone||'—')}</div>
+                    <div class="modal-field"><strong>Amount Lost:</strong> ${esc(l.amount)}</div>
+                    <div class="modal-field"><strong>Fraud Type:</strong> ${fmtFraudType(l.scamType)}</div>
+                    <div class="modal-field"><strong>When:</strong> ${esc(l.when||'—')}</div>
+                    <div class="modal-field"><strong>Payment:</strong> ${esc(l.payment||'—')}</div>
+                    <div class="modal-field"><strong>Status:</strong> <span class="status-badge status-${l.status}">${l.status}</span></div>
+                    <div class="modal-field"><strong>Priority:</strong> <span class="priority-${l.priority}">${l.priority||'—'}</span></div>
+                    <div class="modal-field"><strong>Submitted:</strong> ${new Date(l.createdAt).toLocaleString()}</div>
+                    ${l.notes ? `<div class="modal-field"><strong>Notes:</strong><div class="msg-box">${esc(l.notes)}</div></div>` : ''}
+                    <div class="modal-field"><strong>Description:</strong><div class="msg-box">${esc(l.message||'No description provided.')}</div></div>
+                    <div class="modal-actions">
+                        <button class="modal-btn modal-btn-primary" onclick="closeModal();editLead(${l.id})">Edit Lead</button>
+                        <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+                    </div>
+                `);
+            } catch { showToast('Error loading lead', 'error'); }
+        }
+
+        // ─── EDIT MODAL ───────────────────────────────────────────
+        function editLead(id) {
+            const l = currentLeads.find(x => x.id === id);
+            if (!l) return;
+            openModal(`
+                <button class="modal-close" onclick="closeModal()">×</button>
+                <h2>Edit Lead #${l.id} — ${esc(l.name)}</h2>
+                <div class="modal-form-group">
+                    <label>Status</label>
+                    <select id="editStatus">
+                        <option value="new"         ${l.status==='new'?'selected':''}>New</option>
+                        <option value="contacted"   ${l.status==='contacted'?'selected':''}>Contacted</option>
+                        <option value="qualified"   ${l.status==='qualified'?'selected':''}>Qualified</option>
+                        <option value="unqualified" ${l.status==='unqualified'?'selected':''}>Unqualified</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Priority</label>
+                    <select id="editPriority">
+                        <option value="high"   ${l.priority==='high'?'selected':''}>High</option>
+                        <option value="medium" ${l.priority==='medium'?'selected':''}>Medium</option>
+                        <option value="low"    ${l.priority==='low'?'selected':''}>Low</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Internal Notes</label>
+                    <textarea id="editNotes" rows="4" placeholder="Add case notes, follow-up actions...">${esc(l.notes||'')}</textarea>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn modal-btn-primary"   onclick="saveEdit(${l.id})">Save Changes</button>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button class="modal-btn modal-btn-danger"    onclick="closeModal();deleteLead(${l.id},'${esc(l.name)}')">Delete Lead</button>
+                </div>
+            `);
+        }
+
+        async function saveEdit(id) {
+            const status   = document.getElementById('editStatus').value;
+            const priority = document.getElementById('editPriority').value;
+            const notes    = document.getElementById('editNotes').value.trim();
+            try {
+                const res = await fetch(`${API_URL}/leads/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status, priority, notes })
+                });
+                if (res.ok) {
+                    closeModal();
+                    showToast('Lead updated successfully', 'success');
+                    await Promise.all([loadLeads(), loadStats()]);
+                } else {
+                    showToast('Failed to update lead', 'error');
+                }
+            } catch { showToast('Server error', 'error'); }
+        }
+
+        // ─── DELETE ───────────────────────────────────────────────
+        function deleteLead(id, name) {
+            openModal(`
+                <button class="modal-close" onclick="closeModal()">×</button>
+                <h2>Delete Lead?</h2>
+                <p style="color:#555;margin-bottom:24px;">Are you sure you want to permanently delete the lead for <strong>${esc(name)}</strong>? This cannot be undone.</p>
+                <div class="modal-actions">
+                    <button class="modal-btn modal-btn-danger"    onclick="confirmDelete(${id})">Yes, Delete</button>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Cancel</button>
+                </div>
+            `);
+        }
+
+        async function confirmDelete(id) {
+            try {
+                const res = await fetch(`${API_URL}/leads/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                if (res.ok) {
+                    closeModal();
+                    showToast('Lead deleted', 'success');
+                    await Promise.all([loadLeads(), loadStats()]);
+                } else {
+                    showToast('Failed to delete lead', 'error');
+                }
+            } catch { showToast('Server error', 'error'); }
+        }
+
+        // ─── EXPORT ───────────────────────────────────────────────
+        async function exportToCSV() {
+            try {
+                const res = await fetch(`${API_URL}/leads/export/csv`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+                if (res.ok) {
+                    const blob = await res.blob();
+                    const url  = URL.createObjectURL(blob);
+                    const a    = document.createElement('a');
+                    a.href = url;
+                    a.download = `leads-${new Date().toISOString().split('T')[0]}.csv`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                } else { showToast('Export failed', 'error'); }
+            } catch { showToast('Export error', 'error'); }
+        }
+
+        // ─── MODAL HELPERS ────────────────────────────────────────
+        function openModal(html) {
+            closeModal();
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            overlay.id = 'activeModal';
+            overlay.innerHTML = `<div class="modal-box">${html}</div>`;
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+        }
+
+        function closeModal() {
+            const m = document.getElementById('activeModal');
+            if (m) m.remove();
+        }
+
+        // ─── TOAST ────────────────────────────────────────────────
+        function showToast(msg, type = '') {
+            const t = document.createElement('div');
+            t.className = `toast ${type}`;
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 3200);
+        }
+
+        // ─── UTILS ────────────────────────────────────────────────
+        function esc(str) {
+            return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function fmtDate(iso) {
+            return new Date(iso).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
         }
 
         function getAmountClass(amount) {
@@ -690,165 +991,27 @@
             return 'low';
         }
 
-        function formatFraudType(type) {
-            const types = {
-                'crypto': 'Crypto Scam',
-                'broker': 'Fake Trading',
-                'bank': 'Bank Transfer',
-                'card': 'Card Fraud',
-                'other': 'Other'
-            };
-            return types[type] || type;
+        function fmtFraudType(type) {
+            return ({ crypto:'Crypto Scam', broker:'Fake Trading', bank:'Bank Transfer', card:'Card Fraud', other:'Other' })[type] || type || '—';
         }
 
-        function applyFilters() {
-            currentFilters = {
-                status: document.getElementById('filterStatus').value,
-                fraudType: document.getElementById('filterFraudType').value,
-                amount: document.getElementById('filterAmount').value,
-                search: document.getElementById('searchInput').value
-            };
-            
-            // Remove empty filters
-            Object.keys(currentFilters).forEach(key => {
-                if (!currentFilters[key]) delete currentFilters[key];
-            });
-            
-            loadLeads();
-        }
-
-        async function viewLead(id) {
-            try {
-                const response = await fetch(`${API_URL}/leads/${id}`, {
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-
-                const data = await response.json();
-                if (response.ok) {
-                    showLeadModal(data.lead);
-                }
-            } catch (error) {
-                alert('Error loading lead details');
+        // ─── AUTO-REFRESH (60s) ───────────────────────────────────
+        setInterval(() => {
+            if (authToken && !document.getElementById('activeModal')) {
+                loadStats();
+                loadLeads();
             }
-        }
+        }, 60000);
 
-        function showLeadModal(lead) {
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.7);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                overflow-y: auto;
-            `;
-            modal.innerHTML = `
-                <div style="background: white; padding: 30px; border-radius: 12px; width: 600px; max-width: 90%; max-height: 90vh; overflow-y: auto;">
-                    <h2 style="margin: 0 0 20px 0;">Lead Details #${lead.id}</h2>
-                    <div style="line-height: 1.8;">
-                        <p><strong>Name:</strong> ${lead.name}</p>
-                        <p><strong>Email:</strong> ${lead.email}</p>
-                        <p><strong>Phone:</strong> ${lead.phone || 'N/A'}</p>
-                        <p><strong>Amount Lost:</strong> ${lead.amount}</p>
-                        <p><strong>Fraud Type:</strong> ${formatFraudType(lead.scamType)}</p>
-                        <p><strong>When:</strong> ${lead.when || 'N/A'}</p>
-                        <p><strong>Payment Method:</strong> ${lead.payment || 'N/A'}</p>
-                        <p><strong>Status:</strong> <span class="status-badge status-${lead.status}">${lead.status}</span></p>
-                        <p><strong>Submitted:</strong> ${new Date(lead.createdAt).toLocaleString()}</p>
-                        <p><strong>Description:</strong></p>
-                        <p style="background: #f5f5f5; padding: 15px; border-radius: 6px; white-space: pre-wrap;">${lead.message || 'No description provided'}</p>
-                    </div>
-                    <button onclick="this.closest('div[style*=fixed]').remove()" style="margin-top: 20px; padding: 10px 20px; background: #1B2B44; color: white; border: none; border-radius: 6px; cursor: pointer;">
-                        Close
-                    </button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.remove();
-            });
-        }
-
-        async function editLead(id) {
-            const lead = currentLeads.find(l => l.id === id);
-            if (!lead) return;
-
-            const newStatus = prompt(`Change status for ${lead.name}:\n\n1. New\n2. Contacted\n3. Qualified\n4. Unqualified\n\nEnter number (1-4):`);
-            
-            if (newStatus) {
-                const statuses = ['new', 'contacted', 'qualified', 'unqualified'];
-                const statusIndex = parseInt(newStatus) - 1;
-                
-                if (statusIndex >= 0 && statusIndex < 4) {
-                    try {
-                        const response = await fetch(`${API_URL}/leads/${id}`, {
-                            method: 'PUT',
-                            headers: {
-                                'Authorization': `Bearer ${authToken}`,
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ status: statuses[statusIndex] })
-                        });
-
-                        if (response.ok) {
-                            alert('Status updated successfully!');
-                            loadLeads();
-                            loadStats();
-                        }
-                    } catch (error) {
-                        alert('Error updating status');
-                    }
-                }
-            }
-        }
-
-        async function exportToCSV() {
-            try {
-                const response = await fetch(`${API_URL}/leads/export/csv`, {
-                    headers: { 'Authorization': `Bearer ${authToken}` }
-                });
-
-                if (response.ok) {
-                    const blob = await response.blob();
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = `leads-export-${new Date().toISOString().split('T')[0]}.csv`;
-                    a.click();
-                }
-            } catch (error) {
-                alert('Error exporting leads');
-            }
-        }
-
-        function logout() {
-            if (confirm('Are you sure you want to logout?')) {
-                localStorage.removeItem('adminToken');
-                authToken = null;
-                window.location.reload();
-            }
-        }
-
-        // Keyboard shortcut for search
-        document.addEventListener('keydown', function(e) {
+        // ─── KEYBOARD ─────────────────────────────────────────────
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
             if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
                 e.preventDefault();
                 document.getElementById('searchInput').focus();
             }
         });
-
-        // Auto-refresh every 30 seconds
-        setInterval(() => {
-            if (authToken) {
-                loadStats();
-                loadLeads();
-            }
-        }, 30000);
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

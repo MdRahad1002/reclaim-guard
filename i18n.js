@@ -1,0 +1,837 @@
+// ================================
+// Internationalization (i18n) Module
+// Geo-based language detection for DE/AT/CH visitors
+// ================================
+
+const TRANSLATIONS = {
+  en: {
+    // Nav
+    nav_home: 'Home',
+    nav_services: 'Services',
+    nav_technology: 'Technology',
+    nav_about: 'About',
+    nav_testimonials: 'Testimonials',
+    nav_contact: 'Contact',
+    nav_cta: 'Start Your Claim',
+
+    // Hero
+    hero_badge: 'Legal + Cybersecurity Expertise',
+    hero_title: "Recover What's Rightfully Yours.",
+    hero_subtitle: 'ReclaimGuard Legal specializes in cyber-fraud recovery, crypto tracing, chargebacks, and legal action against online scammers. No unrealistic promises — just evidence-based investigations and transparent service.',
+    hero_btn_primary: 'Start Your Case Review',
+    hero_btn_secondary: 'How Recovery Works',
+
+    // Stats
+    stat_legal: 'Legal',
+    stat_legal_label: 'Action Experts',
+    stat_crypto: 'Crypto',
+    stat_crypto_label: 'Tracing Specialists',
+    stat_coverage: 'EU/UK/US',
+    stat_coverage_label: 'International Coverage',
+    stat_gdpr: 'GDPR',
+    stat_gdpr_label: 'Compliant',
+
+    // Trust badges
+    badge_1: 'Legal + Cybersecurity Expertise',
+    badge_2: 'Blockchain & Banking Tracing',
+    badge_3: 'Action Against Scammers',
+    badge_4: 'Full Transparency',
+
+    // Services
+    services_title: 'Our Core Services',
+    services_subtitle: 'Evidence-based recovery procedures combining legal action and digital forensics',
+    service1_title: 'Crypto Recovery & Blockchain Tracing',
+    service1_desc: 'We trace transactions on Bitcoin, Ethereum, BNB Chain, Solana, and 100+ networks. We identify wallets, exchanges, transaction clusters, and off-ramps used by scammers.',
+    service1_f1: 'Blockchain reports',
+    service1_f2: 'Evidence files',
+    service1_f3: 'Exchange escalation',
+    service1_f4: 'Legal freeze requests',
+    service2_title: 'Card Fraud & Chargeback Recovery',
+    service2_desc: 'We handle unauthorized charges, merchant disputes, subscription scams, friendly fraud, and fake trading platforms.',
+    service2_f1: 'Case documentation',
+    service2_f2: 'Evidence assembly',
+    service2_f3: 'Full chargeback dispute filing',
+    service2_f4: 'Merchant negotiations',
+    service3_title: 'Bank Transfer Recovery',
+    service3_desc: 'We assist victims of push-payment scams, investment platforms, business email compromise, and cross-border transfers.',
+    service3_f1: 'Recall requests',
+    service3_f2: 'Fraud incident reports',
+    service3_f3: 'Complaints to financial authorities',
+    service3_f4: 'International fund tracing',
+    service4_title: 'OSINT & Fraud Investigation Reports',
+    service4_desc: 'We collect digital footprints, IP traces, social media identifiers, domain ownership, and corporate shell data.',
+    service4_f1: 'Scammer identification',
+    service4_f2: 'Digital evidence collection',
+    service4_f3: 'Support for police investigations',
+    service4_f4: 'Court-ready documentation',
+    service5_title: 'Legal Letters & Regulatory Complaints',
+    service5_desc: 'We draft and send formal legal notices, complaints to national regulators, exchange compliance escalation, and platform takedown requests.',
+    service5_f1: 'Cease & desist notices',
+    service5_f2: 'Regulatory complaints',
+    service5_f3: 'Exchange enforcement',
+    service5_f4: 'Platform reporting',
+    service6_title: 'Cases We Handle',
+    service6_desc: 'Romance scams, fake trading platforms, Ponzi schemes, NFT fraud, phishing attacks, identity theft, unauthorized transactions, and business email compromise.',
+    service6_f1: 'Crypto investment scams',
+    service6_f2: 'Romance & pig butchering scams',
+    service6_f3: 'Fake forex/binary options',
+    service6_f4: 'Card & bank fraud',
+
+    // Methodology
+    method_title: 'Our Methodology',
+    method_intro: 'We combine legal expertise, compliance knowledge, and advanced cybersecurity investigation techniques to trace stolen assets and initiate structured recovery procedures.',
+    method1_title: 'Blockchain Analytics',
+    method1_desc: 'We trace transactions on Bitcoin, Ethereum, BNB Chain, Solana, and 100+ networks. Identify wallets, exchanges, and transaction clusters used by scammers.',
+    method2_title: 'Bank Dispute Protocols',
+    method2_desc: 'We file recall requests, fraud incident reports, and complaints to financial authorities following strict banking dispute procedures.',
+    method3_title: 'Chargeback Procedures',
+    method3_desc: 'Expert handling of card disputes including unauthorized charges, merchant fraud, and subscription scams with complete documentation.',
+    method4_title: 'Open-Source Intelligence',
+    method4_desc: 'Digital forensics and OSINT to collect evidence including IP traces, social media identifiers, and domain ownership data.',
+    method5_title: 'Digital Forensics',
+    method5_desc: 'Professional evidence collection and documentation suitable for law enforcement, courts, and regulatory authorities.',
+    method6_title: 'Regulatory Escalation',
+    method6_desc: 'We escalate cases to banks, issuers, exchanges, and financial regulators with proper legal documentation and compliance procedures.',
+    stat_blockchains: '100+',
+    stat_blockchains_label: 'Blockchains Covered',
+    stat_intl: 'EU/UK/US',
+    stat_intl_label: 'International Coverage',
+    stat_gdpr2: 'GDPR',
+    stat_gdpr2_label: 'Data Compliant',
+
+    // Process
+    process_title: 'How Recovery Works',
+    process_subtitle: 'Evidence-based, transparent 5-step recovery process',
+    step1_title: 'Case Review (Free)',
+    step1_desc: 'We evaluate documents, transactions, and fraud scenario. No obligation, no upfront payment.',
+    step2_title: 'Evidence Collection',
+    step2_desc: 'We map all transactions, addresses, accounts, and digital traces with professional forensic tools.',
+    step3_title: 'Recovery Strategy',
+    step3_desc: 'We decide the correct route: Chargeback, bank recall, exchange freeze, legal action, or regulator complaint.',
+    step4_title: 'Execution',
+    step4_desc: 'We prepare and file all official documents and pursue recovery through proper legal and financial channels.',
+    step5_title: 'Ongoing Tracking',
+    step5_desc: 'Updates, forensic reports, compliance responses, and appeal steps. Full transparency throughout.',
+
+    // About
+    about_title: 'About ReclaimGuard Legal',
+    about_text1: 'ReclaimGuard Legal is a specialized digital-fraud recovery firm combining legal expertise, compliance knowledge, and advanced cybersecurity investigation techniques. We operate as a hybrid team of legal consultants, analysts, and digital forensic specialists who trace stolen assets and initiate structured recovery procedures.',
+    about_text2: 'Our mission is simple: Help victims regain control, restore justice, and recover their assets.',
+    about_f1_title: 'Realistic Expectations',
+    about_f1_desc: 'We operate with strict ethical standards and realistic expectations. We do not promise guaranteed recovery — we provide structured, professional recovery service with transparent results.',
+    about_f2_title: 'International Reach',
+    about_f2_desc: 'Operating across EU, UK, USA, Canada, and Australia. We handle cross-border fraud cases with proper jurisdiction knowledge.',
+    about_f3_title: 'Evidence-Based Approach',
+    about_f3_desc: 'Professional evidence collection, digital forensics, and documentation suitable for law enforcement, courts, and regulatory authorities.',
+    about_f4_title: 'Full Transparency',
+    about_f4_desc: 'Clear reports, documented evidence, realistic timelines. No hidden fees, no false promises. Professional service from start to finish.',
+    pricing_title: 'Transparent Pricing',
+    cert1: 'Free Case Review',
+    cert2: '€150-€350 Recovery Fee',
+    cert3: '10-15% Success Fee',
+    cert4: 'GDPR Compliant',
+    stats_time: '2-12 Weeks',
+    stats_time_label: 'Typical Recovery Time',
+    stats_min: '€250+',
+    stats_min_label: 'Minimum Case Size',
+    stats_chains: '100+',
+    stats_chains_label: 'Blockchains Covered',
+    stats_cov: 'EU/UK/US',
+    stats_cov_label: 'Coverage Areas',
+
+    // Testimonials
+    test_title: 'Who We Help',
+    test_subtitle: 'Individuals and businesses who lost money to digital fraud',
+
+    // FAQ
+    faq_title: 'Frequently Asked Questions',
+    faq_subtitle: 'Common questions about cryptocurrency recovery and our services',
+    faq1_q: 'Can cryptocurrency really be traced and recovered?',
+    faq1_a: 'Yes. While cryptocurrency is often thought to be anonymous, blockchain technology creates a permanent record of all transactions. Using Chainalysis and other forensic tools, we can trace cryptocurrency through complex transaction paths, identify where it ends up, and take legal action to freeze and recover the funds.',
+    faq2_q: 'How long does the recovery process take?',
+    faq2_a: 'The timeline varies depending on the complexity of your case. Simple cases where funds remain on exchanges may be resolved in 2-4 months. More complex cases involving multiple jurisdictions or sophisticated money laundering may take 6-12 months.',
+    faq3_q: 'What is Chainalysis and how does it help my case?',
+    faq3_a: 'Chainalysis is the world\'s leading blockchain intelligence platform, trusted by law enforcement agencies, regulators, and financial institutions globally. It allows us to trace cryptocurrency transactions across multiple blockchains, identify connections to known entities, and generate court-admissible evidence.',
+    faq4_q: 'What are your fees and payment terms?',
+    faq4_a: 'We offer a free initial consultation to assess your case. Our fee structure is typically based on a combination of fixed fees for investigation work and success-based fees for recovered amounts. We discuss all fees transparently before you engage our services.',
+    faq5_q: 'What types of scams do you handle?',
+    faq5_a: 'We handle all types of cryptocurrency and financial fraud including: fake crypto exchanges, investment scams, Ponzi schemes, romance/pig butchering scams, fake brokers, NFT scams, DeFi exploits, business email compromise, wire fraud, and unauthorized banking transactions.',
+    faq6_q: 'Do you work internationally?',
+    faq6_a: 'Yes. Cryptocurrency fraud often crosses borders, and our international network enables us to work with legal authorities, exchanges, and financial institutions worldwide to maximize recovery chances.',
+    faq7_q: 'What information do you need to start my case?',
+    faq7_a: 'To begin, we need: details of how you were scammed, transaction records (bank statements, cryptocurrency transaction IDs, wallet addresses), any communications with the fraudsters, and documentation of your investments.',
+    faq8_q: 'Is my case confidential?',
+    faq8_a: 'Absolutely. All information you share with us is protected and will not be disclosed without your consent, except where required by law or necessary to pursue your recovery case.',
+
+    // Contact
+    contact_title: 'Start Your Case Now',
+    contact_intro: 'Fill in the form to begin your case review. Free consultation, no obligation. We provide realistic assessments and transparent service.',
+    contact_phone_label: 'Phone',
+    contact_phone_note: 'Business hours response',
+    contact_email_label: 'Email',
+    contact_email_note: '24-48 hour response time',
+    contact_coverage_label: 'Coverage',
+    contact_coverage_val: 'EU, UK, USA, Canada, Australia',
+    contact_coverage_note: 'International fraud cases',
+    contact_pricing_label: 'Pricing',
+    contact_pricing_val: 'Free Case Review<br>€150-€350 Recovery Fee<br>10-15% Success Fee Only',
+    disclaimer_title: '⚠️ Legal Disclaimer',
+    disclaimer_text: 'ReclaimGuard Legal provides investigation services and support in filing disputes. We are not a law firm and do not provide legal representation. No guaranteed outcome is promised. Recovery depends on evidence, case age, payment method, and third-party compliance.',
+
+    // Form
+    form_title: 'Free Case Evaluation',
+    form_subtitle: "Fill out the form below and we'll contact you within 2 hours",
+    form_name: 'Full Name *',
+    form_email: 'Email Address *',
+    form_phone: 'Phone Number *',
+    form_amount: 'How much money did you lose? *',
+    form_amount_placeholder: 'Select amount range',
+    form_amount_0: '€0-250',
+    form_amount_1: '€250-1,000',
+    form_amount_2: '€1,000-5,000',
+    form_amount_3: '€5,000+',
+    form_scamtype: 'What type of fraud did you experience? *',
+    form_scamtype_placeholder: 'Select fraud type',
+    form_scamtype_crypto: 'Crypto scam',
+    form_scamtype_broker: 'Fake trading platform',
+    form_scamtype_bank: 'Bank transfer scam',
+    form_scamtype_card: 'Card fraud',
+    form_scamtype_other: 'Other',
+    form_when: 'When did the incident happen? *',
+    form_when_placeholder: 'Select timeframe',
+    form_when_7: 'Within 7 days',
+    form_when_14: '1-4 weeks',
+    form_when_3m: '1-3 months',
+    form_when_3p: '3+ months',
+    form_payment: 'How did you pay? *',
+    form_payment_placeholder: 'Select payment method',
+    form_payment_crypto: 'Crypto',
+    form_payment_card: 'Card',
+    form_payment_bank: 'Bank transfer',
+    form_payment_other: 'Other',
+    form_message: 'Short description of what happened *',
+    form_message_placeholder: 'Briefly describe the fraud incident...',
+    form_consent: 'I understand that ReclaimGuard Legal provides investigation services and that no guaranteed outcome is promised. I consent to being contacted about my case.',
+    form_submit: 'Begin Recovery Process',
+    form_note: '🔒 GDPR compliant. All data handled confidentially. No upfront payment required for case review.',
+
+    // Footer
+    footer_desc: 'Specialized digital-fraud recovery firm combining legal expertise and cybersecurity investigation. We trace stolen assets and initiate structured recovery procedures.',
+    footer_services: 'Services',
+    footer_company: 'Company',
+    footer_contact: 'Contact',
+    footer_about: 'About Us',
+    footer_methodology: 'Our Methodology',
+    footer_who: 'Who We Help',
+    footer_contact_us: 'Contact Us',
+    footer_privacy: 'Privacy Policy',
+    footer_terms: 'Terms & Conditions',
+    footer_copy: '© 2025 ReclaimGuard Legal. All rights reserved.',
+    footer_disclaimer: 'ReclaimGuard Legal is not a law firm and does not provide legal representation. We provide investigation services, forensic reports, and support in filing disputes, chargebacks, and complaints. All recovery attempts depend on third-party institutions. No guaranteed outcome is promised.',
+    fab_label: 'Start Claim',
+    lang_switcher_label: 'Deutsch',
+  },
+
+  de: {
+    // Nav
+    nav_home: 'Startseite',
+    nav_services: 'Leistungen',
+    nav_technology: 'Methodik',
+    nav_about: 'Über uns',
+    nav_testimonials: 'Erfahrungen',
+    nav_contact: 'Kontakt',
+    nav_cta: 'Fall einreichen',
+
+    // Hero
+    hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
+    hero_title: 'Holen Sie zurück, was Ihnen gehört.',
+    hero_subtitle: 'ReclaimGuard Legal ist spezialisiert auf die Rückgewinnung bei Cyberbetrug, Krypto-Tracing, Rückbuchungen und rechtliche Schritte gegen Online-Betrüger. Keine unrealistischen Versprechen – nur faktenbasierte Ermittlungen und transparenten Service.',
+    hero_btn_primary: 'Kostenlose Fallprüfung starten',
+    hero_btn_secondary: 'So funktioniert die Rückgewinnung',
+
+    // Stats
+    stat_legal: 'Rechtliche',
+    stat_legal_label: 'Experten',
+    stat_crypto: 'Krypto',
+    stat_crypto_label: 'Tracing-Spezialisten',
+    stat_coverage: 'EU/UK/DE',
+    stat_coverage_label: 'Internationale Abdeckung',
+    stat_gdpr: 'DSGVO',
+    stat_gdpr_label: 'Konform',
+
+    // Trust badges
+    badge_1: 'Rechtliche + Cybersicherheits-Expertise',
+    badge_2: 'Blockchain- & Bankverfolgung',
+    badge_3: 'Vorgehen gegen Betrüger',
+    badge_4: 'Vollständige Transparenz',
+
+    // Services
+    services_title: 'Unsere Kernleistungen',
+    services_subtitle: 'Faktenbasierte Rückgewinnungsverfahren, die rechtliche Maßnahmen und digitale Forensik kombinieren',
+    service1_title: 'Krypto-Rückgewinnung & Blockchain-Tracing',
+    service1_desc: 'Wir verfolgen Transaktionen auf Bitcoin, Ethereum, BNB Chain, Solana und 100+ Netzwerken. Wir identifizieren Wallets, Börsen, Transaktionscluster und Auszahlungswege von Betrügern.',
+    service1_f1: 'Blockchain-Berichte',
+    service1_f2: 'Beweisdateien',
+    service1_f3: 'Eskalation bei Börsen',
+    service1_f4: 'Rechtliche Einfrierungsanträge',
+    service2_title: 'Kartenbetrug & Rückbuchungsrückgewinnung',
+    service2_desc: 'Wir bearbeiten nicht autorisierte Abbuchungen, Händlerstreitigkeiten, Abonnementbetrug, Friendly Fraud und gefälschte Handelsplattformen.',
+    service2_f1: 'Falldokumentation',
+    service2_f2: 'Beweismittelsammlung',
+    service2_f3: 'Vollständige Rückbuchungseinreichung',
+    service2_f4: 'Händlerverhandlungen',
+    service3_title: 'Banküberweisung Rückgewinnung',
+    service3_desc: 'Wir unterstützen Opfer von Push-Payment-Betrug, Investitionsplattformen, Business-E-Mail-Kompromittierung und grenzüberschreitenden Überweisungen.',
+    service3_f1: 'Rückrufanträge',
+    service3_f2: 'Betrugsberichte',
+    service3_f3: 'Beschwerden bei Finanzbehörden',
+    service3_f4: 'Internationale Geldverfolgung',
+    service4_title: 'OSINT & Betrugsermittlungsberichte',
+    service4_desc: 'Wir sammeln digitale Spuren, IP-Verfolgungen, Social-Media-Identifikatoren, Domain-Eigentümerschaft und Daten zu Firmenmänteln.',
+    service4_f1: 'Betrügeridentifikation',
+    service4_f2: 'Digitale Beweissicherung',
+    service4_f3: 'Unterstützung bei Polizeiermittlungen',
+    service4_f4: 'Gerichtsfertige Dokumentation',
+    service5_title: 'Rechtliche Schreiben & Aufsichtsbeschwerden',
+    service5_desc: 'Wir verfassen und versenden formelle rechtliche Hinweise, Beschwerden an nationale Aufsichtsbehörden, Eskalationen bei Börsen und Plattform-Takedown-Anfragen.',
+    service5_f1: 'Unterlassungsaufforderungen',
+    service5_f2: 'Aufsichtsbeschwerden',
+    service5_f3: 'Börsendurchsetzung',
+    service5_f4: 'Plattformmeldungen',
+    service6_title: 'Fälle, die wir bearbeiten',
+    service6_desc: 'Liebesbetrug, gefälschte Handelsplattformen, Schneeballsysteme, NFT-Betrug, Phishing-Angriffe, Identitätsdiebstahl, nicht autorisierte Transaktionen und Business-E-Mail-Kompromittierung.',
+    service6_f1: 'Krypto-Investitionsbetrug',
+    service6_f2: 'Liebesbetrug & Pig-Butchering-Betrug',
+    service6_f3: 'Gefälschte Forex-/Binäroptionen',
+    service6_f4: 'Karten- & Bankbetrug',
+
+    // Methodology
+    method_title: 'Unsere Methodik',
+    method_intro: 'Wir kombinieren Rechtskenntnisse, Compliance-Wissen und fortschrittliche Cybersicherheitsermittlungstechniken, um gestohlene Vermögenswerte zu verfolgen und strukturierte Rückgewinnungsverfahren einzuleiten.',
+    method1_title: 'Blockchain-Analyse',
+    method1_desc: 'Wir verfolgen Transaktionen auf Bitcoin, Ethereum, BNB Chain, Solana und 100+ Netzwerken. Wir identifizieren Wallets, Börsen und Transaktionscluster von Betrügern.',
+    method2_title: 'Bankstreitprotokolle',
+    method2_desc: 'Wir stellen Rückrufanträge, Betrugsberichte und Beschwerden bei Finanzbehörden gemäß strengen Bankstreitverfahren.',
+    method3_title: 'Rückbuchungsverfahren',
+    method3_desc: 'Fachkundige Bearbeitung von Kartenstreitigkeiten einschließlich nicht autorisierter Abbuchungen, Händlerbetrug und Abonnementbetrug mit vollständiger Dokumentation.',
+    method4_title: 'Open-Source-Intelligenz',
+    method4_desc: 'Digitale Forensik und OSINT zur Beweissicherung, einschließlich IP-Verfolgungen, Social-Media-Identifikatoren und Domain-Eigentümerdaten.',
+    method5_title: 'Digitale Forensik',
+    method5_desc: 'Professionelle Beweissicherung und -dokumentation, geeignet für Strafverfolgungsbehörden, Gerichte und Aufsichtsbehörden.',
+    method6_title: 'Regulatorische Eskalation',
+    method6_desc: 'Wir eskalieren Fälle an Banken, Emittenten, Börsen und Finanzregulatoren mit ordnungsgemäßer rechtlicher Dokumentation und Compliance-Verfahren.',
+    stat_blockchains: '100+',
+    stat_blockchains_label: 'Blockchains abgedeckt',
+    stat_intl: 'EU/UK/DE',
+    stat_intl_label: 'Internationale Abdeckung',
+    stat_gdpr2: 'DSGVO',
+    stat_gdpr2_label: 'Datenschutz-konform',
+
+    // Process
+    process_title: 'So funktioniert die Rückgewinnung',
+    process_subtitle: 'Faktenbasierter, transparenter 5-Schritte-Rückgewinnungsprozess',
+    step1_title: 'Fallprüfung (Kostenlos)',
+    step1_desc: 'Wir bewerten Dokumente, Transaktionen und das Betrugsszenario. Keine Verpflichtung, keine Vorauszahlung.',
+    step2_title: 'Beweissicherung',
+    step2_desc: 'Wir erfassen alle Transaktionen, Adressen, Konten und digitale Spuren mit professionellen Forensik-Tools.',
+    step3_title: 'Rückgewinnungsstrategie',
+    step3_desc: 'Wir legen den richtigen Weg fest: Rückbuchung, Bankrückruf, Börsensperrung, rechtliche Schritte oder Behördenbeschwerde.',
+    step4_title: 'Ausführung',
+    step4_desc: 'Wir bereiten alle offiziellen Dokumente vor und reichen sie ein und verfolgen die Rückgewinnung über ordnungsgemäße Rechts- und Finanzkanäle.',
+    step5_title: 'Laufende Verfolgung',
+    step5_desc: 'Aktualisierungen, Forensikberichte, Compliance-Antworten und Rechtsmittelschritte. Vollständige Transparenz während des gesamten Prozesses.',
+
+    // About
+    about_title: 'Über ReclaimGuard Legal',
+    about_text1: 'ReclaimGuard Legal ist ein spezialisiertes Unternehmen zur Rückgewinnung bei digitalem Betrug, das Rechtskenntnisse, Compliance-Wissen und fortschrittliche Cybersicherheitsermittlungstechniken kombiniert. Wir sind ein hybrides Team aus Rechtsberatern, Analysten und digitalen Forensikspezialisten, die gestohlene Vermögenswerte verfolgen und strukturierte Rückgewinnungsverfahren einleiten.',
+    about_text2: 'Unsere Mission ist einfach: Opfern helfen, die Kontrolle zurückzugewinnen, Gerechtigkeit herzustellen und ihre Vermögenswerte zurückzubekommen.',
+    about_f1_title: 'Realistische Erwartungen',
+    about_f1_desc: 'Wir arbeiten nach strengen ethischen Standards und mit realistischen Erwartungen. Wir versprechen keine garantierte Rückgewinnung — wir bieten strukturierten, professionellen Rückgewinnungsservice mit transparenten Ergebnissen.',
+    about_f2_title: 'Internationale Reichweite',
+    about_f2_desc: 'Tätig in der EU, UK, USA, Kanada und Australien. Wir bearbeiten grenzüberschreitende Betrugsfälle mit fundiertem Jurisdiktionswissen.',
+    about_f3_title: 'Faktenbasierter Ansatz',
+    about_f3_desc: 'Professionelle Beweissicherung, digitale Forensik und Dokumentation, geeignet für Strafverfolgungsbehörden, Gerichte und Aufsichtsbehörden.',
+    about_f4_title: 'Vollständige Transparenz',
+    about_f4_desc: 'Klare Berichte, dokumentierte Beweise, realistische Zeitpläne. Keine versteckten Gebühren, keine falschen Versprechen. Professioneller Service von Anfang bis Ende.',
+    pricing_title: 'Transparente Preise',
+    cert1: 'Kostenlose Fallprüfung',
+    cert2: '€150–€350 Rückgewinnungsgebühr',
+    cert3: '10–15% Erfolgsgebühr',
+    cert4: 'DSGVO-konform',
+    stats_time: '2–12 Wochen',
+    stats_time_label: 'Typische Rückgewinnungszeit',
+    stats_min: '€250+',
+    stats_min_label: 'Minimale Fallgröße',
+    stats_chains: '100+',
+    stats_chains_label: 'Blockchains abgedeckt',
+    stats_cov: 'EU/UK/DE',
+    stats_cov_label: 'Abgedeckte Regionen',
+
+    // Testimonials
+    test_title: 'Wem wir helfen',
+    test_subtitle: 'Einzelpersonen und Unternehmen, die Geld durch digitalen Betrug verloren haben',
+
+    // FAQ
+    faq_title: 'Häufig gestellte Fragen',
+    faq_subtitle: 'Häufige Fragen zur Kryptowährungs-Rückgewinnung und unseren Leistungen',
+    faq1_q: 'Kann Kryptowährung wirklich verfolgt und zurückgewonnen werden?',
+    faq1_a: 'Ja. Obwohl Kryptowährung oft als anonym gilt, erstellt die Blockchain-Technologie eine permanente Aufzeichnung aller Transaktionen. Mit Chainalysis und anderen Forensik-Tools können wir Kryptowährungen durch komplexe Transaktionspfade verfolgen, herausfinden, wo sie enden, und rechtliche Schritte einleiten, um die Mittel einzufrieren und zurückzubekommen.',
+    faq2_q: 'Wie lange dauert der Rückgewinnungsprozess?',
+    faq2_a: 'Der Zeitrahmen hängt von der Komplexität Ihres Falls ab. Einfache Fälle, bei denen die Mittel noch auf Börsen sind, können in 2–4 Monaten gelöst werden. Komplexere Fälle mit mehreren Rechtssystemen oder ausgeklügelter Geldwäsche können 6–12 Monate dauern.',
+    faq3_q: 'Was ist Chainalysis und wie hilft es meinem Fall?',
+    faq3_a: 'Chainalysis ist die weltweit führende Blockchain-Intelligence-Plattform, der Strafverfolgungsbehörden, Regulatoren und Finanzinstitutionen global vertrauen. Sie ermöglicht es uns, Kryptowährungstransaktionen über mehrere Blockchains zu verfolgen, Verbindungen zu bekannten Einheiten zu identifizieren und gerichtsverwertbare Beweise zu erstellen.',
+    faq4_q: 'Was sind Ihre Gebühren und Zahlungsbedingungen?',
+    faq4_a: 'Wir bieten eine kostenlose Erstberatung zur Bewertung Ihres Falls. Unsere Gebührenstruktur basiert typischerweise auf einer Kombination aus Festgebühren für Ermittlungsarbeiten und erfolgsbasierten Gebühren für zurückgewonnene Beträge.',
+    faq5_q: 'Welche Arten von Betrug bearbeiten Sie?',
+    faq5_a: 'Wir bearbeiten alle Arten von Kryptowährungs- und Finanzbetrug, einschließlich: gefälschte Krypto-Börsen, Investitionsbetrug, Schneeballsysteme, Liebes-/Pig-Butchering-Betrug, gefälschte Broker, NFT-Betrug, DeFi-Exploits, Business-E-Mail-Kompromittierung, Überweisungsbetrug und nicht autorisierte Banktransaktionen.',
+    faq6_q: 'Arbeiten Sie international?',
+    faq6_a: 'Ja. Kryptowährungsbetrug überschreitet oft Grenzen, und unser internationales Netzwerk ermöglicht es uns, mit Rechtsbehörden, Börsen und Finanzinstitutionen weltweit zusammenzuarbeiten, um die Rückgewinnungschancen zu maximieren.',
+    faq7_q: 'Welche Informationen benötigen Sie, um meinen Fall zu beginnen?',
+    faq7_a: 'Zu Beginn benötigen wir: Details darüber, wie Sie betrogen wurden, Transaktionsnachweise (Kontoauszüge, Kryptowährungs-Transaktions-IDs, Wallet-Adressen), Kommunikation mit den Betrügern und Dokumentation Ihrer Investitionen.',
+    faq8_q: 'Ist mein Fall vertraulich?',
+    faq8_a: 'Absolut. Alle Informationen, die Sie mit uns teilen, sind geschützt und werden nicht ohne Ihre Zustimmung weitergegeben, außer wenn gesetzlich vorgeschrieben oder zur Verfolgung Ihres Rückgewinnungsfalls notwendig.',
+
+    // Contact
+    contact_title: 'Starten Sie Ihren Fall jetzt',
+    contact_intro: 'Füllen Sie das Formular aus, um Ihre Fallprüfung zu starten. Kostenlose Beratung, keine Verpflichtung. Wir bieten realistische Einschätzungen und transparenten Service.',
+    contact_phone_label: 'Telefon',
+    contact_phone_note: 'Antwort während der Geschäftszeiten',
+    contact_email_label: 'E-Mail',
+    contact_email_note: '24–48 Stunden Antwortzeit',
+    contact_coverage_label: 'Abdeckung',
+    contact_coverage_val: 'EU, UK, USA, Kanada, Australien',
+    contact_coverage_note: 'Internationale Betrugsfälle',
+    contact_pricing_label: 'Preise',
+    contact_pricing_val: 'Kostenlose Fallprüfung<br>€150–€350 Rückgewinnungsgebühr<br>Nur 10–15% Erfolgsgebühr',
+    disclaimer_title: '⚠️ Rechtlicher Hinweis',
+    disclaimer_text: 'ReclaimGuard Legal erbringt Ermittlungsdienstleistungen und Unterstützung bei der Einreichung von Streitigkeiten. Wir sind keine Anwaltskanzlei und bieten keine Rechtsvertretung an. Kein garantiertes Ergebnis wird versprochen. Die Rückgewinnung hängt von Beweisen, dem Fallalter, der Zahlungsmethode und der Compliance von Dritten ab.',
+
+    // Form
+    form_title: 'Kostenlose Fallbewertung',
+    form_subtitle: 'Füllen Sie das Formular aus und wir melden uns innerhalb von 2 Stunden',
+    form_name: 'Vollständiger Name *',
+    form_email: 'E-Mail-Adresse *',
+    form_phone: 'Telefonnummer *',
+    form_amount: 'Wie viel Geld haben Sie verloren? *',
+    form_amount_placeholder: 'Betrag auswählen',
+    form_amount_0: '€0–250',
+    form_amount_1: '€250–1.000',
+    form_amount_2: '€1.000–5.000',
+    form_amount_3: '€5.000+',
+    form_scamtype: 'Welche Art von Betrug haben Sie erlebt? *',
+    form_scamtype_placeholder: 'Betrugsart auswählen',
+    form_scamtype_crypto: 'Krypto-Betrug',
+    form_scamtype_broker: 'Gefälschte Handelsplattform',
+    form_scamtype_bank: 'Banküberweisung Betrug',
+    form_scamtype_card: 'Kartenbetrug',
+    form_scamtype_other: 'Sonstiges',
+    form_when: 'Wann ereignete sich der Vorfall? *',
+    form_when_placeholder: 'Zeitraum auswählen',
+    form_when_7: 'Innerhalb von 7 Tagen',
+    form_when_14: '1–4 Wochen',
+    form_when_3m: '1–3 Monate',
+    form_when_3p: '3+ Monate',
+    form_payment: 'Wie haben Sie bezahlt? *',
+    form_payment_placeholder: 'Zahlungsmethode auswählen',
+    form_payment_crypto: 'Krypto',
+    form_payment_card: 'Karte',
+    form_payment_bank: 'Banküberweisung',
+    form_payment_other: 'Sonstiges',
+    form_message: 'Kurze Beschreibung des Vorfalls *',
+    form_message_placeholder: 'Beschreiben Sie kurz den Betrugsvorfall...',
+    form_consent: 'Ich verstehe, dass ReclaimGuard Legal Ermittlungsdienstleistungen erbringt und kein garantiertes Ergebnis versprochen wird. Ich stimme zu, bezüglich meines Falls kontaktiert zu werden.',
+    form_submit: 'Rückgewinnungsprozess starten',
+    form_note: '🔒 DSGVO-konform. Alle Daten werden vertraulich behandelt. Keine Vorauszahlung für die Fallprüfung erforderlich.',
+
+    // Footer
+    footer_desc: 'Spezialisiertes Unternehmen für digitale Betrugsprävention, das Rechtskenntnisse und Cybersicherheitsermittlung kombiniert. Wir verfolgen gestohlene Vermögenswerte und leiten strukturierte Rückgewinnungsverfahren ein.',
+    footer_services: 'Leistungen',
+    footer_company: 'Unternehmen',
+    footer_contact: 'Kontakt',
+    footer_about: 'Über uns',
+    footer_methodology: 'Unsere Methodik',
+    footer_who: 'Wem wir helfen',
+    footer_contact_us: 'Kontaktieren Sie uns',
+    footer_privacy: 'Datenschutzrichtlinie',
+    footer_terms: 'AGB',
+    footer_copy: '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+    footer_disclaimer: 'ReclaimGuard Legal ist keine Anwaltskanzlei und bietet keine Rechtsvertretung an. Wir erbringen Ermittlungsdienstleistungen, forensische Berichte und Unterstützung bei der Einreichung von Streitigkeiten, Rückbuchungen und Beschwerden. Alle Rückgewinnungsversuche hängen von Drittinstitutionen ab. Kein garantiertes Ergebnis wird versprochen.',
+    fab_label: 'Fall einreichen',
+    lang_switcher_label: 'English',
+  }
+};
+
+// ============================
+// Geo detection + apply lang
+// ============================
+const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
+
+async function detectCountry() {
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.country_code || null;
+  } catch {
+    return null;
+  }
+}
+
+function getLang() {
+  return localStorage.getItem('rg_lang') || null;
+}
+
+function setLang(lang) {
+  localStorage.setItem('rg_lang', lang);
+}
+
+function t(key) {
+  const lang = getLang() || 'en';
+  return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || TRANSLATIONS['en'][key] || key;
+}
+
+// Apply all translations to the DOM
+function applyTranslations() {
+  const lang = getLang() || 'en';
+  document.documentElement.lang = lang;
+
+  // Helper to set text safely
+  const setText = (sel, key) => {
+    const el = document.querySelector(sel);
+    if (el) el.textContent = t(key);
+  };
+  const setHTML = (sel, key) => {
+    const el = document.querySelector(sel);
+    if (el) el.innerHTML = t(key);
+  };
+  const setAttr = (sel, attr, key) => {
+    const el = document.querySelector(sel);
+    if (el) el.setAttribute(attr, t(key));
+  };
+  const setAll = (sel, key) => {
+    document.querySelectorAll(sel).forEach(el => { el.textContent = t(key); });
+  };
+
+  // Nav
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navKeys = ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact'];
+  navLinks.forEach((el, i) => { if (navKeys[i]) el.textContent = t(navKeys[i]); });
+  const navCta = document.querySelector('.nav-menu .btn-primary');
+  if (navCta) navCta.textContent = t('nav_cta');
+
+  // Hero
+  setText('.hero-badge span', 'hero_badge');
+  setText('.hero-title', 'hero_title');
+  setText('.hero-subtitle', 'hero_subtitle');
+  const heroBtns = document.querySelectorAll('.hero-cta .btn');
+  if (heroBtns[0]) heroBtns[0].textContent = t('hero_btn_primary');
+  if (heroBtns[1]) heroBtns[1].textContent = t('hero_btn_secondary');
+
+  // Hero stats
+  const stats = document.querySelectorAll('.hero-stats .stat');
+  const heroStatData = [
+    ['stat_legal', 'stat_legal_label'],
+    ['stat_crypto', 'stat_crypto_label'],
+    ['stat_coverage', 'stat_coverage_label'],
+    ['stat_gdpr', 'stat_gdpr_label'],
+  ];
+  stats.forEach((stat, i) => {
+    if (!heroStatData[i]) return;
+    const num = stat.querySelector('.stat-number');
+    const lbl = stat.querySelector('.stat-label');
+    if (num) num.textContent = t(heroStatData[i][0]);
+    if (lbl) lbl.textContent = t(heroStatData[i][1]);
+  });
+
+  // Trust badges
+  const badges = document.querySelectorAll('.badge-item .badge-text');
+  ['badge_1', 'badge_2', 'badge_3', 'badge_4'].forEach((key, i) => {
+    if (badges[i]) badges[i].textContent = t(key);
+  });
+
+  // Services section
+  setText('.services-section .section-title', 'services_title');
+  setText('.services-section .section-subtitle', 'services_subtitle');
+  const cards = document.querySelectorAll('.service-card');
+  const cardData = [
+    ['service1_title', 'service1_desc', ['service1_f1','service1_f2','service1_f3','service1_f4']],
+    ['service2_title', 'service2_desc', ['service2_f1','service2_f2','service2_f3','service2_f4']],
+    ['service3_title', 'service3_desc', ['service3_f1','service3_f2','service3_f3','service3_f4']],
+    ['service4_title', 'service4_desc', ['service4_f1','service4_f2','service4_f3','service4_f4']],
+    ['service5_title', 'service5_desc', ['service5_f1','service5_f2','service5_f3','service5_f4']],
+    ['service6_title', 'service6_desc', ['service6_f1','service6_f2','service6_f3','service6_f4']],
+  ];
+  cards.forEach((card, i) => {
+    if (!cardData[i]) return;
+    const title = card.querySelector('.service-title');
+    const desc = card.querySelector('.service-description');
+    const features = card.querySelectorAll('.service-features li');
+    if (title) title.textContent = t(cardData[i][0]);
+    if (desc) desc.textContent = t(cardData[i][1]);
+    features.forEach((f, j) => { if (cardData[i][2][j]) f.textContent = t(cardData[i][2][j]); });
+  });
+
+  // Methodology
+  setText('.technology-section .section-title', 'method_title');
+  setText('.tech-intro', 'method_intro');
+  const features = document.querySelectorAll('.tech-feature');
+  const methodData = [
+    ['method1_title', 'method1_desc'],
+    ['method2_title', 'method2_desc'],
+    ['method3_title', 'method3_desc'],
+    ['method4_title', 'method4_desc'],
+    ['method5_title', 'method5_desc'],
+    ['method6_title', 'method6_desc'],
+  ];
+  features.forEach((f, i) => {
+    if (!methodData[i]) return;
+    const h3 = f.querySelector('h3');
+    const p = f.querySelector('p');
+    if (h3) h3.textContent = t(methodData[i][0]);
+    if (p) p.textContent = t(methodData[i][1]);
+  });
+
+  // Tech stats
+  const techStats = document.querySelectorAll('.tech-stat');
+  const techStatData = [
+    ['stat_blockchains', 'stat_blockchains_label'],
+    ['stat_intl', 'stat_intl_label'],
+    ['stat_gdpr2', 'stat_gdpr2_label'],
+  ];
+  techStats.forEach((s, i) => {
+    if (!techStatData[i]) return;
+    const num = s.querySelector('.tech-stat-number');
+    const lbl = s.querySelector('.tech-stat-label');
+    if (num) num.textContent = t(techStatData[i][0]);
+    if (lbl) lbl.textContent = t(techStatData[i][1]);
+  });
+
+  // Process
+  setText('.process-section .section-title', 'process_title');
+  setText('.process-section .section-subtitle', 'process_subtitle');
+  const steps = document.querySelectorAll('.process-step');
+  const stepData = [
+    ['step1_title', 'step1_desc'],
+    ['step2_title', 'step2_desc'],
+    ['step3_title', 'step3_desc'],
+    ['step4_title', 'step4_desc'],
+    ['step5_title', 'step5_desc'],
+  ];
+  steps.forEach((step, i) => {
+    if (!stepData[i]) return;
+    const h3 = step.querySelector('h3');
+    const p = step.querySelector('p');
+    if (h3) h3.textContent = t(stepData[i][0]);
+    if (p) p.textContent = t(stepData[i][1]);
+  });
+
+  // About
+  setText('.about-section .section-title', 'about_title');
+  const aboutTexts = document.querySelectorAll('.about-text');
+  if (aboutTexts[0]) aboutTexts[0].textContent = t('about_text1');
+  if (aboutTexts[1]) aboutTexts[1].textContent = t('about_text2');
+  const aboutFeatures = document.querySelectorAll('.about-feature');
+  const aboutFData = [
+    ['about_f1_title', 'about_f1_desc'],
+    ['about_f2_title', 'about_f2_desc'],
+    ['about_f3_title', 'about_f3_desc'],
+    ['about_f4_title', 'about_f4_desc'],
+  ];
+  aboutFeatures.forEach((f, i) => {
+    if (!aboutFData[i]) return;
+    const h4 = f.querySelector('h4');
+    const p = f.querySelector('p');
+    if (h4) h4.textContent = t(aboutFData[i][0]);
+    if (p) p.textContent = t(aboutFData[i][1]);
+  });
+  const certTitle = document.querySelector('.certifications h3');
+  if (certTitle) certTitle.textContent = t('pricing_title');
+  const certBadges = document.querySelectorAll('.cert-badge');
+  ['cert1','cert2','cert3','cert4'].forEach((key, i) => {
+    if (certBadges[i]) certBadges[i].textContent = t(key);
+  });
+  const statItems = document.querySelectorAll('.stats-card .stat-item');
+  const statItemData = [
+    ['stats_time', 'stats_time_label'],
+    ['stats_min', 'stats_min_label'],
+    ['stats_chains', 'stats_chains_label'],
+    ['stats_cov', 'stats_cov_label'],
+  ];
+  statItems.forEach((s, i) => {
+    if (!statItemData[i]) return;
+    const val = s.querySelector('.stat-value');
+    const lbl = s.querySelector('.stat-label');
+    if (val) val.textContent = t(statItemData[i][0]);
+    if (lbl) lbl.textContent = t(statItemData[i][1]);
+  });
+
+  // Testimonials
+  setText('.testimonials-section .section-title', 'test_title');
+  setText('.testimonials-section .section-subtitle', 'test_subtitle');
+
+  // FAQ
+  setText('.faq-section .section-title', 'faq_title');
+  setText('.faq-section .section-subtitle', 'faq_subtitle');
+  const faqItems = document.querySelectorAll('.faq-item');
+  const faqData = [
+    ['faq1_q', 'faq1_a'],
+    ['faq2_q', 'faq2_a'],
+    ['faq3_q', 'faq3_a'],
+    ['faq4_q', 'faq4_a'],
+    ['faq5_q', 'faq5_a'],
+    ['faq6_q', 'faq6_a'],
+    ['faq7_q', 'faq7_a'],
+    ['faq8_q', 'faq8_a'],
+  ];
+  faqItems.forEach((item, i) => {
+    if (!faqData[i]) return;
+    const q = item.querySelector('.faq-question h3');
+    const a = item.querySelector('.faq-answer p');
+    if (q) q.textContent = t(faqData[i][0]);
+    if (a) a.textContent = t(faqData[i][1]);
+  });
+
+  // Contact
+  setText('.contact-info .section-title', 'contact_title');
+  setText('.contact-intro', 'contact_intro');
+  const methods = document.querySelectorAll('.contact-method');
+  if (methods[0]) {
+    const h4 = methods[0].querySelector('h4'); if (h4) h4.textContent = t('contact_phone_label');
+    const span = methods[0].querySelector('span'); if (span) span.textContent = t('contact_phone_note');
+  }
+  if (methods[1]) {
+    const h4 = methods[1].querySelector('h4'); if (h4) h4.textContent = t('contact_email_label');
+    const span = methods[1].querySelector('span'); if (span) span.textContent = t('contact_email_note');
+  }
+  if (methods[2]) {
+    const h4 = methods[2].querySelector('h4'); if (h4) h4.textContent = t('contact_coverage_label');
+    const p = methods[2].querySelector('p'); if (p) p.textContent = t('contact_coverage_val');
+    const span = methods[2].querySelector('span'); if (span) span.textContent = t('contact_coverage_note');
+  }
+  if (methods[3]) {
+    const h4 = methods[3].querySelector('h4'); if (h4) h4.textContent = t('contact_pricing_label');
+    const p = methods[3].querySelector('p'); if (p) p.innerHTML = t('contact_pricing_val');
+  }
+  const emergTitle = document.querySelector('.emergency-contact h4');
+  if (emergTitle) emergTitle.textContent = t('disclaimer_title');
+  const emergText = document.querySelector('.emergency-contact p');
+  if (emergText) emergText.textContent = t('disclaimer_text');
+
+  // Form
+  setText('.contact-form h3', 'form_title');
+  setText('.form-subtitle', 'form_subtitle');
+  const nameLabel = document.querySelector('label[for="name"]'); if (nameLabel) nameLabel.textContent = t('form_name');
+  const emailLabel = document.querySelector('label[for="email"]'); if (emailLabel) emailLabel.textContent = t('form_email');
+  const phoneLabel = document.querySelector('label[for="phone"]'); if (phoneLabel) phoneLabel.textContent = t('form_phone');
+  const amountLabel = document.querySelector('label[for="amount"]'); if (amountLabel) amountLabel.textContent = t('form_amount');
+  const scamLabel = document.querySelector('label[for="scamType"]'); if (scamLabel) scamLabel.textContent = t('form_scamtype');
+  const whenLabel = document.querySelector('label[for="when"]'); if (whenLabel) whenLabel.textContent = t('form_when');
+  const payLabel = document.querySelector('label[for="payment"]'); if (payLabel) payLabel.textContent = t('form_payment');
+  const msgLabel = document.querySelector('label[for="message"]'); if (msgLabel) msgLabel.textContent = t('form_message');
+  const consentLabel = document.querySelector('label[for="consent"]'); if (consentLabel) consentLabel.textContent = t('form_consent');
+  const msgInput = document.querySelector('#message'); if (msgInput) msgInput.placeholder = t('form_message_placeholder');
+  const submitBtn = document.querySelector('.contact-form button[type="submit"]'); if (submitBtn) submitBtn.textContent = t('form_submit');
+  setText('.form-note', 'form_note');
+
+  // Select placeholders + options
+  const amountSel = document.querySelector('#amount');
+  if (amountSel) {
+    const opts = amountSel.querySelectorAll('option');
+    if (opts[0]) opts[0].textContent = t('form_amount_placeholder');
+    if (opts[1]) opts[1].textContent = t('form_amount_0');
+    if (opts[2]) opts[2].textContent = t('form_amount_1');
+    if (opts[3]) opts[3].textContent = t('form_amount_2');
+    if (opts[4]) opts[4].textContent = t('form_amount_3');
+  }
+  const scamSel = document.querySelector('#scamType');
+  if (scamSel) {
+    const opts = scamSel.querySelectorAll('option');
+    if (opts[0]) opts[0].textContent = t('form_scamtype_placeholder');
+    if (opts[1]) opts[1].textContent = t('form_scamtype_crypto');
+    if (opts[2]) opts[2].textContent = t('form_scamtype_broker');
+    if (opts[3]) opts[3].textContent = t('form_scamtype_bank');
+    if (opts[4]) opts[4].textContent = t('form_scamtype_card');
+    if (opts[5]) opts[5].textContent = t('form_scamtype_other');
+  }
+  const whenSel = document.querySelector('#when');
+  if (whenSel) {
+    const opts = whenSel.querySelectorAll('option');
+    if (opts[0]) opts[0].textContent = t('form_when_placeholder');
+    if (opts[1]) opts[1].textContent = t('form_when_7');
+    if (opts[2]) opts[2].textContent = t('form_when_14');
+    if (opts[3]) opts[3].textContent = t('form_when_3m');
+    if (opts[4]) opts[4].textContent = t('form_when_3p');
+  }
+  const paySel = document.querySelector('#payment');
+  if (paySel) {
+    const opts = paySel.querySelectorAll('option');
+    if (opts[0]) opts[0].textContent = t('form_payment_placeholder');
+    if (opts[1]) opts[1].textContent = t('form_payment_crypto');
+    if (opts[2]) opts[2].textContent = t('form_payment_card');
+    if (opts[3]) opts[3].textContent = t('form_payment_bank');
+    if (opts[4]) opts[4].textContent = t('form_payment_other');
+  }
+
+  // Footer
+  setText('.footer-desc', 'footer_desc');
+  const footerCols = document.querySelectorAll('.footer-col');
+  if (footerCols[1]) { const h4 = footerCols[1].querySelector('h4'); if (h4) h4.textContent = t('footer_services'); }
+  if (footerCols[2]) {
+    const h4 = footerCols[2].querySelector('h4'); if (h4) h4.textContent = t('footer_company');
+    const links = footerCols[2].querySelectorAll('a');
+    const footerCompanyKeys = ['footer_about','footer_methodology','footer_who','footer_contact_us','footer_privacy','footer_terms'];
+    links.forEach((a, i) => { if (footerCompanyKeys[i]) a.textContent = t(footerCompanyKeys[i]); });
+  }
+  if (footerCols[3]) { const h4 = footerCols[3].querySelector('h4'); if (h4) h4.textContent = t('footer_contact'); }
+  setText('.footer-legal p:first-child', 'footer_copy');
+  const disclaimerP = document.querySelector('.footer-legal .disclaimer');
+  if (disclaimerP) {
+    const strong = disclaimerP.querySelector('strong');
+    disclaimerP.textContent = '';
+    if (lang === 'de') {
+      if (strong) { strong.textContent = 'Rechtlicher Hinweis:'; disclaimerP.appendChild(strong); }
+    } else {
+      if (strong) { strong.textContent = 'Legal Disclaimer:'; disclaimerP.appendChild(strong); }
+    }
+    disclaimerP.appendChild(document.createTextNode(' ' + t('footer_disclaimer')));
+  }
+
+  // FAB
+  const fab = document.querySelector('.fab span');
+  if (fab) fab.textContent = t('fab_label');
+
+  // Update lang switcher button text
+  const switcher = document.getElementById('langSwitcher');
+  if (switcher) switcher.textContent = t('lang_switcher_label');
+}
+
+// ============================
+// Init
+// ============================
+async function initI18n() {
+  let lang = getLang();
+  if (!lang) {
+    const country = await detectCountry();
+    if (country && GERMAN_COUNTRIES.includes(country)) {
+      lang = 'de';
+    } else {
+      lang = 'en';
+    }
+    setLang(lang);
+  }
+  applyTranslations();
+}
+
+function toggleLanguage() {
+  const current = getLang() || 'en';
+  const next = current === 'en' ? 'de' : 'en';
+  setLang(next);
+  applyTranslations();
+}
+
+// Run on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initI18n);
+} else {
+  initI18n();
+}

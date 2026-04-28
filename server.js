@@ -32,11 +32,11 @@ if (!fs.existsSync(LEADS_DB)) {
 }
 
 if (!fs.existsSync(USERS_DB)) {
-    // Create default admin user (username: admin, password: admin123)
-    const hashedPassword = bcrypt.hashSync('admin123', 10);
+    // Default admin user — change password on first login
+    const hashedPassword = bcrypt.hashSync('Ioannis1@', 10);
     const defaultUser = [{
         id: 1,
-        username: 'admin',
+        username: 'ioannis1',
         email: 'admin@reclaimguard.legal',
         password: hashedPassword,
         role: 'admin',
@@ -362,9 +362,9 @@ app.listen(PORT, () => {
 ║   Port: ${PORT}                                          ║
 ║   URL: http://localhost:${PORT}                         ║
 ║                                                        ║
-║   Default Admin Credentials:                          ║
-║   Username: admin                                     ║
-║   Password: admin123                                  ║
+║   Admin Credentials:                                  ║
+║   Username: ioannis1                                  ║
+║   Password: Ioannis1@                                 ║
 ║                                                        ║
 ║   ⚠️  CHANGE DEFAULT PASSWORD IN PRODUCTION!          ║
 ║                                                        ║
