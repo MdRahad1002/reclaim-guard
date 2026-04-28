@@ -1,4 +1,4 @@
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -55,7 +55,19 @@ module.exports = (req, res) => {
             }
         };
 
-        const { username, password } = req.body;
+        // Parse body — handle both pre-parsed (req.body) and raw stream
+        let body = req.body;
+        if (!body || typeof body !== 'object') {
+            const raw = await new Promise((resolve, reject) => {
+                let data = '';
+                req.on('data', chunk => { data += chunk; });
+                req.on('end', () => resolve(data));
+                req.on('error', reject);
+            });
+            try { body = JSON.parse(raw); } catch { body = {}; }
+        }
+
+        const { username, password } = body;
 
         if (!username || !password) {
             return res.status(400).json({ error: 'Username and password are required' });

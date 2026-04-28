@@ -31,11 +31,23 @@
       "use": "@vercel/static"
     },
     {
+      "src": "i18n.js",
+      "use": "@vercel/static"
+    },
+    {
       "src": "assets/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/api/leads/export/csv",
+      "dest": "/api/leads/export"
+    },
+    {
+      "src": "/api/leads/([0-9]+)",
+      "dest": "/api/leads/[id]?id=$1"
+    },
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
@@ -51,6 +63,10 @@
     {
       "src": "/script.js",
       "dest": "/script.js"
+    },
+    {
+      "src": "/i18n.js",
+      "dest": "/i18n.js"
     },
     {
       "src": "/admin",

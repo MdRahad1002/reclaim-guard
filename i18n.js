@@ -588,7 +588,20 @@ function detectLangFromBrowser() {
   return null;
 }
 
-async function detectCountry() {
+// Primary: Vercel's built-in IP geolocation header (zero rate limit)
+async function detectCountryVercel() {
+  try {
+    const res = await fetch('/api/geo');
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.country || null;
+  } catch {
+    return null;
+  }
+}
+
+// Fallback: third-party IP lookup
+async function detectCountryFallback() {
   try {
     const res = await fetch('https://ipapi.co/json/');
     if (!res.ok) return null;
@@ -998,12 +1011,18 @@ function applyTranslations() {
 async function initI18n() {
   let lang = getLang();
   if (!lang) {
-    // 1. Try browser language first — instant, no network call
-    lang = detectLangFromBrowser();
-    if (!lang) {
-      // 2. Fall back to IP geolocation
-      const country = await detectCountry();
-      lang = (country && GERMAN_COUNTRIES.includes(country)) ? 'de' : 'en';
+    // 1. Try Vercel's built-in IP geolocation (instant header, no rate limit)
+    const countryVercel = await detectCountryVercel();
+    if (countryVercel) {
+      lang = GERMAN_COUNTRIES.includes(countryVercel) ? 'de' : 'en';
+    } else {
+      // 2. Try browser locale (instant, no network)
+      lang = detectLangFromBrowser();
+      if (!lang) {
+        // 3. Fall back to third-party IP lookup
+        const countryFallback = await detectCountryFallback();
+        lang = (countryFallback && GERMAN_COUNTRIES.includes(countryFallback)) ? 'de' : 'en';
+      }
     }
     setLang(lang);
   }
