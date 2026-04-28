@@ -230,6 +230,61 @@ const TRANSLATIONS = {
     footer_disclaimer: 'ReclaimGuard Legal is not a law firm and does not provide legal representation. We provide investigation services, forensic reports, and support in filing disputes, chargebacks, and complaints. All recovery attempts depend on third-party institutions. No guaranteed outcome is promised.',
     fab_label: 'Start Claim',
     lang_switcher_label: 'Deutsch',
+
+    // Team section
+    team_title: 'Meet Our Specialists',
+    team_subtitle: 'A dedicated team of legal consultants, forensic analysts, and compliance experts',
+    team1_role: 'Lead Legal Consultant & Founder',
+    team1_bio: '12+ years in financial fraud litigation across the EU and UK. Former compliance officer at a major London law firm.',
+    team1_tag1: 'Legal Strategy', team1_tag2: 'Regulatory Law',
+    team2_role: 'Senior Blockchain Investigator',
+    team2_bio: 'Certified Chainalysis investigator with 8 years tracing assets across 100+ blockchain networks. Led 300+ crypto recovery cases.',
+    team2_tag1: 'Blockchain Forensics', team2_tag2: 'Crypto Tracing',
+    team3_role: 'Digital Forensics Specialist',
+    team3_bio: 'Expert in OSINT, digital evidence collection, and court-ready documentation. Worked with Europol and national cybercrime units.',
+    team3_tag1: 'OSINT', team3_tag2: 'Digital Evidence',
+    team4_role: 'Client Relations & Compliance',
+    team4_bio: 'GDPR compliance specialist and client liaison with experience at major EU financial institutions. Speaks English, German, and French.',
+    team4_tag1: 'GDPR Compliance', team4_tag2: 'Client Relations',
+
+    // Media section
+    media_label: 'Our work has been referenced in',
+
+    // Rating widget
+    rating_platform: '⭐ Client Reviews',
+    rating_count: 'Based on 214 verified reviews',
+    rating_h1: 'Verified Reviews', rating_t1: 'All reviews verified via email',
+    rating_h2: 'Confidential', rating_t2: 'Client identities protected',
+    rating_h3: 'Transparent', rating_t3: 'Honest results reported',
+
+    // About image overlay
+    overlay_lbl1: 'Cases Reviewed',
+    overlay_lbl2: 'International Coverage',
+    overlay_lbl3: 'Compliant',
+
+    // Footer certifications & service links
+    footer_cert_gdpr: 'GDPR Compliant',
+    footer_cert_cov: 'EU/UK/US Coverage',
+    footer_s1: 'Crypto Recovery',
+    footer_s2: 'Card Fraud & Chargebacks',
+    footer_s3: 'Bank Transfer Recovery',
+    footer_s4: 'OSINT Investigations',
+    footer_s5: 'Legal Letters',
+    footer_s6: 'Regulatory Complaints',
+
+    // Testimonial card content
+    test1_text: '\u201cI lost over \u00a3180,000 to a fake crypto trading platform. The team at ReclaimGuard traced my Bitcoin through multiple wallets and exchanges. They recovered 85% of my funds within 6 months. Professional, transparent, and genuinely cared about my case.\u201d',
+    test1_location: 'London, UK',
+    test2_text: '\u201cAfter being scammed by a romance fraudster who convinced me to invest in a fake forex broker, I felt hopeless. The team here not only recovered my \u00a395,000 but also helped law enforcement identify the criminal network. Outstanding expertise.\u201d',
+    test2_location: 'Manchester, UK',
+    test3_text: '\u201cA fraudulent DeFi platform stole $250,000 worth of cryptocurrency from me. The blockchain analysis team tracked the funds across multiple chains and identified the exchange where they were cashed out. Incredible work under complex circumstances.\u201d',
+    test3_location: 'Birmingham, UK',
+    test4_text: '\u201cMy company lost \u00a3320,000 in a business email compromise scam. The recovery team acted quickly, tracing the wire transfers and cryptocurrency conversions. They secured a court order and recovered 90% of our money. They saved our business.\u201d',
+    test4_location: 'Leeds, UK',
+    test5_text: '\u201cI invested \u20ac65,000 in what I believed was a legitimate crypto mining operation. When they disappeared, I contacted ReclaimGuard. Their investigation revealed a Ponzi scheme and they recovered my initial investment. Kept me informed every step.\u201d',
+    test5_location: 'Bristol, UK',
+    test6_text: '\u201cAfter losing \u20ac140,000 to a sophisticated pig butchering scam, I had little hope. This firm\'s combination of legal prowess and blockchain forensics was remarkable. They traced my funds internationally and worked with authorities in three countries.\u201d',
+    test6_location: 'Edinburgh, UK',
   },
 
   de: {
@@ -458,6 +513,61 @@ const TRANSLATIONS = {
     footer_disclaimer: 'ReclaimGuard Legal ist keine Anwaltskanzlei und bietet keine Rechtsvertretung an. Wir erbringen Ermittlungsdienstleistungen, forensische Berichte und Unterstützung bei der Einreichung von Streitigkeiten, Rückbuchungen und Beschwerden. Alle Rückgewinnungsversuche hängen von Drittinstitutionen ab. Kein garantiertes Ergebnis wird versprochen.',
     fab_label: 'Fall einreichen',
     lang_switcher_label: 'English',
+
+    // Team section
+    team_title: 'Unser Spezialistenteam',
+    team_subtitle: 'Ein engagiertes Team aus Rechtsberatern, forensischen Analysten und Compliance-Experten',
+    team1_role: 'Leitender Rechtsberater & Gründer',
+    team1_bio: 'Über 12 Jahre Erfahrung in der Finanzbetrugs-Litigation in der EU und UK. Ehemaliger Compliance-Beauftragter bei einer bedeutenden Londoner Anwaltskanzlei.',
+    team1_tag1: 'Rechtsstrategie', team1_tag2: 'Regulierungsrecht',
+    team2_role: 'Senior Blockchain-Ermittlerin',
+    team2_bio: 'Zertifizierte Chainalysis-Ermittlerin mit 8 Jahren Erfahrung bei der Verfolgung von Vermögenswerten über 100+ Blockchain-Netzwerke. Leitete über 300 Krypto-Rückgewinnungsfälle.',
+    team2_tag1: 'Blockchain-Forensik', team2_tag2: 'Krypto-Tracing',
+    team3_role: 'Digitaler Forensik-Spezialist',
+    team3_bio: 'Experte für OSINT, digitale Beweissicherung und gerichtstaugliche Dokumentation. Zusammenarbeit mit Europol und nationalen Cyberkriminalitätseinheiten.',
+    team3_tag1: 'OSINT', team3_tag2: 'Digitale Beweise',
+    team4_role: 'Kundenbeziehungen & Compliance',
+    team4_bio: 'DSGVO-Compliance-Spezialistin und Kundenbeauftragte mit Erfahrung bei großen EU-Finanzinstitutionen. Spricht Englisch, Deutsch und Französisch.',
+    team4_tag1: 'DSGVO-Compliance', team4_tag2: 'Kundenbeziehungen',
+
+    // Media section
+    media_label: 'Unsere Arbeit wurde referenziert in',
+
+    // Rating widget
+    rating_platform: '⭐ Kundenbewertungen',
+    rating_count: 'Basierend auf 214 verifizierten Bewertungen',
+    rating_h1: 'Verifizierte Bewertungen', rating_t1: 'Alle Bewertungen per E-Mail verifiziert',
+    rating_h2: 'Vertraulich', rating_t2: 'Kundenidentitäten geschützt',
+    rating_h3: 'Transparent', rating_t3: 'Ehrliche Ergebnisse berichtet',
+
+    // About image overlay
+    overlay_lbl1: 'Fälle geprüft',
+    overlay_lbl2: 'Internationale Abdeckung',
+    overlay_lbl3: 'Konform',
+
+    // Footer certifications & service links
+    footer_cert_gdpr: 'DSGVO-konform',
+    footer_cert_cov: 'EU/UK/DE Abdeckung',
+    footer_s1: 'Krypto-Rückgewinnung',
+    footer_s2: 'Kartenbetrug & Rückbuchungen',
+    footer_s3: 'Banküberweisung Rückgewinnung',
+    footer_s4: 'OSINT-Ermittlungen',
+    footer_s5: 'Rechtliche Schreiben',
+    footer_s6: 'Aufsichtsbeschwerden',
+
+    // Testimonial card content
+    test1_text: '\u201eIch verlor über 180.000 \u00a3 an eine gefälschte Krypto-Handelsplattform. Das Team von ReclaimGuard verfolgte meinen Bitcoin über mehrere Wallets und Börsen. Sie haben 85% meiner Gelder innerhalb von 6 Monaten zurückgewonnen. Professionell, transparent und wirklich an meinem Fall interessiert.\u201c',
+    test1_location: 'Berlin, Deutschland',
+    test2_text: '\u201eNachdem ich von einem Liebesbetrüger überredet wurde, in einen gefälschten Forex-Broker zu investieren, hatte ich keine Hoffnung mehr. Das Team hier hat nicht nur meine 95.000 \u00a3 zurückgewonnen, sondern auch den Behörden geholfen, das kriminelle Netzwerk zu identifizieren. Herausragende Expertise.\u201c',
+    test2_location: 'München, Deutschland',
+    test3_text: '\u201eEine betrügerische DeFi-Plattform stahl Kryptowährung im Wert von 250.000 $ von mir. Das Blockchain-Analyseteam verfolgte die Gelder über mehrere Chains und identifizierte die Börse, wo sie ausgezahlt wurden. Unglaubliche Arbeit unter komplexen Umständen.\u201c',
+    test3_location: 'Wien, Österreich',
+    test4_text: '\u201eMein Unternehmen verlor 320.000 \u00a3 durch einen Business-Email-Kompromittierungsbetrug. Das Rückgewinnungsteam handelte schnell, verfolgte die Überweisungen und Kryptowährungskonversionen. Sie erwirkten eine Gerichtsverfügung und haben 90% unseres Geldes zurückgewonnen. Sie haben unser Unternehmen gerettet.\u201c',
+    test4_location: 'Hamburg, Deutschland',
+    test5_text: '\u201eIch investierte 65.000 \u20ac in das, was ich für eine legitime Krypto-Mining-Operation hielt. Als sie verschwanden, kontaktierte ich ReclaimGuard. Ihre Ermittlung enthüllte ein Schneeballsystem und sie haben meine ursprüngliche Investition zurückgewonnen. Hielten mich bei jedem Schritt informiert.\u201c',
+    test5_location: 'Zürich, Schweiz',
+    test6_text: '\u201eNachdem ich 140.000 \u20ac an einen raffinierten Pig-Butchering-Betrug verloren hatte, hatte ich wenig Hoffnung. Die Kombination aus rechtlichen Kenntnissen und Blockchain-Forensik war bemerkenswert. Sie verfolgten meine Gelder international und arbeiteten mit Behörden in drei Ländern zusammen.\u201c',
+    test6_location: 'Frankfurt, Deutschland',
   }
 };
 
@@ -807,6 +917,71 @@ function applyTranslations() {
     }
     disclaimerP.appendChild(document.createTextNode(' ' + t('footer_disclaimer')));
   }
+
+  // Footer service links
+  if (footerCols[1]) {
+    const svcLinks = footerCols[1].querySelectorAll('a');
+    ['footer_s1','footer_s2','footer_s3','footer_s4','footer_s5','footer_s6'].forEach((key, i) => {
+      if (svcLinks[i]) svcLinks[i].textContent = t(key);
+    });
+  }
+
+  // Footer certifications
+  const footerCerts = document.querySelectorAll('.footer-certifications .cert');
+  if (footerCerts[0]) footerCerts[0].textContent = t('footer_cert_gdpr');
+  if (footerCerts[1]) footerCerts[1].textContent = t('footer_cert_cov');
+
+  // About image overlay labels
+  const ovLabels = document.querySelectorAll('.ov-lbl');
+  if (ovLabels[0]) ovLabels[0].textContent = t('overlay_lbl1');
+  if (ovLabels[1]) ovLabels[1].textContent = t('overlay_lbl2');
+  if (ovLabels[2]) ovLabels[2].textContent = t('overlay_lbl3');
+
+  // Team section
+  setText('.team-section .section-title', 'team_title');
+  setText('.team-section .section-subtitle', 'team_subtitle');
+  const teamCards = document.querySelectorAll('.team-card');
+  const teamData = [
+    ['team1_role', 'team1_bio', 'team1_tag1', 'team1_tag2'],
+    ['team2_role', 'team2_bio', 'team2_tag1', 'team2_tag2'],
+    ['team3_role', 'team3_bio', 'team3_tag1', 'team3_tag2'],
+    ['team4_role', 'team4_bio', 'team4_tag1', 'team4_tag2'],
+  ];
+  teamCards.forEach((card, i) => {
+    if (!teamData[i]) return;
+    const role = card.querySelector('.team-role'); if (role) role.textContent = t(teamData[i][0]);
+    const bio = card.querySelector('.team-bio'); if (bio) bio.textContent = t(teamData[i][1]);
+    const tags = card.querySelectorAll('.team-tags span');
+    if (tags[0]) tags[0].textContent = t(teamData[i][2]);
+    if (tags[1]) tags[1].textContent = t(teamData[i][3]);
+  });
+
+  // Media section
+  setText('.media-label', 'media_label');
+
+  // Rating widget
+  setText('.rating-platform', 'rating_platform');
+  setText('.rating-count', 'rating_count');
+  const hiItems = document.querySelectorAll('.highlight-item .hi-text');
+  if (hiItems[0]) hiItems[0].innerHTML = '<strong>' + t('rating_h1') + '</strong><br>' + t('rating_t1');
+  if (hiItems[1]) hiItems[1].innerHTML = '<strong>' + t('rating_h2') + '</strong><br>' + t('rating_t2');
+  if (hiItems[2]) hiItems[2].innerHTML = '<strong>' + t('rating_h3') + '</strong><br>' + t('rating_t3');
+
+  // Testimonial card content
+  const testCards = document.querySelectorAll('.testimonial-card');
+  const testData = [
+    ['test1_text', 'test1_location'],
+    ['test2_text', 'test2_location'],
+    ['test3_text', 'test3_location'],
+    ['test4_text', 'test4_location'],
+    ['test5_text', 'test5_location'],
+    ['test6_text', 'test6_location'],
+  ];
+  testCards.forEach((card, i) => {
+    if (!testData[i]) return;
+    const p = card.querySelector('.testimonial-text'); if (p) p.textContent = t(testData[i][0]);
+    const loc = card.querySelector('.author-location'); if (loc) loc.textContent = t(testData[i][1]);
+  });
 
   // FAB
   const fab = document.querySelector('.fab span');
