@@ -465,6 +465,18 @@ const TRANSLATIONS = {
 // Geo detection + apply lang
 // ============================
 const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
+const GERMAN_LANG_PREFIXES = ['de'];
+
+// Instant check: is the browser set to German?
+function detectLangFromBrowser() {
+  const langs = (navigator.languages && navigator.languages.length)
+    ? navigator.languages
+    : [navigator.language || ''];
+  for (const l of langs) {
+    if (GERMAN_LANG_PREFIXES.some(p => l.toLowerCase().startsWith(p))) return 'de';
+  }
+  return null;
+}
 
 async function detectCountry() {
   try {
@@ -811,11 +823,12 @@ function applyTranslations() {
 async function initI18n() {
   let lang = getLang();
   if (!lang) {
-    const country = await detectCountry();
-    if (country && GERMAN_COUNTRIES.includes(country)) {
-      lang = 'de';
-    } else {
-      lang = 'en';
+    // 1. Try browser language first — instant, no network call
+    lang = detectLangFromBrowser();
+    if (!lang) {
+      // 2. Fall back to IP geolocation
+      const country = await detectCountry();
+      lang = (country && GERMAN_COUNTRIES.includes(country)) ? 'de' : 'en';
     }
     setLang(lang);
   }
