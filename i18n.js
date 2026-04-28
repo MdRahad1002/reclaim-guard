@@ -17,7 +17,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
     hero_title: "Recover What's Rightfully Yours.",
-    hero_subtitle: 'ReclaimGuard Legal specializes in cyber-fraud recovery, crypto tracing, chargebacks, and legal action against online scammers. No unrealistic promises — just evidence-based investigations and transparent service.',
+    hero_subtitle: 'ReclaimGuard Legal specializes in cyber-fraud recovery, crypto tracing, chargebacks, and legal action against online scammers. No unrealistic promises. Just evidence-based investigations and transparent service.',
     hero_btn_primary: 'Start Your Case Review',
     hero_btn_secondary: 'How Recovery Works',
 
@@ -118,7 +118,7 @@ const TRANSLATIONS = {
     about_text1: 'ReclaimGuard Legal is a specialized digital-fraud recovery firm combining legal expertise, compliance knowledge, and advanced cybersecurity investigation techniques. We operate as a hybrid team of legal consultants, analysts, and digital forensic specialists who trace stolen assets and initiate structured recovery procedures.',
     about_text2: 'Our mission is simple: Help victims regain control, restore justice, and recover their assets.',
     about_f1_title: 'Realistic Expectations',
-    about_f1_desc: 'We operate with strict ethical standards and realistic expectations. We do not promise guaranteed recovery — we provide structured, professional recovery service with transparent results.',
+    about_f1_desc: 'We operate with strict ethical standards and realistic expectations. We do not promise guaranteed recovery. We provide structured, professional recovery service with transparent results.',
     about_f2_title: 'International Reach',
     about_f2_desc: 'Operating across EU, UK, USA, Canada, and Australia. We handle cross-border fraud cases with proper jurisdiction knowledge.',
     about_f3_title: 'Evidence-Based Approach',
@@ -401,7 +401,7 @@ const TRANSLATIONS = {
     about_text1: 'ReclaimGuard Legal ist ein spezialisiertes Unternehmen zur Rückgewinnung bei digitalem Betrug, das Rechtskenntnisse, Compliance-Wissen und fortschrittliche Cybersicherheitsermittlungstechniken kombiniert. Wir sind ein hybrides Team aus Rechtsberatern, Analysten und digitalen Forensikspezialisten, die gestohlene Vermögenswerte verfolgen und strukturierte Rückgewinnungsverfahren einleiten.',
     about_text2: 'Unsere Mission ist einfach: Opfern helfen, die Kontrolle zurückzugewinnen, Gerechtigkeit herzustellen und ihre Vermögenswerte zurückzubekommen.',
     about_f1_title: 'Realistische Erwartungen',
-    about_f1_desc: 'Wir arbeiten nach strengen ethischen Standards und mit realistischen Erwartungen. Wir versprechen keine garantierte Rückgewinnung — wir bieten strukturierten, professionellen Rückgewinnungsservice mit transparenten Ergebnissen.',
+    about_f1_desc: 'Wir arbeiten nach strengen ethischen Standards und mit realistischen Erwartungen. Wir versprechen keine garantierte Rückgewinnung. Wir bieten strukturierten, professionellen Rückgewinnungsservice mit transparenten Ergebnissen.',
     about_f2_title: 'Internationale Reichweite',
     about_f2_desc: 'Tätig in der EU, UK, USA, Kanada und Australien. Wir bearbeiten grenzüberschreitende Betrugsfälle mit fundiertem Jurisdiktionswissen.',
     about_f3_title: 'Faktenbasierter Ansatz',
