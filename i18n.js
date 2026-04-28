@@ -12,7 +12,7 @@ const TRANSLATIONS = {
     nav_about: 'About',
     nav_testimonials: 'Testimonials',
     nav_contact: 'Contact',
-    nav_cta: 'Start Your Claim',
+    nav_cta: 'Free Consultation',
 
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
@@ -228,7 +228,7 @@ const TRANSLATIONS = {
     footer_terms: 'Terms & Conditions',
     footer_copy: '© 2025 ReclaimGuard Legal. All rights reserved.',
     footer_disclaimer: 'ReclaimGuard Legal is not a law firm and does not provide legal representation. We provide investigation services, forensic reports, and support in filing disputes, chargebacks, and complaints. All recovery attempts depend on third-party institutions. No guaranteed outcome is promised.',
-    fab_label: 'Start Claim',
+    fab_label: 'Free Consultation',
     lang_switcher_label: 'Deutsch',
 
     // Team section
@@ -295,7 +295,7 @@ const TRANSLATIONS = {
     nav_about: 'Über uns',
     nav_testimonials: 'Erfahrungen',
     nav_contact: 'Kontakt',
-    nav_cta: 'Fall einreichen',
+    nav_cta: 'Kostenlose Beratung',
 
     // Hero
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
@@ -511,7 +511,7 @@ const TRANSLATIONS = {
     footer_terms: 'AGB',
     footer_copy: '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
     footer_disclaimer: 'ReclaimGuard Legal ist keine Anwaltskanzlei und bietet keine Rechtsvertretung an. Wir erbringen Ermittlungsdienstleistungen, forensische Berichte und Unterstützung bei der Einreichung von Streitigkeiten, Rückbuchungen und Beschwerden. Alle Rückgewinnungsversuche hängen von Drittinstitutionen ab. Kein garantiertes Ergebnis wird versprochen.',
-    fab_label: 'Fall einreichen',
+    fab_label: 'Kostenlose Beratung',
     lang_switcher_label: 'English',
 
     // Team section

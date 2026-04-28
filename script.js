@@ -10,8 +10,8 @@ if (mobileMenuBtn) {
         mobileMenuBtn.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
-    const navLinks = navMenu.querySelectorAll('.nav-link');
+    // Close mobile menu when clicking on a nav link or the CTA button
+    const navLinks = navMenu.querySelectorAll('.nav-link, .btn-primary');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
