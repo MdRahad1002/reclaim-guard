@@ -32,9 +32,12 @@
     }
   ],
   "routes": [
-    { "src": "/api/leads/export/csv", "dest": "/api/leads/index" },
-    { "src": "/api/leads/([0-9]+)", "dest": "/api/leads/index?id=$1" },
-    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/api/leads/export/csv", "dest": "/api/leads/index.js" },
+    { "src": "/api/leads/([0-9]+)", "dest": "/api/leads/index.js?id=$1" },
+    { "src": "/api/leads", "dest": "/api/leads/index.js" },
+    { "src": "/api/auth/login", "dest": "/api/auth/login.js" },
+    { "src": "/api/auth/verify", "dest": "/api/auth/verify.js" },
+    { "src": "/api/geo", "dest": "/api/geo.js" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/styles.css", "dest": "/styles.css" },
     { "src": "/script.js", "dest": "/script.js" },
