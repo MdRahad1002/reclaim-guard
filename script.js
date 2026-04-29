@@ -97,10 +97,14 @@ if (contactForm) {
             const result = await response.json();
             
             if (response.ok) {
-                alert('✅ Thank you for contacting us! We have received your case details and will review them within 24 hours. You will receive a confirmation email shortly.');
+                contactForm.style.display = 'none';
+                const successEl = document.getElementById('formSuccess');
+                if (successEl) successEl.style.display = 'block';
+                // Scroll success card into view
+                if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 contactForm.reset();
             } else {
-                alert('❌ There was an error submitting your form. Please try again or contact us directly at info@reclaimguard.legal');
+                alert('❌ ' + (result.error || 'There was an error submitting your form. Please try again or contact us directly at info@reclaimguard.legal'));
             }
         } catch (error) {
             console.error('Error:', error);

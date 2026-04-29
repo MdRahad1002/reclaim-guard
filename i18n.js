@@ -262,6 +262,14 @@ const TRANSLATIONS = {
     overlay_lbl2: 'International Coverage',
     overlay_lbl3: 'Compliant',
 
+    // Form success state
+    success_title: 'Case Received',
+    success_msg: 'Thank you for reaching out. We have received your case details and will get back to you within 24 hours.',
+    success_step1: 'Our team reviews your case details',
+    success_step2: 'We assess recovery options',
+    success_step3: 'You receive a personalised response within 24h',
+    success_note: 'Check your email inbox — a confirmation is on its way.',
+
     // Footer certifications & service links
     footer_cert_gdpr: 'GDPR Compliant',
     footer_cert_cov: 'EU/UK/US Coverage',
@@ -544,6 +552,14 @@ const TRANSLATIONS = {
     overlay_lbl1: 'Fälle geprüft',
     overlay_lbl2: 'Internationale Abdeckung',
     overlay_lbl3: 'Konform',
+
+    // Form success state
+    success_title: 'Anfrage erhalten',
+    success_msg: 'Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.',
+    success_step1: 'Unser Team prüft Ihre Falldetails',
+    success_step2: 'Wir analysieren Rückgewinnungsoptionen',
+    success_step3: 'Sie erhalten innerhalb von 24 Stunden eine persönliche Antwort',
+    success_note: 'Bitte prüfen Sie Ihr E-Mail-Postfach — eine Bestätigung ist unterwegs.',
 
     // Footer certifications & service links
     footer_cert_gdpr: 'DSGVO-konform',
@@ -999,6 +1015,20 @@ function applyTranslations() {
   // FAB
   const fab = document.querySelector('.fab span');
   if (fab) fab.textContent = t('fab_label');
+
+  // Form success card
+  const successTitle = document.getElementById('successTitle');
+  const successMsg   = document.getElementById('successMsg');
+  const successStep1 = document.getElementById('successStep1');
+  const successStep2 = document.getElementById('successStep2');
+  const successStep3 = document.getElementById('successStep3');
+  const successNote  = document.getElementById('successNote');
+  if (successTitle) successTitle.textContent = t('success_title');
+  if (successMsg)   successMsg.textContent   = t('success_msg');
+  if (successStep1) { successStep1.innerHTML = '<span>1</span> ' + t('success_step1'); }
+  if (successStep2) { successStep2.innerHTML = '<span>2</span> ' + t('success_step2'); }
+  if (successStep3) { successStep3.innerHTML = '<span>3</span> ' + t('success_step3'); }
+  if (successNote)  successNote.textContent  = t('success_note');
 
   // Update lang switcher button text
   const switcher = document.getElementById('langSwitcher');
