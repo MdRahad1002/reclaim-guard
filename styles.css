@@ -902,35 +902,39 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-color);
 }
 
-.phone-group {
-    display: flex;
-    gap: 8px;
-    align-items: stretch;
+/* intl-tel-input overrides — match the site's form field style */
+.iti {
+    width: 100%;
 }
 
-.phone-group .phone-code {
-    width: auto;
-    flex-shrink: 0;
-    padding: 12px 8px;
+.iti__selected-country {
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    background: var(--white, #fff);
+    padding: 0 10px;
+}
+
+.iti__tel-input {
+    padding-left: 12px !important;
+    border-radius: 0 8px 8px 0 !important;
+    border: 2px solid var(--border-color) !important;
+    width: 100% !important;
     font-size: 0.95rem;
     font-family: inherit;
     transition: var(--transition);
     background: var(--white, #fff);
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
+    color: inherit;
 }
 
-.phone-group .phone-code:focus {
+.iti__tel-input:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--primary-color) !important;
 }
 
-.phone-group input[type="tel"] {
-    flex: 1;
-    min-width: 0;
+.iti__selected-country:focus,
+.iti__selected-country[aria-expanded="true"] {
+    border-color: var(--primary-color);
 }
 
 .checkbox-group {

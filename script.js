@@ -78,11 +78,10 @@ if (contactForm) {
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData.entries());
-        // Prepend country code to phone number
-        const phoneCodeEl = document.getElementById('phoneCode');
-        if (phoneCodeEl) {
-            const code = phoneCodeEl.value.replace('-CA', ''); // normalize +1-CA → +1
-            data.phone = code + ' ' + (data.phone || '');
+        // Use intl-tel-input to get full international number
+        const itiInput = document.getElementById('phone');
+        if (itiInput && window._phoneIti) {
+            data.phone = window._phoneIti.getNumber(); // e.g. +44 7700 900000
         }
         
         // Show loading state
@@ -457,4 +456,15 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElements.forEach(el => {
         el.textContent = new Date().getFullYear();
     });
+
+    // ── intl-tel-input: phone flag + country code selector ───────────────
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput && window.intlTelInput) {
+        window._phoneIti = window.intlTelInput(phoneInput, {
+            initialCountry: 'gb',
+            preferredCountries: ['gb', 'de', 'at', 'ch', 'us', 'ca', 'au'],
+            separateDialCode: true,
+            utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@23/build/js/utils.js',
+        });
+    }
 });
