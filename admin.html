@@ -718,10 +718,11 @@
                     <label>Amount Range</label>
                     <select id="filterAmount" onchange="applyFilters()">
                         <option value="">All Amounts</option>
-                        <option value="0-250">€0 – 250</option>
-                        <option value="250-1000">€250 – 1,000</option>
+                        <option value="under-1000">Under €1,000</option>
                         <option value="1000-5000">€1,000 – 5,000</option>
-                        <option value="5000+">€5,000+</option>
+                        <option value="5000-25000">€5,000 – 25,000</option>
+                        <option value="25000-100000">€25,000 – 100,000</option>
+                        <option value="100000+">Over €100,000</option>
                     </select>
                 </div>
                 <div class="filter-item">
@@ -1247,8 +1248,8 @@
         }
 
         function getAmountClass(amount) {
-            if (amount === '5000+') return 'high';
-            if (amount === '1000-5000' || amount === '250-1000') return 'medium';
+            if (amount === '100000+' || amount === '25000-100000') return 'high';
+            if (amount === '5000-25000' || amount === '1000-5000') return 'medium';
             return 'low';
         }
 

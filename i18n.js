@@ -186,10 +186,11 @@ const TRANSLATIONS = {
     form_phone: 'Phone Number *',
     form_amount: 'How much money did you lose? *',
     form_amount_placeholder: 'Select amount range',
-    form_amount_0: '€0-250',
-    form_amount_1: '€250-1,000',
-    form_amount_2: '€1,000-5,000',
-    form_amount_3: '€5,000+',
+    form_amount_0: 'Under €1,000',
+    form_amount_1: '€1,000 – 5,000',
+    form_amount_2: '€5,000 – 25,000',
+    form_amount_3: '€25,000 – 100,000',
+    form_amount_4: 'Over €100,000',
     form_scamtype: 'What type of fraud did you experience? *',
     form_scamtype_placeholder: 'Select fraud type',
     form_scamtype_crypto: 'Crypto scam',
@@ -494,10 +495,11 @@ const TRANSLATIONS = {
     form_phone: 'Telefonnummer *',
     form_amount: 'Wie viel Geld haben Sie verloren? *',
     form_amount_placeholder: 'Betrag auswählen',
-    form_amount_0: '€0–250',
-    form_amount_1: '€250–1.000',
-    form_amount_2: '€1.000–5.000',
-    form_amount_3: '€5.000+',
+    form_amount_0: 'Unter €1.000',
+    form_amount_1: '€1.000 – 5.000',
+    form_amount_2: '€5.000 – 25.000',
+    form_amount_3: '€25.000 – 100.000',
+    form_amount_4: 'Über €100.000',
     form_scamtype: 'Welche Art von Betrug haben Sie erlebt? *',
     form_scamtype_placeholder: 'Betrugsart auswählen',
     form_scamtype_crypto: 'Krypto-Betrug',
@@ -926,6 +928,7 @@ function applyTranslations() {
     if (opts[2]) opts[2].textContent = t('form_amount_1');
     if (opts[3]) opts[3].textContent = t('form_amount_2');
     if (opts[4]) opts[4].textContent = t('form_amount_3');
+    if (opts[5]) opts[5].textContent = t('form_amount_4');
   }
   const scamSel = document.querySelector('#scamType');
   if (scamSel) {

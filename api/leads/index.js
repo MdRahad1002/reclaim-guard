@@ -9,7 +9,7 @@ const MAX_SUBMISSIONS = 3;
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 
 // Strict allowlists for enum fields
-const VALID_AMOUNTS    = ['0-250', '250-1000', '1000-5000', '5000+'];
+const VALID_AMOUNTS    = ['under-1000', '1000-5000', '5000-25000', '25000-100000', '100000+'];
 const VALID_SCAMTYPES  = ['crypto', 'broker', 'bank', 'card', 'other'];
 const VALID_WHEN       = ['7days', '1-4weeks', '1-3months', '3-6months', '6-12months', '1+year'];
 const VALID_PAYMENTS   = ['crypto', 'card', 'bank', 'other'];
@@ -160,7 +160,7 @@ module.exports = async (req, res) => {
         if (when && !VALID_WHEN.includes(when))   return res.status(400).json({ error: 'Invalid timeframe selection' });
         if (payment && !VALID_PAYMENTS.includes(payment)) return res.status(400).json({ error: 'Invalid payment selection' });
 
-        const priority = amount === '5000+' ? 'high' : amount === '1000-5000' ? 'medium' : 'low';
+        const priority = (amount === '100000+' || amount === '25000-100000') ? 'high' : (amount === '5000-25000' || amount === '1000-5000') ? 'medium' : 'low';
 
         try {
             const { rows } = await db.query(
