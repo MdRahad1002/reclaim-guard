@@ -78,10 +78,10 @@ if (contactForm) {
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData.entries());
-        // Use intl-tel-input to get full international number
-        const itiInput = document.getElementById('phone');
-        if (itiInput && window._phoneIti) {
-            data.phone = window._phoneIti.getNumber(); // e.g. +44 7700 900000
+        // Combine country code + phone number
+        const phoneCodeEl = document.getElementById('phoneCode');
+        if (phoneCodeEl) {
+            data.phone = phoneCodeEl.value + ' ' + (data.phone || '').trim();
         }
         
         // Show loading state
@@ -457,14 +457,16 @@ document.addEventListener('DOMContentLoaded', () => {
         el.textContent = new Date().getFullYear();
     });
 
-    // ── intl-tel-input: phone flag + country code selector ───────────────
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput && window.intlTelInput) {
-        window._phoneIti = window.intlTelInput(phoneInput, {
-            initialCountry: 'gb',
-            preferredCountries: ['gb', 'de', 'at', 'ch', 'us', 'ca', 'au'],
-            separateDialCode: true,
-            utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@23/build/js/utils.js',
+    // ── Phone flag updates when country code changes ─────────────────────
+    const phoneCodeSel = document.getElementById('phoneCode');
+    const phoneFlagImg = document.getElementById('phoneFlag');
+    if (phoneCodeSel && phoneFlagImg) {
+        phoneCodeSel.addEventListener('change', () => {
+            const iso = phoneCodeSel.options[phoneCodeSel.selectedIndex].dataset.iso;
+            if (iso) {
+                phoneFlagImg.src = `https://flagcdn.com/20x15/${iso}.png`;
+                phoneFlagImg.alt = iso.toUpperCase();
+            }
         });
     }
 });
