@@ -202,7 +202,9 @@ const TRANSLATIONS = {
     form_when_7: 'Within 7 days',
     form_when_14: '1-4 weeks',
     form_when_3m: '1-3 months',
-    form_when_3p: '3+ months',
+    form_when_36m: '3-6 months',
+    form_when_612m: '6-12 months',
+    form_when_1y: 'Over 1 year',
     form_payment: 'How did you pay? *',
     form_payment_placeholder: 'Select payment method',
     form_payment_crypto: 'Crypto',
@@ -269,6 +271,21 @@ const TRANSLATIONS = {
     success_step2: 'We assess recovery options',
     success_step3: 'You receive a personalised response within 24h',
     success_note: 'Check your email inbox — a confirmation is on its way.',
+
+    // Thank-you page
+    ty_title: 'Case Received',
+    ty_subtitle: 'Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.',
+    ty_step1_title: 'Case Review',
+    ty_step1_desc: 'Our specialists review the details you provided and assess the best recovery options.',
+    ty_step2_title: 'Initial Consultation',
+    ty_step2_desc: 'We will contact you within 24 hours to discuss your case and next steps.',
+    ty_step3_title: 'Recovery Plan',
+    ty_step3_desc: 'You receive a personalised recovery strategy — no upfront commitment required.',
+    ty_highlight: '<strong>Check your inbox</strong> — a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
+    ty_btn_home: '← Back to Home',
+    ty_btn_another: 'Submit Another Case',
+    ty_back: '← Back to Home',
+    ty_copy: '© 2025 ReclaimGuard Legal. All rights reserved.',
 
     // Footer certifications & service links
     footer_cert_gdpr: 'GDPR Compliant',
@@ -493,7 +510,9 @@ const TRANSLATIONS = {
     form_when_7: 'Innerhalb von 7 Tagen',
     form_when_14: '1–4 Wochen',
     form_when_3m: '1–3 Monate',
-    form_when_3p: '3+ Monate',
+    form_when_36m: '3–6 Monate',
+    form_when_612m: '6–12 Monate',
+    form_when_1y: 'Über 1 Jahr',
     form_payment: 'Wie haben Sie bezahlt? *',
     form_payment_placeholder: 'Zahlungsmethode auswählen',
     form_payment_crypto: 'Krypto',
@@ -561,8 +580,22 @@ const TRANSLATIONS = {
     success_step3: 'Sie erhalten innerhalb von 24 Stunden eine persönliche Antwort',
     success_note: 'Bitte prüfen Sie Ihr E-Mail-Postfach — eine Bestätigung ist unterwegs.',
 
+    // Thank-you page
+    ty_title: 'Anfrage erhalten',
+    ty_subtitle: 'Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und unser Team wird diese in Kürze prüfen.',
+    ty_step1_title: 'Fallprüfung',
+    ty_step1_desc: 'Unsere Spezialisten prüfen die von Ihnen angegebenen Details und beurteilen die besten Rückgewinnungsoptionen.',
+    ty_step2_title: 'Erstberatung',
+    ty_step2_desc: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
+    ty_step3_title: 'Rückgewinnungsplan',
+    ty_step3_desc: 'Sie erhalten eine persönliche Rückgewinnungsstrategie – keine Verpflichtung im Voraus erforderlich.',
+    ty_highlight: '<strong>Prüfen Sie Ihr E-Mail-Postfach</strong> — eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
+    ty_btn_home: '← Zurück zur Startseite',
+    ty_btn_another: 'Weiteren Fall einreichen',
+    ty_back: '← Zurück zur Startseite',
+    ty_copy: '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+
     // Footer certifications & service links
-    footer_cert_gdpr: 'DSGVO-konform',
     footer_cert_cov: 'EU/UK/DE Abdeckung',
     footer_s1: 'Krypto-Rückgewinnung',
     footer_s2: 'Kartenbetrug & Rückbuchungen',
@@ -911,7 +944,9 @@ function applyTranslations() {
     if (opts[1]) opts[1].textContent = t('form_when_7');
     if (opts[2]) opts[2].textContent = t('form_when_14');
     if (opts[3]) opts[3].textContent = t('form_when_3m');
-    if (opts[4]) opts[4].textContent = t('form_when_3p');
+    if (opts[4]) opts[4].textContent = t('form_when_36m');
+    if (opts[5]) opts[5].textContent = t('form_when_612m');
+    if (opts[6]) opts[6].textContent = t('form_when_1y');
   }
   const paySel = document.querySelector('#payment');
   if (paySel) {

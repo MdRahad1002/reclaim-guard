@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | ReclaimGuard Legal</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/images/reclaim-guard-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            background: #0f172a;
+            padding: 0 32px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img { height: 36px; }
+
+        .nav-logo span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav-back {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: #fff; }
+
+        /* ── MAIN ── */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            padding: 56px 48px;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .icon-ring {
+            width: 80px;
+            height: 80px;
+            background: #dcfce7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            margin: 0 auto 28px;
+            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.4); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 36px;
+        }
+
+        /* ── STEPS ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: #1B4FD8;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-text strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 3px;
+        }
+
+        .step-text span {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight {
+            background: #eff6ff;
+            border: 1.5px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 18px 22px;
+            font-size: 0.9rem;
+            color: #1e40af;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+
+        .highlight strong { color: #1d4ed8; }
+
+        /* ── CTA ── */
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #1B4FD8;
+            color: #fff;
+        }
+
+        .btn-primary:hover { background: #1640b0; }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #1e293b;
+            border: 1.5px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover { background: #e2e8f0; }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 520px) {
+            .card { padding: 36px 20px; }
+            h1 { font-size: 1.6rem; }
+            .nav { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">
+            <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal">
+            <span>ReclaimGuard Legal</span>
+        </a>
+        <a href="/" class="nav-back" id="navBack">← Back to Home</a>
+    </nav>
+
+    <main class="main">
+        <div class="card">
+            <div class="icon-ring">✅</div>
+
+            <h1 id="tyTitle">Case Received</h1>
+            <p class="subtitle" id="tySubtitle">
+                Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.
+            </p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong id="tyStep1Title">Case Review</strong>
+                        <span id="tyStep1Desc">Our specialists review the details you provided and assess the best recovery options.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong id="tyStep2Title">Initial Consultation</strong>
+                        <span id="tyStep2Desc">We will contact you within 24 hours to discuss your case and next steps.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong id="tyStep3Title">Recovery Plan</strong>
+                        <span id="tyStep3Desc">You receive a personalised recovery strategy — no upfront commitment required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight" id="tyHighlight">
+                📧 <strong>Check your inbox</strong> — a confirmation email is on its way. If you don't see it within a few minutes, please check your spam folder.
+            </div>
+
+            <div class="cta-group">
+                <a href="/" class="btn btn-primary" id="tyBtnHome">← Back to Home</a>
+                <a href="/#contact" class="btn btn-secondary" id="tyBtnAnother">Submit Another Case</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span id="tyCopy">© 2025 ReclaimGuard Legal. All rights reserved.</span> &nbsp;·&nbsp;
+        <a href="/privacy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms" style="color:#94a3b8;">Terms of Service</a>
+    </footer>
+
+    <script>
+        // ── Inline translations (no external dependency) ──────────────────
+        const TY = {
+            en: {
+                title:      'Case Received',
+                subtitle:   'Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.',
+                s1t: 'Case Review',
+                s1d: 'Our specialists review the details you provided and assess the best recovery options.',
+                s2t: 'Initial Consultation',
+                s2d: 'We will contact you within 24 hours to discuss your case and next steps.',
+                s3t: 'Recovery Plan',
+                s3d: 'You receive a personalised recovery strategy — no upfront commitment required.',
+                highlight: '📧 <strong>Check your inbox</strong> — a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
+                btnHome:    '← Back to Home',
+                btnAnother: 'Submit Another Case',
+                navBack:    '← Back to Home',
+                copy:       '© 2025 ReclaimGuard Legal. All rights reserved.',
+            },
+            de: {
+                title:      'Anfrage erhalten',
+                subtitle:   'Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und unser Team wird diese in Kürze prüfen.',
+                s1t: 'Fallprüfung',
+                s1d: 'Unsere Spezialisten prüfen die von Ihnen angegebenen Details und beurteilen die besten Rückgewinnungsoptionen.',
+                s2t: 'Erstberatung',
+                s2d: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
+                s3t: 'Rückgewinnungsplan',
+                s3d: 'Sie erhalten eine persönliche Rückgewinnungsstrategie – keine Verpflichtung im Voraus erforderlich.',
+                highlight: '📧 <strong>Prüfen Sie Ihr E-Mail-Postfach</strong> — eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
+                btnHome:    '← Zurück zur Startseite',
+                btnAnother: 'Weiteren Fall einreichen',
+                navBack:    '← Zurück zur Startseite',
+                copy:       '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+            }
+        };
+
+        function applyTY(lang) {
+            const d = TY[lang] || TY.en;
+            document.documentElement.lang = lang;
+            document.getElementById('tyTitle').textContent     = d.title;
+            document.getElementById('tySubtitle').textContent  = d.subtitle;
+            document.getElementById('tyStep1Title').textContent = d.s1t;
+            document.getElementById('tyStep1Desc').textContent  = d.s1d;
+            document.getElementById('tyStep2Title').textContent = d.s2t;
+            document.getElementById('tyStep2Desc').textContent  = d.s2d;
+            document.getElementById('tyStep3Title').textContent = d.s3t;
+            document.getElementById('tyStep3Desc').textContent  = d.s3d;
+            document.getElementById('tyHighlight').innerHTML    = d.highlight;
+            document.getElementById('tyBtnHome').textContent    = d.btnHome;
+            document.getElementById('tyBtnAnother').textContent = d.btnAnother;
+            document.getElementById('navBack').textContent      = d.navBack;
+            document.getElementById('tyCopy').textContent       = d.copy;
+            document.title = lang === 'de'
+                ? 'Vielen Dank | ReclaimGuard Legal'
+                : 'Thank You | ReclaimGuard Legal';
+        }
+
+        // ── Language detection (same logic as main site) ──────────────────
+        const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
+
+        async function detectLang() {
+            // 1. Respect previously saved preference
+            const saved = localStorage.getItem('rg_lang');
+            if (saved) { applyTY(saved); return; }
+
+            // 2. Try Vercel geo header via /api/geo
+            try {
+                const res = await fetch('/api/geo');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.country && GERMAN_COUNTRIES.includes(data.country)) {
+                        applyTY('de');
+                        return;
+                    }
+                    applyTY('en');
+                    return;
+                }
+            } catch {}
+
+            // 3. Browser language fallback
+            const langs = (navigator.languages && navigator.languages.length)
+                ? navigator.languages : [navigator.language || 'en'];
+            const isDE = langs.some(l => l.toLowerCase().startsWith('de'));
+            applyTY(isDE ? 'de' : 'en');
+        }
+
+        detectLang();
+    </script>
+</body>
+</html>
+    <link rel="icon" type="image/png" href="assets/images/reclaim-guard-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            background: #0f172a;
+            padding: 0 32px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img { height: 36px; }
+
+        .nav-logo span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav-back {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: #fff; }
+
+        /* ── MAIN ── */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            padding: 56px 48px;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .icon-ring {
+            width: 80px;
+            height: 80px;
+            background: #dcfce7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            margin: 0 auto 28px;
+            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.4); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 36px;
+        }
+
+        /* ── STEPS ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: #1B4FD8;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-text strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 3px;
+        }
+
+        .step-text span {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight {
+            background: #eff6ff;
+            border: 1.5px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 18px 22px;
+            font-size: 0.9rem;
+            color: #1e40af;
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+
+        .highlight strong { color: #1d4ed8; }
+
+        /* ── CTA ── */
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            font-family: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #1B4FD8;
+            color: #fff;
+        }
+
+        .btn-primary:hover { background: #1640b0; }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #1e293b;
+            border: 1.5px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover { background: #e2e8f0; }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 520px) {
+            .card { padding: 36px 20px; }
+            h1 { font-size: 1.6rem; }
+            .nav { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">
+            <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal">
+            <span>ReclaimGuard Legal</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <main class="main">
+        <div class="card">
+            <div class="icon-ring">✅</div>
+
+            <h1>Case Received</h1>
+            <p class="subtitle">
+                Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.
+            </p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Case Review</strong>
+                        <span>Our specialists review the details you provided and assess the best recovery options.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Initial Consultation</strong>
+                        <span>We will contact you within 24 hours to discuss your case and next steps.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Recovery Plan</strong>
+                        <span>You receive a personalised recovery strategy — no upfront commitment required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                📧 <strong>Check your inbox</strong> — a confirmation email is on its way. If you don't see it within a few minutes, please check your spam folder.
+            </div>
+
+            <div class="cta-group">
+                <a href="/" class="btn btn-primary">← Back to Home</a>
+                <a href="/#contact" class="btn btn-secondary">Submit Another Case</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 ReclaimGuard Legal. All rights reserved. &nbsp;·&nbsp;
+        <a href="/privacy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms" style="color:#94a3b8;">Terms of Service</a>
+    </footer>
+
+</body>
+</html>

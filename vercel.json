@@ -7,6 +7,7 @@
     { "src": "admin.html", "use": "@vercel/static" },
     { "src": "privacy.html", "use": "@vercel/static" },
     { "src": "terms.html", "use": "@vercel/static" },
+    { "src": "thank-you.html", "use": "@vercel/static" },
     { "src": "styles.css", "use": "@vercel/static" },
     { "src": "script.js", "use": "@vercel/static" },
     { "src": "i18n.js", "use": "@vercel/static" },
@@ -43,6 +44,7 @@
     { "src": "/script.js", "dest": "/script.js" },
     { "src": "/i18n.js", "dest": "/i18n.js" },
     { "src": "/admin", "dest": "/admin.html" },
+    { "src": "/thank-you", "dest": "/thank-you.html" },
     { "src": "/privacy", "dest": "/privacy.html" },
     { "src": "/terms", "dest": "/terms.html" },
     { "src": "/(.*)", "dest": "/index.html" }

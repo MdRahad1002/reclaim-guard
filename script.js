@@ -78,6 +78,12 @@ if (contactForm) {
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData.entries());
+        // Prepend country code to phone number
+        const phoneCodeEl = document.getElementById('phoneCode');
+        if (phoneCodeEl) {
+            const code = phoneCodeEl.value.replace('-CA', ''); // normalize +1-CA → +1
+            data.phone = code + ' ' + (data.phone || '');
+        }
         
         // Show loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -97,12 +103,8 @@ if (contactForm) {
             const result = await response.json();
             
             if (response.ok) {
-                contactForm.style.display = 'none';
-                const successEl = document.getElementById('formSuccess');
-                if (successEl) successEl.style.display = 'block';
-                // Scroll success card into view
-                if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                contactForm.reset();
+                // Redirect to thank-you page
+                window.location.href = '/thank-you';
             } else {
                 alert('❌ ' + (result.error || 'There was an error submitting your form. Please try again or contact us directly at info@reclaimguard.legal'));
             }

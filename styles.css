@@ -902,6 +902,37 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-color);
 }
 
+.phone-group {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.phone-group .phone-code {
+    width: auto;
+    flex-shrink: 0;
+    padding: 12px 8px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white, #fff);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.phone-group .phone-code:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.phone-group input[type="tel"] {
+    flex: 1;
+    min-width: 0;
+}
+
 .checkbox-group {
     display: flex;
     gap: 0.75rem;
