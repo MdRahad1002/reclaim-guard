@@ -20,9 +20,16 @@ const VALID_PRIORITIES = ['low', 'medium', 'high'];
 let _pool;
 function getPool() {
     if (!_pool) {
+        // Parse the URL into individual params so our ssl config
+        // isn't overridden by sslmode= query params in the connection string
+        const url = new URL(process.env.POSTGRES_URL);
         _pool = new Pool({
-            connectionString: process.env.POSTGRES_URL,
-            ssl: { rejectUnauthorized: false },
+            host:     url.hostname,
+            port:     parseInt(url.port) || 5432,
+            database: url.pathname.replace(/^\//, ''),
+            user:     decodeURIComponent(url.username),
+            password: decodeURIComponent(url.password),
+            ssl:      { rejectUnauthorized: false },
             max: 1,
         });
     }
