@@ -1,9 +1,7 @@
-const jwt = require('jsonwebtoken');
-const { createClient } = require('@supabase/supabase-js');
+const jwt  = require('jsonwebtoken');
+const { Pool } = require('pg');
 
-const SECRET_KEY            = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
-const SUPABASE_URL          = process.env.SUPABASE_URL;
-const SUPABASE_SERVICE_KEY  = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
 
 // Rate limiting — public POST submissions (in-memory, per IP)
 const submitLog = new Map();
@@ -17,6 +15,19 @@ const VALID_WHEN       = ['7days', '1-4weeks', '1-3months', '3-6months', '6-12mo
 const VALID_PAYMENTS   = ['crypto', 'card', 'bank', 'other'];
 const VALID_STATUSES   = ['new', 'contacted', 'qualified', 'in-progress', 'closed', 'rejected'];
 const VALID_PRIORITIES = ['low', 'medium', 'high'];
+
+// Reuse pool across warm invocations
+let _pool;
+function getPool() {
+    if (!_pool) {
+        _pool = new Pool({
+            connectionString: process.env.POSTGRES_URL,
+            ssl: { rejectUnauthorized: false },
+            max: 1,
+        });
+    }
+    return _pool;
+}
 
 function getClientIp(req) {
     return (
@@ -42,7 +53,6 @@ function authenticate(req) {
     try { return jwt.verify(auth.slice(7), SECRET_KEY); } catch (e) { return null; }
 }
 
-// Map DB row (snake_case) → API response (camelCase)
 function mapLead(row) {
     return {
         id:        row.id,
@@ -63,12 +73,6 @@ function mapLead(row) {
     };
 }
 
-function getSupabase() {
-    return createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
-        auth: { persistSession: false }
-    });
-}
-
 async function parseBody(req) {
     if (req.body && typeof req.body === 'object') return req.body;
     const raw = await new Promise((resolve, reject) => {
@@ -80,6 +84,28 @@ async function parseBody(req) {
     try { return JSON.parse(raw); } catch (e) { return {}; }
 }
 
+async function ensureTable(db) {
+    await db.query(`
+        CREATE TABLE IF NOT EXISTS leads (
+            id            BIGSERIAL PRIMARY KEY,
+            name          TEXT,
+            email         TEXT,
+            phone         TEXT,
+            amount        TEXT,
+            scam_type     TEXT,
+            when_reported TEXT,
+            payment       TEXT,
+            message       TEXT,
+            status        TEXT DEFAULT 'new',
+            priority      TEXT DEFAULT 'normal',
+            notes         TEXT DEFAULT '',
+            ip            TEXT,
+            created_at    TIMESTAMPTZ DEFAULT NOW(),
+            updated_at    TIMESTAMPTZ DEFAULT NOW()
+        )
+    `);
+}
+
 module.exports = async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -89,13 +115,18 @@ module.exports = async (req, res) => {
 
     if (req.method === 'OPTIONS') { res.status(200).end(); return; }
 
-    if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
-        return res.status(500).json({ error: 'Database not configured. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to Vercel environment variables.' });
+    if (!process.env.POSTGRES_URL) {
+        return res.status(500).json({ error: 'Database not configured. POSTGRES_URL env var is missing.' });
     }
 
-    const supabase = getSupabase();
+    const db = getPool();
 
-    // ── POST /api/leads  (public – submit a lead) ─────────────────────────
+    try { await ensureTable(db); } catch (e) {
+        console.error('ensureTable error:', e.message);
+        return res.status(500).json({ error: 'Database setup failed: ' + e.message });
+    }
+
+    // ── POST /api/leads  (public) ─────────────────────────────────────────
     if (req.method === 'POST') {
         const ip  = getClientIp(req);
         const now = Date.now();
@@ -124,31 +155,24 @@ module.exports = async (req, res) => {
 
         const priority = amount === '5000+' ? 'high' : amount === '1000-5000' ? 'medium' : 'low';
 
-        const { data: newLead, error: insertErr } = await supabase
-            .from('leads')
-            .insert({
-                name, email, phone, amount, message, priority,
-                scam_type:     scamType,
-                when_reported: when    || null,
-                payment:       payment || null,
-                status:        'new',
-                notes:         '',
-                ip,
-            })
-            .select()
-            .single();
-
-        if (insertErr) {
-            console.error('Insert error:', insertErr);
+        try {
+            const { rows } = await db.query(
+                `INSERT INTO leads
+                    (name, email, phone, amount, scam_type, when_reported, payment, message, priority, status, notes, ip)
+                 VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'new','',$10)
+                 RETURNING id`,
+                [name, email, phone, amount, scamType, when || null, payment || null, message, priority, ip]
+            );
+            recent.push(now);
+            submitLog.set(ip, recent);
+            return res.status(201).json({ success: true, message: 'Lead submitted successfully', leadId: rows[0].id });
+        } catch (e) {
+            console.error('Insert error:', e.message);
             return res.status(500).json({ error: 'Failed to save lead. Please try again.' });
         }
-
-        recent.push(now);
-        submitLog.set(ip, recent);
-        return res.status(201).json({ success: true, message: 'Lead submitted successfully', leadId: newLead.id });
     }
 
-    // ── All other methods require admin authentication ─────────────────────
+    // ── All other methods require admin auth ──────────────────────────────
     const user = authenticate(req);
     if (!user) return res.status(401).json({ error: 'Unauthorized' });
     if (user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' });
@@ -160,12 +184,8 @@ module.exports = async (req, res) => {
 
         // CSV export
         if (req.url && req.url.includes('/export/csv')) {
-            const { data: rows } = await supabase
-                .from('leads')
-                .select('*')
-                .order('created_at', { ascending: false });
-
-            const leads = (rows || []).map(mapLead);
+            const { rows } = await db.query('SELECT * FROM leads ORDER BY created_at DESC');
+            const leads = rows.map(mapLead);
             const csv = [
                 'ID,Name,Email,Phone,Amount,Scam Type,When,Payment,Status,Priority,Message,Created',
                 ...leads.map(l => [
@@ -174,21 +194,16 @@ module.exports = async (req, res) => {
                     (l.message || '').replace(/"/g, '""'), l.createdAt
                 ].map(v => '"' + (v || '') + '"').join(','))
             ].join('\n');
-
             res.setHeader('Content-Type', 'text/csv');
             res.setHeader('Content-Disposition', 'attachment; filename="leads.csv"');
             return res.status(200).send(csv);
         }
 
-        // Single lead by ID
+        // Single lead
         if (urlId) {
-            const { data: row, error } = await supabase
-                .from('leads')
-                .select('*')
-                .eq('id', urlId)
-                .single();
-            if (error || !row) return res.status(404).json({ error: 'Lead not found' });
-            return res.status(200).json({ success: true, lead: mapLead(row) });
+            const { rows } = await db.query('SELECT * FROM leads WHERE id = $1', [urlId]);
+            if (!rows[0]) return res.status(404).json({ error: 'Lead not found' });
+            return res.status(200).json({ success: true, lead: mapLead(rows[0]) });
         }
 
         // List leads
@@ -197,26 +212,28 @@ module.exports = async (req, res) => {
         const search   = req.query.search;
         const page     = parseInt(req.query.page, 10) || 1;
         const limit    = Math.min(500, parseInt(req.query.limit, 10) || 20);
+        const offset   = (page - 1) * limit;
 
-        let query = supabase
-            .from('leads')
-            .select('*', { count: 'exact' })
-            .order('created_at', { ascending: false });
+        const conditions = [];
+        const params     = [];
 
-        if (status   && status   !== 'all') query = query.eq('status',    status);
-        if (scamType && scamType !== 'all') query = query.eq('scam_type', scamType);
+        if (status   && status   !== 'all') { params.push(status);   conditions.push(`status = $${params.length}`); }
+        if (scamType && scamType !== 'all') { params.push(scamType); conditions.push(`scam_type = $${params.length}`); }
 
-        query = query.range((page - 1) * limit, page * limit - 1);
+        const where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';
+        params.push(limit);  const limitPh  = params.length;
+        params.push(offset); const offsetPh = params.length;
 
-        const { data: rows, error: fetchErr, count } = await query;
-        if (fetchErr) {
-            console.error('Fetch error:', fetchErr);
-            return res.status(500).json({ error: 'Failed to fetch leads' });
-        }
+        const { rows } = await db.query(
+            `SELECT * FROM leads ${where} ORDER BY created_at DESC LIMIT $${limitPh} OFFSET $${offsetPh}`,
+            params
+        );
+        const { rows: totRow } = await db.query(
+            `SELECT COUNT(*)::int AS c FROM leads ${where}`,
+            params.slice(0, conditions.length)
+        );
 
-        let leads = (rows || []).map(mapLead);
-
-        // Client-side search filter
+        let leads = rows.map(mapLead);
         if (search) {
             const q = search.toLowerCase();
             leads = leads.filter(l =>
@@ -226,19 +243,15 @@ module.exports = async (req, res) => {
             );
         }
 
-        // Stats — lightweight fetch for counts
-        const { data: statRows } = await supabase
-            .from('leads')
-            .select('status, amount');
-        const all = statRows || [];
+        const { rows: statRows } = await db.query('SELECT status, amount FROM leads');
         const stats = {
-            total:     all.length,
-            new:       all.filter(l => l.status === 'new').length,
-            qualified: all.filter(l => l.status === 'qualified').length,
-            highValue: all.filter(l => l.amount === '5000+').length,
+            total:     statRows.length,
+            new:       statRows.filter(l => l.status === 'new').length,
+            qualified: statRows.filter(l => l.status === 'qualified').length,
+            highValue: statRows.filter(l => l.amount === '5000+').length,
         };
 
-        return res.status(200).json({ success: true, leads, total: count, page, stats });
+        return res.status(200).json({ success: true, leads, total: totRow[0]?.c || 0, page, stats });
     }
 
     // ── PUT /api/leads/:id ────────────────────────────────────────────────
@@ -248,31 +261,30 @@ module.exports = async (req, res) => {
         if (body.status   && !VALID_STATUSES.includes(body.status))    return res.status(400).json({ error: 'Invalid status' });
         if (body.priority && !VALID_PRIORITIES.includes(body.priority)) return res.status(400).json({ error: 'Invalid priority' });
 
-        const updates = { updated_at: new Date().toISOString() };
-        if (body.status   !== undefined) updates.status   = body.status;
-        if (body.priority !== undefined) updates.priority = body.priority;
-        if (body.notes    !== undefined) updates.notes    = sanitize(body.notes, 2000);
+        const setClauses = ['updated_at = NOW()'];
+        const params     = [];
 
-        const { data: row, error } = await supabase
-            .from('leads')
-            .update(updates)
-            .eq('id', urlId)
-            .select()
-            .single();
+        if (body.status   !== undefined) { params.push(body.status);                setClauses.push(`status = $${params.length}`); }
+        if (body.priority !== undefined) { params.push(body.priority);              setClauses.push(`priority = $${params.length}`); }
+        if (body.notes    !== undefined) { params.push(sanitize(body.notes, 2000)); setClauses.push(`notes = $${params.length}`); }
 
-        if (error || !row) return res.status(404).json({ error: 'Lead not found' });
-        return res.status(200).json({ success: true, lead: mapLead(row) });
+        params.push(urlId);
+        const { rows } = await db.query(
+            `UPDATE leads SET ${setClauses.join(', ')} WHERE id = $${params.length} RETURNING *`,
+            params
+        );
+        if (!rows[0]) return res.status(404).json({ error: 'Lead not found' });
+        return res.status(200).json({ success: true, lead: mapLead(rows[0]) });
     }
 
     // ── DELETE /api/leads/:id ─────────────────────────────────────────────
     if (req.method === 'DELETE' && urlId) {
-        const { error } = await supabase
-            .from('leads')
-            .delete()
-            .eq('id', urlId);
-
-        if (error) return res.status(500).json({ error: 'Failed to delete lead' });
-        return res.status(200).json({ success: true, message: 'Lead deleted' });
+        try {
+            await db.query('DELETE FROM leads WHERE id = $1', [urlId]);
+            return res.status(200).json({ success: true, message: 'Lead deleted' });
+        } catch (e) {
+            return res.status(500).json({ error: 'Failed to delete lead' });
+        }
     }
 
     res.status(405).json({ error: 'Method not allowed' });
