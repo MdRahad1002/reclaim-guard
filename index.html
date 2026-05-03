@@ -117,6 +117,68 @@
     </script>
 
     <!-- ═══════════════════════════════════════════════════════════════
+         JSON-LD — Organization (Knowledge Panel / Google Business)
+    ═══════════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ReclaimGuard Legal",
+      "url": "https://www.reclaimguard.co.uk/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.reclaimguard.co.uk/assets/images/reclaim-guard-logo.png",
+        "width": 400,
+        "height": 400
+      },
+      "description": "ReclaimGuard Legal specialises in crypto fraud recovery, investment scam recovery, chargeback processing, and legal action against online scammers across the EU, UK, and USA.",
+      "telephone": "+442036958673",
+      "email": "info@reclaimguard.legal",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB",
+        "addressRegion": "England"
+      },
+      "areaServed": ["GB", "DE", "AT", "CH", "US", "CA", "AU"],
+      "foundingDate": "2020",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+442036958673",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "German"],
+          "areaServed": ["GB", "DE", "AT", "CH", "US", "CA", "AU"]
+        }
+      ],
+      "sameAs": [
+        "https://www.reclaimguard.co.uk/"
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         JSON-LD — WebSite (enables Google Sitelinks Search Box)
+    ═══════════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ReclaimGuard Legal",
+      "url": "https://www.reclaimguard.co.uk/",
+      "description": "Crypto fraud recovery, investment scam recovery, chargeback processing. Free case review. EU/UK/US coverage.",
+      "inLanguage": ["en-GB", "de"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.reclaimguard.co.uk/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════
          JSON-LD — FAQ (targets "People Also Ask" in Google)
          Based on real human search patterns
     ═══════════════════════════════════════════════════════════════ -->
@@ -135,10 +197,26 @@
         },
         {
           "@type": "Question",
+          "name": "Can cryptocurrency really be traced and recovered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While cryptocurrency is often thought to be anonymous, blockchain technology creates a permanent record of all transactions. Using Chainalysis and other forensic tools, we can trace cryptocurrency through complex transaction paths, identify where it ends up, and take legal action to freeze and recover the funds."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How do I recover money from an online scam?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The first step is to gather all evidence — transaction IDs, wallet addresses, communications with the scammer. Then submit your case to a fraud recovery specialist who can pursue chargebacks, legal letters, and regulatory complaints on your behalf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the recovery process take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The timeline varies depending on the complexity of your case. Simple cases where funds remain on exchanges may be resolved in 2–4 months. More complex cases involving multiple jurisdictions or sophisticated money laundering may take 6–12 months."
           }
         },
         {
@@ -151,10 +229,10 @@
         },
         {
           "@type": "Question",
-          "name": "How long does crypto recovery take?",
+          "name": "What is Chainalysis and how does it help my case?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Simple chargeback cases can resolve in 4–12 weeks. Complex crypto tracing and legal actions typically take 3–9 months depending on jurisdiction and the volume of evidence available."
+            "text": "Chainalysis is the world's leading blockchain intelligence platform, trusted by law enforcement agencies, regulators, and financial institutions globally. It allows us to trace cryptocurrency transactions across multiple blockchains, identify connections to known entities, and generate court-admissible evidence."
           }
         },
         {
@@ -162,7 +240,39 @@
           "name": "Do I have to pay upfront for fraud recovery services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ReclaimGuard Legal charges a small case-processing fee (€150–€350) and a success fee of 10–15% only if funds are recovered. There is no large upfront payment required."
+            "text": "ReclaimGuard Legal charges a small case-processing fee (€150–€350) and a success fee of 10–15% only if funds are recovered. There is no large upfront payment required. The initial case review is completely free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of scams do you handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We handle all types of cryptocurrency and financial fraud including: fake crypto exchanges, investment scams, Ponzi schemes, romance/pig butchering scams, fake brokers, NFT scams, DeFi exploits, business email compromise, wire fraud, and unauthorized banking transactions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cryptocurrency fraud often crosses borders, and our international network enables us to work with legal authorities, exchanges, and financial institutions in the EU, UK, USA, Canada, and Australia to maximize recovery chances."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information do you need to start my case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To begin, we need: details of how you were scammed, transaction records (bank statements, cryptocurrency transaction IDs, wallet addresses), any communications with the fraudsters, and documentation of your investments. Don't worry if you don't have everything — we can help you gather evidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my case confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All information you share with us is protected and will not be disclosed without your consent, except where required by law or necessary to pursue your recovery case."
           }
         }
       ]
@@ -185,9 +295,12 @@
     </script>
 
     <link rel="icon" type="image/png" href="assets/images/reclaim-guard-logo.png">
+    <link rel="apple-touch-icon" href="assets/images/reclaim-guard-logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://flagcdn.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -196,7 +309,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal" style="height: 50px;">
+                    <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal" width="160" height="50" style="height: 50px; width: auto;">
                     <span class="logo-text">ReclaimGuard Legal</span>
                 </div>
                 <div class="nav-menu" id="navMenu">
@@ -291,7 +404,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#0066FF" opacity="0.1"/>
                             <path d="M24 14L30 18V30L24 34L18 30V18L24 14Z" stroke="#0066FF" stroke-width="2" fill="none"/>
                             <circle cx="24" cy="24" r="3" fill="#0066FF"/>
@@ -312,7 +425,7 @@
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#00C853" opacity="0.1"/>
                             <rect x="16" y="18" width="16" height="12" rx="2" stroke="#00C853" stroke-width="2"/>
                             <path d="M18 18V16C18 13.7909 19.7909 12 22 12H26C28.2091 12 30 13.7909 30 16V18" stroke="#00C853" stroke-width="2"/>
@@ -332,7 +445,7 @@
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#FF6D00" opacity="0.1"/>
                             <circle cx="24" cy="24" r="8" stroke="#FF6D00" stroke-width="2"/>
                             <path d="M24 20V24L27 27" stroke="#FF6D00" stroke-width="2"/>
@@ -352,7 +465,7 @@
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#9C27B0" opacity="0.1"/>
                             <path d="M20 24L23 27L28 22" stroke="#9C27B0" stroke-width="2"/>
                             <rect x="16" y="16" width="16" height="16" rx="2" stroke="#9C27B0" stroke-width="2"/>
@@ -372,7 +485,7 @@
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#F44336" opacity="0.1"/>
                             <path d="M24 16V24L28 28" stroke="#F44336" stroke-width="2"/>
                             <circle cx="24" cy="24" r="10" stroke="#F44336" stroke-width="2"/>
@@ -392,7 +505,7 @@
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
                             <rect width="48" height="48" rx="12" fill="#00BCD4" opacity="0.1"/>
                             <rect x="18" y="18" width="12" height="12" rx="2" stroke="#00BCD4" stroke-width="2"/>
                             <path d="M22 18V14M26 18V14M22 30V34M26 30V34M30 22H34M30 26H34M14 22H18M14 26H18" stroke="#00BCD4" stroke-width="2"/>
@@ -965,12 +1078,12 @@
                         We provide realistic assessments and transparent service.
                     </p>
                     
-                    <div class="contact-methods">
+                    <address class="contact-methods">
                         <div class="contact-method">
                             <div class="method-icon">📞</div>
                             <div class="method-content">
                                 <h4>Phone</h4>
-                                <p><a href="tel:+442036958673">+44 (0)56 0384 6173</a></p>
+                                <p><a href="tel:+445603846173">+44 (0)56 0384 6173</a></p>
                                 <span>Business hours response</span>
                             </div>
                         </div>
@@ -1002,7 +1115,7 @@
                                    10-15% Success Fee Only</p>
                             </div>
                         </div>
-                    </div>
+                    </address>
 
                     <div class="emergency-contact">
                         <h4>⚠️ Legal Disclaimer</h4>
