@@ -1390,6 +1390,69 @@ h1, h2, h3, h4, h5, h6 {
 .media-logo:hover { color: #8090aa; }
 
 /* ================================
+   Trust & Compliance Bar (E-E-A-T)
+   ================================ */
+.trust-compliance-section {
+    padding: 40px 0;
+    background: #f0f4ff;
+    border-top: 1px solid #dce6ff;
+    border-bottom: 1px solid #dce6ff;
+}
+
+.trust-compliance-label {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+}
+
+.trust-compliance-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 32px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid #dce6ff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    min-width: 200px;
+    max-width: 230px;
+    flex: 1 1 180px;
+}
+
+.trust-icon { font-size: 1.4rem; flex-shrink: 0; }
+.trust-text { font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary); }
+.trust-text strong { color: var(--text-primary); font-size: 0.88rem; display: block; margin-bottom: 2px; }
+
+/* Team credential badge */
+.team-tags .tag-cert {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+/* Team section last-reviewed note */
+.section-reviewed {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+    .trust-compliance-bar { flex-direction: column; align-items: center; }
+    .trust-item { max-width: 100%; width: 100%; }
+}
+
+/* ================================
    Rating / Review Widget
    ================================ */
 .rating-section {
