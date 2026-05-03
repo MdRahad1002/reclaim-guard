@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | ReclaimGuard Legal</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/images/reclaim-guard-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAV */
+        .nav {
+            background: #0f172a;
+            padding: 0 32px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img { height: 36px; }
+
+        .nav-logo span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav-back {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: #fff; }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            padding: 60px 48px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -0.04em;
+        }
+
+        .error-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background: #1a56db;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .btn-home:hover { background: #1648c0; }
+
+        .helpful-links {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .helpful-links p {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .link-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .link-list a {
+            font-size: 0.85rem;
+            color: #1a56db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .link-list a:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        .footer {
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 560px) {
+            .card { padding: 40px 24px; }
+            .error-code { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">
+            <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal" width="100" height="36">
+            <span>ReclaimGuard</span>
+        </a>
+        <a href="/" class="nav-back">← Back to homepage</a>
+    </nav>
+
+    <main class="main">
+        <div class="card">
+            <div class="error-code">404</div>
+            <div class="error-icon">🔍</div>
+            <h1>Page not found</h1>
+            <p>The page you're looking for doesn't exist or may have been moved. If you're trying to report a crypto fraud or scam, our team is ready to help.</p>
+            <a href="/" class="btn-home">Get a free consultation</a>
+            <div class="helpful-links">
+                <p>Other helpful pages</p>
+                <div class="link-list">
+                    <a href="/#services">Our Services</a>
+                    <a href="/#about">About Us</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 ReclaimGuard Legal Ltd. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
