@@ -5,4 +5,8 @@ Disallow: /admin.html
 Disallow: /thank-you
 Disallow: /api/
 
+# Block Google's AI training crawler (does not affect Search or AI Overviews)
+User-agent: Google-Extended
+Disallow: /
+
 Sitemap: https://www.reclaimguard.co.uk/sitemap.xml
