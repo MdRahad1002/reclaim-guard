@@ -296,12 +296,16 @@
 
     <link rel="icon" type="image/png" href="assets/images/reclaim-guard-logo.png">
     <link rel="apple-touch-icon" href="assets/images/reclaim-guard-logo.png">
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link rel="dns-prefetch" href="https://flagcdn.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fallback for crawlers that don't execute JS (i18n.js dynamically swaps title/meta) -->
+    <noscript><style>body{font-family:sans-serif}</style></noscript>
 </head>
 <body>
     <!-- Navigation -->
@@ -309,7 +313,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal" width="160" height="50" style="height: 50px; width: auto;">
+                    <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal" width="160" height="50" style="height: 50px; width: auto;" fetchpriority="high" loading="eager">
                     <span class="logo-text">ReclaimGuard Legal</span>
                 </div>
                 <div class="nav-menu" id="navMenu">
@@ -730,7 +734,7 @@
                 </div>
                 <div class="about-image">
                     <div class="about-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=640&q=80" alt="ReclaimGuard Legal team at work" class="about-office-img" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=640&q=80" alt="ReclaimGuard Legal team reviewing a crypto fraud recovery case" class="about-office-img" loading="lazy" width="640" height="427">
                         <div class="about-img-overlay">
                             <div class="overlay-stat"><span class="ov-num">500+</span><span class="ov-lbl">Cases Reviewed</span></div>
                             <div class="overlay-stat"><span class="ov-num">EU/UK/US</span><span class="ov-lbl">International Coverage</span></div>
@@ -770,7 +774,7 @@
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-photo-wrap">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&q=80" alt="James Harrington" class="team-photo" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&q=80" alt="James Harrington, Lead Legal Consultant and Founder at ReclaimGuard Legal" class="team-photo" loading="lazy" width="300" height="300">
                     </div>
                     <h3 class="team-name">James Harrington</h3>
                     <div class="team-role">Lead Legal Consultant & Founder</div>
@@ -779,7 +783,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo-wrap">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&q=80" alt="Sarah Mitchell" class="team-photo" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&q=80" alt="Sarah Mitchell, Senior Blockchain Investigator at ReclaimGuard Legal" class="team-photo" loading="lazy" width="300" height="300">
                     </div>
                     <h3 class="team-name">Sarah Mitchell</h3>
                     <div class="team-role">Senior Blockchain Investigator</div>
@@ -788,7 +792,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo-wrap">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&q=80" alt="David Chen" class="team-photo" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&q=80" alt="David Chen, Digital Forensics Specialist at ReclaimGuard Legal" class="team-photo" loading="lazy" width="300" height="300">
                     </div>
                     <h3 class="team-name">David Chen</h3>
                     <div class="team-role">Digital Forensics Specialist</div>
@@ -797,7 +801,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo-wrap">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&q=80" alt="Emma Rosenberg" class="team-photo" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&q=80" alt="Emma Rosenberg, Client Relations and Compliance at ReclaimGuard Legal" class="team-photo" loading="lazy" width="300" height="300">
                     </div>
                     <h3 class="team-name">Emma Rosenberg</h3>
                     <div class="team-role">Client Relations & Compliance</div>
@@ -863,7 +867,7 @@
                         "I lost over £180,000 to a fake crypto trading platform. The team at ReclaimGuard traced my Bitcoin through multiple wallets and exchanges. They recovered 85% of my funds within 6 months. Professional, transparent, and genuinely cared about my case."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&q=80" alt="Sarah M." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&q=80" alt="Sarah M. — crypto fraud victim who recovered £153,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">Sarah M.</div>
                             <div class="author-location">London, UK</div>
@@ -878,7 +882,7 @@
                         "After being scammed by a romance fraudster who convinced me to invest in a fake forex broker, I felt hopeless. The team here not only recovered my £95,000 but also helped law enforcement identify the criminal network. Outstanding expertise."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&q=80" alt="James T." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&q=80" alt="James T. — romance scam victim who recovered £95,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">James T.</div>
                             <div class="author-location">Manchester, UK</div>
@@ -893,7 +897,7 @@
                         "A fraudulent DeFi platform stole $250,000 worth of cryptocurrency from me. The blockchain analysis team tracked the funds across multiple chains and identified the exchange where they were cashed out. Incredible work under complex circumstances."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&q=80" alt="Michael R." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&q=80" alt="Michael R. — DeFi fraud victim who recovered $210,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">Michael R.</div>
                             <div class="author-location">Birmingham, UK</div>
@@ -908,7 +912,7 @@
                         "My company lost £320,000 in a business email compromise scam. The recovery team acted quickly, tracing the wire transfers and cryptocurrency conversions. They secured a court order and recovered 90% of our money. They saved our business."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=60&h=60&fit=crop&q=80" alt="David L." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=60&h=60&fit=crop&q=80" alt="David L. — business email compromise victim who recovered £288,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">David L.</div>
                             <div class="author-location">Leeds, UK</div>
@@ -923,7 +927,7 @@
                         "I invested €65,000 in what I believed was a legitimate crypto mining operation. When they disappeared, I contacted ReclaimGuard. Their investigation revealed a Ponzi scheme and they recovered my initial investment. Kept me informed every step."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=60&h=60&fit=crop&q=80" alt="Emma W." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=60&h=60&fit=crop&q=80" alt="Emma W. — crypto mining scam victim who recovered €65,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">Emma W.</div>
                             <div class="author-location">Bristol, UK</div>
@@ -938,7 +942,7 @@
                         "After losing €140,000 to a sophisticated pig butchering scam, I had little hope. This firm's combination of legal prowess and blockchain forensics was remarkable. They traced my funds internationally and worked with authorities in three countries."
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&q=80" alt="Robert K." class="testimonial-avatar" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&q=80" alt="Robert K. — pig butchering scam victim who recovered €112,000 with ReclaimGuard" class="testimonial-avatar" loading="lazy" width="60" height="60">
                         <div>
                             <div class="author-name">Robert K.</div>
                             <div class="author-location">Edinburgh, UK</div>
