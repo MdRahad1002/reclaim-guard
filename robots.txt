@@ -5,4 +5,4 @@ Disallow: /admin.html
 Disallow: /thank-you
 Disallow: /api/
 
-Sitemap: https://reclaimguard.co.uk/sitemap.xml
+Sitemap: https://www.reclaimguard.co.uk/sitemap.xml

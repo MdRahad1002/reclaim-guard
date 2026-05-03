@@ -4,28 +4,28 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://reclaimguard.co.uk/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reclaimguard.co.uk/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://reclaimguard.co.uk/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reclaimguard.co.uk/"/>
+    <loc>https://www.reclaimguard.co.uk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaimguard.co.uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaimguard.co.uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaimguard.co.uk/"/>
     <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://reclaimguard.co.uk/assets/images/reclaim-guard-logo.png</image:loc>
+      <image:loc>https://www.reclaimguard.co.uk/assets/images/reclaim-guard-logo.png</image:loc>
       <image:title>ReclaimGuard Legal — Crypto Fraud Recovery Specialists</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://reclaimguard.co.uk/privacy</loc>
+    <loc>https://www.reclaimguard.co.uk/privacy</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://reclaimguard.co.uk/terms</loc>
+    <loc>https://www.reclaimguard.co.uk/terms</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
