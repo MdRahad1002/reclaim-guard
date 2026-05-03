@@ -5,6 +5,12 @@
 
 const TRANSLATIONS = {
   en: {
+    // SEO — page title & meta description (swapped dynamically)
+    seo_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal — Recover Lost Money',
+    seo_desc: 'Scammed online? ReclaimGuard Legal helps you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review. EU/UK/US coverage. Evidence-based recovery — no upfront success fee.',
+    og_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal',
+    og_desc: 'Scammed online? We help you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review — EU/UK/US coverage.',
+
     // Nav
     nav_home: 'Home',
     nav_services: 'Services',
@@ -314,6 +320,12 @@ const TRANSLATIONS = {
   },
 
   de: {
+    // SEO — page title & meta description (swapped dynamically)
+    seo_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal — Geld zurückfordern',
+    seo_desc: 'Durch Betrug Geld verloren? ReclaimGuard Legal hilft Ihnen, verlorenes Geld durch Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung. EU/UK/US Abdeckung. Faktenbasierte Rückgewinnung.',
+    og_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal',
+    og_desc: 'Betrug erlitten? Wir helfen Ihnen, verlorenes Geld bei Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung.',
+
     // Nav
     nav_home: 'Startseite',
     nav_services: 'Leistungen',
@@ -697,6 +709,21 @@ function applyTranslations() {
   const setAll = (sel, key) => {
     document.querySelectorAll(sel).forEach(el => { el.textContent = t(key); });
   };
+
+  // ── SEO: swap title + meta description per language ──────────────────
+  const seoTitle = t('seo_title');
+  const seoDesc  = t('seo_desc');
+  const ogTitle  = t('og_title');
+  const ogDesc   = t('og_desc');
+  if (seoTitle) document.title = seoTitle;
+  const descEl  = document.getElementById('seo-desc');  if (descEl)  descEl.setAttribute('content', seoDesc);
+  const ogTEl   = document.getElementById('og-title');  if (ogTEl)   ogTEl.setAttribute('content', ogTitle);
+  const ogDEl   = document.getElementById('og-desc');   if (ogDEl)   ogDEl.setAttribute('content', ogDesc);
+  const twTEl   = document.getElementById('tw-title');  if (twTEl)   twTEl.setAttribute('content', ogTitle);
+  const twDEl   = document.getElementById('tw-desc');   if (twDEl)   twDEl.setAttribute('content', ogDesc);
+  // Swap og:locale
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_DE' : 'en_GB');
 
   // Nav
   const navLinks = document.querySelectorAll('.nav-link');
