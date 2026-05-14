@@ -2089,6 +2089,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-cta p {
+    color: var(--white);
     font-size: 0.9rem;
     opacity: 0.88;
     margin-bottom: 1.25rem;
@@ -2162,6 +2163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .article-cta-banner p {
+    color: var(--white);
     opacity: 0.9;
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
