@@ -63,7 +63,7 @@ function authenticate(req) {
 
 function mapLead(row) {
     return {
-        id:        row.id,
+        id:        parseInt(row.id, 10),
         name:      row.name,
         email:     row.email,
         phone:     row.phone || '',
