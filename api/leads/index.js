@@ -1,5 +1,6 @@
 const jwt  = require('jsonwebtoken');
 const { Pool } = require('pg');
+const { sendLeadConfirmation, sendAdminNotification } = require('../mailer');
 
 const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
 
@@ -172,7 +173,18 @@ module.exports = async (req, res) => {
             );
             recent.push(now);
             submitLog.set(ip, recent);
-            return res.status(201).json({ success: true, message: 'Lead submitted successfully', leadId: rows[0].id });
+
+            const leadId = rows[0].id;
+
+            // Fire-and-forget emails — do not block the HTTP response
+            sendLeadConfirmation({ name, email, amount, scamType }).catch(err =>
+                console.error('Confirmation email failed:', err.message)
+            );
+            sendAdminNotification({ name, email, phone, amount, scamType, when, payment, message, leadId, priority }).catch(err =>
+                console.error('Admin notification email failed:', err.message)
+            );
+
+            return res.status(201).json({ success: true, message: 'Lead submitted successfully', leadId });
         } catch (e) {
             console.error('Insert error:', e.message);
             return res.status(500).json({ error: 'Failed to save lead. Please try again.' });

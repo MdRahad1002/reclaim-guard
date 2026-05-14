@@ -9,4 +9,4 @@ Disallow: /api/
 User-agent: Google-Extended
 Disallow: /
 
-Sitemap: https://www.reclaimguard.co.uk/sitemap.xml
+Sitemap: https://www.reclaim-guard.com/sitemap.xml

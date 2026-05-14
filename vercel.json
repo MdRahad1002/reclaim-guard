@@ -14,7 +14,13 @@
     { "src": "assets/**/*", "use": "@vercel/static" },
     { "src": "sitemap.xml", "use": "@vercel/static" },
     { "src": "robots.txt", "use": "@vercel/static" },
-    { "src": "404.html", "use": "@vercel/static" }
+    { "src": "404.html", "use": "@vercel/static" },
+    { "src": "blog.html", "use": "@vercel/static" },
+    { "src": "blog/what-to-do-after-being-scammed.html", "use": "@vercel/static" },
+    { "src": "blog/how-to-spot-crypto-recovery-scam.html", "use": "@vercel/static" },
+    { "src": "blog/most-common-crypto-scams-2026.html", "use": "@vercel/static" },
+    { "src": "blog/what-is-a-chargeback.html", "use": "@vercel/static" },
+    { "src": "blog/blockchain-forensics-traces-stolen-crypto.html", "use": "@vercel/static" }
   ],
   "headers": [
     {
@@ -52,6 +58,12 @@
     { "src": "/thank-you", "dest": "/thank-you.html" },
     { "src": "/privacy", "dest": "/privacy.html" },
     { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/blog", "dest": "/blog.html" },
+    { "src": "/blog/what-to-do-after-being-scammed", "dest": "/blog/what-to-do-after-being-scammed.html" },
+    { "src": "/blog/how-to-spot-crypto-recovery-scam", "dest": "/blog/how-to-spot-crypto-recovery-scam.html" },
+    { "src": "/blog/most-common-crypto-scams-2026", "dest": "/blog/most-common-crypto-scams-2026.html" },
+    { "src": "/blog/what-is-a-chargeback", "dest": "/blog/what-is-a-chargeback.html" },
+    { "src": "/blog/blockchain-forensics-traces-stolen-crypto", "dest": "/blog/blockchain-forensics-traces-stolen-crypto.html" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]

@@ -4,31 +4,73 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://www.reclaimguard.co.uk/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaimguard.co.uk/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaimguard.co.uk/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaimguard.co.uk/"/>
+    <loc>https://www.reclaim-guard.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/"/>
     <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.reclaimguard.co.uk/assets/images/reclaim-guard-logo.png</image:loc>
+      <image:loc>https://www.reclaim-guard.com/assets/images/reclaim-guard-logo.png</image:loc>
       <image:title>ReclaimGuard Legal — Crypto Fraud Recovery Specialists</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.reclaimguard.co.uk/privacy</loc>
+    <loc>https://www.reclaim-guard.com/privacy</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://www.reclaimguard.co.uk/terms</loc>
+    <loc>https://www.reclaim-guard.com/terms</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/what-is-a-chargeback</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
