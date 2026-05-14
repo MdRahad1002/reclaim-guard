@@ -1205,6 +1205,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem !important;
 }
 
+.reg-notice {
+    font-size: 0.72rem !important;
+    opacity: 0.5 !important;
+    margin-top: 0.75rem !important;
+    line-height: 1.5;
+}
+
 .footer-social {
     display: flex;
     gap: 1.5rem;
