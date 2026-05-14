@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1043,7 +1043,7 @@
             if (!l) { showToast('Lead not found', 'error'); return; }
             openModal(`
                 <button class="modal-close" onclick="closeModal()">×</button>
-                <h2>Lead #${l.id} — ${esc(l.name)}</h2>
+                <h2>Lead #${l.id} ${esc(l.name)}</h2>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
                     <div class="modal-field"><strong>Email</strong><br>${esc(l.email)}</div>
                     <div class="modal-field"><strong>Phone</strong><br>${esc(l.phone||'—')}</div>
@@ -1076,7 +1076,7 @@
             const priorityOpts = ['high','medium','low'];
             openModal(`
                 <button class="modal-close" onclick="closeModal()">×</button>
-                <h2>Edit Lead — ${esc(l.name)}</h2>
+                <h2>Edit Lead ${esc(l.name)}</h2>
                 <div style="background:var(--slate);border-radius:8px;padding:12px 14px;margin-bottom:20px;font-size:0.85rem;color:var(--muted);">
                     <strong style="color:var(--text);">${esc(l.email)}</strong> · ${esc(l.amount)} lost · submitted ${fmtDate(l.createdAt)}
                 </div>

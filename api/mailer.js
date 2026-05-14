@@ -1,8 +1,8 @@
-'use strict';
+﻿'use strict';
 
 const nodemailer = require('nodemailer');
 
-// Lazy-initialised transporter — reused across warm serverless invocations
+// Lazy-initialised transporter reused across warm serverless invocations
 let _transporter;
 function getTransporter() {
     if (!_transporter) {
@@ -12,7 +12,7 @@ function getTransporter() {
             secure: true,            // SSL on port 465
             auth: {
                 user: process.env.SMTP_USER || 'support@reclaim-guard.com',
-                pass: process.env.SMTP_PASS, // set in env — never hardcode
+                pass: process.env.SMTP_PASS, // set in env never hardcode
             },
             tls: {
                 // Enforce modern TLS; reject invalid/self-signed certs
@@ -46,7 +46,7 @@ async function sendLeadConfirmation({ name, email, amount, scamType }) {
     await getTransporter().sendMail({
         from:    '"Reclaim Guard Legal" <support@reclaim-guard.com>',
         to:      email,
-        subject: 'We received your case submission — Reclaim Guard Legal',
+        subject: 'We received your case submission Reclaim Guard Legal',
         text: [
             `Dear ${name},`,
             '',
@@ -119,7 +119,7 @@ async function sendAdminNotification({ name, email, phone, amount, scamType, whe
     await getTransporter().sendMail({
         from:    '"Reclaim Guard System" <support@reclaim-guard.com>',
         to:      adminEmail,
-        subject: `[${priority.toUpperCase()}] New Lead #${leadId} — ${name}`,
+        subject: `[${priority.toUpperCase()}] New Lead #${leadId} ${name}`,
         text: [
             `New lead submitted (ID #${leadId})`,
             '',

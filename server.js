@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -32,7 +32,7 @@ if (!fs.existsSync(LEADS_DB)) {
 }
 
 if (!fs.existsSync(USERS_DB)) {
-    // Default admin user — change password on first login
+    // Default admin user change password on first login
     const hashedPassword = bcrypt.hashSync('Ioannis1@', 10);
     const defaultUser = [{
         id: 1,

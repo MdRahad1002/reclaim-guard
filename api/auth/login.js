@@ -1,4 +1,4 @@
-// In-memory brute-force store (per IP, resets on cold start)
+﻿// In-memory brute-force store (per IP, resets on cold start)
 const loginAttempts = new Map();
 const MAX_ATTEMPTS = 5;
 const LOCKOUT_MS = 15 * 60 * 1000; // 15 minutes
@@ -71,7 +71,7 @@ module.exports = async (req, res) => {
             }], null, 2));
         }
 
-        // Parse body — handle both pre-parsed (req.body) and raw stream
+        // Parse body handle both pre-parsed (req.body) and raw stream
         let body = req.body;
         if (!body || typeof body !== 'object') {
             const raw = await new Promise((resolve, reject) => {
@@ -112,7 +112,7 @@ module.exports = async (req, res) => {
             return res.status(401).json({ error: 'Invalid username or password' });
         }
 
-        // Success — clear brute-force counter
+        // Success clear brute-force counter
         loginAttempts.delete(ip);
 
         const token = jwt.sign(

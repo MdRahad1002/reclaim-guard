@@ -1,4 +1,4 @@
-/* ================================
+﻿/* ================================
    Global Styles & Variables
    ================================ */
 :root {
@@ -915,7 +915,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-color);
 }
 
-/* Phone field — flag image + country code select + number input */
+/* Phone field flag image + country code select + number input */
 .phone-group {
     display: flex;
     align-items: stretch;

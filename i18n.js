@@ -1,15 +1,15 @@
-// ================================
+﻿// ================================
 // Internationalization (i18n) Module
 // Geo-based language detection for DE/AT/CH visitors
 // ================================
 
 const TRANSLATIONS = {
   en: {
-    // SEO — page title & meta description (swapped dynamically)
-    seo_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal — Recover Lost Money',
-    seo_desc: 'Scammed online? ReclaimGuard Legal helps you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review. EU/UK/US coverage. Evidence-based recovery — no upfront success fee.',
+    // SEO page title & meta description (swapped dynamically)
+    seo_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal Recover Lost Money',
+    seo_desc: 'Scammed online? ReclaimGuard Legal helps you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review. EU/UK/US coverage. Evidence-based recovery no upfront success fee.',
     og_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal',
-    og_desc: 'Scammed online? We help you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review — EU/UK/US coverage.',
+    og_desc: 'Scammed online? We help you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review EU/UK/US coverage.',
 
     // Nav
     nav_home: 'Home',
@@ -277,7 +277,7 @@ const TRANSLATIONS = {
     success_step1: 'Our team reviews your case details',
     success_step2: 'We assess recovery options',
     success_step3: 'You receive a personalised response within 24h',
-    success_note: 'Check your email inbox — a confirmation is on its way.',
+    success_note: 'Check your email inbox a confirmation is on its way.',
 
     // Thank-you page
     ty_title: 'Case Received',
@@ -287,8 +287,8 @@ const TRANSLATIONS = {
     ty_step2_title: 'Initial Consultation',
     ty_step2_desc: 'We will contact you within 24 hours to discuss your case and next steps.',
     ty_step3_title: 'Recovery Plan',
-    ty_step3_desc: 'You receive a personalised recovery strategy — no upfront commitment required.',
-    ty_highlight: '<strong>Check your inbox</strong> — a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
+    ty_step3_desc: 'You receive a personalised recovery strategy no upfront commitment required.',
+    ty_highlight: '<strong>Check your inbox</strong> a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
     ty_btn_home: '← Back to Home',
     ty_btn_another: 'Submit Another Case',
     ty_back: '← Back to Home',
@@ -320,8 +320,8 @@ const TRANSLATIONS = {
   },
 
   de: {
-    // SEO — page title & meta description (swapped dynamically)
-    seo_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal — Geld zurückfordern',
+    // SEO page title & meta description (swapped dynamically)
+    seo_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal Geld zurückfordern',
     seo_desc: 'Durch Betrug Geld verloren? ReclaimGuard Legal hilft Ihnen, verlorenes Geld durch Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung. EU/UK/US Abdeckung. Faktenbasierte Rückgewinnung.',
     og_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal',
     og_desc: 'Betrug erlitten? Wir helfen Ihnen, verlorenes Geld bei Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung.',
@@ -592,7 +592,7 @@ const TRANSLATIONS = {
     success_step1: 'Unser Team prüft Ihre Falldetails',
     success_step2: 'Wir analysieren Rückgewinnungsoptionen',
     success_step3: 'Sie erhalten innerhalb von 24 Stunden eine persönliche Antwort',
-    success_note: 'Bitte prüfen Sie Ihr E-Mail-Postfach — eine Bestätigung ist unterwegs.',
+    success_note: 'Bitte prüfen Sie Ihr E-Mail-Postfach eine Bestätigung ist unterwegs.',
 
     // Thank-you page
     ty_title: 'Anfrage erhalten',
@@ -603,7 +603,7 @@ const TRANSLATIONS = {
     ty_step2_desc: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
     ty_step3_title: 'Rückgewinnungsplan',
     ty_step3_desc: 'Sie erhalten eine persönliche Rückgewinnungsstrategie – keine Verpflichtung im Voraus erforderlich.',
-    ty_highlight: '<strong>Prüfen Sie Ihr E-Mail-Postfach</strong> — eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
+    ty_highlight: '<strong>Prüfen Sie Ihr E-Mail-Postfach</strong> eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
     ty_btn_home: '← Zurück zur Startseite',
     ty_btn_another: 'Weiteren Fall einreichen',
     ty_back: '← Zurück zur Startseite',

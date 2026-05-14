@@ -1,10 +1,10 @@
-const jwt  = require('jsonwebtoken');
+﻿const jwt  = require('jsonwebtoken');
 const { Pool } = require('pg');
 const { sendLeadConfirmation, sendAdminNotification } = require('../mailer');
 
 const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-change-this-in-production';
 
-// Rate limiting — public POST submissions (in-memory, per IP)
+// Rate limiting public POST submissions (in-memory, per IP)
 const submitLog = new Map();
 const MAX_SUBMISSIONS = 3;
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
@@ -176,7 +176,7 @@ module.exports = async (req, res) => {
 
             const leadId = rows[0].id;
 
-            // Fire-and-forget emails — do not block the HTTP response
+            // Fire-and-forget emails do not block the HTTP response
             sendLeadConfirmation({ name, email, amount, scamType }).catch(err =>
                 console.error('Confirmation email failed:', err.message)
             );
