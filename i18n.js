@@ -182,7 +182,7 @@ const TRANSLATIONS = {
     contact_pricing_label: 'Pricing',
     contact_pricing_val: 'Free Case Review<br>€150-€350 Recovery Fee<br>10-15% Success Fee Only',
     disclaimer_title: '⚠️ Legal Disclaimer',
-    disclaimer_text: 'ReclaimGuard Legal provides investigation services and support in filing disputes. We are not a law firm and do not provide legal representation. No guaranteed outcome is promised. Recovery depends on evidence, case age, payment method, and third-party compliance.',
+    disclaimer_text: 'ReclaimGuard Legal is a licensed body regulated by the SRA (No. 830575). We provide forensic investigation services and dispute support. No guaranteed outcome is promised. Recovery depends on evidence, case age, payment method, and third-party compliance.',
 
     // Form
     form_title: 'Free Case Evaluation',
@@ -235,8 +235,9 @@ const TRANSLATIONS = {
     footer_contact_us: 'Contact Us',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms & Conditions',
-    footer_copy: '© 2025 ReclaimGuard Legal. All rights reserved.',
-    footer_disclaimer: 'ReclaimGuard Legal is not a law firm and does not provide legal representation. We provide investigation services, forensic reports, and support in filing disputes, chargebacks, and complaints. All recovery attempts depend on third-party institutions. No guaranteed outcome is promised.',
+    footer_copy: '© 2026 ReclaimGuard Legal. All rights reserved.',
+    footer_disclaimer: 'ReclaimGuard Legal is a licensed body authorised for all legal services, regulated by the Solicitors Regulation Authority (SRA No. 830575), registered in England and Wales (Company No. 13438429). We provide forensic investigation services, dispute support, and legal recovery procedures. No guaranteed outcome is promised.',
+
     fab_label: 'Free Consultation',
     lang_switcher_label: 'Deutsch',
 
@@ -292,7 +293,7 @@ const TRANSLATIONS = {
     ty_btn_home: '← Back to Home',
     ty_btn_another: 'Submit Another Case',
     ty_back: '← Back to Home',
-    ty_copy: '© 2025 ReclaimGuard Legal. All rights reserved.',
+    ty_copy: '© 2026 ReclaimGuard Legal. All rights reserved.',
 
     // Footer certifications & service links
     footer_cert_gdpr: 'GDPR Compliant',
@@ -497,7 +498,7 @@ const TRANSLATIONS = {
     contact_pricing_label: 'Preise',
     contact_pricing_val: 'Kostenlose Fallprüfung<br>€150–€350 Rückgewinnungsgebühr<br>Nur 10–15% Erfolgsgebühr',
     disclaimer_title: '⚠️ Rechtlicher Hinweis',
-    disclaimer_text: 'ReclaimGuard Legal erbringt Ermittlungsdienstleistungen und Unterstützung bei der Einreichung von Streitigkeiten. Wir sind keine Anwaltskanzlei und bieten keine Rechtsvertretung an. Kein garantiertes Ergebnis wird versprochen. Die Rückgewinnung hängt von Beweisen, dem Fallalter, der Zahlungsmethode und der Compliance von Dritten ab.',
+    disclaimer_text: 'ReclaimGuard Legal ist eine von der SRA (Nr. 830575) regulierte zugelassene Körperschaft. Wir erbringen forensische Ermittlungsdienstleistungen und Unterstützung bei Streitigkeiten. Kein garantiertes Ergebnis wird versprochen. Die Rückgewinnung hängt von Beweisen, dem Fallalter, der Zahlungsmethode und der Compliance von Dritten ab.',
 
     // Form
     form_title: 'Kostenlose Fallbewertung',
@@ -550,8 +551,8 @@ const TRANSLATIONS = {
     footer_contact_us: 'Kontaktieren Sie uns',
     footer_privacy: 'Datenschutzrichtlinie',
     footer_terms: 'AGB',
-    footer_copy: '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
-    footer_disclaimer: 'ReclaimGuard Legal ist keine Anwaltskanzlei und bietet keine Rechtsvertretung an. Wir erbringen Ermittlungsdienstleistungen, forensische Berichte und Unterstützung bei der Einreichung von Streitigkeiten, Rückbuchungen und Beschwerden. Alle Rückgewinnungsversuche hängen von Drittinstitutionen ab. Kein garantiertes Ergebnis wird versprochen.',
+    footer_copy: '© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+    footer_disclaimer: 'ReclaimGuard Legal ist eine zugelassene Körperschaft, die für alle Rechtsdienstleistungen zugelassen ist und von der Solicitors Regulation Authority (SRA Nr. 830575) reguliert wird, eingetragen in England und Wales (Unternehmensnr. 13438429). Wir erbringen forensische Ermittlungsdienstleistungen und Unterstützung bei Streitigkeiten. Kein garantiertes Ergebnis wird versprochen.',
     fab_label: 'Kostenlose Beratung',
     lang_switcher_label: 'English',
 
@@ -607,7 +608,7 @@ const TRANSLATIONS = {
     ty_btn_home: '← Zurück zur Startseite',
     ty_btn_another: 'Weiteren Fall einreichen',
     ty_back: '← Zurück zur Startseite',
-    ty_copy: '© 2025 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+    ty_copy: '© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
 
     // Footer certifications & service links
     footer_cert_cov: 'EU/UK/DE Abdeckung',
