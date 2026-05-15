@@ -26,7 +26,7 @@ const TRANSLATIONS = {
     blog_hero_subtitle: 'Expert articles on crypto scam recovery, chargebacks, blockchain forensics, and how to protect yourself online written by our specialist team.',
     blog_a1_cat: 'Action Guide',
     blog_a1_title: 'What to Do in the First 24 Hours After Being Scammed Online',
-    blog_a1_excerpt: 'The actions you take immediately after discovering you've been scammed can make or break your chances of recovering money. Here's the exact sequence to follow.',
+    blog_a1_excerpt: "The actions you take immediately after discovering you've been scammed can make or break your chances of recovering money. Here's the exact sequence to follow.",
     blog_a1_author: 'James Harrington · 12 May 2026',
     blog_a1_url: '/blog/what-to-do-after-being-scammed',
     blog_a2_cat: 'Scam Awareness',
