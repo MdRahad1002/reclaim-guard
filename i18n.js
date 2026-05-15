@@ -18,7 +18,38 @@ const TRANSLATIONS = {
     nav_about: 'About',
     nav_testimonials: 'Testimonials',
     nav_contact: 'Contact',
+    nav_blog: 'Blog',
     nav_cta: 'Free Consultation',
+
+    // Blog page
+    blog_hero_title: 'Fraud Recovery Guides',
+    blog_hero_subtitle: 'Expert articles on crypto scam recovery, chargebacks, blockchain forensics, and how to protect yourself online written by our specialist team.',
+    blog_a1_cat: 'Action Guide',
+    blog_a1_title: 'What to Do in the First 24 Hours After Being Scammed Online',
+    blog_a1_excerpt: 'The actions you take immediately after discovering you've been scammed can make or break your chances of recovering money. Here's the exact sequence to follow.',
+    blog_a1_author: 'James Harrington · 12 May 2026',
+    blog_a1_url: '/blog/what-to-do-after-being-scammed',
+    blog_a2_cat: 'Scam Awareness',
+    blog_a2_title: 'How to Spot a Crypto Recovery Scam Before You Lose More Money',
+    blog_a2_excerpt: 'Fraudsters know you\'re desperate and target victims a second time with fake recovery services. Learn the red flags that separate legitimate firms from scammers.',
+    blog_a2_author: 'James Harrington · 9 May 2026',
+    blog_a2_url: '/blog/how-to-spot-crypto-recovery-scam',
+    blog_a3_cat: 'Scam Awareness',
+    blog_a3_title: 'The 5 Most Common Crypto Scams in 2026 (And How to Avoid Them)',
+    blog_a3_excerpt: 'From pig-butchering romance scams to fake crypto exchanges, these five fraud types are responsible for the majority of crypto losses worldwide. Know what to look for.',
+    blog_a3_author: 'David Chen · 6 May 2026',
+    blog_a3_url: '/blog/most-common-crypto-scams-2026',
+    blog_a4_cat: 'Recovery Methods',
+    blog_a4_title: 'What Is a Chargeback and Can It Get Your Money Back from a Scam?',
+    blog_a4_excerpt: 'A chargeback is one of the most effective tools for recovering money lost to online fraud but there are strict rules, deadlines, and limits. Here\'s everything you need to know.',
+    blog_a4_author: 'Emma Rosenberg · 2 May 2026',
+    blog_a4_url: '/blog/what-is-a-chargeback',
+    blog_a5_cat: 'Blockchain Forensics',
+    blog_a5_title: 'How Blockchain Forensics Can Trace Stolen Cryptocurrency',
+    blog_a5_excerpt: 'Many people believe crypto is untraceable. It isn\'t. Here\'s how professional investigators use blockchain analysis tools to follow stolen funds and build court-ready evidence.',
+    blog_a5_author: 'Sarah Mitchell · 28 Apr 2026',
+    blog_a5_url: '/blog/blockchain-forensics-traces-stolen-crypto',
+    blog_read_more: 'Read article →',
 
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
@@ -334,7 +365,38 @@ const TRANSLATIONS = {
     nav_about: 'Über uns',
     nav_testimonials: 'Erfahrungen',
     nav_contact: 'Kontakt',
+    nav_blog: 'Blog',
     nav_cta: 'Kostenlose Beratung',
+
+    // Blog page
+    blog_hero_title: 'Betrugsrückgewinnungs-Ratgeber',
+    blog_hero_subtitle: 'Expertenbeiträge über Krypto-Betrugsrückgewinnung, Rückbuchungen, Blockchain-Forensik und Schutz vor Online-Betrug – verfasst von unserem Spezialistenteam.',
+    blog_a1_cat: 'Aktionsleitfaden',
+    blog_a1_title: 'Was tun in den ersten 24 Stunden nach einem Online-Betrug?',
+    blog_a1_excerpt: 'Die Schritte, die Sie unmittelbar nach einem Betrug unternehmen, entscheiden darüber, ob Sie Ihr Geld zurückbekommen. Hier ist die genaue Reihenfolge, die Sie befolgen sollten.',
+    blog_a1_author: 'James Harrington · 12. Mai 2026',
+    blog_a1_url: '/blog/de/was-tun-nach-betrug',
+    blog_a2_cat: 'Betrugsaufklärung',
+    blog_a2_title: 'Krypto-Rückgewinnungsbetrug erkennen – bevor Sie noch mehr Geld verlieren',
+    blog_a2_excerpt: 'Betrüger wissen, dass Sie verzweifelt sind, und nehmen Opfer ein zweites Mal ins Visier. Lernen Sie die Warnsignale, die legitime Firmen von Betrügern unterscheiden.',
+    blog_a2_author: 'James Harrington · 9. Mai 2026',
+    blog_a2_url: '/blog/de/krypto-rueckgewinnungsbetrug-erkennen',
+    blog_a3_cat: 'Betrugsaufklärung',
+    blog_a3_title: 'Die 5 häufigsten Krypto-Betrugsmaschen 2026 (und wie Sie sich schützen)',
+    blog_a3_excerpt: 'Von Pig-Butchering-Betrug bis zu gefälschten Kryptobörsen – diese fünf Betrugstypen sind für den Großteil der Kryptoverluste weltweit verantwortlich.',
+    blog_a3_author: 'David Chen · 6. Mai 2026',
+    blog_a3_url: '/blog/de/haeufigste-krypto-betrugsmaschen-2026',
+    blog_a4_cat: 'Rückgewinnungsmethoden',
+    blog_a4_title: 'Was ist eine Rückbuchung und kann sie mein Geld nach einem Betrug zurückbringen?',
+    blog_a4_excerpt: 'Eine Rückbuchung ist eines der wirkungsvollsten Instrumente für Betrugsopfer – aber es gibt strenge Regeln, Fristen und Einschränkungen. Alles, was Sie wissen müssen.',
+    blog_a4_author: 'Emma Rosenberg · 2. Mai 2026',
+    blog_a4_url: '/blog/de/was-ist-eine-rueckbuchung',
+    blog_a5_cat: 'Blockchain-Forensik',
+    blog_a5_title: 'Wie Blockchain-Forensik gestohlene Kryptowährung verfolgen kann',
+    blog_a5_excerpt: 'Viele glauben, Krypto sei nicht verfolgbar. Das stimmt nicht. Erfahren Sie, wie Ermittler Blockchain-Analysetools einsetzen, um gestohlene Gelder zu verfolgen.',
+    blog_a5_author: 'Sarah Mitchell · 28. Apr. 2026',
+    blog_a5_url: '/blog/de/blockchain-forensik-krypto-verfolgen',
+    blog_read_more: 'Artikel lesen →',
 
     // Hero
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
@@ -759,7 +821,9 @@ function applyTranslations() {
 
   // Nav
   const navLinks = document.querySelectorAll('.nav-link');
-  const navKeys = ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact'];
+  const navKeys = navLinks.length >= 7
+    ? ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_blog', 'nav_contact']
+    : ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact'];
   navLinks.forEach((el, i) => { if (navKeys[i]) el.textContent = t(navKeys[i]); });
   const navCta = document.querySelector('.nav-menu .btn-primary');
   if (navCta) navCta.textContent = t('nav_cta');
@@ -1130,6 +1194,38 @@ function applyTranslations() {
   // Update lang switcher button text
   const switcher = document.getElementById('langSwitcher');
   if (switcher) switcher.textContent = t('lang_switcher_label');
+
+  // ── Blog page (blog.html) ────────────────────────────────────────────
+  const blogHero = document.querySelector('.blog-hero');
+  if (blogHero) {
+    const h1 = blogHero.querySelector('h1');
+    const p  = blogHero.querySelector('p');
+    if (h1) h1.textContent = t('blog_hero_title');
+    if (p)  p.textContent  = t('blog_hero_subtitle');
+  }
+  const blogCards = document.querySelectorAll('.blog-card');
+  const blogCardData = [
+    ['blog_a1_cat','blog_a1_title','blog_a1_excerpt','blog_a1_author','blog_a1_url'],
+    ['blog_a2_cat','blog_a2_title','blog_a2_excerpt','blog_a2_author','blog_a2_url'],
+    ['blog_a3_cat','blog_a3_title','blog_a3_excerpt','blog_a3_author','blog_a3_url'],
+    ['blog_a4_cat','blog_a4_title','blog_a4_excerpt','blog_a4_author','blog_a4_url'],
+    ['blog_a5_cat','blog_a5_title','blog_a5_excerpt','blog_a5_author','blog_a5_url'],
+  ];
+  blogCards.forEach((card, i) => {
+    if (!blogCardData[i]) return;
+    const [catKey, titleKey, excerptKey, authorKey, urlKey] = blogCardData[i];
+    const cat    = card.querySelector('.blog-category');
+    const title  = card.querySelector('.blog-card-title');
+    const excerpt= card.querySelector('.blog-card-excerpt');
+    const author = card.querySelector('.blog-card-author');
+    const readMore = card.querySelector('.blog-read-more');
+    if (cat)    cat.textContent    = t(catKey);
+    if (title)  title.textContent  = t(titleKey);
+    if (excerpt)excerpt.textContent= t(excerptKey);
+    if (author) { author.innerHTML = '<strong>' + t(authorKey).split('\u00b7')[0].trim() + '</strong> &nbsp;\u00b7&nbsp; ' + (t(authorKey).split('\u00b7')[1] || '').trim(); }
+    if (readMore) readMore.textContent = t('blog_read_more');
+    card.href = t(urlKey);
+  });
 }
 
 // ============================
