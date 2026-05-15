@@ -684,6 +684,37 @@ function setLang(lang) {
   localStorage.setItem('rg_lang', lang);
 }
 
+// ============================
+// Blog article language redirect
+// ============================
+const BLOG_EN_TO_DE = {
+  '/blog/what-to-do-after-being-scammed': '/blog/de/was-tun-nach-betrug',
+  '/blog/how-to-spot-crypto-recovery-scam': '/blog/de/krypto-rueckgewinnungsbetrug-erkennen',
+  '/blog/most-common-crypto-scams-2026': '/blog/de/haeufigste-krypto-betrugsmaschen-2026',
+  '/blog/what-is-a-chargeback': '/blog/de/was-ist-eine-rueckbuchung',
+  '/blog/blockchain-forensics-traces-stolen-crypto': '/blog/de/blockchain-forensik-krypto-verfolgen',
+};
+const BLOG_DE_TO_EN = {
+  '/blog/de/was-tun-nach-betrug': '/blog/what-to-do-after-being-scammed',
+  '/blog/de/krypto-rueckgewinnungsbetrug-erkennen': '/blog/how-to-spot-crypto-recovery-scam',
+  '/blog/de/haeufigste-krypto-betrugsmaschen-2026': '/blog/most-common-crypto-scams-2026',
+  '/blog/de/was-ist-eine-rueckbuchung': '/blog/what-is-a-chargeback',
+  '/blog/de/blockchain-forensik-krypto-verfolgen': '/blog/blockchain-forensics-traces-stolen-crypto',
+};
+
+function redirectBlogIfNeeded(lang) {
+  const path = window.location.pathname.replace(/\.html$/, '');
+  if (lang === 'de' && BLOG_EN_TO_DE[path]) {
+    window.location.replace(BLOG_EN_TO_DE[path]);
+    return true;
+  }
+  if (lang === 'en' && BLOG_DE_TO_EN[path]) {
+    window.location.replace(BLOG_DE_TO_EN[path]);
+    return true;
+  }
+  return false;
+}
+
 function t(key) {
   const lang = getLang() || 'en';
   return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || TRANSLATIONS['en'][key] || key;
@@ -1122,6 +1153,7 @@ async function initI18n() {
     }
     setLang(lang);
   }
+  if (redirectBlogIfNeeded(lang)) return;
   applyTranslations();
 }
 
@@ -1129,6 +1161,7 @@ function toggleLanguage() {
   const current = getLang() || 'en';
   const next = current === 'en' ? 'de' : 'en';
   setLang(next);
+  if (redirectBlogIfNeeded(next)) return;
   applyTranslations();
 }
 

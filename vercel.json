@@ -20,7 +20,12 @@
     { "src": "blog/how-to-spot-crypto-recovery-scam.html", "use": "@vercel/static" },
     { "src": "blog/most-common-crypto-scams-2026.html", "use": "@vercel/static" },
     { "src": "blog/what-is-a-chargeback.html", "use": "@vercel/static" },
-    { "src": "blog/blockchain-forensics-traces-stolen-crypto.html", "use": "@vercel/static" }
+    { "src": "blog/blockchain-forensics-traces-stolen-crypto.html", "use": "@vercel/static" },
+    { "src": "blog/de/was-tun-nach-betrug.html", "use": "@vercel/static" },
+    { "src": "blog/de/krypto-rueckgewinnungsbetrug-erkennen.html", "use": "@vercel/static" },
+    { "src": "blog/de/haeufigste-krypto-betrugsmaschen-2026.html", "use": "@vercel/static" },
+    { "src": "blog/de/was-ist-eine-rueckbuchung.html", "use": "@vercel/static" },
+    { "src": "blog/de/blockchain-forensik-krypto-verfolgen.html", "use": "@vercel/static" }
   ],
   "headers": [
     {
@@ -74,6 +79,16 @@
     { "src": "/blog/what-is-a-chargeback.html", "dest": "/blog/what-is-a-chargeback.html" },
     { "src": "/blog/blockchain-forensics-traces-stolen-crypto", "dest": "/blog/blockchain-forensics-traces-stolen-crypto.html" },
     { "src": "/blog/blockchain-forensics-traces-stolen-crypto.html", "dest": "/blog/blockchain-forensics-traces-stolen-crypto.html" },
+    { "src": "/blog/de/was-tun-nach-betrug", "dest": "/blog/de/was-tun-nach-betrug.html" },
+    { "src": "/blog/de/was-tun-nach-betrug.html", "dest": "/blog/de/was-tun-nach-betrug.html" },
+    { "src": "/blog/de/krypto-rueckgewinnungsbetrug-erkennen", "dest": "/blog/de/krypto-rueckgewinnungsbetrug-erkennen.html" },
+    { "src": "/blog/de/krypto-rueckgewinnungsbetrug-erkennen.html", "dest": "/blog/de/krypto-rueckgewinnungsbetrug-erkennen.html" },
+    { "src": "/blog/de/haeufigste-krypto-betrugsmaschen-2026", "dest": "/blog/de/haeufigste-krypto-betrugsmaschen-2026.html" },
+    { "src": "/blog/de/haeufigste-krypto-betrugsmaschen-2026.html", "dest": "/blog/de/haeufigste-krypto-betrugsmaschen-2026.html" },
+    { "src": "/blog/de/was-ist-eine-rueckbuchung", "dest": "/blog/de/was-ist-eine-rueckbuchung.html" },
+    { "src": "/blog/de/was-ist-eine-rueckbuchung.html", "dest": "/blog/de/was-ist-eine-rueckbuchung.html" },
+    { "src": "/blog/de/blockchain-forensik-krypto-verfolgen", "dest": "/blog/de/blockchain-forensik-krypto-verfolgen.html" },
+    { "src": "/blog/de/blockchain-forensik-krypto-verfolgen.html", "dest": "/blog/de/blockchain-forensik-krypto-verfolgen.html" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]
