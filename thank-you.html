@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
             flex-direction: column;
         }
 
-        /* ── NAV ── */
+        /* -- NAV -- */
         .nav {
             background: #0f172a;
             padding: 0 32px;
@@ -55,7 +55,7 @@
 
         .nav-back:hover { color: #fff; }
 
-        /* ── MAIN ── */
+        /* -- MAIN -- */
         .main {
             flex: 1;
             display: flex;
@@ -107,7 +107,7 @@
             margin-bottom: 36px;
         }
 
-        /* ── STEPS ── */
+        /* -- STEPS -- */
         .steps {
             display: flex;
             flex-direction: column;
@@ -154,7 +154,7 @@
             line-height: 1.5;
         }
 
-        /* ── HIGHLIGHT BOX ── */
+        /* -- HIGHLIGHT BOX -- */
         .highlight {
             background: #eff6ff;
             border: 1.5px solid #bfdbfe;
@@ -169,7 +169,7 @@
 
         .highlight strong { color: #1d4ed8; }
 
-        /* ── CTA ── */
+        /* -- CTA -- */
         .cta-group {
             display: flex;
             gap: 12px;
@@ -207,7 +207,7 @@
 
         .btn-secondary:hover { background: #e2e8f0; }
 
-        /* ── FOOTER ── */
+        /* -- FOOTER -- */
         footer {
             text-align: center;
             padding: 20px;
@@ -229,13 +229,13 @@
             <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal">
             <span>ReclaimGuard Legal</span>
         </a>
-        <a href="/" class="nav-back" id="navBack">← Back to Home</a>
+        <a href="/" class="nav-back" id="navBack">? Back to Home</a>
         <button id="tyLangBtn" onclick="toggleTYLang()" style="background:#1B4FD8;color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:0.82rem;font-weight:700;cursor:pointer;margin-left:12px;">Deutsch</button>
     </nav>
 
     <main class="main">
         <div class="card">
-            <div class="icon-ring">✅</div>
+            <div class="icon-ring">?</div>
 
             <h1 id="tyTitle">Case Received</h1>
             <p class="subtitle" id="tySubtitle">
@@ -267,24 +267,24 @@
             </div>
 
             <div class="highlight" id="tyHighlight">
-                📧 <strong>Check your inbox</strong> a confirmation email is on its way. If you don't see it within a few minutes, please check your spam folder.
+                ?? <strong>Check your inbox</strong> a confirmation email is on its way. If you don't see it within a few minutes, please check your spam folder.
             </div>
 
             <div class="cta-group">
-                <a href="/" class="btn btn-primary" id="tyBtnHome">← Back to Home</a>
+                <a href="/" class="btn btn-primary" id="tyBtnHome">? Back to Home</a>
                 <a href="/#contact" class="btn btn-secondary" id="tyBtnAnother">Submit Another Case</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <span id="tyCopy">© 2025 ReclaimGuard Legal. All rights reserved.</span> &nbsp;·&nbsp;
-        <a href="/privacy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;·&nbsp;
+        <span id="tyCopy">� 2025 ReclaimGuard Legal. All rights reserved.</span> &nbsp;�&nbsp;
+        <a href="/privacy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;�&nbsp;
         <a href="/terms" style="color:#94a3b8;">Terms of Service</a>
     </footer>
 
     <script>
-        // ── Inline translations (no external dependency) ──────────────────
+        // -- Inline translations (no external dependency) ------------------
         const TY = {
             en: {
                 title:      'Case Received',
@@ -295,26 +295,26 @@
                 s2d: 'We will contact you within 24 hours to discuss your case and next steps.',
                 s3t: 'Recovery Plan',
                 s3d: 'You receive a personalised recovery strategy no upfront commitment required.',
-                highlight: '📧 <strong>Check your inbox</strong> a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
-                btnHome:    '← Back to Home',
+                highlight: '?? <strong>Check your inbox</strong> a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
+                btnHome:    '? Back to Home',
                 btnAnother: 'Submit Another Case',
-                navBack:    '← Back to Home',
-                copy:       '© 2026 ReclaimGuard Legal. All rights reserved.',
+                navBack:    '? Back to Home',
+                copy:       '� 2026 ReclaimGuard Legal. All rights reserved.',
             },
             de: {
                 title:      'Anfrage erhalten',
-                subtitle:   'Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und unser Team wird diese in Kürze prüfen.',
-                s1t: 'Fallprüfung',
-                s1d: 'Unsere Spezialisten prüfen die von Ihnen angegebenen Details und beurteilen die besten Rückgewinnungsoptionen.',
+                subtitle:   'Vielen Dank f�r Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und unser Team wird diese in K�rze pr�fen.',
+                s1t: 'Fallpr�fung',
+                s1d: 'Unsere Spezialisten pr�fen die von Ihnen angegebenen Details und beurteilen die besten R�ckgewinnungsoptionen.',
                 s2t: 'Erstberatung',
-                s2d: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
-                s3t: 'Rückgewinnungsplan',
-                s3d: 'Sie erhalten eine persönliche Rückgewinnungsstrategie – keine Verpflichtung im Voraus erforderlich.',
-                highlight: '📧 <strong>Prüfen Sie Ihr E-Mail-Postfach</strong> eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
-                btnHome:    '← Zurück zur Startseite',
+                s2d: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die n�chsten Schritte zu besprechen.',
+                s3t: 'R�ckgewinnungsplan',
+                s3d: 'Sie erhalten eine pers�nliche R�ckgewinnungsstrategie � keine Verpflichtung im Voraus erforderlich.',
+                highlight: '?? <strong>Pr�fen Sie Ihr E-Mail-Postfach</strong> eine Best�tigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, pr�fen Sie bitte Ihren Spam-Ordner.',
+                btnHome:    '? Zur�ck zur Startseite',
                 btnAnother: 'Weiteren Fall einreichen',
-                navBack:    '← Zurück zur Startseite',
-                copy:       '© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+                navBack:    '? Zur�ck zur Startseite',
+                copy:       '� 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
             }
         };
 
@@ -339,7 +339,7 @@
                 : 'Thank You | ReclaimGuard Legal';
         }
 
-        // ── Language detection (same logic as main site) ──────────────────
+        // -- Language detection (same logic as main site) ------------------
         const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
 
         async function detectLang() {
@@ -387,3 +387,4 @@
     </script>
 </body>
 </html>
+

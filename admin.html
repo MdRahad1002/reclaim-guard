@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,7 @@
             min-height: 100vh;
         }
 
-        /* ── TOP BAR ──────────────────────────────────────────── */
+        /* -- TOP BAR -------------------------------------------- */
         .topbar {
             background: var(--navy);
             color: var(--white);
@@ -112,14 +112,14 @@
 
         .btn-logout:hover { background: rgba(255,255,255,0.15); }
 
-        /* ── MAIN LAYOUT ──────────────────────────────────────── */
+        /* -- MAIN LAYOUT ---------------------------------------- */
         .main {
             max-width: 1440px;
             margin: 0 auto;
             padding: 32px 24px;
         }
 
-        /* ── STAT CARDS ───────────────────────────────────────── */
+        /* -- STAT CARDS ----------------------------------------- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -180,7 +180,7 @@
         .stat-card:nth-child(4) .stat-value { color: var(--amber); }
         .stat-card:nth-child(4) .stat-icon  { background: #fef3c7; }
 
-        /* ── TOOLBAR ──────────────────────────────────────────── */
+        /* -- TOOLBAR -------------------------------------------- */
         .toolbar {
             background: var(--white);
             border: 1px solid var(--border);
@@ -252,7 +252,7 @@
 
         .reset-btn:hover { background: var(--border); color: var(--text); }
 
-        /* ── LEADS TABLE CARD ─────────────────────────────────── */
+        /* -- LEADS TABLE CARD ----------------------------------- */
         .leads-card {
             background: var(--white);
             border: 1px solid var(--border);
@@ -330,7 +330,7 @@
             border-color: #15803d;
         }
 
-        /* ── TABLE ────────────────────────────────────────────── */
+        /* -- TABLE ---------------------------------------------- */
         .table-container { overflow-x: auto; }
 
         table { width: 100%; border-collapse: collapse; }
@@ -360,7 +360,7 @@
 
         tbody tr:hover { background: #f8fafc; }
 
-        /* ── BADGES ───────────────────────────────────────────── */
+        /* -- BADGES --------------------------------------------- */
         .badge {
             display: inline-flex;
             align-items: center;
@@ -392,7 +392,7 @@
         .amount-medium { color: var(--amber); font-weight: 600; }
         .amount-low    { color: var(--muted); }
 
-        /* ── ACTION BUTTONS ───────────────────────────────────── */
+        /* -- ACTION BUTTONS ------------------------------------- */
         .actions { display: flex; gap: 6px; }
 
         .action-btn {
@@ -413,7 +413,7 @@
         .btn-delete { border-color: #fecaca; color: #b91c1c; background: #fff1f2; }
         .btn-delete:hover { background: #b91c1c; color: #fff; border-color: #b91c1c; }
 
-        /* ── PAGINATION ───────────────────────────────────────── */
+        /* -- PAGINATION ----------------------------------------- */
         .pagination {
             display: flex;
             justify-content: center;
@@ -442,7 +442,7 @@
         .page-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
         .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-        /* ── MODALS ───────────────────────────────────────────── */
+        /* -- MODALS --------------------------------------------- */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -572,13 +572,13 @@
         .modal-btn-danger    { background: #fff1f2; color: var(--red); border: 1.5px solid #fecaca; }
         .modal-btn-danger:hover    { background: var(--red); color: var(--white); border-color: var(--red); }
 
-        /* ── LOGIN CARD ───────────────────────────────────────── */
+        /* -- LOGIN CARD ----------------------------------------- */
         .login-logo { text-align: center; margin-bottom: 24px; }
         .login-logo .login-icon { font-size: 2.5rem; margin-bottom: 10px; }
         .login-logo h2 { color: var(--navy); font-size: 1.4rem; }
         .login-logo p  { color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
 
-        /* ── TOAST ────────────────────────────────────────────── */
+        /* -- TOAST ---------------------------------------------- */
         .toast {
             position: fixed;
             bottom: 28px;
@@ -603,7 +603,7 @@
             to   { transform: translateY(0);    opacity: 1; }
         }
 
-        /* ── EMPTY / LOADING ──────────────────────────────────── */
+        /* -- EMPTY / LOADING ------------------------------------ */
         .table-empty {
             text-align: center;
             padding: 64px 24px;
@@ -613,7 +613,7 @@
         .table-empty .empty-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.4; }
         .table-empty p { font-size: 0.95rem; }
 
-        /* ── RESPONSIVE ───────────────────────────────────────── */
+        /* -- RESPONSIVE ----------------------------------------- */
         @media (max-width: 1100px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -639,7 +639,7 @@
     <!-- TOP BAR -->
     <header class="topbar">
         <div class="topbar-left">
-            <div class="topbar-logo">⚖️</div>
+            <div class="topbar-logo">??</div>
             <div>
                 <div class="topbar-title">ReclaimGuard Legal</div>
                 <div class="topbar-subtitle">Admin Dashboard</div>
@@ -647,7 +647,7 @@
         </div>
         <div class="topbar-right">
             <div class="topbar-user">
-                <strong id="adminUsername">—</strong>
+                <strong id="adminUsername">�</strong>
                 <span id="adminRole">Administrator</span>
             </div>
             <button class="btn-logout" onclick="logout()">Sign Out</button>
@@ -660,31 +660,31 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="totalLeads">—</div>
+                    <div class="stat-value" id="totalLeads">�</div>
                     <div class="stat-label">Total Leads</div>
                 </div>
-                <div class="stat-icon">📋</div>
+                <div class="stat-icon">??</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="newLeads">—</div>
+                    <div class="stat-value" id="newLeads">�</div>
                     <div class="stat-label">New Leads</div>
                 </div>
-                <div class="stat-icon">🆕</div>
+                <div class="stat-icon">??</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="qualifiedLeads">—</div>
+                    <div class="stat-value" id="qualifiedLeads">�</div>
                     <div class="stat-label">Qualified</div>
                 </div>
-                <div class="stat-icon">✅</div>
+                <div class="stat-icon">?</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="highValueLeads">—</div>
-                    <div class="stat-label">High-Value (€5k+)</div>
+                    <div class="stat-value" id="highValueLeads">�</div>
+                    <div class="stat-label">High-Value (�5k+)</div>
                 </div>
-                <div class="stat-icon">💰</div>
+                <div class="stat-icon">??</div>
             </div>
         </div>
 
@@ -718,18 +718,18 @@
                     <label>Amount Range</label>
                     <select id="filterAmount" onchange="applyFilters()">
                         <option value="">All Amounts</option>
-                        <option value="under-1000">Under €1,000</option>
-                        <option value="1000-5000">€1,000 – 5,000</option>
-                        <option value="5000-25000">€5,000 – 25,000</option>
-                        <option value="25000-100000">€25,000 – 100,000</option>
-                        <option value="100000+">Over €100,000</option>
+                        <option value="under-1000">Under �1,000</option>
+                        <option value="1000-5000">�1,000 � 5,000</option>
+                        <option value="5000-25000">�5,000 � 25,000</option>
+                        <option value="25000-100000">�25,000 � 100,000</option>
+                        <option value="100000+">Over �100,000</option>
                     </select>
                 </div>
                 <div class="filter-item">
                     <label>Search</label>
-                    <input type="text" id="searchInput" placeholder="Name, email or phone…" oninput="debounceFilter()">
+                    <input type="text" id="searchInput" placeholder="Name, email or phone�" oninput="debounceFilter()">
                 </div>
-                <button class="reset-btn" onclick="resetFilters()">↺ Reset</button>
+                <button class="reset-btn" onclick="resetFilters()">? Reset</button>
             </div>
         </div>
 
@@ -738,17 +738,17 @@
             <div class="table-header">
                 <div class="table-header-left">
                     <h2>All Leads</h2>
-                    <span class="leads-count" id="leadsCount">—</span>
+                    <span class="leads-count" id="leadsCount">�</span>
                 </div>
                 <div class="export-group">
                     <button class="export-btn export-btn-csv" onclick="loadDashboard()" title="Refresh leads" style="color:var(--blue);border-color:#bfdbfe;background:#eff6ff;">
-                        ↻ Refresh
+                        ? Refresh
                     </button>
                     <button class="export-btn export-btn-csv" onclick="exportCSV()">
-                        ⬇ CSV
+                        ? CSV
                     </button>
                     <button class="export-btn export-btn-excel" onclick="exportExcel()">
-                        📊 Excel
+                        ?? Excel
                     </button>
                 </div>
             </div>
@@ -769,7 +769,7 @@
                         </tr>
                     </thead>
                     <tbody id="leadsTableBody">
-                        <tr><td colspan="10" class="table-empty"><div class="empty-icon">⏳</div><p>Loading leads…</p></td></tr>
+                        <tr><td colspan="10" class="table-empty"><div class="empty-icon">?</div><p>Loading leads�</p></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -779,7 +779,7 @@
     </main>
 
     <script>
-        // ── CONFIG ────────────────────────────────────────────────
+        // -- CONFIG ------------------------------------------------
         const API_URL  = '/api';
         const PAGE_SIZE = 20;
 
@@ -790,13 +790,13 @@
         let currentFilters = {};
         let filterTimer   = null;
 
-        // ── BOOT ──────────────────────────────────────────────────
+        // -- BOOT --------------------------------------------------
         window.addEventListener('DOMContentLoaded', () => {
             if (!authToken) showLoginModal();
             else verifyToken();
         });
 
-        // ── AUTH ──────────────────────────────────────────────────
+        // -- AUTH --------------------------------------------------
         function showLoginModal() {
             const overlay = document.createElement('div');
             overlay.className = 'modal-overlay';
@@ -804,7 +804,7 @@
             overlay.innerHTML = `
                 <div class="modal-box" style="width:420px;">
                     <div class="login-logo">
-                        <div class="login-icon">🔐</div>
+                        <div class="login-icon">??</div>
                         <h2>Admin Login</h2>
                         <p>ReclaimGuard Legal Dashboard</p>
                     </div>
@@ -815,10 +815,10 @@
                         </div>
                         <div class="modal-form-group">
                             <label>Password</label>
-                            <input type="password" id="loginPass" required autocomplete="current-password" placeholder="••••••••">
+                            <input type="password" id="loginPass" required autocomplete="current-password" placeholder="��������">
                         </div>
                         <div class="modal-actions" style="margin-top:8px;">
-                            <button type="submit" class="modal-btn modal-btn-primary" style="width:100%;text-align:center;">Sign In →</button>
+                            <button type="submit" class="modal-btn modal-btn-primary" style="width:100%;text-align:center;">Sign In ?</button>
                         </div>
                         <div id="loginError" style="color:#dc2626;margin-top:12px;text-align:center;font-size:0.88rem;display:none;background:#fff1f2;padding:10px;border-radius:8px;"></div>
                     </form>
@@ -828,10 +828,10 @@
             document.getElementById('loginForm').addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const btn = e.target.querySelector('button[type="submit"]');
-                btn.textContent = 'Signing in…';
+                btn.textContent = 'Signing in�';
                 btn.disabled = true;
                 await doLogin(document.getElementById('loginUser').value, document.getElementById('loginPass').value);
-                btn.textContent = 'Sign In →';
+                btn.textContent = 'Sign In ?';
                 btn.disabled = false;
             });
             document.getElementById('loginUser').focus();
@@ -886,7 +886,7 @@
             location.reload();
         }
 
-        // ── DASHBOARD ─────────────────────────────────────────────
+        // -- DASHBOARD ---------------------------------------------
         async function loadDashboard() {
             await loadLeads();
         }
@@ -906,9 +906,9 @@
                     // Update stat cards from API stats object
                     if (data.stats) {
                         document.getElementById('totalLeads').textContent     = data.stats.total     ?? allLeads.length;
-                        document.getElementById('newLeads').textContent       = data.stats.new       ?? '—';
-                        document.getElementById('qualifiedLeads').textContent = data.stats.qualified ?? '—';
-                        document.getElementById('highValueLeads').textContent = data.stats.highValue ?? '—';
+                        document.getElementById('newLeads').textContent       = data.stats.new       ?? '�';
+                        document.getElementById('qualifiedLeads').textContent = data.stats.qualified ?? '�';
+                        document.getElementById('highValueLeads').textContent = data.stats.highValue ?? '�';
                     }
                     applyClientFilters();
                 } else if (res.status === 401) {
@@ -918,15 +918,15 @@
                 } else {
                     const errMsg = data.error || `Server error ${res.status}`;
                     document.getElementById('leadsTableBody').innerHTML =
-                        `<tr><td colspan="10" class="table-empty"><div class="empty-icon">⚠️</div><p><strong>${errMsg}</strong></p></td></tr>`;
+                        `<tr><td colspan="10" class="table-empty"><div class="empty-icon">??</div><p><strong>${errMsg}</strong></p></td></tr>`;
                 }
             } catch (err) {
                 document.getElementById('leadsTableBody').innerHTML =
-                    `<tr><td colspan="10" class="table-empty"><div class="empty-icon">⚠️</div><p>Cannot reach server. Check your connection.</p></td></tr>`;
+                    `<tr><td colspan="10" class="table-empty"><div class="empty-icon">??</div><p>Cannot reach server. Check your connection.</p></td></tr>`;
             }
         }
 
-        // ── CLIENT-SIDE FILTER ────────────────────────────────────
+        // -- CLIENT-SIDE FILTER ------------------------------------
         function applyClientFilters() {
             const status    = document.getElementById('filterStatus').value;
             const fraudType = document.getElementById('filterFraudType').value;
@@ -965,7 +965,7 @@
             applyClientFilters();
         }
 
-        // ── TABLE RENDER ──────────────────────────────────────────
+        // -- TABLE RENDER ------------------------------------------
         function renderTable() {
             const tbody = document.getElementById('leadsTableBody');
             const start = (currentPage - 1) * PAGE_SIZE;
@@ -974,7 +974,7 @@
             if (currentLeads.length === 0) {
                 tbody.innerHTML = `
                     <tr><td colspan="10" class="table-empty">
-                        <div class="empty-icon">🔍</div>
+                        <div class="empty-icon">??</div>
                         <p>No leads match your current filters.</p>
                     </td></tr>`;
                 return;
@@ -1016,15 +1016,15 @@
             const pg    = document.getElementById('pagination');
             if (pages <= 1) { pg.innerHTML = ''; return; }
 
-            let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
+            let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>�</button>`;
             const start = Math.max(1, currentPage - 2);
             const end   = Math.min(pages, currentPage + 2);
-            if (start > 1) html += `<button class="page-btn" onclick="goPage(1)">1</button>${start > 2 ? '<span style="padding:0 4px;color:var(--muted);">…</span>' : ''}`;
+            if (start > 1) html += `<button class="page-btn" onclick="goPage(1)">1</button>${start > 2 ? '<span style="padding:0 4px;color:var(--muted);">�</span>' : ''}`;
             for (let i = start; i <= end; i++) {
                 html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
             }
-            if (end < pages) html += `${end < pages - 1 ? '<span style="padding:0 4px;color:var(--muted);">…</span>' : ''}<button class="page-btn" onclick="goPage(${pages})">${pages}</button>`;
-            html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>›</button>`;
+            if (end < pages) html += `${end < pages - 1 ? '<span style="padding:0 4px;color:var(--muted);">�</span>' : ''}<button class="page-btn" onclick="goPage(${pages})">${pages}</button>`;
+            html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>�</button>`;
             pg.innerHTML = html;
         }
 
@@ -1037,16 +1037,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ── VIEW MODAL ────────────────────────────────────────────
+        // -- VIEW MODAL --------------------------------------------
         async function viewLead(id) {
             const l = allLeads.find(x => x.id === id);
             if (!l) { showToast('Lead not found', 'error'); return; }
             openModal(`
-                <button class="modal-close" onclick="closeModal()">×</button>
+                <button class="modal-close" onclick="closeModal()">�</button>
                 <h2>Lead #${l.id} ${esc(l.name)}</h2>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
                     <div class="modal-field"><strong>Email</strong><br>${esc(l.email)}</div>
-                    <div class="modal-field"><strong>Phone</strong><br>${esc(l.phone||'—')}</div>
+                    <div class="modal-field"><strong>Phone</strong><br>${esc(l.phone||'�')}</div>
                     <div class="modal-field"><strong>Amount Lost</strong><br><span class="amount-${getAmountClass(l.amount)}">${esc(l.amount)}</span></div>
                     <div class="modal-field"><strong>Fraud Type</strong><br>${fmtFraudType(l.scamType)}</div>
                     <div class="modal-field"><strong>When</strong><br>${fmtWhen(l.when)}</div>
@@ -1068,17 +1068,17 @@
             `);
         }
 
-        // ── EDIT MODAL ────────────────────────────────────────────
+        // -- EDIT MODAL --------------------------------------------
         function editLead(id) {
             const l = allLeads.find(x => x.id === id);
             if (!l) return;
             const statusOpts = ['new','contacted','qualified','in-progress','closed','rejected'];
             const priorityOpts = ['high','medium','low'];
             openModal(`
-                <button class="modal-close" onclick="closeModal()">×</button>
+                <button class="modal-close" onclick="closeModal()">�</button>
                 <h2>Edit Lead ${esc(l.name)}</h2>
                 <div style="background:var(--slate);border-radius:8px;padding:12px 14px;margin-bottom:20px;font-size:0.85rem;color:var(--muted);">
-                    <strong style="color:var(--text);">${esc(l.email)}</strong> · ${esc(l.amount)} lost · submitted ${fmtDate(l.createdAt)}
+                    <strong style="color:var(--text);">${esc(l.email)}</strong> � ${esc(l.amount)} lost � submitted ${fmtDate(l.createdAt)}
                 </div>
                 <div class="modal-form-group">
                     <label>Status</label>
@@ -1094,7 +1094,7 @@
                 </div>
                 <div class="modal-form-group">
                     <label>Internal Notes</label>
-                    <textarea id="editNotes" rows="4" placeholder="Add case notes, follow-up actions…">${esc(l.notes||'')}</textarea>
+                    <textarea id="editNotes" rows="4" placeholder="Add case notes, follow-up actions�">${esc(l.notes||'')}</textarea>
                 </div>
                 <div class="modal-actions">
                     <button class="modal-btn modal-btn-primary"   onclick="saveEdit(${l.id})">Save Changes</button>
@@ -1124,10 +1124,10 @@
             } catch { showToast('Server error', 'error'); }
         }
 
-        // ── DELETE ────────────────────────────────────────────────
+        // -- DELETE ------------------------------------------------
         function deleteLead(id, name) {
             openModal(`
-                <button class="modal-close" onclick="closeModal()">×</button>
+                <button class="modal-close" onclick="closeModal()">�</button>
                 <h2>Delete Lead?</h2>
                 <p style="color:var(--muted);margin-bottom:24px;line-height:1.6;">
                     Permanently delete the lead for <strong style="color:var(--text);">${esc(name)}</strong>? This action cannot be undone.
@@ -1155,7 +1155,7 @@
             } catch { showToast('Server error', 'error'); }
         }
 
-        // ── EXPORT CSV ────────────────────────────────────────────
+        // -- EXPORT CSV --------------------------------------------
         async function exportCSV() {
             try {
                 const res = await fetch(`${API_URL}/leads/export/csv`, {
@@ -1168,7 +1168,7 @@
             } catch { showToast('Export error', 'error'); }
         }
 
-        // ── EXPORT EXCEL ──────────────────────────────────────────
+        // -- EXPORT EXCEL ------------------------------------------
         function exportExcel() {
             if (!allLeads.length) { showToast('No leads to export', ''); return; }
             if (typeof XLSX === 'undefined') { showToast('Excel library not loaded', 'error'); return; }
@@ -1202,7 +1202,7 @@
             showToast('Excel downloaded', 'success');
         }
 
-        // ── MODAL HELPERS ─────────────────────────────────────────
+        // -- MODAL HELPERS -----------------------------------------
         function openModal(html) {
             closeModal();
             const overlay = document.createElement('div');
@@ -1218,7 +1218,7 @@
             if (m) m.remove();
         }
 
-        // ── TOAST ─────────────────────────────────────────────────
+        // -- TOAST -------------------------------------------------
         function showToast(msg, type = '') {
             const t = document.createElement('div');
             t.className = `toast ${type}`;
@@ -1227,7 +1227,7 @@
             setTimeout(() => t.remove(), 3000);
         }
 
-        // ── UTILS ─────────────────────────────────────────────────
+        // -- UTILS -------------------------------------------------
         function esc(str) {
             return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
         }
@@ -1254,30 +1254,30 @@
         }
 
         function fmtFraudType(t) {
-            return ({crypto:'Crypto Scam',broker:'Fake Trading',bank:'Bank Transfer',card:'Card Fraud',other:'Other'})[t] || t || '—';
+            return ({crypto:'Crypto Scam',broker:'Fake Trading',bank:'Bank Transfer',card:'Card Fraud',other:'Other'})[t] || t || '�';
         }
 
         function fmtWhen(w) {
             return ({
                 '7days':'Within 7 days',
-                '1-4weeks':'1–4 weeks',
-                '1-3months':'1–3 months',
-                '3-6months':'3–6 months',
-                '6-12months':'6–12 months',
+                '1-4weeks':'1�4 weeks',
+                '1-3months':'1�3 months',
+                '3-6months':'3�6 months',
+                '6-12months':'6�12 months',
                 '1+year':'Over 1 year'
-            })[w] || w || '—';
+            })[w] || w || '�';
         }
 
         function fmtPayment(p) {
-            return ({crypto:'Crypto',card:'Card',bank:'Bank transfer',other:'Other'})[p] || p || '—';
+            return ({crypto:'Crypto',card:'Card',bank:'Bank transfer',other:'Other'})[p] || p || '�';
         }
 
-        // ── AUTO REFRESH (60s) ────────────────────────────────────
+        // -- AUTO REFRESH (60s) ------------------------------------
         setInterval(() => {
             if (authToken && !document.getElementById('activeModal')) loadLeads();
         }, 60000);
 
-        // ── KEYBOARD ─────────────────────────────────────────────
+        // -- KEYBOARD ---------------------------------------------
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeModal();
             if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
