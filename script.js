@@ -105,17 +105,11 @@ if (contactForm) {
                 // Redirect to thank-you page
                 window.location.href = '/thank-you';
             } else {
-                alert('❌ ' + (result.error || 'There was an error submitting your form. Please try again or contact us directly at info@reclaimguard.legal'));
+                alert('❌ ' + (result.error || 'There was an error submitting your form. Please try again or contact us directly at support@reclaim-guard.com'));
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('❌ Could not connect to server. Please ensure the server is running or contact us directly at info@reclaimguard.legal');
-        } finally {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
+            alert('❌ Could not connect to server. Please ensure the server is running or contact us directly at support@reclaim-guard.com');
 
 // ================================
 // Navbar Background on Scroll
