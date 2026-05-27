@@ -110,6 +110,12 @@ if (contactForm) {
         } catch (error) {
             console.error('Error:', error);
             alert('❌ Could not connect to server. Please ensure the server is running or contact us directly at support@reclaim-guard.com');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
 
 // ================================
 // Navbar Background on Scroll
