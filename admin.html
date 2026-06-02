@@ -639,7 +639,7 @@
     <!-- TOP BAR -->
     <header class="topbar">
         <div class="topbar-left">
-            <div class="topbar-logo">??</div>
+            <div class="topbar-logo">‚ö°</div>
             <div>
                 <div class="topbar-title">ReclaimGuard Legal</div>
                 <div class="topbar-subtitle">Admin Dashboard</div>
@@ -647,7 +647,7 @@
         </div>
         <div class="topbar-right">
             <div class="topbar-user">
-                <strong id="adminUsername">ó</strong>
+                <strong id="adminUsername">Admin</strong>
                 <span id="adminRole">Administrator</span>
             </div>
             <button class="btn-logout" onclick="logout()">Sign Out</button>
@@ -660,31 +660,31 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="totalLeads">ó</div>
+                    <div class="stat-value" id="totalLeads">0</div>
                     <div class="stat-label">Total Leads</div>
                 </div>
-                <div class="stat-icon">??</div>
+                <div class="stat-icon">üìà</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="newLeads">ó</div>
+                    <div class="stat-value" id="newLeads">0</div>
                     <div class="stat-label">New Leads</div>
                 </div>
-                <div class="stat-icon">??</div>
+                <div class="stat-icon">‚ú®</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="qualifiedLeads">ó</div>
+                    <div class="stat-value" id="qualifiedLeads">0</div>
                     <div class="stat-label">Qualified</div>
                 </div>
-                <div class="stat-icon">?</div>
+                <div class="stat-icon">‚úÖ</div>
             </div>
             <div class="stat-card">
                 <div class="stat-info">
-                    <div class="stat-value" id="highValueLeads">ó</div>
-                    <div class="stat-label">High-Value (Ä5k+)</div>
+                    <div class="stat-value" id="highValueLeads">0</div>
+                    <div class="stat-label">High-Value (¬£5k+)</div>
                 </div>
-                <div class="stat-icon">??</div>
+                <div class="stat-icon">üí∞</div>
             </div>
         </div>
 
@@ -718,18 +718,18 @@
                     <label>Amount Range</label>
                     <select id="filterAmount" onchange="applyFilters()">
                         <option value="">All Amounts</option>
-                        <option value="under-1000">Under Ä1,000</option>
-                        <option value="1000-5000">Ä1,000 ñ 5,000</option>
-                        <option value="5000-25000">Ä5,000 ñ 25,000</option>
-                        <option value="25000-100000">Ä25,000 ñ 100,000</option>
-                        <option value="100000+">Over Ä100,000</option>
+                        <option value="under-1000">Under ¬£1,000</option>
+                        <option value="1000-5000">¬£1,000 - ¬£5,000</option>
+                        <option value="5000-25000">¬£5,000 - ¬£25,000</option>
+                        <option value="25000-100000">¬£25,000 - ¬£100,000</option>
+                        <option value="100000+">Over ¬£100,000</option>
                     </select>
                 </div>
                 <div class="filter-item">
                     <label>Search</label>
-                    <input type="text" id="searchInput" placeholder="Name, email or phoneÖ" oninput="debounceFilter()">
+                    <input type="text" id="searchInput" placeholder="Name, email, or phone" oninput="debounceFilter()">
                 </div>
-                <button class="reset-btn" onclick="resetFilters()">? Reset</button>
+                <button class="reset-btn" onclick="resetFilters()">üîÑ Reset</button>
             </div>
         </div>
 
@@ -738,17 +738,17 @@
             <div class="table-header">
                 <div class="table-header-left">
                     <h2>All Leads</h2>
-                    <span class="leads-count" id="leadsCount">ó</span>
+                    <span class="leads-count" id="leadsCount">0 leads</span>
                 </div>
                 <div class="export-group">
                     <button class="export-btn export-btn-csv" onclick="loadDashboard()" title="Refresh leads" style="color:var(--blue);border-color:#bfdbfe;background:#eff6ff;">
-                        ? Refresh
+                        ‚ü≥ Refresh
                     </button>
                     <button class="export-btn export-btn-csv" onclick="exportCSV()">
-                        ? CSV
+                        üìÑ CSV
                     </button>
                     <button class="export-btn export-btn-excel" onclick="exportExcel()">
-                        ?? Excel
+                        üìä Excel
                     </button>
                 </div>
             </div>
@@ -769,7 +769,7 @@
                         </tr>
                     </thead>
                     <tbody id="leadsTableBody">
-                        <tr><td colspan="10" class="table-empty"><div class="empty-icon">?</div><p>Loading leadsÖ</p></td></tr>
+                        <tr><td colspan="10" class="table-empty"><div class="empty-icon">‚ö†Ô∏è</div><p>Loading leads...</p></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -804,7 +804,7 @@
             overlay.innerHTML = `
                 <div class="modal-box" style="width:420px;">
                     <div class="login-logo">
-                        <div class="login-icon">??</div>
+                        <div class="login-icon">üîê</div>
                         <h2>Admin Login</h2>
                         <p>ReclaimGuard Legal Dashboard</p>
                     </div>
@@ -815,10 +815,10 @@
                         </div>
                         <div class="modal-form-group">
                             <label>Password</label>
-                            <input type="password" id="loginPass" required autocomplete="current-password" placeholder="ïïïïïïïï">
+                            <input type="password" id="loginPass" required autocomplete="current-password" placeholder="Enter password">
                         </div>
                         <div class="modal-actions" style="margin-top:8px;">
-                            <button type="submit" class="modal-btn modal-btn-primary" style="width:100%;text-align:center;">Sign In ?</button>
+                            <button type="submit" class="modal-btn modal-btn-primary" style="width:100%;text-align:center;">Sign In</button>
                         </div>
                         <div id="loginError" style="color:#dc2626;margin-top:12px;text-align:center;font-size:0.88rem;display:none;background:#fff1f2;padding:10px;border-radius:8px;"></div>
                     </form>
@@ -828,10 +828,10 @@
             document.getElementById('loginForm').addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const btn = e.target.querySelector('button[type="submit"]');
-                btn.textContent = 'Signing inÖ';
+                btn.textContent = 'Signing in...';
                 btn.disabled = true;
                 await doLogin(document.getElementById('loginUser').value, document.getElementById('loginPass').value);
-                btn.textContent = 'Sign In ?';
+                btn.textContent = 'Sign In';
                 btn.disabled = false;
             });
             document.getElementById('loginUser').focus();
@@ -906,9 +906,9 @@
                     // Update stat cards from API stats object
                     if (data.stats) {
                         document.getElementById('totalLeads').textContent     = data.stats.total     ?? allLeads.length;
-                        document.getElementById('newLeads').textContent       = data.stats.new       ?? 'ó';
-                        document.getElementById('qualifiedLeads').textContent = data.stats.qualified ?? 'ó';
-                        document.getElementById('highValueLeads').textContent = data.stats.highValue ?? 'ó';
+                        document.getElementById('newLeads').textContent       = data.stats.new       ?? '0';
+                        document.getElementById('qualifiedLeads').textContent = data.stats.qualified ?? '0';
+                        document.getElementById('highValueLeads').textContent = data.stats.highValue ?? '0';
                     }
                     applyClientFilters();
                 } else if (res.status === 401) {
@@ -918,11 +918,11 @@
                 } else {
                     const errMsg = data.error || `Server error ${res.status}`;
                     document.getElementById('leadsTableBody').innerHTML =
-                        `<tr><td colspan="10" class="table-empty"><div class="empty-icon">??</div><p><strong>${errMsg}</strong></p></td></tr>`;
+                        `<tr><td colspan="10" class="table-empty"><div class="empty-icon">‚ö†Ô∏è</div><p><strong>${errMsg}</strong></p></td></tr>`;
                 }
             } catch (err) {
                 document.getElementById('leadsTableBody').innerHTML =
-                    `<tr><td colspan="10" class="table-empty"><div class="empty-icon">??</div><p>Cannot reach server. Check your connection.</p></td></tr>`;
+                    `<tr><td colspan="10" class="table-empty"><div class="empty-icon">‚ö†Ô∏è</div><p>Cannot reach server. Check your connection.</p></td></tr>`;
             }
         }
 
@@ -974,7 +974,7 @@
             if (currentLeads.length === 0) {
                 tbody.innerHTML = `
                     <tr><td colspan="10" class="table-empty">
-                        <div class="empty-icon">??</div>
+                        <div class="empty-icon">‚ö†Ô∏è</div>
                         <p>No leads match your current filters.</p>
                     </td></tr>`;
                 return;
@@ -1016,15 +1016,15 @@
             const pg    = document.getElementById('pagination');
             if (pages <= 1) { pg.innerHTML = ''; return; }
 
-            let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>ã</button>`;
+            let html = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‚Äπ</button>`;
             const start = Math.max(1, currentPage - 2);
             const end   = Math.min(pages, currentPage + 2);
-            if (start > 1) html += `<button class="page-btn" onclick="goPage(1)">1</button>${start > 2 ? '<span style="padding:0 4px;color:var(--muted);">Ö</span>' : ''}`;
+            if (start > 1) html += `<button class="page-btn" onclick="goPage(1)">1</button>${start > 2 ? '<span style="padding:0 4px;color:var(--muted);">‚Ä¶</span>' : ''}`;
             for (let i = start; i <= end; i++) {
                 html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
             }
-            if (end < pages) html += `${end < pages - 1 ? '<span style="padding:0 4px;color:var(--muted);">Ö</span>' : ''}<button class="page-btn" onclick="goPage(${pages})">${pages}</button>`;
-            html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>õ</button>`;
+            if (end < pages) html += `${end < pages - 1 ? '<span style="padding:0 4px;color:var(--muted);">‚Ä¶</span>' : ''}<button class="page-btn" onclick="goPage(${pages})">${pages}</button>`;
+            html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>‚Ä∫</button>`;
             pg.innerHTML = html;
         }
 
@@ -1042,11 +1042,11 @@
             const l = allLeads.find(x => x.id === id);
             if (!l) { showToast('Lead not found', 'error'); return; }
             openModal(`
-                <button class="modal-close" onclick="closeModal()">◊</button>
+                <button class="modal-close" onclick="closeModal()">‚úï</button>
                 <h2>Lead #${l.id} ${esc(l.name)}</h2>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
                     <div class="modal-field"><strong>Email</strong><br>${esc(l.email)}</div>
-                    <div class="modal-field"><strong>Phone</strong><br>${esc(l.phone||'ó')}</div>
+                    <div class="modal-field"><strong>Phone</strong><br>${esc(l.phone||'N/A')}</div>
                     <div class="modal-field"><strong>Amount Lost</strong><br><span class="amount-${getAmountClass(l.amount)}">${esc(l.amount)}</span></div>
                     <div class="modal-field"><strong>Fraud Type</strong><br>${fmtFraudType(l.scamType)}</div>
                     <div class="modal-field"><strong>When</strong><br>${fmtWhen(l.when)}</div>
@@ -1075,10 +1075,10 @@
             const statusOpts = ['new','contacted','qualified','in-progress','closed','rejected'];
             const priorityOpts = ['high','medium','low'];
             openModal(`
-                <button class="modal-close" onclick="closeModal()">◊</button>
+                <button class="modal-close" onclick="closeModal()">‚úï</button>
                 <h2>Edit Lead ${esc(l.name)}</h2>
                 <div style="background:var(--slate);border-radius:8px;padding:12px 14px;margin-bottom:20px;font-size:0.85rem;color:var(--muted);">
-                    <strong style="color:var(--text);">${esc(l.email)}</strong> ∑ ${esc(l.amount)} lost ∑ submitted ${fmtDate(l.createdAt)}
+                    <strong style="color:var(--text);">${esc(l.email)}</strong> ‚Ä¢ ${esc(l.amount)} lost ‚Ä¢ submitted ${fmtDate(l.createdAt)}
                 </div>
                 <div class="modal-form-group">
                     <label>Status</label>
@@ -1094,7 +1094,7 @@
                 </div>
                 <div class="modal-form-group">
                     <label>Internal Notes</label>
-                    <textarea id="editNotes" rows="4" placeholder="Add case notes, follow-up actionsÖ">${esc(l.notes||'')}</textarea>
+                    <textarea id="editNotes" rows="4" placeholder="Add case notes, follow-up actions...">${esc(l.notes||'')}</textarea>
                 </div>
                 <div class="modal-actions">
                     <button class="modal-btn modal-btn-primary"   onclick="saveEdit(${l.id})">Save Changes</button>
@@ -1127,7 +1127,7 @@
         // -- DELETE ------------------------------------------------
         function deleteLead(id, name) {
             openModal(`
-                <button class="modal-close" onclick="closeModal()">◊</button>
+                <button class="modal-close" onclick="closeModal()">‚úï</button>
                 <h2>Delete Lead?</h2>
                 <p style="color:var(--muted);margin-bottom:24px;line-height:1.6;">
                     Permanently delete the lead for <strong style="color:var(--text);">${esc(name)}</strong>? This action cannot be undone.
@@ -1254,22 +1254,22 @@
         }
 
         function fmtFraudType(t) {
-            return ({crypto:'Crypto Scam',broker:'Fake Trading',bank:'Bank Transfer',card:'Card Fraud',other:'Other'})[t] || t || 'ó';
+            return ({crypto:'Crypto Scam',broker:'Fake Trading',bank:'Bank Transfer',card:'Card Fraud',other:'Other'})[t] || t || 'Unknown';
         }
 
         function fmtWhen(w) {
             return ({
                 '7days':'Within 7 days',
-                '1-4weeks':'1ñ4 weeks',
-                '1-3months':'1ñ3 months',
-                '3-6months':'3ñ6 months',
-                '6-12months':'6ñ12 months',
+                '1-4weeks':'1-4 weeks',
+                '1-3months':'1-3 months',
+                '3-6months':'3-6 months',
+                '6-12months':'6-12 months',
                 '1+year':'Over 1 year'
-            })[w] || w || 'ó';
+            })[w] || w || 'Unknown';
         }
 
         function fmtPayment(p) {
-            return ({crypto:'Crypto',card:'Card',bank:'Bank transfer',other:'Other'})[p] || p || 'ó';
+            return ({crypto:'Crypto',card:'Card',bank:'Bank transfer',other:'Other'})[p] || p || 'Unknown';
         }
 
         // -- AUTO REFRESH (60s) ------------------------------------
@@ -1288,3 +1288,4 @@
     </script>
 </body>
 </html>
+
