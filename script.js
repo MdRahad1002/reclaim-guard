@@ -380,49 +380,9 @@ function debounce(func, wait) {
 }
 
 // ================================
-// Cookie Consent (Optional)
+// Cookie Consent
 // ================================
-function showCookieConsent() {
-    if (!localStorage.getItem('cookieConsent')) {
-        const consent = document.createElement('div');
-        consent.style.cssText = `
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #1a1a2e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            z-index: 9999;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
-        `;
-        consent.innerHTML = `
-            <p style="margin-bottom: 10px;">
-                We use cookies to improve your experience. By using our site, you agree to our use of cookies.
-                <a href="#privacy" style="color: #0066FF; text-decoration: underline;">Learn more</a>
-            </p>
-            <button id="acceptCookies" style="
-                background: #0066FF;
-                color: white;
-                border: none;
-                padding: 10px 30px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-weight: 600;
-            ">Accept</button>
-        `;
-        document.body.appendChild(consent);
-        
-        document.getElementById('acceptCookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'true');
-            consent.remove();
-        });
-    }
-}
-
-// Show cookie consent after a delay
-setTimeout(showCookieConsent, 2000);
+// Handled by analytics.js (Google Consent Mode v2 Accept/Reject banner).
 
 // ================================
 // Print Page Optimization
