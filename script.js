@@ -74,7 +74,10 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
+        // Validate all fields (both steps) before submitting
+        if (!validateScope(contactForm)) return;
+
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData.entries());
@@ -116,6 +119,58 @@ if (contactForm) {
         }
     });
 }
+
+// ================================
+// Multi-step Contact Form
+// ================================
+// Validate every required field inside `scope`; focus + report the first
+// invalid one. Works with the form's `novalidate` attribute (hidden steps
+// would otherwise throw "invalid control is not focusable" on submit).
+function validateScope(scope) {
+    const fields = scope.querySelectorAll('input[required], select[required], textarea[required]');
+    for (const field of fields) {
+        if (!field.checkValidity()) {
+            field.reportValidity();
+            field.focus();
+            return false;
+        }
+    }
+    return true;
+}
+
+(function initMultiStepForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const steps = form.querySelectorAll('.form-step');
+    const indicators = form.querySelectorAll('.form-step-indicator');
+    const fill = form.querySelector('#formProgressFill');
+    const continueBtn = form.querySelector('.form-continue-btn');
+    const backBtn = form.querySelector('.form-back-btn');
+    if (steps.length < 2 || !continueBtn) return;
+
+    function showStep(n) {
+        steps.forEach(s => { s.style.display = (s.dataset.step === String(n)) ? '' : 'none'; });
+        indicators.forEach(i => { i.style.display = (i.dataset.step === String(n)) ? '' : 'none'; });
+        if (fill) fill.style.width = (n === 2) ? '100%' : '50%';
+    }
+
+    continueBtn.addEventListener('click', () => {
+        const step1 = form.querySelector('.form-step[data-step="1"]');
+        if (!validateScope(step1)) return;
+        showStep(2);
+        // Bring the form heading back into view on the smaller second step.
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            showStep(1);
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
+
+    showStep(1);
+})();
 
 // ================================
 // Navbar Background on Scroll

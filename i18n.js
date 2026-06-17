@@ -55,7 +55,7 @@ const TRANSLATIONS = {
     hero_badge: 'Legal + Cybersecurity Expertise',
     hero_title: "Recover What's Rightfully Yours.",
     hero_subtitle: 'ReclaimGuard Legal specializes in cyber-fraud recovery, crypto tracing, chargebacks, and legal action against online scammers. No unrealistic promises. Just evidence-based investigations and transparent service.',
-    hero_btn_primary: 'Start Your Case Review',
+    hero_btn_primary: 'Get a Free Consultation',
     hero_btn_secondary: 'How Recovery Works',
 
     // Stats
@@ -201,7 +201,7 @@ const TRANSLATIONS = {
     faq8_a: 'Absolutely. All information you share with us is protected and will not be disclosed without your consent, except where required by law or necessary to pursue your recovery case.',
 
     // Contact
-    contact_title: 'Start Your Case Now',
+    contact_title: 'Get a Free Consultation',
     contact_intro: 'Fill in the form to begin your case review. Free consultation, no obligation. We provide realistic assessments and transparent service.',
     contact_phone_label: 'Phone',
     contact_phone_note: 'Business hours response',
@@ -252,7 +252,11 @@ const TRANSLATIONS = {
     form_message: 'Short description of what happened *',
     form_message_placeholder: 'Briefly describe the fraud incident...',
     form_consent: 'I understand that ReclaimGuard Legal provides investigation services and that no guaranteed outcome is promised. I consent to being contacted about my case.',
-    form_submit: 'Begin Recovery Process',
+    form_submit: 'Get a Free Consultation',
+    form_step1_indicator: 'Step 1 of 2 · Your case',
+    form_step2_indicator: 'Step 2 of 2 · Your details',
+    form_continue: 'Continue →',
+    form_back: '← Back',
     form_note: '🔒 GDPR compliant. All data handled confidentially. No upfront payment required for case review.',
 
     // Footer
@@ -402,7 +406,7 @@ const TRANSLATIONS = {
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
     hero_title: 'Holen Sie zurück, was Ihnen gehört.',
     hero_subtitle: 'ReclaimGuard Legal ist spezialisiert auf die Rückgewinnung bei Cyberbetrug, Krypto-Tracing, Rückbuchungen und rechtliche Schritte gegen Online-Betrüger. Keine unrealistischen Versprechen – nur faktenbasierte Ermittlungen und transparenten Service.',
-    hero_btn_primary: 'Kostenlose Fallprüfung starten',
+    hero_btn_primary: 'Kostenlose Beratung erhalten',
     hero_btn_secondary: 'So funktioniert die Rückgewinnung',
 
     // Stats
@@ -548,7 +552,7 @@ const TRANSLATIONS = {
     faq8_a: 'Absolut. Alle Informationen, die Sie mit uns teilen, sind geschützt und werden nicht ohne Ihre Zustimmung weitergegeben, außer wenn gesetzlich vorgeschrieben oder zur Verfolgung Ihres Rückgewinnungsfalls notwendig.',
 
     // Contact
-    contact_title: 'Starten Sie Ihren Fall jetzt',
+    contact_title: 'Kostenlose Beratung erhalten',
     contact_intro: 'Füllen Sie das Formular aus, um Ihre Fallprüfung zu starten. Kostenlose Beratung, keine Verpflichtung. Wir bieten realistische Einschätzungen und transparenten Service.',
     contact_phone_label: 'Telefon',
     contact_phone_note: 'Antwort während der Geschäftszeiten',
@@ -599,7 +603,11 @@ const TRANSLATIONS = {
     form_message: 'Kurze Beschreibung des Vorfalls *',
     form_message_placeholder: 'Beschreiben Sie kurz den Betrugsvorfall...',
     form_consent: 'Ich verstehe, dass ReclaimGuard Legal Ermittlungsdienstleistungen erbringt und kein garantiertes Ergebnis versprochen wird. Ich stimme zu, bezüglich meines Falls kontaktiert zu werden.',
-    form_submit: 'Rückgewinnungsprozess starten',
+    form_submit: 'Kostenlose Beratung erhalten',
+    form_step1_indicator: 'Schritt 1 von 2 · Ihr Fall',
+    form_step2_indicator: 'Schritt 2 von 2 · Ihre Daten',
+    form_continue: 'Weiter →',
+    form_back: '← Zurück',
     form_note: '🔒 DSGVO-konform. Alle Daten werden vertraulich behandelt. Keine Vorauszahlung für die Fallprüfung erforderlich.',
 
     // Footer
@@ -1040,6 +1048,10 @@ function applyTranslations() {
   const consentLabel = document.querySelector('label[for="consent"]'); if (consentLabel) consentLabel.textContent = t('form_consent');
   const msgInput = document.querySelector('#message'); if (msgInput) msgInput.placeholder = t('form_message_placeholder');
   const submitBtn = document.querySelector('.contact-form button[type="submit"]'); if (submitBtn) submitBtn.textContent = t('form_submit');
+  const ind1 = document.querySelector('.form-step-indicator[data-step="1"]'); if (ind1) ind1.textContent = t('form_step1_indicator');
+  const ind2 = document.querySelector('.form-step-indicator[data-step="2"]'); if (ind2) ind2.textContent = t('form_step2_indicator');
+  const contBtn = document.querySelector('.form-continue-btn'); if (contBtn) contBtn.textContent = t('form_continue');
+  const backBtn = document.querySelector('.form-back-btn'); if (backBtn) backBtn.textContent = t('form_back');
   setText('.form-note', 'form_note');
 
   // Select placeholders + options
