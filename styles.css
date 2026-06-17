@@ -994,9 +994,15 @@ h1, h2, h3, h4, h5, h6 {
     flex-shrink: 0;
 }
 
-.phone-code-select {
+/* Higher specificity than `.form-group select` so the code selector
+   doesn't get its own border/box inside the .phone-code-box. */
+.phone-group select.phone-code-select {
     border: none;
-    background: transparent;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    background-color: transparent;
     font-size: 0.9rem;
     font-family: inherit;
     cursor: pointer;
