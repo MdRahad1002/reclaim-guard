@@ -52,7 +52,9 @@ const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    
+    // The second FAQ section uses native <details>/<summary> (no .faq-question) skip those.
+    if (!question) return;
+
     question.addEventListener('click', () => {
         // Close other open items
         faqItems.forEach(otherItem => {
