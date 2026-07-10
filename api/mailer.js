@@ -1,50 +1,80 @@
-﻿'use strict';
+'use strict';
 
-const nodemailer = require('nodemailer');
+/**
+ * Email transport.
+ *
+ * Prefers the Resend HTTP API (https, port 443) when RESEND_API_KEY is set
+ * this is required on hosts that block outbound SMTP (25/465/587). Falls back
+ * to SMTP via nodemailer when RESEND_API_KEY is absent.
+ */
 
-// Lazy-initialised transporter reused across warm serverless invocations
+const FROM_LEAD  = process.env.MAIL_FROM       || 'Reclaim Guard Legal <support@reclaim-guard.com>';
+const FROM_SYSTEM = process.env.MAIL_FROM_SYSTEM || 'Reclaim Guard System <support@reclaim-guard.com>';
+
+// ---- Transport ------------------------------------------------------------
 let _transporter;
 function getTransporter() {
     if (!_transporter) {
+        const nodemailer = require('nodemailer');
         _transporter = nodemailer.createTransport({
             host:   process.env.SMTP_HOST || 'my.safeguard-dns.com',
             port:   parseInt(process.env.SMTP_PORT || '465', 10),
-            secure: true,            // SSL on port 465
-            auth: {
-                user: process.env.SMTP_USER || 'support@reclaim-guard.com',
-                pass: process.env.SMTP_PASS, // set in env never hardcode
-            },
-            tls: {
-                // Enforce modern TLS; reject invalid/self-signed certs
-                minVersion: 'TLSv1.2',
-                rejectUnauthorized: true,
-            },
+            secure: true,
+            auth: { user: process.env.SMTP_USER || 'support@reclaim-guard.com', pass: process.env.SMTP_PASS },
+            tls: { minVersion: 'TLSv1.2', rejectUnauthorized: true },
         });
     }
     return _transporter;
 }
 
-/**
- * Send a confirmation email to the person who submitted the form.
- */
-async function sendLeadConfirmation({ name, email, amount, scamType }) {
-    const amountLabels = {
-        'under-1000':       'Under $1,000',
-        '1000-5000':        '$1,000 – $5,000',
-        '5000-25000':       '$5,000 – $25,000',
-        '25000-100000':     '$25,000 – $100,000',
-        '100000+':          'Over $100,000',
-    };
-    const typeLabels = {
-        crypto: 'Cryptocurrency Fraud',
-        broker: 'Broker / Investment Fraud',
-        bank:   'Bank / Wire Fraud',
-        card:   'Card Fraud',
-        other:  'Other Financial Fraud',
-    };
+async function sendViaResend({ from, to, subject, text, html }) {
+    const resp = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            from,
+            to: Array.isArray(to) ? to : [to],
+            subject,
+            ...(text ? { text } : {}),
+            ...(html ? { html } : {}),
+        }),
+    });
+    if (!resp.ok) {
+        const body = await resp.text().catch(() => '');
+        throw new Error(`Resend API ${resp.status}: ${body}`);
+    }
+    return resp.json().catch(() => ({}));
+}
 
-    await getTransporter().sendMail({
-        from:    '"Reclaim Guard Legal" <support@reclaim-guard.com>',
+async function sendEmail(msg) {
+    if (process.env.RESEND_API_KEY) return sendViaResend(msg);
+    // SMTP fallback (nodemailer uses `from`/`to`/`subject`/`text`/`html`)
+    return getTransporter().sendMail(msg);
+}
+
+// ---- Content --------------------------------------------------------------
+const amountLabels = {
+    'under-1000':   'Under $1,000',
+    '1000-5000':    '$1,000 – $5,000',
+    '5000-25000':   '$5,000 – $25,000',
+    '25000-100000': '$25,000 – $100,000',
+    '100000+':      'Over $100,000',
+};
+const typeLabels = {
+    crypto: 'Cryptocurrency Fraud',
+    broker: 'Broker / Investment Fraud',
+    bank:   'Bank / Wire Fraud',
+    card:   'Card Fraud',
+    other:  'Other Financial Fraud',
+};
+
+/** Confirmation email to the person who submitted the form. */
+async function sendLeadConfirmation({ name, email, amount, scamType }) {
+    await sendEmail({
+        from:    FROM_LEAD,
         to:      email,
         subject: 'We received your case submission Reclaim Guard Legal',
         text: [
@@ -110,16 +140,13 @@ async function sendLeadConfirmation({ name, email, amount, scamType }) {
     });
 }
 
-/**
- * Notify admin that a new lead has arrived.
- */
+/** Notify admin that a new lead has arrived. */
 async function sendAdminNotification({ name, email, phone, amount, scamType, when, payment, message, leadId, priority }) {
     const adminEmail = process.env.ADMIN_EMAIL || 'support@reclaim-guard.com';
-
-    await getTransporter().sendMail({
-        from:    '"Reclaim Guard System" <support@reclaim-guard.com>',
+    await sendEmail({
+        from:    FROM_SYSTEM,
         to:      adminEmail,
-        subject: `[${priority.toUpperCase()}] New Lead #${leadId} ${name}`,
+        subject: `[${String(priority).toUpperCase()}] New Lead #${leadId} ${name}`,
         text: [
             `New lead submitted (ID #${leadId})`,
             '',
