@@ -6,9 +6,9 @@
 const TRANSLATIONS = {
   en: {
     // SEO page title & meta description (swapped dynamically)
-    seo_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal Recover Lost Money',
-    seo_desc: 'Scammed online? ReclaimGuard Legal helps you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review. EU/UK/US coverage. Evidence-based recovery no upfront success fee.',
-    og_title: 'Crypto Recovery & Fraud Lawyers | ReclaimGuard Legal',
+    seo_title: 'Crypto Scam & Online Fraud Recovery Help | ReclaimGuard Legal',
+    seo_desc: 'Scammed online? ReclaimGuard Legal helps victims pursue recovery of money lost to crypto scams, investment fraud and bank fraud, through blockchain forensics and legal action. Free case review. EU/UK/US. No win, no fee outcomes are never guaranteed.',
+    og_title: 'Crypto Scam & Online Fraud Recovery Help | ReclaimGuard Legal',
     og_desc: 'Scammed online? We help you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review EU/UK/US coverage.',
 
     // Nav
@@ -184,11 +184,11 @@ const TRANSLATIONS = {
     faq_title: 'Frequently Asked Questions',
     faq_subtitle: 'Common questions about cryptocurrency recovery and our services',
     faq1_q: 'Can cryptocurrency really be traced and recovered?',
-    faq1_a: 'Often, yes traceable. While cryptocurrency is often thought to be anonymous, the blockchain creates a permanent record of transactions. Using Chainalysis and other forensic tools, we can trace cryptocurrency through complex transaction paths and identify where it ends up, then take legal action to pursue freezing and recovery of the funds where possible. Tracing does not guarantee recovery.',
+    faq1_a: 'Often, yes traceable. While cryptocurrency is often thought to be anonymous, the blockchain creates a permanent record of transactions. Using industry-standard blockchain forensic tools, we can trace cryptocurrency through complex transaction paths and identify where it ends up, then take legal action to pursue freezing and recovery of the funds where possible. Tracing does not guarantee recovery.',
     faq2_q: 'How long does the recovery process take?',
     faq2_a: 'The timeline varies depending on the complexity of your case. Simple cases where funds remain on exchanges may be resolved in 2-4 months. More complex cases involving multiple jurisdictions or sophisticated money laundering may take 6-12 months.',
-    faq3_q: 'What is Chainalysis and how does it help my case?',
-    faq3_a: 'Chainalysis is a widely used blockchain analytics platform. We use it alongside other forensic tools to trace cryptocurrency transactions across multiple blockchains, identify links to known services and exchanges, and build evidence to support legal action and regulatory complaints. It does not guarantee recovery, but it strengthens the investigation.',
+    faq3_q: 'What tools do you use to trace stolen cryptocurrency?',
+    faq3_a: 'We use industry-standard blockchain analytics tools alongside our own investigative methods to trace cryptocurrency transactions across multiple blockchains, identify links to known services and exchanges, and build evidence to support legal action and regulatory complaints. These tools do not guarantee recovery, but they strengthen the investigation.',
     faq4_q: 'What are your fees and payment terms?',
     faq4_a: 'We offer a free initial consultation to assess your case. Our fee structure is typically based on a combination of fixed fees for investigation work and success-based fees for recovered amounts. We discuss all fees transparently before you engage our services.',
     faq5_q: 'What types of scams do you handle?',
@@ -357,10 +357,10 @@ const TRANSLATIONS = {
 
   de: {
     // SEO page title & meta description (swapped dynamically)
-    seo_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal Geld zurückfordern',
-    seo_desc: 'Durch Betrug Geld verloren? ReclaimGuard Legal hilft Ihnen, verlorenes Geld durch Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung. EU/UK/US Abdeckung. Faktenbasierte Rückgewinnung.',
-    og_title: 'Krypto Rückgewinnung & Betrug Anwalt | ReclaimGuard Legal',
-    og_desc: 'Betrug erlitten? Wir helfen Ihnen, verlorenes Geld bei Krypto-Betrug, Anlagebetrug und Rückbuchungen zurückzugewinnen. Kostenlose Fallprüfung.',
+    seo_title: 'Hilfe bei Krypto-Betrug & Online-Betrug | ReclaimGuard Legal',
+    seo_desc: 'Durch Betrug Geld verloren? ReclaimGuard Legal unterstützt Opfer dabei, die Rückgewinnung von durch Krypto-Betrug, Anlagebetrug und Bankbetrug verlorenem Geld zu verfolgen mittels Blockchain-Forensik und rechtlicher Schritte. Kostenlose Fallprüfung. EU/UK/US. Kein Erfolg, keine Gebühr Ergebnisse sind nie garantiert.',
+    og_title: 'Hilfe bei Krypto-Betrug & Online-Betrug | ReclaimGuard Legal',
+    og_desc: 'Betrug erlitten? Wir unterstützen Opfer dabei, die Rückgewinnung von durch Krypto- und Anlagebetrug verlorenem Geld zu verfolgen. Kostenlose Fallprüfung. Ergebnisse sind nie garantiert.',
 
     // Nav
     nav_home: 'Startseite',
@@ -535,11 +535,11 @@ const TRANSLATIONS = {
     faq_title: 'Häufig gestellte Fragen',
     faq_subtitle: 'Häufige Fragen zur Kryptowährungs-Rückgewinnung und unseren Leistungen',
     faq1_q: 'Kann Kryptowährung wirklich verfolgt und zurückgewonnen werden?',
-    faq1_a: 'Oft ist eine Verfolgung möglich. Obwohl Kryptowährung oft als anonym gilt, erstellt die Blockchain eine permanente Aufzeichnung der Transaktionen. Mit Chainalysis und anderen Forensik-Tools können wir Kryptowährungen durch komplexe Transaktionspfade verfolgen und herausfinden, wo sie enden, und anschließend rechtliche Schritte einleiten, um nach Möglichkeit auf das Einfrieren und die Rückgewinnung der Mittel hinzuwirken. Eine Verfolgung garantiert keine Rückgewinnung.',
+    faq1_a: 'Oft ist eine Verfolgung möglich. Obwohl Kryptowährung oft als anonym gilt, erstellt die Blockchain eine permanente Aufzeichnung der Transaktionen. Mit branchenüblichen Blockchain-Forensik-Tools können wir Kryptowährungen durch komplexe Transaktionspfade verfolgen und herausfinden, wo sie enden, und anschließend rechtliche Schritte einleiten, um nach Möglichkeit auf das Einfrieren und die Rückgewinnung der Mittel hinzuwirken. Eine Verfolgung garantiert keine Rückgewinnung.',
     faq2_q: 'Wie lange dauert der Rückgewinnungsprozess?',
     faq2_a: 'Der Zeitrahmen hängt von der Komplexität Ihres Falls ab. Einfache Fälle, bei denen die Mittel noch auf Börsen sind, können in 2–4 Monaten gelöst werden. Komplexere Fälle mit mehreren Rechtssystemen oder ausgeklügelter Geldwäsche können 6–12 Monate dauern.',
-    faq3_q: 'Was ist Chainalysis und wie hilft es meinem Fall?',
-    faq3_a: 'Chainalysis ist eine weit verbreitete Blockchain-Analyseplattform. Wir setzen sie neben anderen Forensik-Tools ein, um Kryptowährungstransaktionen über mehrere Blockchains zu verfolgen, Verbindungen zu bekannten Diensten und Börsen zu identifizieren und Beweise für rechtliche Schritte und regulatorische Beschwerden aufzubereiten. Eine Rückgewinnung wird dadurch nicht garantiert, aber die Ermittlung wird gestärkt.',
+    faq3_q: 'Welche Tools verwenden Sie, um gestohlene Kryptowährung zu verfolgen?',
+    faq3_a: 'Wir setzen branchenübliche Blockchain-Analysetools zusammen mit unseren eigenen Ermittlungsmethoden ein, um Kryptowährungstransaktionen über mehrere Blockchains zu verfolgen, Verbindungen zu bekannten Diensten und Börsen zu identifizieren und Beweise für rechtliche Schritte und regulatorische Beschwerden aufzubereiten. Diese Tools garantieren keine Rückgewinnung, stärken aber die Ermittlung.',
     faq4_q: 'Was sind Ihre Gebühren und Zahlungsbedingungen?',
     faq4_a: 'Wir bieten eine kostenlose Erstberatung zur Bewertung Ihres Falls. Unsere Gebührenstruktur basiert typischerweise auf einer Kombination aus Festgebühren für Ermittlungsarbeiten und erfolgsbasierten Gebühren für zurückgewonnene Beträge.',
     faq5_q: 'Welche Arten von Betrug bearbeiten Sie?',
