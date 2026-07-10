@@ -5,72 +5,120 @@
 
   <url>
     <loc>https://www.reclaim-guard.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/"/>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.reclaim-guard.com/assets/images/reclaim-guard-logo.png</image:loc>
-      <image:title>ReclaimGuard Legal — Crypto Fraud Recovery Specialists</image:title>
+      <image:title>ReclaimGuard Legal — Crypto Fraud Recovery</image:title>
     </image:image>
   </url>
-
-  <url>
-    <loc>https://www.reclaim-guard.com/privacy</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.reclaim-guard.com/terms</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
   <url>
     <loc>https://www.reclaim-guard.com/blog</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.reclaim-guard.com/privacy</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.reclaim-guard.com/terms</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/was-tun-nach-betrug"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://www.reclaim-guard.com/blog/de/was-tun-nach-betrug</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/was-tun-nach-betrug"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/what-to-do-after-being-scammed"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam</loc>
-    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/krypto-rueckgewinnungsbetrug-erkennen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/de/krypto-rueckgewinnungsbetrug-erkennen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/krypto-rueckgewinnungsbetrug-erkennen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/how-to-spot-crypto-recovery-scam"/>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026</loc>
-    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/haeufigste-krypto-betrugsmaschen-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/de/haeufigste-krypto-betrugsmaschen-2026</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/haeufigste-krypto-betrugsmaschen-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/most-common-crypto-scams-2026"/>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.reclaim-guard.com/blog/what-is-a-chargeback</loc>
-    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/what-is-a-chargeback"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/was-ist-eine-rueckbuchung"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/what-is-a-chargeback"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/de/was-ist-eine-rueckbuchung</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/what-is-a-chargeback"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/was-ist-eine-rueckbuchung"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/what-is-a-chargeback"/>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto</loc>
-    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/blockchain-forensik-krypto-verfolgen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto"/>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.reclaim-guard.com/blog/de/blockchain-forensik-krypto-verfolgen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/blog/de/blockchain-forensik-krypto-verfolgen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/blog/blockchain-forensics-traces-stolen-crypto"/>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
