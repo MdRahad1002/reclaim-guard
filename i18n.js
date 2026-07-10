@@ -168,7 +168,7 @@ const TRANSLATIONS = {
     cert3: '10-15% Success Fee (only on recovery)',
     cert4: 'GDPR Compliant',
     stats_time: '2-12 Weeks',
-    stats_time_label: 'Typical Recovery Time',
+    stats_time_label: 'Typical Case Timeline',
     stats_min: '€250+',
     stats_min_label: 'Minimum Case Size',
     stats_chains: '100+',
@@ -302,7 +302,7 @@ const TRANSLATIONS = {
     rating_h3: 'Transparent', rating_t3: 'Honest results reported',
 
     // About image overlay
-    overlay_lbl1: 'Cases Reviewed',
+    overlay_lbl1: 'Regulated',
     overlay_lbl2: 'International Coverage',
     overlay_lbl3: 'Compliant',
 
@@ -518,7 +518,7 @@ const TRANSLATIONS = {
     cert3: 'Nur 10–15% Erfolgsgebühr (nur bei Rückgewinnung)',
     cert4: 'DSGVO-konform',
     stats_time: '2–12 Wochen',
-    stats_time_label: 'Typische Rückgewinnungszeit',
+    stats_time_label: 'Typische Fallbearbeitungsdauer',
     stats_min: '€250+',
     stats_min_label: 'Minimale Fallgröße',
     stats_chains: '100+',
@@ -651,7 +651,7 @@ const TRANSLATIONS = {
     rating_h3: 'Transparent', rating_t3: 'Ehrliche Ergebnisse berichtet',
 
     // About image overlay
-    overlay_lbl1: 'Fälle geprüft',
+    overlay_lbl1: 'Reguliert',
     overlay_lbl2: 'Internationale Abdeckung',
     overlay_lbl3: 'Konform',
 
