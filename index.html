@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Google Analytics 4 + Google Ads (Consent Mode v2) -->
     <script src="analytics.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +22,11 @@
     <meta name="theme-color" content="#1B4FD8">
 
     <!-- ---------------------------------------------------------------
-         CANONICAL + HREFLANG
+         CANONICAL
+         (No hreflang: EN/DE are served on the same URL via client-side
+         i18n, so per-language alternate URLs don't exist.)
     --------------------------------------------------------------- -->
     <link rel="canonical" href="https://www.reclaim-guard.com/">
-    <link rel="alternate" hreflang="en" href="https://www.reclaim-guard.com/">
-    <link rel="alternate" hreflang="de" href="https://www.reclaim-guard.com/">
-    <link rel="alternate" hreflang="x-default" href="https://www.reclaim-guard.com/">
 
     <!-- ---------------------------------------------------------------
          OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
@@ -338,10 +338,7 @@
     <link rel="apple-touch-icon" href="assets/images/reclaim-guard-logo.png">
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://flagcdn.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Fallback for crawlers that don't execute JS (i18n.js dynamically swaps title/meta) -->
     <noscript><style>body{font-family:sans-serif}</style></noscript>
 </head>
@@ -773,7 +770,7 @@
                 </div>
                 <div class="about-image">
                     <div class="about-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=640&q=80" alt="Illustrative image of a fraud case review" class="about-office-img" loading="lazy" width="640" height="427">
+                        <img src="/assets/images/about-case-review.jpg" alt="Illustrative image of a fraud case review" class="about-office-img" loading="lazy" width="640" height="427">
                         <div class="about-img-overlay">
                             <div class="overlay-stat"><span class="ov-num">SRA</span><span class="ov-lbl">Regulated</span></div>
                             <div class="overlay-stat"><span class="ov-num">EU/UK/US</span><span class="ov-lbl">International Coverage</span></div>
