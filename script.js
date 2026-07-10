@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
         phoneCodeSel.addEventListener('change', () => {
             const iso = phoneCodeSel.options[phoneCodeSel.selectedIndex].dataset.iso;
             if (iso) {
-                phoneFlagImg.src = `https://flagcdn.com/20x15/${iso}.png`;
+                phoneFlagImg.src = `/assets/flags/${iso}.png`;
                 phoneFlagImg.alt = iso.toUpperCase();
             }
         });
