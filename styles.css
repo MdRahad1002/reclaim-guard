@@ -701,6 +701,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+/* ================================
+   Professional inline SVG icons (replace emoji)
+   ================================ */
+.badge-icon svg,
+.trust-icon svg,
+.method-icon svg,
+.tech-feature-icon svg,
+.team-name svg,
+.testimonial-rating svg,
+.feature-icon svg {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--primary-color);
+}
+.badge-icon svg         { width: 34px; height: 34px; }
+.trust-icon svg         { width: 26px; height: 26px; }
+.method-icon svg        { width: 30px; height: 30px; }
+.tech-feature-icon svg  { width: 34px; height: 34px; }
+.team-name svg          { width: 30px; height: 30px; }
+.testimonial-rating svg { width: 30px; height: 30px; }
+.feature-icon svg       { width: 20px; height: 20px; color: currentColor; } /* white circle */
+
 .testimonial-text {
     color: var(--text-light);
     line-height: 1.8;
