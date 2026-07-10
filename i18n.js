@@ -293,7 +293,6 @@ const TRANSLATIONS = {
     team4_tag1: 'GDPR Compliance', team4_tag2: 'Client Care',
 
     // Media section
-    media_label: 'Our work has been referenced in',
 
     // Rating widget
     rating_platform: '⭐ Client Reviews',
@@ -643,7 +642,6 @@ const TRANSLATIONS = {
     team4_tag1: 'DSGVO-Compliance', team4_tag2: 'Kundenbetreuung',
 
     // Media section
-    media_label: 'Unsere Arbeit wurde referenziert in',
 
     // Rating widget
     rating_platform: '⭐ Kundenbewertungen',
@@ -1158,8 +1156,6 @@ function applyTranslations() {
     if (tags[1]) tags[1].textContent = t(teamData[i][3]);
   });
 
-  // Media section
-  setText('.media-label', 'media_label');
 
   // Rating widget
   setText('.rating-platform', 'rating_platform');
