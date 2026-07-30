@@ -69,8 +69,9 @@ app.all('/api/leads/:id',        withQueryId(leadsHandler));
 // ---------------------------------------------------------------------------
 // Static assets (explicit allowlist)
 // ---------------------------------------------------------------------------
-const ASSETS_DIR = path.join(__dirname, 'assets');
-const BLOG_DIR   = path.join(__dirname, 'blog');
+const ASSETS_DIR  = path.join(__dirname, 'assets');
+const BLOG_DIR    = path.join(__dirname, 'blog');
+const RECOVER_DIR = path.join(__dirname, 'recover');
 
 app.use('/assets', express.static(ASSETS_DIR, { maxAge: '30d', dotfiles: 'deny' }));
 
@@ -108,6 +109,18 @@ app.get(/^\/blog\/(.+)$/, (req, res, next) => {
 
     const target = path.resolve(BLOG_DIR, slug + '.html');
     if (!target.startsWith(BLOG_DIR + path.sep)) return next(); // traversal guard
+    if (!fs.existsSync(target)) return next();
+
+    res.sendFile(target);
+});
+
+// Campaign landing pages: /recover/<slug>, with or without .html.
+app.get(/^\/recover\/(.+)$/, (req, res, next) => {
+    let slug = req.params[0].replace(/\.html$/, '');
+    if (!/^[a-z0-9\-]+$/i.test(slug)) return next();
+
+    const target = path.resolve(RECOVER_DIR, slug + '.html');
+    if (!target.startsWith(RECOVER_DIR + path.sep)) return next(); // traversal guard
     if (!fs.existsSync(target)) return next();
 
     res.sendFile(target);
