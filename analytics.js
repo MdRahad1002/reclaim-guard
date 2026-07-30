@@ -18,7 +18,7 @@
   // ---- CONFIG (replace these) ----------------------------------------
   var GA4_MEASUREMENT_ID    = 'G-XXXXXXXXXX';
   var GOOGLE_ADS_ID         = 'AW-18360624527';
-  var LEAD_CONVERSION_LABEL = 'XXXXXXXXXXXXXXXXXX';
+  var LEAD_CONVERSION_LABEL = 'NCyXCLTNitkcEI_Lg7NE';
   // --------------------------------------------------------------------
 
   function configured(v) { return v && v.indexOf('XXXX') === -1; }
@@ -70,7 +70,9 @@
   window.trackLeadConversion = function () {
     if (ADS_ON && configured(LEAD_CONVERSION_LABEL)) {
       gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL
+        send_to: GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL,
+        value: 1.0,
+        currency: 'GBP'
       });
     }
   };
