@@ -17,7 +17,7 @@
 
   // ---- CONFIG (replace these) ----------------------------------------
   var GA4_MEASUREMENT_ID    = 'G-XXXXXXXXXX';
-  var GOOGLE_ADS_ID         = 'AW-XXXXXXXXXX';
+  var GOOGLE_ADS_ID         = 'AW-18360624527';
   var LEAD_CONVERSION_LABEL = 'XXXXXXXXXXXXXXXXXX';
   // --------------------------------------------------------------------
 
