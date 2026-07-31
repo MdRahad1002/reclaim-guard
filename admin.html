@@ -191,7 +191,7 @@
 
         .filter-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1.6fr auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr auto;
             gap: 14px;
             align-items: end;
         }
@@ -370,12 +370,16 @@
             white-space: nowrap;
         }
 
-        .badge-new         { background: #dbeafe; color: #1d4ed8; }
-        .badge-contacted   { background: #fef3c7; color: #b45309; }
-        .badge-qualified   { background: #dcfce7; color: #15803d; }
-        .badge-in-progress { background: #ede9fe; color: #7c3aed; }
-        .badge-closed      { background: #f1f5f9; color: #475569; }
-        .badge-rejected    { background: #fee2e2; color: #b91c1c; }
+        .badge-new            { background: #dbeafe; color: #1d4ed8; }
+        .badge-contacted      { background: #fef3c7; color: #b45309; }
+        .badge-no-answer      { background: #f1f5f9; color: #475569; }
+        .badge-callback       { background: #e0f2fe; color: #0369a1; }
+        .badge-wrong-number   { background: #ffedd5; color: #c2410c; }
+        .badge-qualified      { background: #dcfce7; color: #15803d; }
+        .badge-in-progress    { background: #ede9fe; color: #7c3aed; }
+        .badge-not-interested { background: #ffe4e6; color: #be123c; }
+        .badge-closed         { background: #f1f5f9; color: #475569; }
+        .badge-rejected       { background: #fee2e2; color: #b91c1c; }
 
         .priority-dot {
             width: 8px; height: 8px;
@@ -696,10 +700,23 @@
                         <option value="">All Status</option>
                         <option value="new">New</option>
                         <option value="contacted">Contacted</option>
+                        <option value="no-answer">No Answer</option>
+                        <option value="callback">Callback</option>
+                        <option value="wrong-number">Wrong Number</option>
                         <option value="qualified">Qualified</option>
                         <option value="in-progress">In Progress</option>
+                        <option value="not-interested">Not Interested</option>
                         <option value="closed">Closed</option>
                         <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Priority</label>
+                    <select id="filterPriority" onchange="applyFilters()">
+                        <option value="">All Priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
                     </select>
                 </div>
                 <div class="filter-item">
@@ -928,12 +945,14 @@
         // -- CLIENT-SIDE FILTER ------------------------------------
         function applyClientFilters() {
             const status    = document.getElementById('filterStatus').value;
+            const priority  = document.getElementById('filterPriority').value;
             const fraudType = document.getElementById('filterFraudType').value;
             const amount    = document.getElementById('filterAmount').value;
             const search    = document.getElementById('searchInput').value.trim().toLowerCase();
 
             currentLeads = allLeads.filter(l => {
                 if (status    && l.status   !== status)    return false;
+                if (priority  && l.priority !== priority)  return false;
                 if (fraudType && l.scamType !== fraudType) return false;
                 if (amount    && l.amount   !== amount)    return false;
                 if (search) {
@@ -958,6 +977,7 @@
 
         function resetFilters() {
             document.getElementById('filterStatus').value    = '';
+            document.getElementById('filterPriority').value  = '';
             document.getElementById('filterFraudType').value = '';
             document.getElementById('filterAmount').value    = '';
             document.getElementById('searchInput').value     = '';
@@ -994,7 +1014,7 @@
                     <td>${fmtFraudType(lead.scamType)}</td>
                     <td style="font-size:0.82rem;color:var(--muted);white-space:nowrap;">${fmtWhen(lead.when)}</td>
                     <td style="font-size:0.82rem;color:var(--muted);">${fmtPayment(lead.payment)}</td>
-                    <td><span class="badge badge-${esc(lead.status || 'new')}">${esc(lead.status || 'new')}</span></td>
+                    <td><span class="badge badge-${esc(lead.status || 'new')}">${fmtStatus(lead.status)}</span></td>
                     <td>
                         <span class="priority-dot dot-${esc(lead.priority || 'low')}"></span>
                         <span style="font-size:0.82rem;text-transform:capitalize;">${esc(lead.priority || 'low')}</span>
@@ -1050,7 +1070,7 @@
                     <div class="modal-field"><strong>Fraud Type</strong><br>${fmtFraudType(l.scamType)}</div>
                     <div class="modal-field"><strong>When</strong><br>${fmtWhen(l.when)}</div>
                     <div class="modal-field"><strong>Payment</strong><br>${fmtPayment(l.payment)}</div>
-                    <div class="modal-field"><strong>Status</strong><br><span class="badge badge-${esc(l.status)}">${esc(l.status)}</span></div>
+                    <div class="modal-field"><strong>Status</strong><br><span class="badge badge-${esc(l.status)}">${fmtStatus(l.status)}</span></div>
                     <div class="modal-field"><strong>Priority</strong><br>
                         <span class="priority-dot dot-${esc(l.priority||'low')}"></span>
                         <span style="text-transform:capitalize;">${esc(l.priority||'low')}</span>
@@ -1071,7 +1091,7 @@
         function editLead(id) {
             const l = allLeads.find(x => x.id === id);
             if (!l) return;
-            const statusOpts = ['new','contacted','qualified','in-progress','closed','rejected'];
+            const statusOpts = ['new','contacted','no-answer','callback','wrong-number','qualified','in-progress','not-interested','closed','rejected'];
             const priorityOpts = ['high','medium','low'];
             openModal(`
                 <button class="modal-close" onclick="closeModal()">✕</button>
@@ -1082,7 +1102,7 @@
                 <div class="modal-form-group">
                     <label>Status</label>
                     <select id="editStatus">
-                        ${statusOpts.map(s => `<option value="${s}" ${l.status===s?'selected':''}>${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+                        ${statusOpts.map(s => `<option value="${s}" ${l.status===s?'selected':''}>${fmtStatus(s)}</option>`).join('')}
                     </select>
                 </div>
                 <div class="modal-form-group">
@@ -1250,6 +1270,21 @@
             if (amount === '100000+' || amount === '25000-100000') return 'high';
             if (amount === '5000-25000' || amount === '1000-5000') return 'medium';
             return 'low';
+        }
+
+        function fmtStatus(s) {
+            return ({
+                'new':'New',
+                'contacted':'Contacted',
+                'no-answer':'No Answer',
+                'callback':'Callback',
+                'wrong-number':'Wrong Number',
+                'qualified':'Qualified',
+                'in-progress':'In Progress',
+                'not-interested':'Not Interested',
+                'closed':'Closed',
+                'rejected':'Rejected'
+            })[s] || s || 'New';
         }
 
         function fmtFraudType(t) {

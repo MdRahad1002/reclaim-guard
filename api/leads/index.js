@@ -14,7 +14,7 @@ const VALID_AMOUNTS    = ['under-1000', '1000-5000', '5000-25000', '25000-100000
 const VALID_SCAMTYPES  = ['crypto', 'broker', 'bank', 'card', 'other'];
 const VALID_WHEN       = ['7days', '1-4weeks', '1-3months', '3-6months', '6-12months', '1+year'];
 const VALID_PAYMENTS   = ['crypto', 'card', 'bank', 'other'];
-const VALID_STATUSES   = ['new', 'contacted', 'qualified', 'in-progress', 'closed', 'rejected'];
+const VALID_STATUSES   = ['new', 'contacted', 'no-answer', 'callback', 'wrong-number', 'qualified', 'in-progress', 'not-interested', 'closed', 'rejected'];
 const VALID_PRIORITIES = ['low', 'medium', 'high'];
 
 // Reuse pool across warm invocations
@@ -267,7 +267,7 @@ module.exports = async (req, res) => {
             total:     statRows.length,
             new:       statRows.filter(l => l.status === 'new').length,
             qualified: statRows.filter(l => l.status === 'qualified').length,
-            highValue: statRows.filter(l => l.amount === '5000+').length,
+            highValue: statRows.filter(l => ['5000-25000', '25000-100000', '100000+'].includes(l.amount)).length,
         };
 
         return res.status(200).json({ success: true, leads, total: totRow[0]?.c || 0, page, stats });
