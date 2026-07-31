@@ -18,7 +18,8 @@
   // ---- CONFIG (replace these) ----------------------------------------
   var GA4_MEASUREMENT_ID    = 'G-XXXXXXXXXX';
   var GOOGLE_ADS_ID         = 'AW-18360624527';
-  var LEAD_CONVERSION_LABEL = 'NCyXCLTNitkcEI_Lg7NE';
+  var LEAD_CONVERSION_LABEL   = 'NCyXCLTNitkcEI_Lg7NE'; // "Page view conversion"
+  var LEAD_CONVERSION_LABEL_2 = 'vy2sCJ6ttdkcEI_Lg7NE'; // "Sign-up conversion"
   // --------------------------------------------------------------------
 
   function configured(v) { return v && v.indexOf('XXXX') === -1; }
@@ -68,9 +69,13 @@
   // 3) Public helper: fire the Google Ads "lead" conversion.
   //    Called from the /thank-you page after a successful form submission.
   window.trackLeadConversion = function () {
-    if (ADS_ON && configured(LEAD_CONVERSION_LABEL)) {
+    if (!ADS_ON) return;
+    var targets = [];
+    if (configured(LEAD_CONVERSION_LABEL))   targets.push(GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL);
+    if (configured(LEAD_CONVERSION_LABEL_2)) targets.push(GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL_2);
+    if (targets.length) {
       gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL,
+        send_to: targets,
         value: 1.0,
         currency: 'GBP'
       });
