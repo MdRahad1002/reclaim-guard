@@ -137,3 +137,12 @@
     setTimeout(showBanner, 800);
   }
 })();
+
+/* Umami self-hosted analytics (cookieless, GDPR-friendly loads without consent). */
+(function () {
+  var s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://analytics.reclaim-guard.com/script.js';
+  s.setAttribute('data-website-id', '062bb6c5-b63f-4fa3-83eb-720ad69b5794');
+  (document.head || document.documentElement).appendChild(s);
+})();
