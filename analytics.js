@@ -31,18 +31,35 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  // 1) Consent Mode v2 defaults: everything denied until the user opts in.
+  // 1) Consent Mode v2 defaults.
+  //    Grant by default globally (regions with no legal consent requirement,
+  //    e.g. the US), but DENY by default in the EEA, UK and Switzerland until
+  //    the visitor opts in. This keeps measurement strong outside the EEA
+  //    while staying GDPR-compliant inside it.
+  var CONSENT_REQUIRED_REGIONS = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
+    'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO',
+    'GB','CH'
+  ];
+  gtag('consent', 'default', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted'
+  });
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
     analytics_storage: 'denied',
+    region: CONSENT_REQUIRED_REGIONS,
     wait_for_update: 500
   });
 
-  // Honour a previously stored "granted" choice on subsequent page loads.
+  // Honour a previously stored choice on subsequent page loads.
   var stored = localStorage.getItem('cookieConsent');
   if (stored === 'granted') { updateConsent('granted'); }
+  else if (stored === 'denied') { updateConsent('denied'); }
 
   // 2) Load the gtag library + configure the tags (only if IDs are set).
   if (GA4_ON || ADS_ON) {
@@ -132,6 +149,7 @@
     });
     document.getElementById('rgRejectCookies').addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'denied');
+      updateConsent('denied'); // withdraw consent (matters where the default is granted)
       bar.remove();
     });
   }
