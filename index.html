@@ -673,6 +673,35 @@
         </div>
     </section>
 
+    <!-- How we trace funds: simple investigative flow diagram -->
+    <section class="chainflow-section" aria-label="How we trace stolen funds" style="padding:64px 0;">
+        <style>
+        .chainflow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:10px;max-width:940px;margin:0 auto;}
+        .cf-node{flex:1 1 180px;min-width:150px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 14px;text-align:center;font-weight:600;font-size:0.9rem;color:var(--dark-color,#0f172a);display:flex;flex-direction:column;gap:9px;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+        .cf-ico{width:38px;height:38px;border-radius:9px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:var(--primary-color,#1B4FD8);}
+        .cf-ico svg{width:19px;height:19px;}
+        .cf-node.cf-legal{background:#ecfdf5;border-color:#a7f3d0;}
+        .cf-node.cf-legal .cf-ico{background:#d1fae5;color:#047857;}
+        .cf-arrow{display:flex;align-items:center;color:#94a3b8;font-size:1.5rem;font-weight:700;}
+        @media(max-width:640px){.chainflow{flex-direction:column;}.cf-arrow{transform:rotate(90deg);justify-content:center;height:22px;}}
+        </style>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="chainTitle">How we trace stolen funds</h2>
+                <p class="section-subtitle" id="chainSubtitle">A simplified view of a real investigation. Every case is different, and outcomes are never guaranteed.</p>
+            </div>
+            <div class="chainflow">
+                <div class="cf-node"><span class="cf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><span id="cfLabel1">Your payment</span></div>
+                <div class="cf-arrow">&rarr;</div>
+                <div class="cf-node"><span class="cf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span id="cfLabel2">Scammer wallet or account</span></div>
+                <div class="cf-arrow">&rarr;</div>
+                <div class="cf-node"><span class="cf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span><span id="cfLabel3">Exchange or off-ramp</span></div>
+                <div class="cf-arrow">&rarr;</div>
+                <div class="cf-node cf-legal"><span class="cf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></span><span id="cfLabel4">KYC &amp; freeze request</span></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
     <section class="process-section">
         <div class="container">

@@ -27,6 +27,12 @@ const TRANSLATIONS = {
     verify_never_title: 'What we will never do',
     objfaq_title: 'Still wondering if we can help you?',
     objfaq_subtitle: 'The questions people ask us most, before they get in touch.',
+    chain_title: 'How we trace stolen funds',
+    chain_subtitle: 'A simplified view of a real investigation. Every case is different, and outcomes are never guaranteed.',
+    chain_n1: 'Your payment',
+    chain_n2: 'Scammer wallet or account',
+    chain_n3: 'Exchange or off-ramp',
+    chain_n4: 'KYC & freeze request',
     objfaq_html: '<details><summary>Is it too late to do anything?</summary><div>Often not. Payment records and blockchain transactions are permanent, and legal steps can still be taken months later. The sooner you act the better &mdash; but older cases are still worth assessing.</div></details><details><summary>I paid by bank transfer &mdash; can that be recovered?</summary><div>Possibly. Bank-transfer (APP) fraud may be recoverable, and since October 2024 UK banks must reimburse many victims. If your bank has refused, that decision can be challenged.</div></details><details><summary>I paid in Bitcoin or crypto &mdash; is it gone for good?</summary><div>Not automatically. Crypto can usually be traced on the blockchain to the exchange it reached; recovery then depends on legal action. Tracing is possible; recovery is never guaranteed.</div></details><details><summary>I was told to pay an AML or tax fee &mdash; is that normal?</summary><div>No. No legitimate platform charges a fee to release your own money &mdash; that is part of the scam. Stop paying and have your case assessed.</div></details><details><summary>The broker or website has disappeared &mdash; is there any point?</summary><div>Yes. Even when a site vanishes, the money trail and payment records usually remain, and that is exactly what an investigation follows.</div></details>',
     verify_never_html: '<li>We will <strong>never</strong> ask you to pay a fee, &ldquo;tax&rdquo; or &ldquo;release&rdquo; charge to withdraw your own money.</li><li>We will <strong>never</strong> guarantee recovery &mdash; anyone who promises a guaranteed result is not being honest.</li><li>We will <strong>never</strong> ask you to pay in cryptocurrency, gift cards, or to a personal account.</li><li>We will <strong>never</strong> cold-call you claiming we have already found your money.</li>',
 
@@ -388,6 +394,12 @@ const TRANSLATIONS = {
     verify_never_title: 'Was wir niemals tun',
     objfaq_title: 'Fragen Sie sich noch, ob wir Ihnen helfen können?',
     objfaq_subtitle: 'Die häufigsten Fragen, bevor Menschen uns kontaktieren.',
+    chain_title: 'So verfolgen wir gestohlene Gelder',
+    chain_subtitle: 'Eine vereinfachte Darstellung einer echten Ermittlung. Jeder Fall ist anders, und Ergebnisse sind nie garantiert.',
+    chain_n1: 'Ihre Zahlung',
+    chain_n2: 'Wallet oder Konto des Betrügers',
+    chain_n3: 'Börse oder Auszahlungsstelle',
+    chain_n4: 'KYC- & Sperr-Anfrage',
     objfaq_html: '<details><summary>Ist es zu spät, noch etwas zu tun?</summary><div>Oft nicht. Zahlungsbelege und Blockchain-Transaktionen sind dauerhaft, und rechtliche Schritte sind auch nach Monaten noch möglich. Je früher Sie handeln, desto besser &mdash; aber auch ältere Fälle lohnen eine Prüfung.</div></details><details><summary>Ich habe per Banküberweisung gezahlt &mdash; ist das rückholbar?</summary><div>Möglicherweise. Betrug per Banküberweisung (APP) kann rückholbar sein, und seit Oktober 2024 müssen britische Banken viele Opfer entschädigen. Wenn Ihre Bank abgelehnt hat, lässt sich das anfechten.</div></details><details><summary>Ich habe in Bitcoin oder Krypto gezahlt &mdash; ist es endgültig weg?</summary><div>Nicht automatisch. Krypto lässt sich meist über die Blockchain bis zur Ziel-Börse verfolgen; die Rückgewinnung hängt dann von rechtlichen Schritten ab. Verfolgung ist möglich, Rückgewinnung nie garantiert.</div></details><details><summary>Ich sollte eine AML- oder Steuergebühr zahlen &mdash; ist das normal?</summary><div>Nein. Keine seriöse Plattform verlangt eine Gebühr, um Ihr eigenes Geld freizugeben &mdash; das ist Teil des Betrugs. Zahlen Sie nicht weiter und lassen Sie Ihren Fall prüfen.</div></details><details><summary>Der Broker oder die Website ist verschwunden &mdash; hat das noch Zweck?</summary><div>Ja. Selbst wenn eine Seite verschwindet, bleiben die Geldspur und Zahlungsbelege meist erhalten &mdash; genau dem folgt eine Ermittlung.</div></details>',
     verify_never_html: '<li>Wir werden Sie <strong>niemals</strong> auffordern, eine Gebühr, &ldquo;Steuer&rdquo; oder &ldquo;Freigabegebühr&rdquo; zu zahlen, um Ihr eigenes Geld abzuheben.</li><li>Wir <strong>garantieren niemals</strong> eine Wiederbeschaffung &mdash; wer ein garantiertes Ergebnis verspricht, ist nicht ehrlich.</li><li>Wir werden Sie <strong>niemals</strong> bitten, in Kryptowährung, mit Geschenkkarten oder auf ein privates Konto zu zahlen.</li><li>Wir werden Sie <strong>niemals</strong> unaufgefordert anrufen und behaupten, wir hätten Ihr Geld bereits gefunden.</li>',
 
@@ -876,6 +888,12 @@ function applyTranslations() {
   setText('#objFaqTitle', 'objfaq_title');
   setText('#objFaqSubtitle', 'objfaq_subtitle');
   setHTML('#objFaqList', 'objfaq_html');
+  setText('#chainTitle', 'chain_title');
+  setText('#chainSubtitle', 'chain_subtitle');
+  setText('#cfLabel1', 'chain_n1');
+  setText('#cfLabel2', 'chain_n2');
+  setText('#cfLabel3', 'chain_n3');
+  setText('#cfLabel4', 'chain_n4');
 
   // Hero
   setText('.hero-badge span', 'hero_badge');
