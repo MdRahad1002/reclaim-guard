@@ -16,7 +16,7 @@ const TRANSLATIONS = {
     nav_services: 'Services',
     nav_technology: 'Technology',
     nav_about: 'About',
-    nav_testimonials: 'Testimonials',
+    nav_testimonials: 'Fraud Types',
     nav_contact: 'Contact',
     nav_blog: 'Blog',
     nav_cta: 'Free Consultation',
@@ -366,7 +366,7 @@ const TRANSLATIONS = {
     nav_services: 'Leistungen',
     nav_technology: 'Methodik',
     nav_about: 'Über uns',
-    nav_testimonials: 'Erfahrungen',
+    nav_testimonials: 'Betrugsarten',
     nav_contact: 'Kontakt',
     nav_blog: 'Blog',
     nav_cta: 'Kostenlose Beratung',
@@ -828,7 +828,7 @@ function applyTranslations() {
   // Nav
   const navLinks = document.querySelectorAll('.nav-link');
   const navKeys = navLinks.length >= 7
-    ? ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_blog', 'nav_contact']
+    ? ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact', 'nav_blog']
     : ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact'];
   navLinks.forEach((el, i) => { if (navKeys[i]) el.textContent = t(navKeys[i]); });
   const navCta = document.querySelector('.nav-menu .btn-primary');

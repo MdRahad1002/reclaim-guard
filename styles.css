@@ -217,6 +217,16 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+/* Persistent "Free Consultation" CTA button in the nav */
+.nav-cta {
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.nav-cta::after { display: none; }
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;

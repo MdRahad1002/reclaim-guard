@@ -5,8 +5,9 @@ Disallow: /admin.html
 Disallow: /thank-you
 Disallow: /api/
 
-# Block Google's AI training crawler (does not affect Search or AI Overviews)
-User-agent: Google-Extended
-Disallow: /
+# AI assistants and answer engines (ChatGPT, Claude, Perplexity, Gemini,
+# Copilot, etc.) are welcome to crawl and cite this site. They follow the
+# rules above, so /admin, /thank-you and /api stay excluded.
+# A structured summary for LLMs is published at /llms.txt
 
 Sitemap: https://www.reclaim-guard.com/sitemap.xml

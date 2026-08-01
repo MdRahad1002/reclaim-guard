@@ -78,7 +78,7 @@ app.use('/assets', express.static(ASSETS_DIR, { maxAge: '30d', dotfiles: 'deny' 
 // Root-level files that are safe to publish.
 const ROOT_FILES = new Set([
     'styles.css', 'script.js', 'analytics.js', 'i18n.js',
-    'sitemap.xml', 'robots.txt',
+    'sitemap.xml', 'robots.txt', 'llms.txt',
 ]);
 
 for (const file of ROOT_FILES) {
