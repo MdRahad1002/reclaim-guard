@@ -826,11 +826,21 @@ function applyTranslations() {
   if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_DE' : 'en_GB');
 
   // Nav
+  // Map each nav link by its href (robust to link order, which differs
+  // between the homepage and sub-pages like blog/privacy/terms).
   const navLinks = document.querySelectorAll('.nav-link');
-  const navKeys = navLinks.length >= 7
-    ? ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact', 'nav_blog']
-    : ['nav_home', 'nav_services', 'nav_technology', 'nav_about', 'nav_testimonials', 'nav_contact'];
-  navLinks.forEach((el, i) => { if (navKeys[i]) el.textContent = t(navKeys[i]); });
+  navLinks.forEach((el) => {
+    const href = (el.getAttribute('href') || '').toLowerCase();
+    let key = null;
+    if      (href.indexOf('#home') !== -1)         key = 'nav_home';
+    else if (href.indexOf('#services') !== -1)     key = 'nav_services';
+    else if (href.indexOf('#technology') !== -1)   key = 'nav_technology';
+    else if (href.indexOf('#about') !== -1)        key = 'nav_about';
+    else if (href.indexOf('#testimonials') !== -1) key = 'nav_testimonials';
+    else if (href.indexOf('#contact') !== -1)      key = 'nav_contact';
+    else if (href.indexOf('blog') !== -1)          key = 'nav_blog';
+    if (key) el.textContent = t(key);
+  });
   const navCta = document.querySelector('.nav-menu .btn-primary');
   if (navCta) navCta.textContent = t('nav_cta');
 
