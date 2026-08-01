@@ -114,6 +114,10 @@ app.get(/^\/blog\/(.+)$/, (req, res, next) => {
     res.sendFile(target);
 });
 
+// Bare /recover has no index page; send visitors to the homepage.
+app.get('/recover', (req, res) => res.redirect(301, '/'));
+app.get('/recover/', (req, res) => res.redirect(301, '/'));
+
 // Campaign landing pages: /recover/<slug>, with or without .html.
 app.get(/^\/recover\/(.+)$/, (req, res, next) => {
     let slug = req.params[0].replace(/\.html$/, '');

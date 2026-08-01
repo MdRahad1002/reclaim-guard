@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.4rem;
 }
 
 .nav-link {
@@ -381,6 +381,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.875rem;
     opacity: 0.9;
 }
+
+/* Hero sits on a dark image — force the stats to light so the labels
+   (Action Experts, Tracing Specialists, ...) aren't invisible. */
+.hero .stat-number { color: #ffffff; }
+.hero .stat-label { color: rgba(255, 255, 255, 0.85); opacity: 1; }
 
 /* ================================
    Trust Section
