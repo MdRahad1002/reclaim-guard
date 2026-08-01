@@ -1173,6 +1173,31 @@
         </div>
     </section>
 
+    <!-- Objection-handling FAQ, right before the form -->
+    <section class="obj-faq-section" aria-label="Common questions before you start" style="padding:72px 0;background:var(--bg-light);">
+        <style>
+        .obj-faq-section details{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;margin-bottom:10px;}
+        .obj-faq-section summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+        .obj-faq-section summary::-webkit-details-marker{display:none;}
+        .obj-faq-section summary::after{content:'+';color:var(--primary-color);font-size:1.35rem;line-height:1;flex:0 0 auto;}
+        .obj-faq-section details[open] summary::after{content:'\2212';}
+        .obj-faq-section details > div{margin-top:10px;color:#475569;line-height:1.6;font-size:0.95rem;}
+        </style>
+        <div class="container" style="max-width:820px;">
+            <div class="section-header">
+                <h2 class="section-title" id="objFaqTitle">Still wondering if we can help you?</h2>
+                <p class="section-subtitle" id="objFaqSubtitle">The questions people ask us most, before they get in touch.</p>
+            </div>
+            <div id="objFaqList">
+                <details><summary>Is it too late to do anything?</summary><div>Often not. Payment records and blockchain transactions are permanent, and legal steps can still be taken months later. The sooner you act the better &mdash; but older cases are still worth assessing.</div></details>
+                <details><summary>I paid by bank transfer &mdash; can that be recovered?</summary><div>Possibly. Bank-transfer (APP) fraud may be recoverable, and since October 2024 UK banks must reimburse many victims. If your bank has refused, that decision can be challenged.</div></details>
+                <details><summary>I paid in Bitcoin or crypto &mdash; is it gone for good?</summary><div>Not automatically. Crypto can usually be traced on the blockchain to the exchange it reached; recovery then depends on legal action. Tracing is possible; recovery is never guaranteed.</div></details>
+                <details><summary>I was told to pay an AML or tax fee &mdash; is that normal?</summary><div>No. No legitimate platform charges a fee to release your own money &mdash; that is part of the scam. Stop paying and have your case assessed.</div></details>
+                <details><summary>The broker or website has disappeared &mdash; is there any point?</summary><div>Yes. Even when a site vanishes, the money trail and payment records usually remain, and that is exactly what an investigation follows.</div></details>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
