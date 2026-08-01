@@ -59,9 +59,9 @@ const TRANSLATIONS = {
 
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
-    hero_title: 'Help Recovering Money Lost to Crypto Scams & Online Fraud',
-    hero_subtitle: 'ReclaimGuard Legal specializes in cyber-fraud recovery, crypto tracing, chargebacks, and legal action against online scammers. No unrealistic promises. Just evidence-based investigations and transparent service.',
-    hero_btn_primary: 'Get a Free Consultation',
+    hero_title: 'Lost money to an online trading platform or crypto scam?',
+    hero_subtitle: 'If your withdrawal has been blocked, or you have been asked to pay AML, tax or "release" fees, our SRA-regulated legal and blockchain investigation team can assess your case — free, and on a no win, no fee basis.',
+    hero_btn_primary: 'Check If My Case Is Recoverable',
     hero_btn_secondary: 'How Recovery Works',
 
     // Stats
@@ -258,7 +258,9 @@ const TRANSLATIONS = {
     form_message: 'Short description of what happened (optional)',
     form_message_placeholder: 'Briefly describe the fraud incident...',
     form_consent: 'I understand that ReclaimGuard Legal provides investigation services and that no guaranteed outcome is promised. I consent to being contacted about my case.',
-    form_submit: 'Get a Free Consultation',
+    form_submit: 'Check If My Case Is Recoverable',
+    form_urgency: 'The sooner an investigation begins, the greater the chance of preserving evidence and tracing funds.',
+    form_reassure_html: '<li>&#10003; Free case review</li><li>&#10003; Confidential</li><li>&#10003; No obligation</li><li>&#10003; No guaranteed outcome promised</li>',
     form_step1_indicator: 'Step 1 of 2 · Your case',
     form_step2_indicator: 'Step 2 of 2 · Your details',
     form_continue: 'Continue →',
@@ -415,9 +417,9 @@ const TRANSLATIONS = {
 
     // Hero
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
-    hero_title: 'Hilfe bei der Rückgewinnung von durch Krypto- & Online-Betrug verlorenem Geld',
-    hero_subtitle: 'ReclaimGuard Legal ist spezialisiert auf die Rückgewinnung bei Cyberbetrug, Krypto-Tracing, Rückbuchungen und rechtliche Schritte gegen Online-Betrüger. Keine unrealistischen Versprechen – nur faktenbasierte Ermittlungen und transparenten Service.',
-    hero_btn_primary: 'Kostenlose Beratung erhalten',
+    hero_title: 'Geld an eine Online-Trading-Plattform oder einen Krypto-Betrug verloren?',
+    hero_subtitle: 'Wenn Ihre Auszahlung blockiert wurde oder Sie aufgefordert wurden, AML-, Steuer- oder „Freigabe"-Gebühren zu zahlen, kann unser SRA-reguliertes Team aus Juristen und Blockchain-Ermittlern Ihren Fall prüfen – kostenlos und nach dem Prinzip „No Win, No Fee".',
+    hero_btn_primary: 'Prüfen, ob mein Fall lösbar ist',
     hero_btn_secondary: 'So funktioniert die Rückgewinnung',
 
     // Stats
@@ -614,7 +616,9 @@ const TRANSLATIONS = {
     form_message: 'Kurze Beschreibung des Vorfalls (optional)',
     form_message_placeholder: 'Beschreiben Sie kurz den Betrugsvorfall...',
     form_consent: 'Ich verstehe, dass ReclaimGuard Legal Ermittlungsdienstleistungen erbringt und kein garantiertes Ergebnis versprochen wird. Ich stimme zu, bezüglich meines Falls kontaktiert zu werden.',
-    form_submit: 'Kostenlose Beratung erhalten',
+    form_submit: 'Prüfen, ob mein Fall lösbar ist',
+    form_urgency: 'Je früher eine Ermittlung beginnt, desto größer die Chance, Beweise zu sichern und Gelder zu verfolgen.',
+    form_reassure_html: '<li>&#10003; Kostenlose Fallprüfung</li><li>&#10003; Vertraulich</li><li>&#10003; Unverbindlich</li><li>&#10003; Kein garantiertes Ergebnis</li>',
     form_step1_indicator: 'Schritt 1 von 2 · Ihr Fall',
     form_step2_indicator: 'Schritt 2 von 2 · Ihre Daten',
     form_continue: 'Weiter →',
@@ -1076,6 +1080,8 @@ function applyTranslations() {
   const consentLabel = document.querySelector('label[for="consent"]'); if (consentLabel) consentLabel.textContent = t('form_consent');
   const msgInput = document.querySelector('#message'); if (msgInput) msgInput.placeholder = t('form_message_placeholder');
   const submitBtn = document.querySelector('.contact-form button[type="submit"]'); if (submitBtn) submitBtn.textContent = t('form_submit');
+  setText('#formUrgency', 'form_urgency');
+  setHTML('#formReassure', 'form_reassure_html');
   const ind1 = document.querySelector('.form-step-indicator[data-step="1"]'); if (ind1) ind1.textContent = t('form_step1_indicator');
   const ind2 = document.querySelector('.form-step-indicator[data-step="2"]'); if (ind2) ind2.textContent = t('form_step2_indicator');
   const contBtn = document.querySelector('.form-continue-btn'); if (contBtn) contBtn.textContent = t('form_continue');
