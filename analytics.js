@@ -20,6 +20,7 @@
   var GOOGLE_ADS_ID         = 'AW-18360624527';
   var LEAD_CONVERSION_LABEL   = 'NCyXCLTNitkcEI_Lg7NE'; // "Page view conversion"
   var LEAD_CONVERSION_LABEL_2 = 'vy2sCJ6ttdkcEI_Lg7NE'; // "Sign-up conversion"
+  var CLARITY_ID              = 'xvn0yf7djo';            // Microsoft Clarity (loads only after consent)
   // --------------------------------------------------------------------
 
   function configured(v) { return v && v.indexOf('XXXX') === -1; }
@@ -58,8 +59,20 @@
 
   // Honour a previously stored choice on subsequent page loads.
   var stored = localStorage.getItem('cookieConsent');
-  if (stored === 'granted') { updateConsent('granted'); }
+  if (stored === 'granted') { updateConsent('granted'); loadClarity(); }
   else if (stored === 'denied') { updateConsent('denied'); }
+
+  // Microsoft Clarity (heatmaps + session recording). Privacy-sensitive, so
+  // it loads ONLY once the visitor has granted consent (never before).
+  function loadClarity() {
+    if (!CLARITY_ID || window.__clarityLoaded) return;
+    window.__clarityLoaded = true;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+  }
 
   // 2) Load the gtag library + configure the tags (only if IDs are set).
   if (GA4_ON || ADS_ON) {
@@ -145,6 +158,7 @@
     document.getElementById('rgAcceptCookies').addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'granted');
       updateConsent('granted');
+      loadClarity();
       bar.remove();
     });
     document.getElementById('rgRejectCookies').addEventListener('click', function () {
@@ -216,6 +230,64 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inject);
   } else { inject(); }
+})();
+
+/* Sticky mobile CTA bar: Call / WhatsApp / Free Review. Shows on phones
+   (<=768px), where most ad clicks land; hides the floating WhatsApp circle
+   there so they don't overlap. All taps flow through the click tracker above. */
+(function () {
+  var PHONE = '+447735029656';
+  var WA    = '447466901590';
+  function injectBar() {
+    if (document.getElementById('rgCtaBar') || !document.body) return;
+    var isDE = (document.documentElement.lang || '').toLowerCase().indexOf('de') === 0;
+    var L = isDE
+      ? { call: 'Anrufen', wa: 'WhatsApp', form: 'Gratis-Prüfung' }
+      : { call: 'Call',    wa: 'WhatsApp', form: 'Free Review' };
+    var waMsg = encodeURIComponent(isDE
+      ? 'Hallo, ich moechte eine kostenlose Beratung zur Rueckholung von Geld, das ich durch einen Betrug verloren habe.'
+      : "Hi, I'd like a free consultation about recovering money I lost to a scam.");
+
+    var st = document.createElement('style');
+    st.textContent =
+      '#rgCtaBar{display:none;}' +
+      '#rgCtaBar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;' +
+      'padding:15px 6px;font:700 14px/1 Inter,system-ui,sans-serif;text-decoration:none;color:#fff;' +
+      'white-space:nowrap;}' +
+      '#rgCtaBar a svg{width:17px;height:17px;flex:0 0 auto;}' +
+      '#rgCtaBar .rg-call{background:#0f172a;}' +
+      '#rgCtaBar .rg-wa{background:#25D366;}' +
+      '#rgCtaBar .rg-form{background:#1B4FD8;}' +
+      '@media(max-width:768px){' +
+        '#rgCtaBar{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:flex;' +
+        'box-shadow:0 -2px 12px rgba(0,0,0,.22);}' +
+        '#rgWhatsApp{display:none!important;}' +
+        'body{padding-bottom:52px;}' +
+      '}';
+    document.head.appendChild(st);
+
+    var callIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+    var waIcon   = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>';
+    var formIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+
+    var bar = document.createElement('div');
+    bar.id = 'rgCtaBar';
+    bar.innerHTML =
+      '<a class="rg-call" href="tel:' + PHONE + '">' + callIcon + L.call + '</a>' +
+      '<a class="rg-wa" href="https://wa.me/' + WA + '?text=' + waMsg + '" target="_blank" rel="noopener">' + waIcon + L.wa + '</a>' +
+      '<a class="rg-form" href="#" id="rgCtaForm">' + formIcon + L.form + '</a>';
+    document.body.appendChild(bar);
+
+    document.getElementById('rgCtaForm').addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.getElementById('contactForm') || document.getElementById('contact');
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      else { location.href = '/#contact'; }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectBar);
+  } else { injectBar(); }
 })();
 
 /* Umami self-hosted analytics (cookieless, GDPR-friendly loads without consent). */
