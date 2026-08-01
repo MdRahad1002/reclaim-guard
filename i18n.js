@@ -20,6 +20,12 @@ const TRANSLATIONS = {
     nav_contact: 'Contact',
     nav_blog: 'Blog',
     nav_cta: 'Free Consultation',
+    verify_title: 'You were scammed once. Here\'s how to know we\'re genuine.',
+    verify_subtitle: 'Fraud victims are often targeted a second time by fake "recovery" services. Before trusting anyone, including us, verify their credentials and watch for these red flags.',
+    verify_cred_title: 'Verify our credentials',
+    verify_cred_html: '<li>Regulated by the <strong>Solicitors Regulation Authority</strong> &mdash; check <strong>SRA No.&nbsp;830575</strong> on the <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA register</a>.</li><li>Registered in England &amp; Wales &mdash; <strong>Company No.&nbsp;13438429</strong> on <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Registered office: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Always confirm a firm&rsquo;s regulation before you share details or send documents.</li>',
+    verify_never_title: 'What we will never do',
+    verify_never_html: '<li>We will <strong>never</strong> ask you to pay a fee, &ldquo;tax&rdquo; or &ldquo;release&rdquo; charge to withdraw your own money.</li><li>We will <strong>never</strong> guarantee recovery &mdash; anyone who promises a guaranteed result is not being honest.</li><li>We will <strong>never</strong> ask you to pay in cryptocurrency, gift cards, or to a personal account.</li><li>We will <strong>never</strong> cold-call you claiming we have already found your money.</li>',
 
     // Blog page
     blog_hero_title: 'Fraud Recovery Guides',
@@ -370,6 +376,12 @@ const TRANSLATIONS = {
     nav_contact: 'Kontakt',
     nav_blog: 'Blog',
     nav_cta: 'Kostenlose Beratung',
+    verify_title: 'Sie wurden einmal betrogen. So erkennen Sie, dass wir seriös sind.',
+    verify_subtitle: 'Betrugsopfer werden oft ein zweites Mal von gefälschten "Wiederbeschaffungs"-Diensten ins Visier genommen. Bevor Sie jemandem vertrauen, auch uns, überprüfen Sie die Zulassung und achten Sie auf diese Warnzeichen.',
+    verify_cred_title: 'Überprüfen Sie unsere Zulassung',
+    verify_cred_html: '<li>Reguliert durch die <strong>Solicitors Regulation Authority</strong> &mdash; prüfen Sie <strong>SRA-Nr.&nbsp;830575</strong> im <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA-Register</a>.</li><li>Eingetragen in England &amp; Wales &mdash; <strong>Handelsregister-Nr.&nbsp;13438429</strong> bei <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Eingetragener Sitz: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Überprüfen Sie immer die Zulassung einer Kanzlei, bevor Sie Daten oder Dokumente weitergeben.</li>',
+    verify_never_title: 'Was wir niemals tun',
+    verify_never_html: '<li>Wir werden Sie <strong>niemals</strong> auffordern, eine Gebühr, &ldquo;Steuer&rdquo; oder &ldquo;Freigabegebühr&rdquo; zu zahlen, um Ihr eigenes Geld abzuheben.</li><li>Wir <strong>garantieren niemals</strong> eine Wiederbeschaffung &mdash; wer ein garantiertes Ergebnis verspricht, ist nicht ehrlich.</li><li>Wir werden Sie <strong>niemals</strong> bitten, in Kryptowährung, mit Geschenkkarten oder auf ein privates Konto zu zahlen.</li><li>Wir werden Sie <strong>niemals</strong> unaufgefordert anrufen und behaupten, wir hätten Ihr Geld bereits gefunden.</li>',
 
     // Blog page
     blog_hero_title: 'Betrugsrückgewinnungs-Ratgeber',
@@ -843,6 +855,14 @@ function applyTranslations() {
   });
   const navCta = document.querySelector('.nav-menu .btn-primary');
   if (navCta) navCta.textContent = t('nav_cta');
+
+  // Anti-scam "verify us" section
+  setText('#verifyTitle', 'verify_title');
+  setText('#verifySubtitle', 'verify_subtitle');
+  setText('#verifyCredTitle', 'verify_cred_title');
+  setHTML('#verifyCredList', 'verify_cred_html');
+  setText('#verifyNeverTitle', 'verify_never_title');
+  setHTML('#verifyNeverList', 'verify_never_html');
 
   // Hero
   setText('.hero-badge span', 'hero_badge');
