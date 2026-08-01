@@ -140,38 +140,129 @@ function validateScope(scope) {
     return true;
 }
 
-(function initMultiStepForm() {
+// Case Assessment Wizard: turns the form's case questions into a guided,
+// one-question-per-screen flow (clickable options, auto-advance) that feels
+// like an assessment, asking for personal details only at the end. It drives
+// the existing hidden <select>s so the normal submit handler + conversion
+// tracking are reused unchanged. Labels/options are read live from the DOM so
+// the wizard stays localized even though i18n applies asynchronously.
+(function initAssessmentWizard() {
     const form = document.getElementById('contactForm');
     if (!form) return;
-    const steps = form.querySelectorAll('.form-step');
-    const indicators = form.querySelectorAll('.form-step-indicator');
-    const fill = form.querySelector('#formProgressFill');
-    const continueBtn = form.querySelector('.form-continue-btn');
-    const backBtn = form.querySelector('.form-back-btn');
-    if (steps.length < 2 || !continueBtn) return;
+    const step1 = form.querySelector('.form-step[data-step="1"]');
+    const step2 = form.querySelector('.form-step[data-step="2"]');
+    if (!step1 || !step2) return;
 
-    function showStep(n) {
-        steps.forEach(s => { s.style.display = (s.dataset.step === String(n)) ? '' : 'none'; });
-        indicators.forEach(i => { i.style.display = (i.dataset.step === String(n)) ? '' : 'none'; });
-        if (fill) fill.style.width = (n === 2) ? '100%' : '50%';
+    const qDefs = [{ id: 'amount' }, { id: 'payment' }, { id: 'scamType' }, { id: 'when' }, { contact: true }]
+        .filter(d => d.contact || form.querySelector('#' + d.id));
+    const total = qDefs.length;
+    let idx = 0;
+    let inContact = null;
+
+    function strings() {
+        const isDE = (document.documentElement.lang || '').toLowerCase().indexOf('de') === 0;
+        return isDE
+            ? { back: '← Zurück', count: 'Frage %a von %b', contactQ: 'Stehen Sie noch mit den Betrügern in Kontakt?', yes: 'Ja', no: 'Nein', note: 'Noch in Kontakt' }
+            : { back: '← Back', count: 'Question %a of %b', contactQ: 'Are you still in contact with them?', yes: 'Yes', no: 'No', note: 'Still in contact' };
+    }
+    function cleanLabel(s) {
+        return (s || '').replace(/\s*\(optional\)\s*/ig, '').replace(/\s*\*\s*$/, '').trim();
+    }
+    function questionData(def) {
+        const T = strings();
+        if (def.contact) {
+            return { title: T.contactQ, opts: [{ v: 'yes', l: T.yes }, { v: 'no', l: T.no }], selected: inContact };
+        }
+        const sel = form.querySelector('#' + def.id);
+        const label = form.querySelector('label[for="' + def.id + '"]');
+        const opts = Array.prototype.slice.call(sel.options).filter(o => o.value).map(o => ({ v: o.value, l: o.textContent }));
+        return { title: cleanLabel(label && label.textContent), opts: opts, selected: sel.value };
     }
 
-    continueBtn.addEventListener('click', () => {
-        const step1 = form.querySelector('.form-step[data-step="1"]');
-        if (!validateScope(step1)) return;
-        showStep(2);
-        // Bring the form heading back into view on the smaller second step.
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    // Hide the original step-1 UI + progress; the selects stay in the DOM
+    // (display:none still submits their values).
+    step1.style.display = 'none';
+    step2.style.display = 'none';
+    const origProgress = form.querySelector('.form-progress');
+    if (origProgress) origProgress.style.display = 'none';
 
+    const wiz = document.createElement('div');
+    wiz.className = 'wizard';
+    wiz.innerHTML =
+        '<div class="wiz-progress"><span class="wiz-progress-fill"></span></div>' +
+        '<div class="wiz-count"></div>' +
+        '<h4 class="wiz-question"></h4>' +
+        '<div class="wiz-options"></div>' +
+        '<button type="button" class="wiz-back"></button>';
+    step1.parentNode.insertBefore(wiz, step1);
+
+    const elFill = wiz.querySelector('.wiz-progress-fill');
+    const elCount = wiz.querySelector('.wiz-count');
+    const elQ = wiz.querySelector('.wiz-question');
+    const elOpts = wiz.querySelector('.wiz-options');
+    const elBack = wiz.querySelector('.wiz-back');
+
+    function render() {
+        const T = strings();
+        const def = qDefs[idx];
+        const data = questionData(def);
+        elFill.style.width = Math.round((idx / total) * 100) + '%';
+        elCount.textContent = T.count.replace('%a', idx + 1).replace('%b', total);
+        elQ.textContent = data.title;
+        elOpts.innerHTML = '';
+        data.opts.forEach(o => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'wiz-option' + (data.selected === o.v ? ' selected' : '');
+            b.textContent = o.l;
+            b.addEventListener('click', () => {
+                if (def.contact) inContact = o.v;
+                else form.querySelector('#' + def.id).value = o.v;
+                if (idx < total - 1) { idx++; render(); }
+                else { toDetails(); }
+            });
+            elOpts.appendChild(b);
+        });
+        elBack.textContent = T.back;
+        elBack.style.visibility = idx === 0 ? 'hidden' : 'visible';
+    }
+
+    elBack.addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
+
+    function toDetails() {
+        wiz.style.display = 'none';
+        step2.style.display = '';
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Details step "Back" returns to the last wizard question.
+    const backBtn = step2.querySelector('.form-back-btn');
     if (backBtn) {
-        backBtn.addEventListener('click', () => {
-            showStep(1);
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const fresh = backBtn.cloneNode(true);
+        backBtn.parentNode.replaceChild(fresh, backBtn);
+        fresh.addEventListener('click', function (e) {
+            e.preventDefault();
+            step2.style.display = 'none';
+            wiz.style.display = '';
+            idx = total - 1;
+            render();
         });
     }
 
-    showStep(1);
+    // Fold the "still in contact" answer into the message field just before
+    // the existing submit handler reads it (capture runs before bubble).
+    form.addEventListener('submit', function () {
+        if (!inContact) return;
+        const T = strings();
+        const msg = form.querySelector('#message');
+        if (!msg) return;
+        const note = T.note + ': ' + (inContact === 'yes' ? T.yes : T.no);
+        if (msg.value.indexOf(T.note) === -1) msg.value = msg.value ? (note + '. ' + msg.value) : note;
+    }, true);
+
+    render();
+    setTimeout(render, 500);   // re-read once i18n (async geo) has localized
+    setTimeout(render, 1400);
 })();
 
 // ================================

@@ -227,6 +227,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-cta::after { display: none; }
 
+/* ================================
+   Case Assessment Wizard
+   ================================ */
+.wizard { margin-bottom: 8px; }
+.wiz-progress { height: 6px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
+.wiz-progress-fill { display: block; height: 100%; width: 0; background: var(--primary-color); border-radius: 999px; transition: width 0.3s ease; }
+.wiz-count { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--primary-color); margin-bottom: 12px; }
+.wiz-question { font-size: 1.2rem; font-weight: 700; line-height: 1.35; margin-bottom: 18px; color: var(--dark-color, #0f172a); }
+.wiz-options { display: grid; gap: 10px; }
+.wiz-option {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    width: 100%; text-align: left; background: #fff; border: 1.5px solid #e2e8f0;
+    border-radius: 10px; padding: 15px 16px; font-size: 0.98rem; font-weight: 600;
+    color: var(--dark-color, #0f172a); cursor: pointer; font-family: inherit;
+    transition: border-color 0.15s, background 0.15s, transform 0.08s;
+}
+.wiz-option::after { content: '→'; color: var(--primary-color); opacity: 0.45; font-weight: 700; }
+.wiz-option:hover { border-color: var(--primary-color); background: #f5f8ff; }
+.wiz-option:active { transform: scale(0.99); }
+.wiz-option.selected { border-color: var(--primary-color); background: #eef4ff; }
+.wiz-back {
+    margin-top: 18px; background: none; border: none; color: var(--muted, #64748b);
+    font-weight: 600; cursor: pointer; font-family: inherit; font-size: 0.9rem; padding: 4px 0;
+}
+.wiz-back:hover { color: var(--dark-color, #0f172a); }
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
