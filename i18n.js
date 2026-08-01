@@ -167,7 +167,7 @@ const TRANSLATIONS = {
 
     // About
     about_title: 'About ReclaimGuard Legal',
-    about_text1: 'ReclaimGuard Legal is a specialized digital-fraud recovery firm combining legal expertise, compliance knowledge, and advanced cybersecurity investigation techniques. We operate as a hybrid team of legal consultants, analysts, and digital forensic specialists who trace stolen assets and initiate structured recovery procedures.',
+    about_text1: 'ReclaimGuard Legal is an SRA-regulated digital-fraud recovery firm. We combine legal action with blockchain forensics to trace stolen assets and pursue structured recovery.',
     about_text2: 'Our mission is simple: Help victims regain control, restore justice, and recover their assets.',
     about_f1_title: 'Realistic Expectations',
     about_f1_desc: 'We operate with strict ethical standards and realistic expectations. We do not promise guaranteed recovery. We provide structured, professional recovery service with transparent results.',
@@ -534,7 +534,7 @@ const TRANSLATIONS = {
 
     // About
     about_title: 'Über ReclaimGuard Legal',
-    about_text1: 'ReclaimGuard Legal ist ein spezialisiertes Unternehmen zur Rückgewinnung bei digitalem Betrug, das Rechtskenntnisse, Compliance-Wissen und fortschrittliche Cybersicherheitsermittlungstechniken kombiniert. Wir sind ein hybrides Team aus Rechtsberatern, Analysten und digitalen Forensikspezialisten, die gestohlene Vermögenswerte verfolgen und strukturierte Rückgewinnungsverfahren einleiten.',
+    about_text1: 'ReclaimGuard Legal ist ein SRA-reguliertes Unternehmen zur Rückgewinnung bei digitalem Betrug. Wir kombinieren rechtliche Schritte mit Blockchain-Forensik, um gestohlene Vermögenswerte zu verfolgen und strukturiert zurückzuholen.',
     about_text2: 'Unsere Mission ist einfach: Opfern helfen, die Kontrolle zurückzugewinnen, Gerechtigkeit herzustellen und ihre Vermögenswerte zurückzubekommen.',
     about_f1_title: 'Realistische Erwartungen',
     about_f1_desc: 'Wir arbeiten nach strengen ethischen Standards und mit realistischen Erwartungen. Wir versprechen keine garantierte Rückgewinnung. Wir bieten strukturierten, professionellen Rückgewinnungsservice mit transparenten Ergebnissen.',
