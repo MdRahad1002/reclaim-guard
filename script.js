@@ -332,21 +332,23 @@ function removeFieldError(field) {
 const fab = document.querySelector('.fab');
 let fabLastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > fabLastScroll && currentScroll > 500) {
-        // Scrolling down
-        fab.style.transform = 'translateY(100px)';
-        fab.style.opacity = '0';
-    } else {
-        // Scrolling up
-        fab.style.transform = 'translateY(0)';
-        fab.style.opacity = '1';
-    }
-    
-    fabLastScroll = currentScroll;
-});
+if (fab) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > fabLastScroll && currentScroll > 500) {
+            // Scrolling down
+            fab.style.transform = 'translateY(100px)';
+            fab.style.opacity = '0';
+        } else {
+            // Scrolling up
+            fab.style.transform = 'translateY(0)';
+            fab.style.opacity = '1';
+        }
+
+        fabLastScroll = currentScroll;
+    });
+}
 
 // ================================
 // Lazy Loading for Images (if you add images later)
