@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.9;
 }
 
-/* Hero sits on a dark image — force the stats to light so the labels
+/* Hero sits on a dark image, force the stats to light so the labels
    (Action Experts, Tracing Specialists, ...) aren't invisible. */
 .hero .stat-number { color: #ffffff; }
 .hero .stat-label { color: rgba(255, 255, 255, 0.85); opacity: 1; }
@@ -2014,7 +2014,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================
-   Mobile refinements — easy to surf
+   Mobile refinements, easy to surf
    ================================ */
 @media (max-width: 768px) {
     /* Consistent, comfortable vertical rhythm */
