@@ -1883,7 +1883,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
+    /* Only the full nav (with a hamburger, id=navMenu) collapses off-screen.
+       Landing pages use a class-only .nav-menu with no hamburger, so it must
+       stay visible. */
+    #navMenu {
         position: fixed;
         top: 70px;
         left: -100%;
@@ -1896,7 +1899,7 @@ h1, h2, h3, h4, h5, h6 {
         box-shadow: var(--shadow);
     }
 
-    .nav-menu.active {
+    #navMenu.active {
         left: 0;
     }
 
@@ -1999,6 +2002,53 @@ h1, h2, h3, h4, h5, h6 {
     .trust-badges {
         flex-direction: column;
     }
+}
+
+/* ================================
+   Mobile refinements — easy to surf
+   ================================ */
+@media (max-width: 768px) {
+    /* Consistent, comfortable vertical rhythm */
+    .services-section, .technology-section, .process-section,
+    .about-section, .trust-section, .trust-compliance-section,
+    .testimonials-section, .faq-section, .blog-grid-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .section-header { margin-bottom: 26px; }
+
+    /* Hero breathing room */
+    .hero { padding: 44px 0 32px; }
+    .hero-trust { gap: 10px 16px; }
+    .hero-stats { gap: 1rem; margin-top: 2.25rem; }
+
+    /* Landing-page nav (no hamburger) stays visible + tidy */
+    .navbar .nav-menu:not(#navMenu) { gap: 12px; }
+
+    /* Forms: use the width; font-size:16px stops iOS zooming on focus */
+    .contact-form-container { padding: 1.5rem; }
+    .form-group input, .form-group select, .form-group textarea,
+    .phone-group input, #phone { font-size: 16px; }
+
+    /* Wizard: bigger, thumb-friendly targets */
+    .wiz-option { padding: 16px; font-size: 1rem; }
+    .wiz-question { font-size: 1.12rem; }
+}
+
+@media (max-width: 600px) {
+    /* Landing nav: keep logo + tap-to-call; the CTA lives in the sticky bar */
+    .navbar .nav-menu:not(#navMenu) .btn-primary { display: none; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .logo-text { display: none; }        /* save width; logo image stays */
+    .hero-title { font-size: 1.6rem; line-height: 1.25; }
+    .hero-subtitle { font-size: 0.98rem; }
+    .stat-number { font-size: 1.5rem; }
+    .stat-label { font-size: 0.72rem; }
+    .section-title { font-size: 1.6rem; }
+    .contact-form-container { padding: 1.25rem; }
 }
 
 /* ================================
