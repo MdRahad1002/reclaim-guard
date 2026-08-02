@@ -1892,9 +1892,15 @@ h1, h2, h3, h4, h5, h6 {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
         background: var(--white);
         flex-direction: column;
-        padding: 2rem;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.75rem 2rem 3rem;
         transition: var(--transition);
         box-shadow: var(--shadow);
     }
@@ -1902,6 +1908,9 @@ h1, h2, h3, h4, h5, h6 {
     #navMenu.active {
         left: 0;
     }
+
+    /* Freeze the page behind the open menu so only the menu scrolls */
+    body.menu-open { overflow: hidden; }
 
     .mobile-menu-btn {
         display: flex;

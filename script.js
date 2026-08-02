@@ -5,25 +5,29 @@ const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navMenu = document.getElementById('navMenu');
 
 if (mobileMenuBtn) {
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    };
+
     mobileMenuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         mobileMenuBtn.classList.toggle('active');
+        // Lock the page behind so only the menu scrolls while it's open.
+        document.body.classList.toggle('menu-open', navMenu.classList.contains('active'));
     });
 
     // Close mobile menu when clicking on a nav link or the CTA button
-    const navLinks = navMenu.querySelectorAll('.nav-link, .btn-primary');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-        });
+    navMenu.querySelectorAll('.nav-link, .btn-primary').forEach(link => {
+        link.addEventListener('click', closeMenu);
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
+        if (navMenu.classList.contains('active') &&
+            !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            closeMenu();
         }
     });
 }
