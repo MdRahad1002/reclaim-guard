@@ -121,7 +121,7 @@ app.get('/recover/', (req, res) => res.redirect(301, '/'));
 // Campaign landing pages: /recover/<slug>, with or without .html.
 app.get(/^\/recover\/(.+)$/, (req, res, next) => {
     let slug = req.params[0].replace(/\.html$/, '');
-    if (!/^[a-z0-9\-]+$/i.test(slug)) return next();
+    if (!/^(de\/)?[a-z0-9\-]+$/i.test(slug)) return next();
 
     const target = path.resolve(RECOVER_DIR, slug + '.html');
     if (!target.startsWith(RECOVER_DIR + path.sep)) return next(); // traversal guard
