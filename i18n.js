@@ -23,6 +23,7 @@ const TRANSLATIONS = {
     verify_title: 'You were scammed once. Here\'s how to know we\'re genuine.',
     verify_subtitle: 'Fraud victims are often targeted a second time by fake "recovery" services. Before trusting anyone, including us, verify their credentials and watch for these red flags.',
     verify_cred_title: 'Verify our credentials',
+    verify_safety: '100% confidential. We speak with you by phone, and we never ask for any payment to release your money. Be wary of any recovery service that only chats or asks for upfront fees.',
     verify_cred_html: '<li>Regulated by the <strong>Solicitors Regulation Authority</strong>, check <strong>SRA No.&nbsp;830575</strong> on the <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA register</a>.</li><li>Registered in England &amp; Wales, <strong>Company No.&nbsp;13438429</strong> on <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Registered office: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Always confirm a firm&rsquo;s regulation before you share details or send documents.</li>',
     verify_never_title: 'What we will never do',
     objfaq_title: 'Still wondering if we can help you?',
@@ -398,6 +399,7 @@ const TRANSLATIONS = {
     verify_title: 'Sie wurden einmal betrogen. So erkennen Sie, dass wir seriös sind.',
     verify_subtitle: 'Betrugsopfer werden oft ein zweites Mal von gefälschten "Wiederbeschaffungs"-Diensten ins Visier genommen. Bevor Sie jemandem vertrauen, auch uns, überprüfen Sie die Zulassung und achten Sie auf diese Warnzeichen.',
     verify_cred_title: 'Überprüfen Sie unsere Zulassung',
+    verify_safety: '100% vertraulich. Wir sprechen persönlich mit Ihnen am Telefon und verlangen niemals eine Zahlung, um Ihr Geld freizugeben. Seien Sie vorsichtig bei jedem Wiederbeschaffungsdienst, der nur chattet oder Vorabgebühren verlangt.',
     verify_cred_html: '<li>Reguliert durch die <strong>Solicitors Regulation Authority</strong>, prüfen Sie <strong>SRA-Nr.&nbsp;830575</strong> im <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA-Register</a>.</li><li>Eingetragen in England &amp; Wales, <strong>Handelsregister-Nr.&nbsp;13438429</strong> bei <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Eingetragener Sitz: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Überprüfen Sie immer die Zulassung einer Kanzlei, bevor Sie Daten oder Dokumente weitergeben.</li>',
     verify_never_title: 'Was wir niemals tun',
     objfaq_title: 'Fragen Sie sich noch, ob wir Ihnen helfen können?',
@@ -901,6 +903,7 @@ function applyTranslations() {
   setHTML('#verifyCredList', 'verify_cred_html');
   setText('#verifyNeverTitle', 'verify_never_title');
   setHTML('#verifyNeverList', 'verify_never_html');
+  setText('#verifySafety', 'verify_safety');
   setText('#objFaqTitle', 'objfaq_title');
   setText('#objFaqSubtitle', 'objfaq_subtitle');
   setHTML('#objFaqList', 'objfaq_html');
