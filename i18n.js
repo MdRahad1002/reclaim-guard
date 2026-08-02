@@ -1333,18 +1333,17 @@ function applyTranslations() {
 async function initI18n() {
   let lang = getLang();
   if (!lang) {
-    // 1. Try Vercel's built-in IP geolocation (instant header, no rate limit)
-    const countryVercel = await detectCountryVercel();
-    if (countryVercel) {
-      lang = GERMAN_COUNTRIES.includes(countryVercel) ? 'de' : 'en';
+    // Show German if EITHER the phone/browser language is German, OR the
+    // visitor is in a German-speaking country (DE/AT/CH). English otherwise.
+    if (detectLangFromBrowser() === 'de') {
+      // German phone/browser -> German instantly, no network needed.
+      lang = 'de';
     } else {
-      // 2. Try browser locale (instant, no network)
-      lang = detectLangFromBrowser();
-      if (!lang) {
-        // 3. Fall back to third-party IP lookup
-        const countryFallback = await detectCountryFallback();
-        lang = (countryFallback && GERMAN_COUNTRIES.includes(countryFallback)) ? 'de' : 'en';
-      }
+      // Otherwise decide by country: server-side GeoIP (/api/geo), with a
+      // third-party IP lookup as backup.
+      let country = await detectCountryVercel();
+      if (!country) country = await detectCountryFallback();
+      lang = (country && GERMAN_COUNTRIES.includes(country)) ? 'de' : 'en';
     }
     setLang(lang);
   }
