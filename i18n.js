@@ -6,10 +6,10 @@
 const TRANSLATIONS = {
   en: {
     // SEO page title & meta description (swapped dynamically)
-    seo_title: 'Crypto Scam & Online Fraud Recovery Help | ReclaimGuard Legal',
-    seo_desc: 'Scammed online? ReclaimGuard Legal helps victims pursue recovery of money lost to crypto scams, investment fraud and bank fraud, through blockchain forensics and legal action. Free case review. EU/UK/US. No win, no fee outcomes are never guaranteed.',
-    og_title: 'Crypto Scam & Online Fraud Recovery Help | ReclaimGuard Legal',
-    og_desc: 'Scammed online? We help you recover lost money from crypto scams, investment fraud, and chargebacks. Free case review EU/UK/US coverage.',
+    seo_title: 'Crypto, Forex & Investment Scam Recovery | ReclaimGuard Legal',
+    seo_desc: 'Lost money to a crypto, forex or investment scam, a fake trading platform, or a romance or pig-butchering fraud? ReclaimGuard Legal traces stolen funds and pursues recovery through blockchain forensics and legal action. Free case review. UK, EU and US. No win, no fee; outcomes are never guaranteed.',
+    og_title: 'Crypto, Forex & Investment Scam Recovery | ReclaimGuard Legal',
+    og_desc: 'Lost money to a crypto, forex, investment or fake trading-platform scam? We trace stolen funds and pursue recovery. Free case review. UK, EU and US. No win, no fee.',
 
     // Nav
     nav_home: 'Home',
@@ -23,7 +23,7 @@ const TRANSLATIONS = {
     verify_title: 'You were scammed once. Here\'s how to know we\'re genuine.',
     verify_subtitle: 'Fraud victims are often targeted a second time by fake "recovery" services. Before trusting anyone, including us, verify their credentials and watch for these red flags.',
     verify_cred_title: 'Verify our credentials',
-    verify_cred_html: '<li>Regulated by the <strong>Solicitors Regulation Authority</strong> &mdash; check <strong>SRA No.&nbsp;830575</strong> on the <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA register</a>.</li><li>Registered in England &amp; Wales &mdash; <strong>Company No.&nbsp;13438429</strong> on <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Registered office: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Always confirm a firm&rsquo;s regulation before you share details or send documents.</li>',
+    verify_cred_html: '<li>Regulated by the <strong>Solicitors Regulation Authority</strong>, check <strong>SRA No.&nbsp;830575</strong> on the <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA register</a>.</li><li>Registered in England &amp; Wales, <strong>Company No.&nbsp;13438429</strong> on <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Registered office: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Always confirm a firm&rsquo;s regulation before you share details or send documents.</li>',
     verify_never_title: 'What we will never do',
     objfaq_title: 'Still wondering if we can help you?',
     objfaq_subtitle: 'The questions people ask us most, before they get in touch.',
@@ -33,8 +33,8 @@ const TRANSLATIONS = {
     chain_n2: 'Scammer wallet or account',
     chain_n3: 'Exchange or off-ramp',
     chain_n4: 'KYC & freeze request',
-    objfaq_html: '<details><summary>Is it too late to do anything?</summary><div>Often not. Payment records and blockchain transactions are permanent, and legal steps can still be taken months later. The sooner you act the better &mdash; but older cases are still worth assessing.</div></details><details><summary>I paid by bank transfer &mdash; can that be recovered?</summary><div>Possibly. Bank-transfer (APP) fraud may be recoverable, and since October 2024 UK banks must reimburse many victims. If your bank has refused, that decision can be challenged.</div></details><details><summary>I paid in Bitcoin or crypto &mdash; is it gone for good?</summary><div>Not automatically. Crypto can usually be traced on the blockchain to the exchange it reached; recovery then depends on legal action. Tracing is possible; recovery is never guaranteed.</div></details><details><summary>I was told to pay an AML or tax fee &mdash; is that normal?</summary><div>No. No legitimate platform charges a fee to release your own money &mdash; that is part of the scam. Stop paying and have your case assessed.</div></details><details><summary>The broker or website has disappeared &mdash; is there any point?</summary><div>Yes. Even when a site vanishes, the money trail and payment records usually remain, and that is exactly what an investigation follows.</div></details>',
-    verify_never_html: '<li>We will <strong>never</strong> ask you to pay a fee, &ldquo;tax&rdquo; or &ldquo;release&rdquo; charge to withdraw your own money.</li><li>We will <strong>never</strong> guarantee recovery &mdash; anyone who promises a guaranteed result is not being honest.</li><li>We will <strong>never</strong> ask you to pay in cryptocurrency, gift cards, or to a personal account.</li><li>We will <strong>never</strong> cold-call you claiming we have already found your money.</li>',
+    objfaq_html: '<details><summary>Is it too late to do anything?</summary><div>Often not. Payment records and blockchain transactions are permanent, and legal steps can still be taken months later. The sooner you act the better, but older cases are still worth assessing.</div></details><details><summary>I paid by bank transfer, can that be recovered?</summary><div>Possibly. Bank-transfer (APP) fraud may be recoverable, and since October 2024 UK banks must reimburse many victims. If your bank has refused, that decision can be challenged.</div></details><details><summary>I paid in Bitcoin or crypto, is it gone for good?</summary><div>Not automatically. Crypto can usually be traced on the blockchain to the exchange it reached; recovery then depends on legal action. Tracing is possible; recovery is never guaranteed.</div></details><details><summary>I was told to pay an AML or tax fee, is that normal?</summary><div>No. No legitimate platform charges a fee to release your own money, that is part of the scam. Stop paying and have your case assessed.</div></details><details><summary>The broker or website has disappeared, is there any point?</summary><div>Yes. Even when a site vanishes, the money trail and payment records usually remain, and that is exactly what an investigation follows.</div></details>',
+    verify_never_html: '<li>We will <strong>never</strong> ask you to pay a fee, &ldquo;tax&rdquo; or &ldquo;release&rdquo; charge to withdraw your own money.</li><li>We will <strong>never</strong> guarantee recovery, anyone who promises a guaranteed result is not being honest.</li><li>We will <strong>never</strong> ask you to pay in cryptocurrency, gift cards, or to a personal account.</li><li>We will <strong>never</strong> cold-call you claiming we have already found your money.</li>',
 
     // Blog page
     blog_hero_title: 'Fraud Recovery Guides',
@@ -69,7 +69,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
     hero_title: 'Lost money to an online trading platform or crypto scam?',
-    hero_subtitle: 'If your withdrawal has been blocked, or you have been asked to pay AML, tax or "release" fees, our SRA-regulated legal and blockchain investigation team can assess your case — free, and on a no win, no fee basis.',
+    hero_subtitle: 'If your withdrawal has been blocked, or you have been asked to pay AML, tax or "release" fees, our SRA-regulated legal and blockchain investigation team can assess your case, free, and on a no win, no fee basis.',
     hero_btn_primary: 'Check If My Case Is Recoverable',
     hero_btn_secondary: 'How Recovery Works',
 
@@ -373,10 +373,10 @@ const TRANSLATIONS = {
 
   de: {
     // SEO page title & meta description (swapped dynamically)
-    seo_title: 'Hilfe bei Krypto-Betrug & Online-Betrug | ReclaimGuard Legal',
-    seo_desc: 'Durch Betrug Geld verloren? ReclaimGuard Legal unterstützt Opfer dabei, die Rückgewinnung von durch Krypto-Betrug, Anlagebetrug und Bankbetrug verlorenem Geld zu verfolgen mittels Blockchain-Forensik und rechtlicher Schritte. Kostenlose Fallprüfung. EU/UK/US. Kein Erfolg, keine Gebühr Ergebnisse sind nie garantiert.',
-    og_title: 'Hilfe bei Krypto-Betrug & Online-Betrug | ReclaimGuard Legal',
-    og_desc: 'Betrug erlitten? Wir unterstützen Opfer dabei, die Rückgewinnung von durch Krypto- und Anlagebetrug verlorenem Geld zu verfolgen. Kostenlose Fallprüfung. Ergebnisse sind nie garantiert.',
+    seo_title: 'Rückgewinnung bei Krypto-, Forex- & Anlagebetrug | ReclaimGuard Legal',
+    seo_desc: 'Geld durch Krypto-, Forex- oder Anlagebetrug, eine gefälschte Handelsplattform oder Romance-/Pig-Butchering-Betrug verloren? ReclaimGuard Legal verfolgt gestohlene Gelder mittels Blockchain-Forensik und rechtlicher Schritte. Kostenlose Fallprüfung. UK, EU und US. Kein Erfolg, keine Gebühr; Ergebnisse sind nie garantiert.',
+    og_title: 'Rückgewinnung bei Krypto-, Forex- & Anlagebetrug | ReclaimGuard Legal',
+    og_desc: 'Geld durch Krypto-, Forex-, Anlage- oder Trading-Plattform-Betrug verloren? Wir verfolgen gestohlene Gelder und die Rückgewinnung. Kostenlose Fallprüfung. UK, EU und US. Kein Erfolg, keine Gebühr.',
 
     // Nav
     nav_home: 'Startseite',
@@ -390,7 +390,7 @@ const TRANSLATIONS = {
     verify_title: 'Sie wurden einmal betrogen. So erkennen Sie, dass wir seriös sind.',
     verify_subtitle: 'Betrugsopfer werden oft ein zweites Mal von gefälschten "Wiederbeschaffungs"-Diensten ins Visier genommen. Bevor Sie jemandem vertrauen, auch uns, überprüfen Sie die Zulassung und achten Sie auf diese Warnzeichen.',
     verify_cred_title: 'Überprüfen Sie unsere Zulassung',
-    verify_cred_html: '<li>Reguliert durch die <strong>Solicitors Regulation Authority</strong> &mdash; prüfen Sie <strong>SRA-Nr.&nbsp;830575</strong> im <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA-Register</a>.</li><li>Eingetragen in England &amp; Wales &mdash; <strong>Handelsregister-Nr.&nbsp;13438429</strong> bei <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Eingetragener Sitz: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Überprüfen Sie immer die Zulassung einer Kanzlei, bevor Sie Daten oder Dokumente weitergeben.</li>',
+    verify_cred_html: '<li>Reguliert durch die <strong>Solicitors Regulation Authority</strong>, prüfen Sie <strong>SRA-Nr.&nbsp;830575</strong> im <a href="https://www.sra.org.uk/consumers/register/" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">SRA-Register</a>.</li><li>Eingetragen in England &amp; Wales, <strong>Handelsregister-Nr.&nbsp;13438429</strong> bei <a href="https://find-and-update.company-information.service.gov.uk/company/13438429" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">Companies House</a>.</li><li>Eingetragener Sitz: <strong>Altrincham, WA14&nbsp;4DR, England</strong>.</li><li>Überprüfen Sie immer die Zulassung einer Kanzlei, bevor Sie Daten oder Dokumente weitergeben.</li>',
     verify_never_title: 'Was wir niemals tun',
     objfaq_title: 'Fragen Sie sich noch, ob wir Ihnen helfen können?',
     objfaq_subtitle: 'Die häufigsten Fragen, bevor Menschen uns kontaktieren.',
@@ -400,30 +400,30 @@ const TRANSLATIONS = {
     chain_n2: 'Wallet oder Konto des Betrügers',
     chain_n3: 'Börse oder Auszahlungsstelle',
     chain_n4: 'KYC- & Sperr-Anfrage',
-    objfaq_html: '<details><summary>Ist es zu spät, noch etwas zu tun?</summary><div>Oft nicht. Zahlungsbelege und Blockchain-Transaktionen sind dauerhaft, und rechtliche Schritte sind auch nach Monaten noch möglich. Je früher Sie handeln, desto besser &mdash; aber auch ältere Fälle lohnen eine Prüfung.</div></details><details><summary>Ich habe per Banküberweisung gezahlt &mdash; ist das rückholbar?</summary><div>Möglicherweise. Betrug per Banküberweisung (APP) kann rückholbar sein, und seit Oktober 2024 müssen britische Banken viele Opfer entschädigen. Wenn Ihre Bank abgelehnt hat, lässt sich das anfechten.</div></details><details><summary>Ich habe in Bitcoin oder Krypto gezahlt &mdash; ist es endgültig weg?</summary><div>Nicht automatisch. Krypto lässt sich meist über die Blockchain bis zur Ziel-Börse verfolgen; die Rückgewinnung hängt dann von rechtlichen Schritten ab. Verfolgung ist möglich, Rückgewinnung nie garantiert.</div></details><details><summary>Ich sollte eine AML- oder Steuergebühr zahlen &mdash; ist das normal?</summary><div>Nein. Keine seriöse Plattform verlangt eine Gebühr, um Ihr eigenes Geld freizugeben &mdash; das ist Teil des Betrugs. Zahlen Sie nicht weiter und lassen Sie Ihren Fall prüfen.</div></details><details><summary>Der Broker oder die Website ist verschwunden &mdash; hat das noch Zweck?</summary><div>Ja. Selbst wenn eine Seite verschwindet, bleiben die Geldspur und Zahlungsbelege meist erhalten &mdash; genau dem folgt eine Ermittlung.</div></details>',
-    verify_never_html: '<li>Wir werden Sie <strong>niemals</strong> auffordern, eine Gebühr, &ldquo;Steuer&rdquo; oder &ldquo;Freigabegebühr&rdquo; zu zahlen, um Ihr eigenes Geld abzuheben.</li><li>Wir <strong>garantieren niemals</strong> eine Wiederbeschaffung &mdash; wer ein garantiertes Ergebnis verspricht, ist nicht ehrlich.</li><li>Wir werden Sie <strong>niemals</strong> bitten, in Kryptowährung, mit Geschenkkarten oder auf ein privates Konto zu zahlen.</li><li>Wir werden Sie <strong>niemals</strong> unaufgefordert anrufen und behaupten, wir hätten Ihr Geld bereits gefunden.</li>',
+    objfaq_html: '<details><summary>Ist es zu spät, noch etwas zu tun?</summary><div>Oft nicht. Zahlungsbelege und Blockchain-Transaktionen sind dauerhaft, und rechtliche Schritte sind auch nach Monaten noch möglich. Je früher Sie handeln, desto besser, aber auch ältere Fälle lohnen eine Prüfung.</div></details><details><summary>Ich habe per Banküberweisung gezahlt, ist das rückholbar?</summary><div>Möglicherweise. Betrug per Banküberweisung (APP) kann rückholbar sein, und seit Oktober 2024 müssen britische Banken viele Opfer entschädigen. Wenn Ihre Bank abgelehnt hat, lässt sich das anfechten.</div></details><details><summary>Ich habe in Bitcoin oder Krypto gezahlt, ist es endgültig weg?</summary><div>Nicht automatisch. Krypto lässt sich meist über die Blockchain bis zur Ziel-Börse verfolgen; die Rückgewinnung hängt dann von rechtlichen Schritten ab. Verfolgung ist möglich, Rückgewinnung nie garantiert.</div></details><details><summary>Ich sollte eine AML- oder Steuergebühr zahlen, ist das normal?</summary><div>Nein. Keine seriöse Plattform verlangt eine Gebühr, um Ihr eigenes Geld freizugeben, das ist Teil des Betrugs. Zahlen Sie nicht weiter und lassen Sie Ihren Fall prüfen.</div></details><details><summary>Der Broker oder die Website ist verschwunden, hat das noch Zweck?</summary><div>Ja. Selbst wenn eine Seite verschwindet, bleiben die Geldspur und Zahlungsbelege meist erhalten, genau dem folgt eine Ermittlung.</div></details>',
+    verify_never_html: '<li>Wir werden Sie <strong>niemals</strong> auffordern, eine Gebühr, &ldquo;Steuer&rdquo; oder &ldquo;Freigabegebühr&rdquo; zu zahlen, um Ihr eigenes Geld abzuheben.</li><li>Wir <strong>garantieren niemals</strong> eine Wiederbeschaffung, wer ein garantiertes Ergebnis verspricht, ist nicht ehrlich.</li><li>Wir werden Sie <strong>niemals</strong> bitten, in Kryptowährung, mit Geschenkkarten oder auf ein privates Konto zu zahlen.</li><li>Wir werden Sie <strong>niemals</strong> unaufgefordert anrufen und behaupten, wir hätten Ihr Geld bereits gefunden.</li>',
 
     // Blog page
     blog_hero_title: 'Betrugsrückgewinnungs-Ratgeber',
-    blog_hero_subtitle: 'Expertenbeiträge über Krypto-Betrugsrückgewinnung, Rückbuchungen, Blockchain-Forensik und Schutz vor Online-Betrug – verfasst von unserem Spezialistenteam.',
+    blog_hero_subtitle: 'Expertenbeiträge über Krypto-Betrugsrückgewinnung, Rückbuchungen, Blockchain-Forensik und Schutz vor Online-Betrug, verfasst von unserem Spezialistenteam.',
     blog_a1_cat: 'Aktionsleitfaden',
     blog_a1_title: 'Was tun in den ersten 24 Stunden nach einem Online-Betrug?',
     blog_a1_excerpt: 'Die Schritte, die Sie unmittelbar nach einem Betrug unternehmen, entscheiden darüber, ob Sie Ihr Geld zurückbekommen. Hier ist die genaue Reihenfolge, die Sie befolgen sollten.',
     blog_a1_author: 'ReclaimGuard Legal Team · 12. Mai 2026',
     blog_a1_url: '/blog/de/was-tun-nach-betrug',
     blog_a2_cat: 'Betrugsaufklärung',
-    blog_a2_title: 'Krypto-Rückgewinnungsbetrug erkennen – bevor Sie noch mehr Geld verlieren',
+    blog_a2_title: 'Krypto-Rückgewinnungsbetrug erkennen, bevor Sie noch mehr Geld verlieren',
     blog_a2_excerpt: 'Betrüger wissen, dass Sie verzweifelt sind, und nehmen Opfer ein zweites Mal ins Visier. Lernen Sie die Warnsignale, die legitime Firmen von Betrügern unterscheiden.',
     blog_a2_author: 'ReclaimGuard Legal Team · 9. Mai 2026',
     blog_a2_url: '/blog/de/krypto-rueckgewinnungsbetrug-erkennen',
     blog_a3_cat: 'Betrugsaufklärung',
     blog_a3_title: 'Die 5 häufigsten Krypto-Betrugsmaschen 2026 (und wie Sie sich schützen)',
-    blog_a3_excerpt: 'Von Pig-Butchering-Betrug bis zu gefälschten Kryptobörsen – diese fünf Betrugstypen sind für den Großteil der Kryptoverluste weltweit verantwortlich.',
+    blog_a3_excerpt: 'Von Pig-Butchering-Betrug bis zu gefälschten Kryptobörsen, diese fünf Betrugstypen sind für den Großteil der Kryptoverluste weltweit verantwortlich.',
     blog_a3_author: 'ReclaimGuard Legal Team · 6. Mai 2026',
     blog_a3_url: '/blog/de/haeufigste-krypto-betrugsmaschen-2026',
     blog_a4_cat: 'Rückgewinnungsmethoden',
     blog_a4_title: 'Was ist eine Rückbuchung und kann sie mein Geld nach einem Betrug zurückbringen?',
-    blog_a4_excerpt: 'Eine Rückbuchung ist eines der wirkungsvollsten Instrumente für Betrugsopfer – aber es gibt strenge Regeln, Fristen und Einschränkungen. Alles, was Sie wissen müssen.',
+    blog_a4_excerpt: 'Eine Rückbuchung ist eines der wirkungsvollsten Instrumente für Betrugsopfer, aber es gibt strenge Regeln, Fristen und Einschränkungen. Alles, was Sie wissen müssen.',
     blog_a4_author: 'ReclaimGuard Legal Team · 2. Mai 2026',
     blog_a4_url: '/blog/de/was-ist-eine-rueckbuchung',
     blog_a5_cat: 'Blockchain-Forensik',
@@ -436,7 +436,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
     hero_title: 'Geld an eine Online-Trading-Plattform oder einen Krypto-Betrug verloren?',
-    hero_subtitle: 'Wenn Ihre Auszahlung blockiert wurde oder Sie aufgefordert wurden, AML-, Steuer- oder „Freigabe"-Gebühren zu zahlen, kann unser SRA-reguliertes Team aus Juristen und Blockchain-Ermittlern Ihren Fall prüfen – kostenlos und nach dem Prinzip „No Win, No Fee".',
+    hero_subtitle: 'Wenn Ihre Auszahlung blockiert wurde oder Sie aufgefordert wurden, AML-, Steuer- oder „Freigabe"-Gebühren zu zahlen, kann unser SRA-reguliertes Team aus Juristen und Blockchain-Ermittlern Ihren Fall prüfen, kostenlos und nach dem Prinzip „No Win, No Fee".',
     hero_btn_primary: 'Prüfen, ob mein Fall lösbar ist',
     hero_btn_secondary: 'So funktioniert die Rückgewinnung',
 
@@ -663,7 +663,7 @@ const TRANSLATIONS = {
     team_title: 'Unser Team',
     team_subtitle: 'Ein interdisziplinäres Team aus Rechtsberatern, Blockchain-Analysten und Compliance-Spezialisten',
     team1_role: 'Rechts- & Regulierungsteam',
-    team1_bio: 'Anwälte und Rechtsberater, die Betrugsstreitigkeiten, Rückbuchungsansprüche und regulatorische Beschwerden nach englischem und walisischem Recht bearbeiten – als SRA-regulierte Einheit.',
+    team1_bio: 'Anwälte und Rechtsberater, die Betrugsstreitigkeiten, Rückbuchungsansprüche und regulatorische Beschwerden nach englischem und walisischem Recht bearbeiten, als SRA-regulierte Einheit.',
     team1_tag1: 'Rechtsstrategie', team1_tag2: 'Regulatorische Beschwerden',
     team2_role: 'Blockchain-Ermittlungsteam',
     team2_bio: 'Analysten, die gestohlene Kryptowährungen über Wallets, Börsen und Netzwerke hinweg mit branchenüblichen Blockchain-Forensik-Tools verfolgen.',
@@ -705,7 +705,7 @@ const TRANSLATIONS = {
     ty_step2_title: 'Erstberatung',
     ty_step2_desc: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
     ty_step3_title: 'Rückgewinnungsplan',
-    ty_step3_desc: 'Sie erhalten eine persönliche Rückgewinnungsstrategie – keine Verpflichtung im Voraus erforderlich.',
+    ty_step3_desc: 'Sie erhalten eine persönliche Rückgewinnungsstrategie, keine Verpflichtung im Voraus erforderlich.',
     ty_highlight: '<strong>Prüfen Sie Ihr E-Mail-Postfach</strong> eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
     ty_btn_home: '← Zurück zur Startseite',
     ty_btn_another: 'Weiteren Fall einreichen',
@@ -722,17 +722,17 @@ const TRANSLATIONS = {
     footer_s6: 'Aufsichtsbeschwerden',
 
     // Testimonial card content
-    test1_text: 'Krypto-Investmentbetrug — gefälschte Investmentplattformen und Krypto-Systeme mit „garantierten Renditen“, die mit den Einlagen der Opfer verschwinden.',
+    test1_text: 'Krypto-Investmentbetrug, gefälschte Investmentplattformen und Krypto-Systeme mit „garantierten Renditen“, die mit den Einlagen der Opfer verschwinden.',
     test1_location: '',
-    test2_text: 'Gefälschte Handelsplattformen & Broker — betrügerische Forex-, CFD- und Krypto-Broker, die Auszahlungen blockieren oder über Nacht verschwinden.',
+    test2_text: 'Gefälschte Handelsplattformen & Broker, betrügerische Forex-, CFD- und Krypto-Broker, die Auszahlungen blockieren oder über Nacht verschwinden.',
     test2_location: '',
-    test3_text: 'DeFi- & NFT-Betrug — Rug Pulls, betrügerische DeFi-Protokolle und NFT-Betrug über mehrere Blockchains hinweg.',
+    test3_text: 'DeFi- & NFT-Betrug, Rug Pulls, betrügerische DeFi-Protokolle und NFT-Betrug über mehrere Blockchains hinweg.',
     test3_location: '',
-    test4_text: 'Business-E-Mail-Kompromittierung — Rechnungsumleitung und Überweisungsbetrug, der Unternehmen und ihre Lieferanten ins Visier nimmt.',
+    test4_text: 'Business-E-Mail-Kompromittierung, Rechnungsumleitung und Überweisungsbetrug, der Unternehmen und ihre Lieferanten ins Visier nimmt.',
     test4_location: '',
-    test5_text: 'Schneeball- & gefälschte Mining-Systeme — „passives Einkommen“ und Cloud-Mining-Angebote, die auszahlen, bis sie zusammenbrechen.',
+    test5_text: 'Schneeball- & gefälschte Mining-Systeme, „passives Einkommen“ und Cloud-Mining-Angebote, die auszahlen, bis sie zusammenbrechen.',
     test5_location: '',
-    test6_text: 'Pig-Butchering & Romance-Betrug — langfristige Social-Engineering-Betrügereien, die Opfer zu gefälschten Krypto- oder Forex-Investitionen drängen.',
+    test6_text: 'Pig-Butchering & Romance-Betrug, langfristige Social-Engineering-Betrügereien, die Opfer zu gefälschten Krypto- oder Forex-Investitionen drängen.',
     test6_location: '',
   }
 };
