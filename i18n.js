@@ -10,6 +10,7 @@ const TRANSLATIONS = {
     seo_desc: 'Lost money to a crypto, forex or investment scam, a fake trading platform, or a romance or pig-butchering fraud? ReclaimGuard Legal traces stolen funds and pursues recovery through blockchain forensics and legal action. Free case review. UK, EU and US. No win, no fee; outcomes are never guaranteed.',
     og_title: 'Crypto, Forex & Investment Scam Recovery | ReclaimGuard Legal',
     og_desc: 'Lost money to a crypto, forex, investment or fake trading-platform scam? We trace stolen funds and pursue recovery. Free case review. UK, EU and US. No win, no fee.',
+    meta_keywords: 'crypto scam recovery, forex scam recovery, recover money from forex scam, forex broker scam, investment scam recovery, investment fraud recovery, recover money from investment scam, fake trading platform recovery, recover stolen bitcoin, pig butchering scam recovery, romance scam money recovery, bank transfer scam recovery, APP fraud reimbursement, chargeback fraud recovery, how to get money back from online scam, recover funds from scam broker, blockchain fraud recovery',
 
     // Nav
     nav_home: 'Home',
@@ -386,6 +387,7 @@ const TRANSLATIONS = {
     seo_desc: 'Geld durch Krypto-, Forex- oder Anlagebetrug, eine gefälschte Handelsplattform oder Romance-/Pig-Butchering-Betrug verloren? ReclaimGuard Legal verfolgt gestohlene Gelder mittels Blockchain-Forensik und rechtlicher Schritte. Kostenlose Fallprüfung. UK, EU und US. Kein Erfolg, keine Gebühr; Ergebnisse sind nie garantiert.',
     og_title: 'Rückgewinnung bei Krypto-, Forex- & Anlagebetrug | ReclaimGuard Legal',
     og_desc: 'Geld durch Krypto-, Forex-, Anlage- oder Trading-Plattform-Betrug verloren? Wir verfolgen gestohlene Gelder und die Rückgewinnung. Kostenlose Fallprüfung. UK, EU und US. Kein Erfolg, keine Gebühr.',
+    meta_keywords: 'Krypto-Betrug Geld zurückholen, Forex-Betrug Rückgewinnung, Geld von Forex-Broker zurückholen, Forex-Broker-Betrug, Anlagebetrug Rückgewinnung, Geld von Anlagebetrug zurückholen, gefälschte Handelsplattform Geld zurück, gestohlene Bitcoin zurückholen, Pig-Butchering-Betrug, Romance-Scam Geld zurück, Überweisungsbetrug Rückgewinnung, Rückbuchung bei Betrug, Geld nach Online-Betrug zurückbekommen, Krypto-Betrug Hilfe, Blockchain-Betrug Ermittlung',
 
     // Nav
     nav_home: 'Startseite',
@@ -873,6 +875,7 @@ function applyTranslations() {
   const ogDEl   = document.getElementById('og-desc');   if (ogDEl)   ogDEl.setAttribute('content', ogDesc);
   const twTEl   = document.getElementById('tw-title');  if (twTEl)   twTEl.setAttribute('content', ogTitle);
   const twDEl   = document.getElementById('tw-desc');   if (twDEl)   twDEl.setAttribute('content', ogDesc);
+  const kwEl    = document.getElementById('seo-keywords'); if (kwEl) kwEl.setAttribute('content', t('meta_keywords'));
   // Swap og:locale
   const ogLocale = document.querySelector('meta[property="og:locale"]');
   if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_DE' : 'en_GB');
