@@ -155,16 +155,24 @@
       '</div>';
     document.body.appendChild(bar);
 
+    // Lift the floating WhatsApp button above the banner so it isn't hidden.
+    function setChatBottom(px) {
+      var wa = document.getElementById('rgWhatsApp');
+      if (wa) wa.style.bottom = px;
+    }
+    setChatBottom((bar.offsetHeight + 16) + 'px');
+    function dismiss() { setChatBottom('24px'); bar.remove(); }
+
     document.getElementById('rgAcceptCookies').addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'granted');
       updateConsent('granted');
       loadClarity();
-      bar.remove();
+      dismiss();
     });
     document.getElementById('rgRejectCookies').addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'denied');
       updateConsent('denied'); // withdraw consent (matters where the default is granted)
-      bar.remove();
+      dismiss();
     });
   }
 
