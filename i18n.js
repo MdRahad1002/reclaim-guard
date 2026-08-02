@@ -33,6 +33,14 @@ const TRANSLATIONS = {
     chain_n2: 'Scammer wallet or account',
     chain_n3: 'Exchange or off-ramp',
     chain_n4: 'KYC & freeze request',
+    offer_title: 'We help you recover money lost to crypto, forex, investment and bank scams',
+    offer_lead: 'We trace where your money went and pursue it back through chargebacks, bank recalls, exchange action and legal claims. Your case review is free, and it is no win, no fee.',
+    offer_1_title: 'Trace',
+    offer_1_text: 'We follow the money with blockchain forensics and payment-trail investigation.',
+    offer_2_title: 'Recover',
+    offer_2_text: 'Chargebacks, bank recalls, exchange freezes and legal action to pursue your funds.',
+    offer_3_title: 'Free to start',
+    offer_3_text: 'Free, confidential case review. No win, no fee, a success fee only if we recover.',
     objfaq_html: '<details><summary>Is it too late to do anything?</summary><div>Often not. Payment records and blockchain transactions are permanent, and legal steps can still be taken months later. The sooner you act the better, but older cases are still worth assessing.</div></details><details><summary>I paid by bank transfer, can that be recovered?</summary><div>Possibly. Bank-transfer (APP) fraud may be recoverable, and since October 2024 UK banks must reimburse many victims. If your bank has refused, that decision can be challenged.</div></details><details><summary>I paid in Bitcoin or crypto, is it gone for good?</summary><div>Not automatically. Crypto can usually be traced on the blockchain to the exchange it reached; recovery then depends on legal action. Tracing is possible; recovery is never guaranteed.</div></details><details><summary>I was told to pay an AML or tax fee, is that normal?</summary><div>No. No legitimate platform charges a fee to release your own money, that is part of the scam. Stop paying and have your case assessed.</div></details><details><summary>The broker or website has disappeared, is there any point?</summary><div>Yes. Even when a site vanishes, the money trail and payment records usually remain, and that is exactly what an investigation follows.</div></details>',
     verify_never_html: '<li>We will <strong>never</strong> ask you to pay a fee, &ldquo;tax&rdquo; or &ldquo;release&rdquo; charge to withdraw your own money.</li><li>We will <strong>never</strong> guarantee recovery, anyone who promises a guaranteed result is not being honest.</li><li>We will <strong>never</strong> ask you to pay in cryptocurrency, gift cards, or to a personal account.</li><li>We will <strong>never</strong> cold-call you claiming we have already found your money.</li>',
 
@@ -400,6 +408,14 @@ const TRANSLATIONS = {
     chain_n2: 'Wallet oder Konto des Betrügers',
     chain_n3: 'Börse oder Auszahlungsstelle',
     chain_n4: 'KYC- & Sperr-Anfrage',
+    offer_title: 'Wir helfen Ihnen, Geld zurückzuholen, das durch Krypto-, Forex-, Anlage- und Bankbetrug verloren ging',
+    offer_lead: 'Wir verfolgen, wohin Ihr Geld geflossen ist, und holen es zurück, über Rückbuchungen, Bankrückrufe, Maßnahmen bei Börsen und rechtliche Schritte. Die Fallprüfung ist kostenlos, nach dem Prinzip No Win, No Fee.',
+    offer_1_title: 'Verfolgen',
+    offer_1_text: 'Wir folgen dem Geld mit Blockchain-Forensik und Zahlungsspur-Ermittlung.',
+    offer_2_title: 'Zurückholen',
+    offer_2_text: 'Rückbuchungen, Bankrückrufe, Börsen-Sperren und rechtliche Schritte, um Ihre Gelder zu verfolgen.',
+    offer_3_title: 'Kostenlos starten',
+    offer_3_text: 'Kostenlose, vertrauliche Fallprüfung. No Win, No Fee, eine Erfolgsgebühr nur bei Rückgewinnung.',
     objfaq_html: '<details><summary>Ist es zu spät, noch etwas zu tun?</summary><div>Oft nicht. Zahlungsbelege und Blockchain-Transaktionen sind dauerhaft, und rechtliche Schritte sind auch nach Monaten noch möglich. Je früher Sie handeln, desto besser, aber auch ältere Fälle lohnen eine Prüfung.</div></details><details><summary>Ich habe per Banküberweisung gezahlt, ist das rückholbar?</summary><div>Möglicherweise. Betrug per Banküberweisung (APP) kann rückholbar sein, und seit Oktober 2024 müssen britische Banken viele Opfer entschädigen. Wenn Ihre Bank abgelehnt hat, lässt sich das anfechten.</div></details><details><summary>Ich habe in Bitcoin oder Krypto gezahlt, ist es endgültig weg?</summary><div>Nicht automatisch. Krypto lässt sich meist über die Blockchain bis zur Ziel-Börse verfolgen; die Rückgewinnung hängt dann von rechtlichen Schritten ab. Verfolgung ist möglich, Rückgewinnung nie garantiert.</div></details><details><summary>Ich sollte eine AML- oder Steuergebühr zahlen, ist das normal?</summary><div>Nein. Keine seriöse Plattform verlangt eine Gebühr, um Ihr eigenes Geld freizugeben, das ist Teil des Betrugs. Zahlen Sie nicht weiter und lassen Sie Ihren Fall prüfen.</div></details><details><summary>Der Broker oder die Website ist verschwunden, hat das noch Zweck?</summary><div>Ja. Selbst wenn eine Seite verschwindet, bleiben die Geldspur und Zahlungsbelege meist erhalten, genau dem folgt eine Ermittlung.</div></details>',
     verify_never_html: '<li>Wir werden Sie <strong>niemals</strong> auffordern, eine Gebühr, &ldquo;Steuer&rdquo; oder &ldquo;Freigabegebühr&rdquo; zu zahlen, um Ihr eigenes Geld abzuheben.</li><li>Wir <strong>garantieren niemals</strong> eine Wiederbeschaffung, wer ein garantiertes Ergebnis verspricht, ist nicht ehrlich.</li><li>Wir werden Sie <strong>niemals</strong> bitten, in Kryptowährung, mit Geschenkkarten oder auf ein privates Konto zu zahlen.</li><li>Wir werden Sie <strong>niemals</strong> unaufgefordert anrufen und behaupten, wir hätten Ihr Geld bereits gefunden.</li>',
 
@@ -894,6 +910,15 @@ function applyTranslations() {
   setText('#cfLabel2', 'chain_n2');
   setText('#cfLabel3', 'chain_n3');
   setText('#cfLabel4', 'chain_n4');
+  setText('#offerTitle', 'offer_title');
+  setText('#offerLead', 'offer_lead');
+  setText('#offer1Title', 'offer_1_title');
+  setText('#offer1Text', 'offer_1_text');
+  setText('#offer2Title', 'offer_2_title');
+  setText('#offer2Text', 'offer_2_text');
+  setText('#offer3Title', 'offer_3_title');
+  setText('#offer3Text', 'offer_3_text');
+  setText('#offerCta', 'form_submit');
 
   // Hero
   setText('.hero-badge span', 'hero_badge');
