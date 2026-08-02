@@ -155,13 +155,16 @@
       '</div>';
     document.body.appendChild(bar);
 
-    // Lift the floating WhatsApp button above the banner so it isn't hidden.
-    function setChatBottom(px) {
+    // Lift the floating WhatsApp pill (desktop) and the sticky CTA bar
+    // (mobile) above the banner so neither is hidden behind it.
+    function liftUI(h) {
       var wa = document.getElementById('rgWhatsApp');
-      if (wa) wa.style.bottom = px;
+      if (wa) wa.style.bottom = (h == null) ? '24px' : (h + 16) + 'px';
+      var cta = document.getElementById('rgCtaBar');
+      if (cta) cta.style.bottom = (h == null) ? '' : h + 'px';
     }
-    setChatBottom((bar.offsetHeight + 16) + 'px');
-    function dismiss() { setChatBottom('24px'); bar.remove(); }
+    liftUI(bar.offsetHeight);
+    function dismiss() { liftUI(null); bar.remove(); }
 
     document.getElementById('rgAcceptCookies').addEventListener('click', function () {
       localStorage.setItem('cookieConsent', 'granted');
