@@ -309,3 +309,38 @@
   s.setAttribute('data-website-id', '062bb6c5-b63f-4fa3-83eb-720ad69b5794');
   (document.head || document.documentElement).appendChild(s);
 })();
+
+/* AI-assistant referral tracking: when a visitor arrives from ChatGPT,
+   Perplexity, Gemini, Copilot or Claude, record it as a custom event in
+   both Umami and GA4 so the channel is measurable. Runs on every page
+   (English and German), and only on the entry page where the referrer
+   is the AI source. */
+(function () {
+  var ref = document.referrer || '';
+  if (!ref) return;
+  var host;
+  try { host = new URL(ref).hostname.replace(/^www\./, ''); } catch (e) { return; }
+  var MAP = {
+    'chatgpt.com': 'ChatGPT', 'chat.openai.com': 'ChatGPT', 'openai.com': 'ChatGPT',
+    'perplexity.ai': 'Perplexity',
+    'gemini.google.com': 'Gemini', 'bard.google.com': 'Gemini',
+    'copilot.microsoft.com': 'Copilot',
+    'claude.ai': 'Claude', 'you.com': 'You.com', 'poe.com': 'Poe'
+  };
+  var source = null, k;
+  for (k in MAP) { if (host === k || host.slice(-(k.length + 1)) === '.' + k) { source = MAP[k]; break; } }
+  if (!source) return;
+
+  // GA4 (queues until the library loads; Consent Mode still governs sending)
+  try { gtag('event', 'ai_referral', { ai_source: source, page_referrer: ref }); } catch (e) {}
+
+  // Umami (cookieless) - retry briefly until its script has loaded
+  var tries = 0;
+  (function fireUmami() {
+    if (window.umami && typeof window.umami.track === 'function') {
+      try { window.umami.track('ai-referral', { source: source, host: host }); } catch (e) {}
+    } else if (tries++ < 12) {
+      setTimeout(fireUmami, 500);
+    }
+  })();
+})();
