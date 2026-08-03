@@ -1334,28 +1334,47 @@ function applyTranslations() {
 // Init
 // ============================
 async function initI18n() {
+  const _path = location.pathname;
+  const onDeHome = (_path === '/de' || _path === '/de/');
+  const onEnHome = (_path === '/' || _path === '/index.html' || _path === '/index-de.html');
+
+  // The dedicated German homepage URL is always German (static German HTML).
+  if (onDeHome) {
+    setLang('de');
+    applyTranslations();
+    return;
+  }
+
   let lang = getLang();
   if (!lang) {
-    // Show German if EITHER the phone/browser language is German, OR the
-    // visitor is in a German-speaking country (DE/AT/CH). English otherwise.
+    // German if the phone/browser language is German, OR the visitor is in a
+    // German-speaking country (DE/AT/CH). English otherwise.
     if (detectLangFromBrowser() === 'de') {
-      // German phone/browser -> German instantly, no network needed.
       lang = 'de';
     } else {
-      // Otherwise decide by country: server-side GeoIP (/api/geo), with a
-      // third-party IP lookup as backup.
       let country = await detectCountryVercel();
       if (!country) country = await detectCountryFallback();
       lang = (country && GERMAN_COUNTRIES.includes(country)) ? 'de' : 'en';
     }
-    setLang(lang);
   }
+
+  // On the English homepage, send German visitors to the German homepage URL
+  // so each language has its own canonical page (better for SEO). Respects a
+  // stored English choice, so toggling to English does not bounce back.
+  if (onEnHome && lang === 'de') { location.replace('/de'); return; }
+
+  if (!onEnHome) setLang(lang);
   if (redirectBlogIfNeeded(lang)) return;
   applyTranslations();
 }
 
 function toggleLanguage() {
-  const current = getLang() || 'en';
+  const p = location.pathname;
+  // Homepage: switch by URL (/ = English, /de = German) and remember the choice.
+  if (p === '/de' || p === '/de/') { setLang('en'); location.href = '/'; return; }
+  if (p === '/' || p === '/index.html' || p === '/index-de.html') { setLang('de'); location.href = '/de'; return; }
+  // Inner pages (blog, etc.): toggle in place.
+  const current = getLang() || (document.documentElement.lang === 'de' ? 'de' : 'en');
   const next = current === 'en' ? 'de' : 'en';
   setLang(next);
   if (redirectBlogIfNeeded(next)) return;

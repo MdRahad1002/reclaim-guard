@@ -101,6 +101,11 @@ for (const [route, file] of Object.entries(PAGES)) {
     if (route !== '/') app.get(route + '.html', send); // keep .html URLs working
 }
 
+// German homepage: a pre-rendered static German version of index.html.
+const sendDeHome = (req, res) => res.sendFile(path.join(__dirname, 'index-de.html'));
+app.get('/de', sendDeHome);
+app.get('/de/', sendDeHome);
+
 // Blog posts: /blog/<slug> and /blog/de/<slug>, with or without .html.
 // Resolved inside BLOG_DIR and verified, so "../" traversal can't escape.
 app.get(/^\/blog\/(.+)$/, (req, res, next) => {
