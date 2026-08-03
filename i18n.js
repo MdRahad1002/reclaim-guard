@@ -847,6 +847,7 @@ const TRANSLATIONS = {
     ty_copy: '© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
 
     // Footer certifications & service links
+    footer_cert_gdpr: 'DSGVO-konform',
     footer_cert_cov: 'EU/UK/DE Abdeckung',
     footer_s1: 'Krypto-Rückgewinnung',
     footer_s2: 'Kartenbetrug & Rückbuchungen',
