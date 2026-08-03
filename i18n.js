@@ -78,6 +78,16 @@ const TRANSLATIONS = {
 
     // Hero
     hero_badge: 'Legal + Cybersecurity Expertise',
+    situation_title: 'Does any of this sound familiar?',
+    situation_lead: 'If you recognise your situation below, you\'re in the right place. Our legal and blockchain investigation team can assess your case for free no obligation, and no win, no fee.',
+    situation_1: 'A trading or investment platform <strong>won\'t let you withdraw</strong> your money',
+    situation_2: 'You\'re asked to pay <strong>&ldquo;tax&rdquo;, &ldquo;AML&rdquo;, &ldquo;liquidity&rdquo; or &ldquo;release&rdquo; fees</strong> before you can withdraw',
+    situation_3: 'Your broker or &ldquo;account manager&rdquo; has <strong>stopped replying</strong> or disappeared',
+    situation_4: 'Your account was suddenly <strong>frozen</strong>, or your withdrawal is stuck &ldquo;pending&rdquo;',
+    situation_5: 'You sent <strong>crypto</strong> to an investment you now believe was a scam',
+    situation_6: 'Someone you met online <strong>encouraged you to invest</strong> and the money is gone',
+    situation_cta: 'Get a Free Case Review',
+    situation_note: 'Confidential · No obligation · Response within 24 hours',
     hero_title: 'Lost money to an online trading platform or crypto scam?',
     hero_subtitle: 'If your withdrawal has been blocked, or you have been asked to pay AML, tax or "release" fees, our SRA-regulated legal and blockchain investigation team can assess your case, free, and on a no win, no fee basis.',
     hero_btn_primary: 'Check If My Case Is Recoverable',
@@ -455,6 +465,16 @@ const TRANSLATIONS = {
 
     // Hero
     hero_badge: 'Rechtliche + Cybersicherheits-Expertise',
+    situation_title: 'Kommt Ihnen das bekannt vor?',
+    situation_lead: 'Wenn Sie Ihre Situation unten wiedererkennen, sind Sie hier richtig. Unser Team aus Rechts- und Blockchain-Ermittlern prüft Ihren Fall kostenlos und unverbindlich, nach dem Prinzip kein Erfolg, keine Gebühr.',
+    situation_1: 'Eine Trading- oder Anlageplattform <strong>lässt Sie Ihr Geld nicht auszahlen</strong>',
+    situation_2: 'Sie sollen <strong>&bdquo;Steuer&ldquo;-, &bdquo;AML&ldquo;-, &bdquo;Liquiditäts&ldquo;- oder &bdquo;Freigabe&ldquo;-Gebühren</strong> zahlen, bevor Sie auszahlen können',
+    situation_3: 'Ihr Broker oder &bdquo;Account-Manager&ldquo; <strong>antwortet nicht mehr</strong> oder ist verschwunden',
+    situation_4: 'Ihr Konto wurde plötzlich <strong>eingefroren</strong>, oder Ihre Auszahlung hängt &bdquo;in Bearbeitung&ldquo; fest',
+    situation_5: 'Sie haben <strong>Krypto</strong> an eine Anlage gesendet, die Sie jetzt für Betrug halten',
+    situation_6: 'Jemand, den Sie online kennengelernt haben, hat Sie <strong>zu einer Investition gedrängt</strong>, und das Geld ist weg',
+    situation_cta: 'Kostenlose Fallprüfung anfordern',
+    situation_note: 'Vertraulich · Unverbindlich · Antwort innerhalb von 24 Stunden',
     hero_title: 'Geld an eine Online-Trading-Plattform oder einen Krypto-Betrug verloren?',
     hero_subtitle: 'Wenn Ihre Auszahlung blockiert wurde oder Sie aufgefordert wurden, AML-, Steuer- oder „Freigabe"-Gebühren zu zahlen, kann unser SRA-reguliertes Team aus Juristen und Blockchain-Ermittlern Ihren Fall prüfen, kostenlos und nach dem Prinzip „No Win, No Fee".',
     hero_btn_primary: 'Prüfen, ob mein Fall lösbar ist',
@@ -822,6 +842,16 @@ const TRANSLATIONS = {
   "blog_a5_url": "/blog/blockchain-forensics-traces-stolen-crypto",
   "blog_read_more": "Leer artículo →",
   "hero_badge": "Experiencia legal + ciberseguridad",
+  "situation_title": "¿Te suena algo de esto?",
+  "situation_lead": "Si reconoces tu situación abajo, estás en el lugar correcto. Nuestro equipo legal y de investigación blockchain puede evaluar tu caso gratis y sin compromiso, y sin ganar no hay honorarios.",
+  "situation_1": "Una plataforma de trading o inversión <strong>no te deja retirar</strong> tu dinero",
+  "situation_2": "Te piden pagar comisiones de <strong>«impuestos», «AML», «liquidez» o «liberación»</strong> antes de poder retirar",
+  "situation_3": "Tu bróker o «gestor de cuenta» ha <strong>dejado de responder</strong> o ha desaparecido",
+  "situation_4": "Tu cuenta fue <strong>bloqueada</strong> de repente, o tu retirada está atascada «pendiente»",
+  "situation_5": "Enviaste <strong>cripto</strong> a una inversión que ahora crees que era una estafa",
+  "situation_6": "Alguien que conociste en línea <strong>te animó a invertir</strong> y el dinero desapareció",
+  "situation_cta": "Obtener una revisión gratuita del caso",
+  "situation_note": "Confidencial · Sin compromiso · Respuesta en 24 horas",
   "hero_title": "¿Perdió dinero en una plataforma de trading online o una estafa de cripto?",
   "hero_subtitle": "Si le han bloqueado la retirada, o le han pedido pagar tasas de AML, impuestos o \"liberación\", nuestro equipo legal y de investigación en blockchain, regulado por la SRA, puede evaluar su caso, gratis y sin éxito, sin honorarios.",
   "hero_btn_primary": "Comprobar si mi caso es recuperable",
@@ -1267,6 +1297,17 @@ function applyTranslations() {
   setText('#offer3Title', 'offer_3_title');
   setText('#offer3Text', 'offer_3_text');
   setText('#offerCta', 'form_submit');
+
+  setText('#situationTitle', 'situation_title');
+  setText('#situationLead', 'situation_lead');
+  setHTML('#situation1', 'situation_1');
+  setHTML('#situation2', 'situation_2');
+  setHTML('#situation3', 'situation_3');
+  setHTML('#situation4', 'situation_4');
+  setHTML('#situation5', 'situation_5');
+  setHTML('#situation6', 'situation_6');
+  setText('#situationCta', 'situation_cta');
+  setText('#situationNote', 'situation_note');
 
   // Hero
   setText('.hero-badge span', 'hero_badge');
