@@ -1404,7 +1404,7 @@ function applyTranslations() {
   const kwEl    = document.getElementById('seo-keywords'); if (kwEl) kwEl.setAttribute('content', t('meta_keywords'));
   // Swap og:locale
   const ogLocale = document.querySelector('meta[property="og:locale"]');
-  if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_DE' : 'en_GB');
+  if (ogLocale) ogLocale.setAttribute('content', lang === 'de' ? 'de_DE' : lang === 'es' ? 'es_ES' : 'en_GB');
 
   // Nav
   // Map each nav link by its href (robust to link order, which differs
