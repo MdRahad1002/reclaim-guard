@@ -106,6 +106,11 @@ const sendDeHome = (req, res) => res.sendFile(path.join(__dirname, 'index-de.htm
 app.get('/de', sendDeHome);
 app.get('/de/', sendDeHome);
 
+// Spanish homepage: a pre-rendered static Spanish version of index.html.
+const sendEsHome = (req, res) => res.sendFile(path.join(__dirname, 'index-es.html'));
+app.get('/es', sendEsHome);
+app.get('/es/', sendEsHome);
+
 // Blog posts: /blog/<slug> and /blog/de/<slug>, with or without .html.
 // Resolved inside BLOG_DIR and verified, so "../" traversal can't escape.
 app.get(/^\/blog\/(.+)$/, (req, res, next) => {
@@ -126,7 +131,7 @@ app.get('/recover/', (req, res) => res.redirect(301, '/'));
 // Campaign landing pages: /recover/<slug>, with or without .html.
 app.get(/^\/recover\/(.+)$/, (req, res, next) => {
     let slug = req.params[0].replace(/\.html$/, '');
-    if (!/^(de\/)?[a-z0-9\-]+$/i.test(slug)) return next();
+    if (!/^(de\/|es\/)?[a-z0-9\-]+$/i.test(slug)) return next();
 
     const target = path.resolve(RECOVER_DIR, slug + '.html');
     if (!target.startsWith(RECOVER_DIR + path.sep)) return next(); // traversal guard

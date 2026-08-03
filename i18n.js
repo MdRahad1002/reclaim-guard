@@ -367,17 +367,17 @@ const TRANSLATIONS = {
     footer_s6: 'Regulatory Complaints',
 
     // Testimonial card content
-    test1_text: 'Crypto investment scams \u2014 fake investment platforms and \u201cguaranteed return\u201d crypto schemes that disappear with victims\u2019 deposits.',
+    test1_text: 'Crypto investment scams, fake investment platforms and \u201cguaranteed return\u201d crypto schemes that disappear with victims\u2019 deposits.',
     test1_location: '',
-    test2_text: 'Fake trading platforms & brokers \u2014 bogus forex, CFD and crypto brokers that block withdrawals or vanish overnight.',
+    test2_text: 'Fake trading platforms & brokers, bogus forex, CFD and crypto brokers that block withdrawals or vanish overnight.',
     test2_location: '',
-    test3_text: 'DeFi & NFT fraud \u2014 rug pulls, fraudulent DeFi protocols and NFT scams spread across multiple blockchains.',
+    test3_text: 'DeFi & NFT fraud, rug pulls, fraudulent DeFi protocols and NFT scams spread across multiple blockchains.',
     test3_location: '',
-    test4_text: 'Business email compromise \u2014 invoice-redirection and wire fraud targeting companies and their suppliers.',
+    test4_text: 'Business email compromise, invoice-redirection and wire fraud targeting companies and their suppliers.',
     test4_location: '',
-    test5_text: 'Ponzi & fake mining schemes \u2014 \u201cpassive income\u201d and cloud-mining operations that pay out until they collapse.',
+    test5_text: 'Ponzi & fake mining schemes, \u201cpassive income\u201d and cloud-mining operations that pay out until they collapse.',
     test5_location: '',
-    test6_text: 'Pig-butchering & romance fraud \u2014 long-term social-engineering scams that pressure victims into fake crypto or forex investments.',
+    test6_text: 'Pig-butchering & romance fraud, long-term social-engineering scams that pressure victims into fake crypto or forex investments.',
     test6_location: '',
   },
 
@@ -754,7 +754,344 @@ const TRANSLATIONS = {
     test5_location: '',
     test6_text: 'Pig-Butchering & Romance-Betrug, langfristige Social-Engineering-Betrügereien, die Opfer zu gefälschten Krypto- oder Forex-Investitionen drängen.',
     test6_location: '',
-  }
+  },
+  es: {
+  "seo_title": "Recuperación de estafas de cripto, forex e inversión | ReclaimGuard Legal",
+  "seo_desc": "¿Perdió dinero en una estafa de criptomonedas, forex o inversión, una plataforma de trading falsa o un fraude romántico o de tipo pig butchering? ReclaimGuard Legal rastrea los fondos robados y persigue su recuperación mediante análisis forense de blockchain y acciones legales. Evaluación gratuita del caso. Reino Unido, UE y EE. UU. Sin éxito, sin honorarios; los resultados nunca están garantizados.",
+  "og_title": "Recuperación de estafas de cripto, forex e inversión | ReclaimGuard Legal",
+  "og_desc": "¿Perdió dinero en una estafa de cripto, forex, inversión o una plataforma de trading falsa? Rastreamos los fondos robados y perseguimos su recuperación. Evaluación gratuita. Reino Unido, UE y EE. UU. Sin éxito, sin honorarios.",
+  "meta_keywords": "recuperación estafa cripto, recuperación estafa forex, recuperar dinero de estafa forex, estafa bróker forex, recuperación estafa inversión, recuperación fraude de inversión, recuperar dinero de estafa de inversión, recuperación plataforma de trading falsa, recuperar bitcoin robado, recuperación estafa pig butchering, recuperación dinero estafa romántica, recuperación estafa transferencia bancaria, reembolso fraude APP, recuperación fraude con tarjeta, cómo recuperar dinero de una estafa online, recuperar fondos de bróker fraudulento, recuperación fraude blockchain",
+  "nav_home": "Inicio",
+  "nav_services": "Servicios",
+  "nav_technology": "Tecnología",
+  "nav_about": "Nosotros",
+  "nav_testimonials": "Tipos de fraude",
+  "nav_contact": "Contacto",
+  "nav_blog": "Blog",
+  "nav_cta": "Consulta gratuita",
+  "verify_title": "Le estafaron una vez. Así puede saber que somos auténticos.",
+  "verify_subtitle": "A las víctimas de fraude a menudo las atacan una segunda vez con servicios de \"recuperación\" falsos. Antes de confiar en nadie, incluidos nosotros, verifique sus credenciales y esté atento a estas señales de alarma.",
+  "verify_cred_title": "Verifique nuestras credenciales",
+  "verify_safety": "100% confidencial. Hablamos con usted por teléfono y nunca pedimos ningún pago para liberar su dinero. Desconfíe de cualquier servicio de recuperación que solo use chat o pida honorarios por adelantado.",
+  "verify_cred_html": "<li>Regulados por la <strong>Solicitors Regulation Authority</strong>, verifique el <strong>n.º SRA&nbsp;830575</strong> en el <a href=\"https://www.sra.org.uk/consumers/register/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--primary-color);font-weight:600;\">registro de la SRA</a>.</li><li>Registrados en Inglaterra y Gales, <strong>n.º de sociedad 13438429</strong> en <a href=\"https://find-and-update.company-information.service.gov.uk/company/13438429\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--primary-color);font-weight:600;\">Companies House</a>.</li><li>Domicilio social: <strong>Altrincham, WA14&nbsp;4DR, Inglaterra</strong>.</li><li>Confirme siempre la regulación de una firma antes de compartir datos o enviar documentos.</li>",
+  "verify_never_title": "Lo que nunca haremos",
+  "objfaq_title": "¿Todavía se pregunta si podemos ayudarle?",
+  "objfaq_subtitle": "Las preguntas que más nos hacen, antes de ponerse en contacto.",
+  "chain_title": "Cómo rastreamos los fondos robados",
+  "chain_subtitle": "Una vista simplificada de una investigación real. Cada caso es distinto y los resultados nunca están garantizados.",
+  "chain_n1": "Su pago",
+  "chain_n2": "Wallet o cuenta del estafador",
+  "chain_n3": "Exchange o punto de salida",
+  "chain_n4": "Solicitud de KYC y congelación",
+  "offer_title": "Le ayudamos a recuperar el dinero perdido en estafas de cripto, forex, inversión y banca",
+  "offer_lead": "Rastreamos a dónde fue su dinero y lo perseguimos mediante contracargos, retrocesiones bancarias, acciones ante exchanges y reclamaciones legales. La evaluación de su caso es gratuita y es sin éxito, sin honorarios.",
+  "offer_1_title": "Rastrear",
+  "offer_1_text": "Seguimos el dinero con análisis forense de blockchain e investigación del rastro de pagos.",
+  "offer_2_title": "Recuperar",
+  "offer_2_text": "Contracargos, retrocesiones bancarias, congelaciones en exchanges y acciones legales para perseguir sus fondos.",
+  "offer_3_title": "Empezar es gratis",
+  "offer_3_text": "Evaluación del caso gratuita y confidencial. Sin éxito, sin honorarios; solo se cobra una comisión si recuperamos.",
+  "objfaq_html": "<details><summary>¿Es demasiado tarde para hacer algo?</summary><div>A menudo no. Los registros de pago y las transacciones de blockchain son permanentes, y aún pueden tomarse medidas legales meses después. Cuanto antes actúe, mejor, pero los casos más antiguos también merecen una evaluación.</div></details><details><summary>Pagué por transferencia bancaria, ¿se puede recuperar?</summary><div>Posiblemente. El fraude por transferencia (APP) puede ser recuperable y, desde octubre de 2024, los bancos del Reino Unido deben reembolsar a muchas víctimas. Si su banco lo ha rechazado, esa decisión se puede impugnar.</div></details><details><summary>Pagué en Bitcoin o cripto, ¿se ha perdido para siempre?</summary><div>No automáticamente. La cripto suele poder rastrearse en la blockchain hasta el exchange al que llegó; la recuperación depende entonces de acciones legales. El rastreo es posible; la recuperación nunca está garantizada.</div></details><details><summary>Me pidieron pagar una tasa de AML o de impuestos, ¿es normal?</summary><div>No. Ninguna plataforma legítima cobra una tasa para liberar su propio dinero, eso es parte de la estafa. Deje de pagar y haga que evalúen su caso.</div></details><details><summary>El bróker o la web ha desaparecido, ¿tiene sentido?</summary><div>Sí. Incluso cuando un sitio desaparece, el rastro del dinero y los registros de pago suelen permanecer, y eso es exactamente lo que sigue una investigación.</div></details>",
+  "verify_never_html": "<li><strong>Nunca</strong> le pediremos pagar una tasa, un “impuesto” o un cargo de “liberación” para retirar su propio dinero.</li><li><strong>Nunca</strong> garantizaremos la recuperación; quien promete un resultado garantizado no está siendo honesto.</li><li><strong>Nunca</strong> le pediremos pagar en criptomonedas, tarjetas de regalo ni a una cuenta personal.</li><li><strong>Nunca</strong> le llamaremos sin previo aviso afirmando que ya hemos encontrado su dinero.</li>",
+  "blog_hero_title": "Guías de recuperación de fraude",
+  "blog_hero_subtitle": "Artículos expertos sobre recuperación de estafas cripto, contracargos, análisis forense de blockchain y cómo protegerse en internet, escritos por nuestro equipo especialista.",
+  "blog_a1_cat": "Guía de actuación",
+  "blog_a1_title": "Qué hacer en las primeras 24 horas tras ser estafado en internet",
+  "blog_a1_excerpt": "Lo que haga justo después de descubrir la estafa puede decidir sus posibilidades de recuperar el dinero. Esta es la secuencia exacta a seguir.",
+  "blog_a1_author": "Equipo de ReclaimGuard Legal · 12 may 2026",
+  "blog_a1_url": "/blog/what-to-do-after-being-scammed",
+  "blog_a2_cat": "Alerta de estafas",
+  "blog_a2_title": "Cómo detectar una estafa de recuperación de cripto antes de perder más dinero",
+  "blog_a2_excerpt": "Los estafadores saben que está desesperado y atacan a las víctimas por segunda vez con servicios de recuperación falsos. Aprenda las señales que distinguen a las firmas legítimas de los estafadores.",
+  "blog_a2_author": "Equipo de ReclaimGuard Legal · 9 may 2026",
+  "blog_a2_url": "/blog/how-to-spot-crypto-recovery-scam",
+  "blog_a3_cat": "Alerta de estafas",
+  "blog_a3_title": "Las 5 estafas de cripto más comunes en 2026 (y cómo evitarlas)",
+  "blog_a3_excerpt": "Desde estafas románticas de pig butchering hasta exchanges de cripto falsos, estos cinco tipos de fraude causan la mayoría de las pérdidas de cripto en el mundo. Sepa qué buscar.",
+  "blog_a3_author": "Equipo de ReclaimGuard Legal · 6 may 2026",
+  "blog_a3_url": "/blog/most-common-crypto-scams-2026",
+  "blog_a4_cat": "Métodos de recuperación",
+  "blog_a4_title": "Qué es un contracargo y si puede recuperar su dinero de una estafa",
+  "blog_a4_excerpt": "Un contracargo es una de las herramientas más eficaces para recuperar dinero perdido en fraudes online, pero hay reglas, plazos y límites estrictos. Esto es todo lo que necesita saber.",
+  "blog_a4_author": "Equipo de ReclaimGuard Legal · 2 may 2026",
+  "blog_a4_url": "/blog/what-is-a-chargeback",
+  "blog_a5_cat": "Análisis forense de blockchain",
+  "blog_a5_title": "Cómo el análisis forense de blockchain puede rastrear criptomonedas robadas",
+  "blog_a5_excerpt": "Mucha gente cree que la cripto no se puede rastrear. No es así. Así usan los investigadores profesionales las herramientas de análisis de blockchain para seguir fondos robados y construir pruebas válidas para un tribunal.",
+  "blog_a5_author": "Equipo de ReclaimGuard Legal · 28 abr 2026",
+  "blog_a5_url": "/blog/blockchain-forensics-traces-stolen-crypto",
+  "blog_read_more": "Leer artículo →",
+  "hero_badge": "Experiencia legal + ciberseguridad",
+  "hero_title": "¿Perdió dinero en una plataforma de trading online o una estafa de cripto?",
+  "hero_subtitle": "Si le han bloqueado la retirada, o le han pedido pagar tasas de AML, impuestos o \"liberación\", nuestro equipo legal y de investigación en blockchain, regulado por la SRA, puede evaluar su caso, gratis y sin éxito, sin honorarios.",
+  "hero_btn_primary": "Comprobar si mi caso es recuperable",
+  "hero_btn_secondary": "Cómo funciona la recuperación",
+  "stat_legal": "Legal",
+  "stat_legal_label": "Expertos en acción legal",
+  "stat_crypto": "Cripto",
+  "stat_crypto_label": "Especialistas en rastreo",
+  "stat_coverage": "UE/RU/EE. UU.",
+  "stat_coverage_label": "Cobertura internacional",
+  "stat_gdpr": "RGPD",
+  "stat_gdpr_label": "Conforme",
+  "badge_1": "Experiencia legal + ciberseguridad",
+  "badge_2": "Rastreo en blockchain y banca",
+  "badge_3": "Acción contra los estafadores",
+  "badge_4": "Total transparencia",
+  "services_title": "Nuestros servicios principales",
+  "services_subtitle": "Procedimientos de recuperación basados en pruebas que combinan acción legal y análisis forense digital",
+  "service1_title": "Recuperación de cripto y rastreo en blockchain",
+  "service1_desc": "Rastreamos transacciones en Bitcoin, Ethereum, BNB Chain, Solana y más de 100 redes. Identificamos wallets, exchanges, grupos de transacciones y puntos de salida usados por los estafadores.",
+  "service1_f1": "Informes de blockchain",
+  "service1_f2": "Archivos de pruebas",
+  "service1_f3": "Escalado a exchanges",
+  "service1_f4": "Solicitudes legales de congelación",
+  "service2_title": "Fraude con tarjeta y recuperación por contracargo",
+  "service2_desc": "Gestionamos cargos no autorizados, disputas con comercios, estafas de suscripción, fraude amistoso y plataformas de trading falsas.",
+  "service2_f1": "Documentación del caso",
+  "service2_f2": "Preparación de pruebas",
+  "service2_f3": "Presentación completa de la disputa de contracargo",
+  "service2_f4": "Negociaciones con comercios",
+  "service3_title": "Recuperación de transferencias bancarias",
+  "service3_desc": "Asistimos a víctimas de estafas de pago autorizado, plataformas de inversión, fraude del correo corporativo y transferencias transfronterizas.",
+  "service3_f1": "Solicitudes de retrocesión",
+  "service3_f2": "Denuncias de incidentes de fraude",
+  "service3_f3": "Reclamaciones a autoridades financieras",
+  "service3_f4": "Rastreo internacional de fondos",
+  "service4_title": "OSINT e informes de investigación de fraude",
+  "service4_desc": "Recopilamos huellas digitales, rastros de IP, identificadores en redes sociales, titularidad de dominios y datos de sociedades pantalla.",
+  "service4_f1": "Identificación de estafadores",
+  "service4_f2": "Recopilación de pruebas digitales",
+  "service4_f3": "Apoyo a investigaciones policiales",
+  "service4_f4": "Documentación válida para tribunales",
+  "service5_title": "Cartas legales y reclamaciones ante reguladores",
+  "service5_desc": "Redactamos y enviamos notificaciones legales formales, reclamaciones a reguladores nacionales, escalados de cumplimiento a exchanges y solicitudes de retirada de plataformas.",
+  "service5_f1": "Requerimientos de cese",
+  "service5_f2": "Reclamaciones ante reguladores",
+  "service5_f3": "Acción ante exchanges",
+  "service5_f4": "Denuncia de plataformas",
+  "service6_title": "Casos que gestionamos",
+  "service6_desc": "Estafas románticas, plataformas de trading falsas, esquemas Ponzi, fraude con NFT, ataques de phishing, robo de identidad, transacciones no autorizadas y fraude del correo corporativo.",
+  "service6_f1": "Estafas de inversión en cripto",
+  "service6_f2": "Estafas románticas y pig butchering",
+  "service6_f3": "Forex/opciones binarias falsas",
+  "service6_f4": "Fraude con tarjeta y bancario",
+  "method_title": "Nuestra metodología",
+  "method_intro": "Combinamos experiencia legal, conocimiento de cumplimiento y técnicas avanzadas de investigación de ciberseguridad para rastrear activos robados e iniciar procedimientos de recuperación estructurados.",
+  "method1_title": "Análisis de blockchain",
+  "method1_desc": "Rastreamos transacciones en Bitcoin, Ethereum, BNB Chain, Solana y más de 100 redes. Identificamos wallets, exchanges y grupos de transacciones usados por los estafadores.",
+  "method2_title": "Protocolos de disputa bancaria",
+  "method2_desc": "Presentamos solicitudes de retrocesión, denuncias de incidentes de fraude y reclamaciones a autoridades financieras siguiendo procedimientos estrictos de disputa bancaria.",
+  "method3_title": "Procedimientos de contracargo",
+  "method3_desc": "Gestión experta de disputas con tarjeta, incluidos cargos no autorizados, fraude de comercios y estafas de suscripción, con documentación completa.",
+  "method4_title": "Inteligencia de fuentes abiertas",
+  "method4_desc": "Análisis forense digital y OSINT para recopilar pruebas, incluidos rastros de IP, identificadores en redes sociales y datos de titularidad de dominios.",
+  "method5_title": "Análisis forense digital",
+  "method5_desc": "Recopilación de pruebas y documentación profesional, aptas para fuerzas del orden, tribunales y autoridades reguladoras.",
+  "method6_title": "Escalado ante reguladores",
+  "method6_desc": "Escalamos los casos a bancos, emisores, exchanges y reguladores financieros con la documentación legal y los procedimientos de cumplimiento adecuados.",
+  "stat_blockchains": "100+",
+  "stat_blockchains_label": "Blockchains cubiertas",
+  "stat_intl": "UE/RU/EE. UU.",
+  "stat_intl_label": "Cobertura internacional",
+  "stat_gdpr2": "RGPD",
+  "stat_gdpr2_label": "Datos conformes",
+  "process_title": "Cómo funciona la recuperación",
+  "process_subtitle": "Proceso de recuperación transparente en 5 pasos, basado en pruebas",
+  "step1_title": "Evaluación del caso (gratis)",
+  "step1_desc": "Evaluamos documentos, transacciones y el escenario del fraude. Sin compromiso, sin pago por adelantado.",
+  "step2_title": "Recopilación de pruebas",
+  "step2_desc": "Mapeamos todas las transacciones, direcciones, cuentas y rastros digitales con herramientas forenses profesionales.",
+  "step3_title": "Estrategia de recuperación",
+  "step3_desc": "Decidimos la vía correcta: contracargo, retrocesión bancaria, congelación en exchange, acción legal o reclamación ante el regulador.",
+  "step4_title": "Ejecución",
+  "step4_desc": "Preparamos y presentamos todos los documentos oficiales y perseguimos la recuperación por los cauces legales y financieros adecuados.",
+  "step5_title": "Seguimiento continuo",
+  "step5_desc": "Actualizaciones, informes forenses, respuestas de cumplimiento y pasos de apelación. Total transparencia en todo momento.",
+  "about_title": "Sobre ReclaimGuard Legal",
+  "about_text1": "ReclaimGuard Legal es una firma de recuperación de fraude digital regulada por la SRA. Combinamos la acción legal con el análisis forense de blockchain para rastrear activos robados y perseguir una recuperación estructurada.",
+  "about_text2": "Nuestra misión es simple: ayudar a las víctimas a recuperar el control, restaurar la justicia y recuperar sus activos.",
+  "about_f1_title": "Expectativas realistas",
+  "about_f1_desc": "Operamos con estrictos estándares éticos y expectativas realistas. No prometemos una recuperación garantizada. Ofrecemos un servicio de recuperación estructurado y profesional, con resultados transparentes.",
+  "about_f2_title": "Alcance internacional",
+  "about_f2_desc": "Operamos en la UE, Reino Unido, EE. UU., Canadá y Australia. Gestionamos casos de fraude transfronterizo con el debido conocimiento jurisdiccional.",
+  "about_f3_title": "Enfoque basado en pruebas",
+  "about_f3_desc": "Recopilación de pruebas, análisis forense digital y documentación profesionales, aptos para fuerzas del orden, tribunales y autoridades reguladoras.",
+  "about_f4_title": "Total transparencia",
+  "about_f4_desc": "Informes claros, pruebas documentadas, plazos realistas. Sin comisiones ocultas, sin falsas promesas. Servicio profesional de principio a fin.",
+  "pricing_title": "Precios transparentes",
+  "cert1": "Evaluación del caso gratuita",
+  "cert2": "Sin éxito, sin honorarios",
+  "cert3": "Comisión de éxito del 10-15% (solo sobre lo recuperado)",
+  "cert4": "Conforme al RGPD",
+  "stats_time": "2-12 semanas",
+  "stats_time_label": "Duración típica del caso",
+  "stats_min": "250 €+",
+  "stats_min_label": "Importe mínimo del caso",
+  "stats_chains": "100+",
+  "stats_chains_label": "Blockchains cubiertas",
+  "stats_cov": "UE/RU/EE. UU.",
+  "stats_cov_label": "Áreas de cobertura",
+  "test_title": "Tipos de fraude que gestionamos",
+  "test_subtitle": "Asistimos a víctimas de una amplia gama de fraudes financieros online. Los resultados de recuperación dependen de las particularidades de cada caso y nunca están garantizados.",
+  "faq_title": "Preguntas frecuentes",
+  "faq_subtitle": "Preguntas habituales sobre la recuperación de criptomonedas y nuestros servicios",
+  "faq1_q": "¿Se pueden realmente rastrear y recuperar las criptomonedas?",
+  "faq1_a": "A menudo sí son rastreables. Aunque se suele creer que las criptomonedas son anónimas, la blockchain crea un registro permanente de las transacciones. Con herramientas forenses de blockchain estándar del sector, podemos rastrear la cripto a través de rutas de transacción complejas e identificar dónde acaba, y luego emprender acciones legales para perseguir la congelación y recuperación de los fondos cuando es posible. El rastreo no garantiza la recuperación.",
+  "faq2_q": "¿Cuánto tarda el proceso de recuperación?",
+  "faq2_a": "El plazo varía según la complejidad de su caso. Los casos sencillos en los que los fondos siguen en exchanges pueden resolverse en 2-4 meses. Los casos más complejos con varias jurisdicciones o blanqueo sofisticado pueden tardar 6-12 meses.",
+  "faq3_q": "¿Qué herramientas usan para rastrear criptomonedas robadas?",
+  "faq3_a": "Usamos herramientas de análisis de blockchain estándar del sector junto con nuestros propios métodos de investigación para rastrear transacciones de cripto en varias blockchains, identificar vínculos con servicios y exchanges conocidos, y construir pruebas que respalden acciones legales y reclamaciones ante reguladores. Estas herramientas no garantizan la recuperación, pero refuerzan la investigación.",
+  "faq4_q": "¿Cuáles son sus honorarios y condiciones de pago?",
+  "faq4_a": "Ofrecemos una consulta inicial gratuita para evaluar su caso. Nuestra estructura de honorarios suele basarse en una combinación de tarifas fijas por el trabajo de investigación y honorarios en función del éxito sobre los importes recuperados. Explicamos todos los honorarios de forma transparente antes de que contrate nuestros servicios.",
+  "faq5_q": "¿Qué tipos de estafas gestionan?",
+  "faq5_a": "Gestionamos todo tipo de fraude cripto y financiero, incluidos: exchanges de cripto falsos, estafas de inversión, esquemas Ponzi, estafas románticas/pig butchering, brókeres falsos, estafas con NFT, exploits de DeFi, fraude del correo corporativo, fraude por transferencia y transacciones bancarias no autorizadas.",
+  "faq6_q": "¿Trabajan a nivel internacional?",
+  "faq6_a": "Sí. El fraude cripto a menudo cruza fronteras, y nuestra red internacional nos permite trabajar con autoridades legales, exchanges e instituciones financieras de todo el mundo para maximizar las posibilidades de recuperación.",
+  "faq7_q": "¿Qué información necesitan para iniciar mi caso?",
+  "faq7_a": "Para empezar necesitamos: detalles de cómo le estafaron, registros de transacciones (extractos bancarios, IDs de transacciones de cripto, direcciones de wallet), cualquier comunicación con los estafadores y documentación de sus inversiones.",
+  "faq8_q": "¿Mi caso es confidencial?",
+  "faq8_a": "Por supuesto. Toda la información que comparta con nosotros está protegida y no se divulgará sin su consentimiento, salvo cuando lo exija la ley o sea necesario para perseguir la recuperación de su caso.",
+  "contact_title": "Solicite una consulta gratuita",
+  "contact_intro": "Rellene el formulario para iniciar la evaluación de su caso. Consulta gratuita, sin compromiso. Ofrecemos evaluaciones realistas y un servicio transparente.",
+  "contact_phone_label": "Teléfono",
+  "contact_phone_note": "Respuesta en 24 horas",
+  "contact_email_label": "Correo electrónico",
+  "contact_email_note": "Respuesta en 24 horas",
+  "contact_coverage_label": "Cobertura",
+  "contact_coverage_val": "UE, Reino Unido, EE. UU., Canadá, Australia",
+  "contact_coverage_note": "Casos de fraude internacional",
+  "contact_pricing_label": "Precios",
+  "contact_pricing_val": "Evaluación gratuita<br>Sin éxito, sin honorarios<br>Comisión de éxito del 10-15% (solo sobre lo recuperado)",
+  "disclaimer_title": "⚠️ Aviso legal",
+  "disclaimer_text": "ReclaimGuard Legal es una entidad autorizada regulada por la SRA (n.º 830575). Ofrecemos servicios de investigación forense y apoyo en disputas. No se promete ningún resultado garantizado. La recuperación depende de las pruebas, la antigüedad del caso, el método de pago y la cooperación de terceros.",
+  "form_title": "Evaluación gratuita del caso",
+  "form_subtitle": "Rellene el formulario y le contactaremos en 24 horas",
+  "form_name": "Nombre completo *",
+  "form_email": "Correo electrónico *",
+  "form_phone": "Número de teléfono *",
+  "form_amount": "¿Cuánto dinero perdió? *",
+  "form_amount_placeholder": "Seleccione un rango",
+  "form_amount_0": "Menos de 1.000",
+  "form_amount_1": "1.000 – 5.000",
+  "form_amount_2": "5.000 – 25.000",
+  "form_amount_3": "25.000 – 100.000",
+  "form_amount_4": "Más de 100.000",
+  "form_scamtype": "¿Qué tipo de fraude sufrió? *",
+  "form_scamtype_placeholder": "Seleccione el tipo de fraude",
+  "form_scamtype_crypto": "Estafa de cripto",
+  "form_scamtype_broker": "Plataforma de trading falsa",
+  "form_scamtype_bank": "Estafa por transferencia bancaria",
+  "form_scamtype_card": "Fraude con tarjeta",
+  "form_scamtype_other": "Otro",
+  "form_when": "¿Cuándo ocurrió el incidente? (opcional)",
+  "form_when_placeholder": "Seleccione un periodo",
+  "form_when_7": "En los últimos 7 días",
+  "form_when_14": "1-4 semanas",
+  "form_when_3m": "1-3 meses",
+  "form_when_36m": "3-6 meses",
+  "form_when_612m": "6-12 meses",
+  "form_when_1y": "Más de 1 año",
+  "form_payment": "¿Cómo pagó? (opcional)",
+  "form_payment_placeholder": "Seleccione el método de pago",
+  "form_payment_crypto": "Cripto",
+  "form_payment_card": "Tarjeta",
+  "form_payment_bank": "Transferencia bancaria",
+  "form_payment_other": "Otro",
+  "form_message": "Breve descripción de lo ocurrido (opcional)",
+  "form_message_placeholder": "Describa brevemente el incidente de fraude...",
+  "form_consent": "Entiendo que ReclaimGuard Legal ofrece servicios de investigación y que no se promete ningún resultado garantizado. Doy mi consentimiento para que me contacten sobre mi caso.",
+  "form_submit": "Comprobar si mi caso es recuperable",
+  "form_urgency": "Cuanto antes empiece la investigación, mayores serán las posibilidades de preservar pruebas y rastrear los fondos.",
+  "form_reassure_html": "<li>&#10003; Evaluación gratuita</li><li>&#10003; Confidencial</li><li>&#10003; Sin compromiso</li><li>&#10003; Sin resultado garantizado</li>",
+  "form_step1_indicator": "Paso 1 de 2 · Su caso",
+  "form_step2_indicator": "Paso 2 de 2 · Sus datos",
+  "form_continue": "Continuar →",
+  "form_back": "← Atrás",
+  "form_note": "🔒 Conforme al RGPD. Todos los datos se tratan de forma confidencial. No se requiere pago por adelantado para la evaluación del caso.",
+  "footer_desc": "Firma especializada en recuperación de fraude digital que combina experiencia legal e investigación de ciberseguridad. Rastreamos activos robados e iniciamos procedimientos de recuperación estructurados.",
+  "footer_services": "Servicios",
+  "footer_company": "Empresa",
+  "footer_contact": "Contacto",
+  "footer_about": "Sobre nosotros",
+  "footer_methodology": "Nuestra metodología",
+  "footer_who": "A quién ayudamos",
+  "footer_contact_us": "Contáctenos",
+  "footer_privacy": "Política de privacidad",
+  "footer_terms": "Términos y condiciones",
+  "footer_copy": "© 2026 ReclaimGuard Legal. Todos los derechos reservados.",
+  "footer_disclaimer": "ReclaimGuard Legal es una entidad autorizada para todos los servicios legales, regulada por la Solicitors Regulation Authority (n.º SRA 830575), registrada en Inglaterra y Gales (n.º de sociedad 13438429). Ofrecemos servicios de investigación forense, apoyo en disputas y procedimientos legales de recuperación. No se promete ningún resultado garantizado.",
+  "fab_label": "Consulta gratuita",
+  "lang_switcher_label": "Idioma",
+  "team_title": "Nuestro equipo",
+  "team_subtitle": "Un equipo multidisciplinar de asesores legales, analistas de blockchain y especialistas en cumplimiento",
+  "team1_role": "Equipo legal y regulatorio",
+  "team1_bio": "Abogados y asesores legales que gestionan disputas de fraude, reclamaciones de contracargo y quejas ante reguladores bajo la ley de Inglaterra y Gales, como entidad regulada por la SRA.",
+  "team1_tag1": "Estrategia legal",
+  "team1_tag2": "Reclamaciones ante reguladores",
+  "team2_role": "Equipo de investigación en blockchain",
+  "team2_bio": "Analistas que rastrean criptomonedas robadas a través de wallets, exchanges y redes con herramientas forenses de blockchain estándar del sector.",
+  "team2_tag1": "Análisis forense de blockchain",
+  "team2_tag2": "Rastreo de cripto",
+  "team3_role": "Equipo de análisis forense digital",
+  "team3_bio": "Especialistas en OSINT y recopilación de pruebas, que preparan documentación apta para bancos, exchanges y procesos judiciales.",
+  "team3_tag1": "OSINT",
+  "team3_tag2": "Pruebas digitales",
+  "team4_role": "Atención al cliente y cumplimiento",
+  "team4_bio": "Gestión de casos conforme al RGPD y comunicación con el cliente durante todo el proceso, en inglés y alemán.",
+  "team4_tag1": "Cumplimiento del RGPD",
+  "team4_tag2": "Atención al cliente",
+  "rating_platform": "⭐ Opiniones de clientes",
+  "rating_count": "Basado en 214 opiniones verificadas",
+  "rating_h1": "Opiniones verificadas",
+  "rating_t1": "Todas las opiniones verificadas por correo",
+  "rating_h2": "Confidencial",
+  "rating_t2": "Identidad de los clientes protegida",
+  "rating_h3": "Transparente",
+  "rating_t3": "Resultados reportados con honestidad",
+  "overlay_lbl1": "Regulados",
+  "overlay_lbl2": "Cobertura internacional",
+  "overlay_lbl3": "Conforme",
+  "success_title": "Caso recibido",
+  "success_msg": "Gracias por contactarnos. Hemos recibido los detalles de su caso y le responderemos en 24 horas.",
+  "success_step1": "Nuestro equipo revisa los detalles de su caso",
+  "success_step2": "Evaluamos las opciones de recuperación",
+  "success_step3": "Recibe una respuesta personalizada en 24 h",
+  "success_note": "Revise su bandeja de entrada, una confirmación está en camino.",
+  "ty_title": "Caso recibido",
+  "ty_subtitle": "Gracias por contactar con ReclaimGuard Legal. Hemos recibido los detalles de su caso y nuestro equipo los revisará en breve.",
+  "ty_step1_title": "Evaluación del caso",
+  "ty_step1_desc": "Nuestros especialistas revisan los detalles que ha facilitado y evalúan las mejores opciones de recuperación.",
+  "ty_step2_title": "Consulta inicial",
+  "ty_step2_desc": "Le contactaremos en 24 horas para hablar de su caso y de los siguientes pasos.",
+  "ty_step3_title": "Plan de recuperación",
+  "ty_step3_desc": "Recibe una estrategia de recuperación personalizada, sin compromiso por adelantado.",
+  "ty_highlight": "<strong>Revise su bandeja de entrada</strong>, un correo de confirmación está en camino. Si no lo ve en unos minutos, revise su carpeta de spam.",
+  "ty_btn_home": "← Volver al inicio",
+  "ty_btn_another": "Enviar otro caso",
+  "ty_back": "← Volver al inicio",
+  "ty_copy": "© 2026 ReclaimGuard Legal. Todos los derechos reservados.",
+  "footer_cert_gdpr": "Conforme al RGPD",
+  "footer_cert_cov": "Cobertura UE/RU/EE. UU.",
+  "footer_s1": "Recuperación de cripto",
+  "footer_s2": "Fraude con tarjeta y contracargos",
+  "footer_s3": "Recuperación de transferencias",
+  "footer_s4": "Investigaciones OSINT",
+  "footer_s5": "Cartas legales",
+  "footer_s6": "Reclamaciones ante reguladores",
+  "test1_text": "Estafas de inversión en cripto, plataformas de inversión falsas y esquemas de cripto de \"rentabilidad garantizada\" que desaparecen con los depósitos de las víctimas.",
+  "test1_location": "",
+  "test2_text": "Plataformas de trading y brókeres falsos, brókeres fraudulentos de forex, CFD y cripto que bloquean las retiradas o desaparecen de la noche a la mañana.",
+  "test2_location": "",
+  "test3_text": "Fraude con DeFi y NFT, rug pulls, protocolos DeFi fraudulentos y estafas con NFT repartidas por varias blockchains.",
+  "test3_location": "",
+  "test4_text": "Fraude del correo corporativo, redirección de facturas y fraude por transferencia dirigido a empresas y sus proveedores.",
+  "test4_location": "",
+  "test5_text": "Esquemas Ponzi y de minería falsa, operaciones de \"ingresos pasivos\" y de minería en la nube que pagan hasta que colapsan.",
+  "test5_location": "",
+  "test6_text": "Fraude romántico y pig butchering, estafas de ingeniería social a largo plazo que presionan a las víctimas para invertir en cripto o forex falsos.",
+  "test6_location": ""
+}
 };
 
 // ============================
@@ -762,6 +1099,9 @@ const TRANSLATIONS = {
 // ============================
 const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
 const GERMAN_LANG_PREFIXES = ['de'];
+const SPANISH_COUNTRIES = ['ES', 'MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'PR'];
+const SPANISH_LANG_PREFIXES = ['es'];
+const LANG_NAMES = { en: 'English', de: 'Deutsch', es: 'Español' };
 
 // Instant check: is the browser set to German?
 function detectLangFromBrowser() {
@@ -769,7 +1109,9 @@ function detectLangFromBrowser() {
     ? navigator.languages
     : [navigator.language || ''];
   for (const l of langs) {
-    if (GERMAN_LANG_PREFIXES.some(p => l.toLowerCase().startsWith(p))) return 'de';
+    const ll = l.toLowerCase();
+    if (GERMAN_LANG_PREFIXES.some(p => ll.startsWith(p))) return 'de';
+    if (SPANISH_LANG_PREFIXES.some(p => ll.startsWith(p))) return 'es';
   }
   return null;
 }
@@ -1295,7 +1637,7 @@ function applyTranslations() {
 
   // Update lang switcher button text
   const switcher = document.getElementById('langSwitcher');
-  if (switcher) switcher.textContent = t('lang_switcher_label');
+  if (switcher) switcher.textContent = (LANG_NAMES[document.documentElement.lang] || 'English') + ' ▾';
 
   // ── Blog page (blog.html) ────────────────────────────────────────────
   const blogHero = document.querySelector('.blog-hero');
@@ -1336,60 +1678,98 @@ function applyTranslations() {
 async function initI18n() {
   const _path = location.pathname;
   const onDeHome = (_path === '/de' || _path === '/de/');
-  const onEnHome = (_path === '/' || _path === '/index.html' || _path === '/index-de.html');
+  const onEsHome = (_path === '/es' || _path === '/es/');
+  const onEnHome = (_path === '/' || _path === '/index.html' || _path === '/index-de.html' || _path === '/index-es.html');
 
-  // The dedicated German homepage URL is always German (static German HTML).
-  if (onDeHome) {
-    setLang('de');
-    applyTranslations();
-    return;
-  }
+  // Dedicated language homepages serve static translated HTML.
+  if (onDeHome) { setLang('de'); applyTranslations(); return; }
+  if (onEsHome) { setLang('es'); applyTranslations(); return; }
 
   let lang = getLang();
   if (!lang) {
-    // German if the phone/browser language is German, OR the visitor is in a
-    // German-speaking country (DE/AT/CH). English otherwise.
-    if (detectLangFromBrowser() === 'de') {
-      lang = 'de';
+    // Language by phone/browser first, then by country (German- or
+    // Spanish-speaking). English otherwise.
+    const bl = detectLangFromBrowser(); // 'de' | 'es' | null
+    if (bl) {
+      lang = bl;
     } else {
       let country = await detectCountryVercel();
       if (!country) country = await detectCountryFallback();
-      lang = (country && GERMAN_COUNTRIES.includes(country)) ? 'de' : 'en';
+      if (country && GERMAN_COUNTRIES.includes(country)) lang = 'de';
+      else if (country && SPANISH_COUNTRIES.includes(country)) lang = 'es';
+      else lang = 'en';
     }
   }
 
-  // On the English homepage, send German visitors to the German homepage URL
-  // so each language has its own canonical page (better for SEO). Respects a
-  // stored English choice, so toggling to English does not bounce back.
+  // English homepage: send German/Spanish visitors to their homepage URL so
+  // each language has its own canonical page. Respects a stored choice.
   if (onEnHome && lang === 'de') { location.replace('/de'); return; }
+  if (onEnHome && lang === 'es') { location.replace('/es'); return; }
 
   if (!onEnHome) setLang(lang);
   if (redirectBlogIfNeeded(lang)) return;
   applyTranslations();
 }
 
-function toggleLanguage() {
+function switchTo(lang) {
+  setLang(lang);
   const p = location.pathname;
-  // Homepage: switch by URL (/ = English, /de = German) and remember the choice.
-  if (p === '/de' || p === '/de/') { setLang('en'); location.href = '/'; return; }
-  if (p === '/' || p === '/index.html' || p === '/index-de.html') { setLang('de'); location.href = '/de'; return; }
-  // Inner pages (blog, etc.): toggle in place.
-  const current = getLang() || (document.documentElement.lang === 'de' ? 'de' : 'en');
-  const next = current === 'en' ? 'de' : 'en';
-  setLang(next);
-  if (redirectBlogIfNeeded(next)) return;
+  const homeUrls = { en: '/', de: '/de', es: '/es' };
+  const onHome = (p === '/' || p === '/de' || p === '/de/' || p === '/es' || p === '/es/' ||
+                  p === '/index.html' || p === '/index-de.html' || p === '/index-es.html');
+  if (onHome) { location.href = homeUrls[lang] || '/'; return; }
+  // Blog: EN/DE have their own article URLs; Spanish has no articles yet,
+  // so send Spanish visitors to the Spanish homepage.
+  if (lang === 'es') { location.href = '/es'; return; }
+  if (redirectBlogIfNeeded(lang)) return;
   applyTranslations();
+}
+
+// Dropdown language selector (English / Deutsch / Español).
+function setupLangSwitcher() {
+  // Skip during static prerender so no runtime state leaks into the snapshot.
+  if (typeof window !== 'undefined' && window.__PRERENDER__) return;
+  const btn = document.getElementById('langSwitcher');
+  if (!btn || btn.dataset.rgLangReady) return;
+  btn.dataset.rgLangReady = '1';
+
+  const menu = document.createElement('div');
+  menu.style.cssText = 'position:absolute;background:#fff;border:1px solid #e2e8f0;border-radius:8px;' +
+    'box-shadow:0 8px 24px rgba(0,0,0,.15);padding:6px;display:none;z-index:100000;min-width:130px;';
+  ['en', 'de', 'es'].forEach(function (l) {
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.textContent = LANG_NAMES[l];
+    item.style.cssText = 'display:block;width:100%;text-align:left;background:none;border:none;' +
+      'padding:9px 14px;border-radius:6px;cursor:pointer;font:inherit;color:#0f172a;';
+    item.addEventListener('mouseenter', function () { item.style.background = '#eef4ff'; });
+    item.addEventListener('mouseleave', function () { item.style.background = 'none'; });
+    item.addEventListener('click', function (e) { e.stopPropagation(); switchTo(l); });
+    menu.appendChild(item);
+  });
+  document.body.appendChild(menu);
+
+  function place() {
+    const r = btn.getBoundingClientRect();
+    menu.style.top = (window.scrollY + r.bottom + 6) + 'px';
+    menu.style.left = (window.scrollX + Math.max(8, r.right - 130)) + 'px';
+  }
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    place();
+    menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+  });
+  document.addEventListener('click', function () { menu.style.display = 'none'; });
+  window.addEventListener('resize', function () { menu.style.display = 'none'; });
 }
 
 // Run on DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initI18n();
-    const btn = document.getElementById('langSwitcher');
-    if (btn) btn.addEventListener('click', toggleLanguage);
+    setupLangSwitcher();
   });
 } else {
   initI18n();
-  const btn = document.getElementById('langSwitcher');
-  if (btn) btn.addEventListener('click', toggleLanguage);
+  setupLangSwitcher();
 }
