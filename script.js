@@ -127,6 +127,46 @@ if (contactForm) {
 }
 
 // ================================
+// Hero lead form (short, above the fold). Submits to the same endpoint and
+// redirects to /thank-you on success so the existing conversion tracking fires.
+// ================================
+const heroForm = document.getElementById('heroForm');
+if (heroForm) {
+    heroForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!validateScope(heroForm)) return;
+
+        const data = Object.fromEntries(new FormData(heroForm).entries());
+        const codeEl = document.getElementById('heroPhoneCode');
+        if (codeEl) data.phone = codeEl.value + ' ' + (data.phone || '').trim();
+
+        const submitBtn = heroForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+        try {
+            const response = await fetch('/api/leads', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            if (response.ok) {
+                window.location.href = '/thank-you';
+            } else {
+                alert('❌ ' + (result.error || 'There was an error. Please try again, WhatsApp us, or call us directly.'));
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('❌ Could not connect to the server. Please try WhatsApp or call us directly.');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// ================================
 // Multi-step Contact Form
 // ================================
 // Validate every required field inside `scope`; focus + report the first

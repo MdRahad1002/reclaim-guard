@@ -155,7 +155,10 @@ module.exports = async (req, res) => {
         const message  = sanitize(body.message, 2000);
 
         if (!name || name.length < 2)             return res.status(400).json({ error: 'Valid full name is required' });
-        if (!validateEmail(email))                return res.status(400).json({ error: 'Valid email address is required' });
+        // A contact method is required. Email is optional (the short hero form
+        // captures phone only); if given it must be valid.
+        if (email && !validateEmail(email))       return res.status(400).json({ error: 'Valid email address is required' });
+        if (!email && phone.replace(/\D/g, '').length < 7) return res.status(400).json({ error: 'A phone number or email is required' });
         if (!VALID_AMOUNTS.includes(amount))      return res.status(400).json({ error: 'Invalid amount selection' });
         if (!VALID_SCAMTYPES.includes(scamType))  return res.status(400).json({ error: 'Invalid fraud type selection' });
         if (when && !VALID_WHEN.includes(when))   return res.status(400).json({ error: 'Invalid timeframe selection' });
@@ -176,10 +179,13 @@ module.exports = async (req, res) => {
 
             const leadId = rows[0].id;
 
-            // Fire-and-forget emails do not block the HTTP response
-            sendLeadConfirmation({ name, email, amount, scamType }).catch(err =>
-                console.error('Confirmation email failed:', err.message)
-            );
+            // Fire-and-forget emails do not block the HTTP response.
+            // Confirmation only goes out when the lead supplied an email.
+            if (email) {
+                sendLeadConfirmation({ name, email, amount, scamType }).catch(err =>
+                    console.error('Confirmation email failed:', err.message)
+                );
+            }
             sendAdminNotification({ name, email, phone, amount, scamType, when, payment, message, leadId, priority }).catch(err =>
                 console.error('Admin notification email failed:', err.message)
             );

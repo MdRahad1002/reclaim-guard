@@ -387,6 +387,71 @@ h1, h2, h3, h4, h5, h6 {
 .hero .stat-number { color: #ffffff; }
 .hero .stat-label { color: rgba(255, 255, 255, 0.85); opacity: 1; }
 
+/* Two-column hero: copy + trust on the left, lead form on the right. The
+   form lives above the fold so paid traffic can convert without scrolling. */
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(1.75rem, 4vw, 3.25rem);
+    align-items: center;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.hero-grid .hero-content { max-width: none; margin: 0; text-align: left; }
+.hero-grid .hero-title { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 1rem; }
+.hero-grid .hero-subtitle { font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.6; margin-bottom: 1.5rem; }
+.hero-grid .hero-badge { margin-bottom: 1.25rem; }
+.hero-grid .hero-trust { justify-content: flex-start; margin: 0; }
+
+.hero-form-card {
+    background: #ffffff;
+    color: var(--dark-color);
+    border-radius: 16px;
+    padding: clamp(18px, 2.5vw, 26px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.30);
+}
+.hero-form-title { font-size: 1.35rem; font-weight: 800; margin: 0 0 0.25rem; color: var(--dark-color); }
+.hero-form-sub { font-size: 0.9rem; color: #475569; margin: 0 0 1rem; line-height: 1.4; }
+.hero-form .form-group { margin-bottom: 0.7rem; }
+.hero-form label { color: var(--dark-color); font-size: 0.9rem; }
+.hero-phone-row { display: flex; gap: 0.5rem; }
+.hero-phone-row select { flex: 0 0 92px; }
+.hero-phone-row input { flex: 1 1 auto; min-width: 0; }
+.hero-form .btn-full { margin-top: 0.35rem; }
+
+.hero-or {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.hero-or::before, .hero-or::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+
+.btn-whatsapp {
+    background: #25D366;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border: none;
+}
+.btn-whatsapp:hover { background: #1ebe57; color: #ffffff; }
+.hero-form-trust { text-align: center; font-size: 0.8rem; color: #64748b; margin: 0.85rem 0 0; }
+
+@media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero-grid .hero-content { text-align: center; }
+    .hero-grid .hero-trust { justify-content: center; }
+}
+
 /* ================================
    Trust Section
    ================================ */
