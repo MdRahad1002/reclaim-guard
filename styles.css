@@ -522,6 +522,24 @@ h1, h2, h3, h4, h5, h6 {
 .review-name { font-weight: 700; color: var(--dark-color); font-size: 0.95rem; }
 .review-tag { font-size: 0.82rem; color: #64748b; }
 
+/* Regulated firm vs fake recovery agents */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 960px; margin: 0 auto; }
+.compare-col { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px; }
+.compare-good { border-top: 4px solid #16a34a; }
+.compare-bad { border-top: 4px solid #dc2626; }
+.compare-col h3 { display: flex; align-items: center; gap: 9px; font-size: 1.12rem; margin: 0 0 16px; color: var(--dark-color); }
+.compare-col h3 svg { width: 22px; height: 22px; flex: 0 0 auto; }
+.compare-good h3 svg { color: #16a34a; }
+.compare-bad h3 svg { color: #dc2626; }
+.compare-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.compare-col li { position: relative; padding-left: 27px; font-size: 0.93rem; line-height: 1.5; color: #334155; }
+.compare-col li::before { position: absolute; left: 0; top: -1px; font-weight: 800; font-size: 1rem; }
+.compare-good li::before { content: '\2713'; color: #16a34a; }
+.compare-bad li::before { content: '\2715'; color: #dc2626; }
+.compare-verify { text-align: center; max-width: 760px; margin: 26px auto 0; font-size: 0.9rem; color: #475569; line-height: 1.55; }
+.compare-verify a { color: var(--primary-color); font-weight: 600; }
+@media (max-width: 720px) { .compare-grid { grid-template-columns: 1fr; } }
+
 @media (max-width: 920px) {
     .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .hero-grid .hero-content { text-align: center; }
