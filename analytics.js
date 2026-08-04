@@ -213,11 +213,14 @@
   var WA_NUMBER = '447466901590'; // +44 7466 901590
   function inject() {
     if (document.getElementById('rgWhatsApp') || !document.body) return;
-    var isDE = (document.documentElement.lang || '').toLowerCase().indexOf('de') === 0;
+    var lc = (document.documentElement.lang || '').toLowerCase();
+    var isDE = lc.indexOf('de') === 0, isES = lc.indexOf('es') === 0;
     var msg  = isDE
       ? 'Hallo, ich moechte eine kostenlose Beratung zur Rueckholung von Geld, das ich durch einen Betrug verloren habe.'
+      : isES
+      ? 'Hola, quiero una consulta gratuita para recuperar el dinero que perdi en una estafa.'
       : "Hi, I'd like a free consultation about recovering money I lost to a scam.";
-    var label = isDE ? 'Auf WhatsApp chatten' : 'Chat on WhatsApp';
+    var label = isDE ? 'Auf WhatsApp chatten' : isES ? 'Chatear por WhatsApp' : 'Chat on WhatsApp';
     var a = document.createElement('a');
     a.id = 'rgWhatsApp';
     a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
@@ -233,7 +236,7 @@
       'box-shadow:0 6px 18px rgba(37,211,102,.45);transition:transform .2s ease;';
     a.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="#fff" aria-hidden="true">' +
       '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 005.71 1.447h.006c6.585 0 11.946-5.359 11.949-11.893a11.821 11.821 0 00-3.481-8.453z"/></svg>' +
-      '<span>' + (isDE ? 'Schreiben Sie uns' : 'Chat with us') + '</span>';
+      '<span>' + (isDE ? 'Schreiben Sie uns' : isES ? 'Escríbenos' : 'Chat with us') + '</span>';
     a.addEventListener('mouseenter', function () { a.style.transform = 'scale(1.05)'; });
     a.addEventListener('mouseleave', function () { a.style.transform = 'scale(1)'; });
     document.body.appendChild(a);
@@ -251,12 +254,15 @@
   var WA    = '447466901590';
   function injectBar() {
     if (document.getElementById('rgCtaBar') || !document.body) return;
-    var isDE = (document.documentElement.lang || '').toLowerCase().indexOf('de') === 0;
-    var L = isDE
-      ? { call: 'Anrufen', wa: 'WhatsApp', form: 'Gratis-Prüfung' }
-      : { call: 'Call',    wa: 'WhatsApp', form: 'Free Review' };
+    var lc = (document.documentElement.lang || '').toLowerCase();
+    var isDE = lc.indexOf('de') === 0, isES = lc.indexOf('es') === 0;
+    var L = isDE ? { call: 'Anrufen', wa: 'WhatsApp', form: 'Gratis-Prüfung' }
+          : isES ? { call: 'Llamar',  wa: 'WhatsApp', form: 'Revisión gratis' }
+          : { call: 'Call', wa: 'WhatsApp', form: 'Free Review' };
     var waMsg = encodeURIComponent(isDE
       ? 'Hallo, ich moechte eine kostenlose Beratung zur Rueckholung von Geld, das ich durch einen Betrug verloren habe.'
+      : isES
+      ? 'Hola, quiero una consulta gratuita para recuperar el dinero que perdi en una estafa.'
       : "Hi, I'd like a free consultation about recovering money I lost to a scam.");
 
     var st = document.createElement('style');
@@ -291,9 +297,12 @@
 
     document.getElementById('rgCtaForm').addEventListener('click', function (e) {
       e.preventDefault();
-      var target = document.getElementById('contactForm') || document.getElementById('contact');
-      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-      else { location.href = '/#contact'; }
+      var target = document.getElementById('heroForm') || document.getElementById('contactForm') || document.getElementById('contact');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var firstField = target.querySelector('select, input');
+        if (firstField) { setTimeout(function () { try { firstField.focus(); } catch (e) {} }, 450); }
+      } else { location.href = '/#home'; }
     });
   }
   if (document.readyState === 'loading') {

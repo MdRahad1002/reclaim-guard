@@ -445,6 +445,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-whatsapp:hover { background: #1ebe57; color: #ffffff; }
 .hero-form-trust { text-align: center; font-size: 0.8rem; color: #64748b; margin: 0.85rem 0 0; }
+.hero-urgency {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 8px 11px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 0.9rem;
+}
+.hero-reassure { text-align: center; font-size: 0.82rem; color: #0f766e; font-weight: 600; margin: 0.45rem 0 0; }
 
 @media (max-width: 920px) {
     .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
