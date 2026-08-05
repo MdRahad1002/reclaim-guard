@@ -76,7 +76,10 @@
 
   // 2) Load the gtag library + configure the tags (only if IDs are set).
   if (GA4_ON || ADS_ON) {
-    var loaderId = GA4_ON ? GA4_MEASUREMENT_ID : GOOGLE_ADS_ID;
+    // Load the library through the Ads ID when present: it is the
+    // conversion-critical tag and its gtag/js endpoint is known-good. (Loading
+    // via a deleted GA4 ID returns 404 and kills the whole gtag stack.)
+    var loaderId = ADS_ON ? GOOGLE_ADS_ID : GA4_MEASUREMENT_ID;
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(loaderId);
