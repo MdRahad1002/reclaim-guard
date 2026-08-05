@@ -96,20 +96,53 @@
     });
   }
 
-  // 3) Public helper: fire the Google Ads "lead" conversion.
+  // 3) Public helper: fire the Google Ads "lead" conversion, with proof.
   //    Called from the /thank-you page after a successful form submission.
+  //    Verification mode: append ?rgverify=1 to any URL to get an on-screen
+  //    confirmation the moment the conversion actually fires (the flag persists
+  //    through the form redirect); ?rgverify=0 turns it off. A console line is
+  //    always logged so it can be checked from DevTools too.
+  try {
+    var _qp = new URLSearchParams(location.search);
+    if (_qp.get('rgverify') === '1') localStorage.setItem('rg_verify', '1');
+    if (_qp.get('rgverify') === '0') localStorage.removeItem('rg_verify');
+  } catch (e) {}
+  var RG_VERIFY = false;
+  try { RG_VERIFY = localStorage.getItem('rg_verify') === '1'; } catch (e) {}
+
+  function showConvBadge(targets) {
+    if (!document.body) { window.addEventListener('DOMContentLoaded', function () { showConvBadge(targets); }); return; }
+    var b = document.createElement('div');
+    b.setAttribute('role', 'status');
+    b.innerHTML = '&#10003; Google Ads conversion fired';
+    b.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:100001;' +
+      'background:#16a34a;color:#fff;font:700 14px/1.2 Inter,system-ui,sans-serif;padding:13px 20px;' +
+      'border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.28);';
+    document.body.appendChild(b);
+    setTimeout(function () { b.remove(); }, 8000);
+  }
+
   window.trackLeadConversion = function () {
     if (!ADS_ON) return;
     var targets = [];
     if (configured(LEAD_CONVERSION_LABEL))   targets.push(GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL);
     if (configured(LEAD_CONVERSION_LABEL_2)) targets.push(GOOGLE_ADS_ID + '/' + LEAD_CONVERSION_LABEL_2);
-    if (targets.length) {
-      gtag('event', 'conversion', {
-        send_to: targets,
-        value: 1.0,
-        currency: 'GBP'
-      });
+    if (!targets.length) return;
+    var sent = false;
+    function onSent() {
+      if (sent) return; sent = true;
+      try { console.log('%c[ReclaimGuard] Google Ads lead conversion SENT ✓', 'color:#16a34a;font-weight:700', targets); } catch (e) {}
+      if (RG_VERIFY) showConvBadge(targets);
     }
+    gtag('event', 'conversion', {
+      send_to: targets,
+      value: 1.0,
+      currency: 'GBP',
+      event_callback: onSent
+    });
+    setTimeout(function () {
+      if (!sent) { try { console.log('%c[ReclaimGuard] Conversion queued. If it never confirms, accept cookies (Consent Mode blocks it until then).', 'color:#c26a00;font-weight:700', targets); } catch (e) {} }
+    }, 2000);
   };
 
   // 4) Consent banner -------------------------------------------------
