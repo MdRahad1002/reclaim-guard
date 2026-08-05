@@ -8,219 +8,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | ReclaimGuard Legal</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="apple-touch-icon" href="/assets/images/reclaim-guard-logo.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/images/reclaim-guard-logo.png">
     <style>
         @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/inter-variable.woff2') format('woff2');}
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f1f5f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{
+            --navy:#0f172a; --blue:#1B4FD8; --blue-dark:#1640b0;
+            --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --wa:#25D366;
+        }
+        body{
+            font-family:'Inter',system-ui,sans-serif;
+            color:var(--ink);
+            background:
+                radial-gradient(1200px 500px at 50% -10%, rgba(27,79,216,.10), transparent 60%),
+                linear-gradient(180deg,#f8fafc 0%, #eef2f8 100%);
+            min-height:100vh; display:flex; flex-direction:column;
         }
 
-        /* -- NAV -- */
-        .nav {
-            background: #0f172a;
-            padding: 0 32px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        /* NAV */
+        .nav{background:var(--navy);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,32px);}
+        .nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+        .nav-logo img{height:34px;width:auto;}
+        .nav-logo span{color:#fff;font-weight:700;font-size:1rem;}
+        .nav-right{display:flex;align-items:center;gap:14px;}
+        .nav-back{color:#94a3b8;text-decoration:none;font-size:.86rem;font-weight:600;transition:color .2s;}
+        .nav-back:hover{color:#fff;}
+        #tyLang{background:#1e293b;color:#fff;border:1px solid #334155;border-radius:7px;padding:6px 10px;font:600 .82rem Inter,sans-serif;cursor:pointer;}
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+        /* MAIN */
+        .main{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(28px,5vw,56px) 18px;}
+        .card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 60px rgba(15,23,42,.10);padding:clamp(30px,5vw,52px);max-width:660px;width:100%;text-align:center;}
 
-        .nav-logo img { height: 36px; }
+        /* SUCCESS CHECK */
+        .check-wrap{width:84px;height:84px;margin:0 auto 24px;}
+        .check-svg{width:84px;height:84px;}
+        .check-circle{stroke:#22c55e;stroke-width:2.2;fill:#dcfce7;stroke-dasharray:166;stroke-dashoffset:166;animation:draw .6s cubic-bezier(.65,0,.45,1) forwards;}
+        .check-mark{stroke:#16a34a;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:48;stroke-dashoffset:48;animation:draw .35s cubic-bezier(.65,0,.45,1) .5s forwards;}
+        @keyframes draw{to{stroke-dashoffset:0;}}
 
-        .nav-logo span {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-        }
+        h1{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:800;letter-spacing:-.03em;margin-bottom:12px;}
+        .subtitle{color:var(--muted);font-size:1.02rem;line-height:1.6;max-width:520px;margin:0 auto 28px;}
 
-        .nav-back {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+        /* WHATSAPP CTA */
+        .wa-box{background:#ecfdf3;border:1.5px solid #a7f3cf;border-radius:16px;padding:20px;margin-bottom:30px;}
+        .wa-box h2{font-size:1.06rem;font-weight:800;margin-bottom:4px;}
+        .wa-box p{color:#3f6653;font-size:.92rem;line-height:1.5;margin-bottom:14px;}
+        .wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:12px;box-shadow:0 8px 20px rgba(37,211,102,.35);transition:transform .15s,background .2s;width:100%;max-width:340px;}
+        .wa-btn:hover{background:#1ebe57;transform:translateY(-1px);}
+        .wa-call{margin-top:12px;font-size:.9rem;color:var(--muted);}
+        .wa-call a{color:var(--ink);font-weight:700;text-decoration:none;}
 
-        .nav-back:hover { color: #fff; }
+        /* STEPS */
+        .steps-title{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;text-align:left;margin-bottom:12px;}
+        .steps{display:flex;flex-direction:column;gap:11px;margin-bottom:26px;text-align:left;}
+        .step{display:flex;align-items:flex-start;gap:14px;background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:15px 17px;}
+        .step-num{width:30px;height:30px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0;}
+        .step-text strong{display:block;font-size:.95rem;margin-bottom:3px;}
+        .step-text span{font-size:.86rem;color:var(--muted);line-height:1.5;}
 
-        /* -- MAIN -- */
-        .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 48px 20px;
-        }
+        /* ANTI-SCAM HIGHLIGHT */
+        .highlight{display:flex;gap:10px;align-items:flex-start;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:13px;padding:15px 17px;font-size:.9rem;color:#9a3412;line-height:1.55;text-align:left;margin-bottom:26px;}
+        .highlight svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;}
 
-        .card {
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-            padding: 56px 48px;
-            max-width: 620px;
-            width: 100%;
-            text-align: center;
-        }
+        /* TRUST ROW */
+        .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-bottom:28px;}
+        .trust span{display:inline-flex;align-items:center;gap:6px;font-size:.83rem;font-weight:600;color:#475569;}
+        .trust svg{width:15px;height:15px;color:#16a34a;}
 
-        .icon-ring {
-            width: 80px;
-            height: 80px;
-            background: #dcfce7;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.4rem;
-            margin: 0 auto 28px;
-            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-        }
+        /* BACK BUTTON */
+        .btn-home{display:inline-flex;align-items:center;gap:8px;background:#f1f5f9;color:#1e293b;border:1.5px solid var(--line);border-radius:11px;padding:12px 26px;font-weight:700;font-size:.92rem;text-decoration:none;transition:background .2s;}
+        .btn-home:hover{background:#e2e8f0;}
 
-        @keyframes pop {
-            from { transform: scale(0.4); opacity: 0; }
-            to   { transform: scale(1);   opacity: 1; }
-        }
+        footer{text-align:center;padding:22px 18px;color:#94a3b8;font-size:.82rem;line-height:1.7;}
+        footer a{color:#94a3b8;text-decoration:none;}
+        footer a:hover{text-decoration:underline;}
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 14px;
-            letter-spacing: -0.03em;
-        }
-
-        .subtitle {
-            color: #64748b;
-            font-size: 1rem;
-            line-height: 1.65;
-            margin-bottom: 36px;
-        }
-
-        /* -- STEPS -- */
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 16px 18px;
-        }
-
-        .step-num {
-            width: 32px;
-            height: 32px;
-            background: #1B4FD8;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-        .step-text strong {
-            display: block;
-            font-size: 0.95rem;
-            color: #0f172a;
-            margin-bottom: 3px;
-        }
-
-        .step-text span {
-            font-size: 0.85rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-
-        /* -- HIGHLIGHT BOX -- */
-        .highlight {
-            background: #eff6ff;
-            border: 1.5px solid #bfdbfe;
-            border-radius: 12px;
-            padding: 18px 22px;
-            font-size: 0.9rem;
-            color: #1e40af;
-            line-height: 1.6;
-            margin-bottom: 36px;
-            text-align: left;
-        }
-
-        .highlight strong { color: #1d4ed8; }
-
-        /* -- CTA -- */
-        .cta-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 28px;
-            border-radius: 10px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            font-family: inherit;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: #1B4FD8;
-            color: #fff;
-        }
-
-        .btn-primary:hover { background: #1640b0; }
-
-        .btn-secondary {
-            background: #f1f5f9;
-            color: #1e293b;
-            border: 1.5px solid #e2e8f0;
-        }
-
-        .btn-secondary:hover { background: #e2e8f0; }
-
-        /* -- FOOTER -- */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #94a3b8;
-            font-size: 0.82rem;
-        }
-
-        @media (max-width: 520px) {
-            .card { padding: 36px 20px; }
-            h1 { font-size: 1.6rem; }
-            .nav { padding: 0 16px; }
-        }
+        @media(max-width:520px){.wa-btn{max-width:none;}}
     </style>
 </head>
 <body>
@@ -230,160 +94,206 @@
             <img src="assets/images/reclaim-guard-logo.png" alt="ReclaimGuard Legal">
             <span>ReclaimGuard Legal</span>
         </a>
-        <a href="/" class="nav-back" id="navBack">? Back to Home</a>
-        <button id="tyLangBtn" onclick="toggleTYLang()" style="background:#1B4FD8;color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:0.82rem;font-weight:700;cursor:pointer;margin-left:12px;">Deutsch</button>
+        <div class="nav-right">
+            <a href="/" class="nav-back" id="navBack">&larr; Back to home</a>
+            <select id="tyLang" aria-label="Language">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
     </nav>
 
     <main class="main">
         <div class="card">
-            <div class="icon-ring">?</div>
+            <div class="check-wrap">
+                <svg class="check-svg" viewBox="0 0 60 60" aria-hidden="true">
+                    <circle class="check-circle" cx="30" cy="30" r="26.4"/>
+                    <path class="check-mark" d="M19 30.5l7.5 7.5L42 22"/>
+                </svg>
+            </div>
 
-            <h1 id="tyTitle">Case Received</h1>
-            <p class="subtitle" id="tySubtitle">
-                Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.
-            </p>
+            <h1 id="tyTitle">Your case has been received</h1>
+            <p class="subtitle" id="tySubtitle">Thank you. Our SRA-regulated team has your details and will review them right away.</p>
 
+            <div class="wa-box">
+                <h2 id="tyWaHeading">Want a faster response?</h2>
+                <p id="tyWaText">Message us on WhatsApp now and speak with a specialist directly.</p>
+                <a class="wa-btn" id="tyWaBtn" target="_blank" rel="noopener"
+                   href="https://wa.me/447466901590?text=Hi%2C%20I%20have%20just%20submitted%20my%20case%20to%20ReclaimGuard%20Legal%20and%20would%20like%20to%20speak%20to%20someone.">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:20px;height:20px;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.25-8.09 8.25zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+                    <span id="tyWaBtnLabel">Chat on WhatsApp</span>
+                </a>
+                <p class="wa-call" id="tyWaCall">or call us on <a href="tel:+447735029656">+44 773 502 9656</a></p>
+            </div>
+
+            <p class="steps-title" id="tyNextTitle">What happens next</p>
             <div class="steps">
                 <div class="step">
                     <div class="step-num">1</div>
                     <div class="step-text">
-                        <strong id="tyStep1Title">Case Review</strong>
-                        <span id="tyStep1Desc">Our specialists review the details you provided and assess the best recovery options.</span>
+                        <strong id="tyStep1Title">We review your case</strong>
+                        <span id="tyStep1Desc">A specialist reviews the details you provided and assesses whether your funds can be traced and recovered.</span>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">2</div>
                     <div class="step-text">
-                        <strong id="tyStep2Title">Initial Consultation</strong>
-                        <span id="tyStep2Desc">We will contact you within 24 hours to discuss your case and next steps.</span>
+                        <strong id="tyStep2Title">We contact you within 24 hours</strong>
+                        <span id="tyStep2Desc">We reach out by phone or email to discuss your case and the realistic options. Recovery is never guaranteed.</span>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">3</div>
                     <div class="step-text">
-                        <strong id="tyStep3Title">Recovery Plan</strong>
-                        <span id="tyStep3Desc">You receive a personalised recovery strategy no upfront commitment required.</span>
+                        <strong id="tyStep3Title">You decide, with no obligation</strong>
+                        <span id="tyStep3Desc">If we can help and you want to proceed, it is no win, no fee. No upfront payment, ever.</span>
                     </div>
                 </div>
             </div>
 
             <div class="highlight" id="tyHighlight">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:15px;height:15px;vertical-align:-2px;margin-right:3px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <strong>Check your inbox</strong> a confirmation email is on its way. If you don't see it within a few minutes, please check your spam folder.
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                <span id="tyHighlightText">We will never ask you to pay a fee to release your money. If anyone contacts you claiming to be us and asks for an upfront payment, it is not us.</span>
             </div>
 
-            <div class="cta-group">
-                <a href="/" class="btn btn-primary" id="tyBtnHome">&#8592; Back to Home</a>
-                <a href="/#contact" class="btn btn-secondary" id="tyBtnAnother">Submit Another Case</a>
+            <div class="trust">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="tyTrust1">SRA-regulated (No. 830575)</span></span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="tyTrust2">Reply within 24 hours</span></span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="tyTrust3">100% confidential</span></span>
             </div>
+
+            <a href="/" class="btn-home" id="tyBtnHome">&larr; Back to home</a>
         </div>
     </main>
 
     <footer>
-        <span id="tyCopy">&copy; 2025 ReclaimGuard Legal. All rights reserved.</span> &nbsp;&middot;&nbsp;
-        <a href="/privacy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;&middot;&nbsp;
-        <a href="/terms" style="color:#94a3b8;">Terms of Service</a>
+        <span id="tyCopy">&copy; 2026 ReclaimGuard Legal. All rights reserved.</span> &nbsp;&middot;&nbsp;
+        <a href="/privacy" id="tyPrivacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+        <a href="/terms" id="tyTerms">Terms of Service</a>
     </footer>
 
     <script>
-        // -- Inline translations (no external dependency) ------------------
+        // Self-contained translations so this conversion page never depends on
+        // the main i18n bundle loading.
         const TY = {
             en: {
-                title:      'Case Received',
-                subtitle:   'Thank you for reaching out to ReclaimGuard Legal. We have received your case details and our team will review them shortly.',
-                s1t: 'Case Review',
-                s1d: 'Our specialists review the details you provided and assess the best recovery options.',
-                s2t: 'Initial Consultation',
-                s2d: 'We will contact you within 24 hours to discuss your case and next steps.',
-                s3t: 'Recovery Plan',
-                s3d: 'You receive a personalised recovery strategy no upfront commitment required.',
-                highlight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:15px;height:15px;vertical-align:-2px;margin-right:3px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <strong>Check your inbox</strong> a confirmation email is on its way. If you don\'t see it within a few minutes, please check your spam folder.',
-                btnHome:    '← Back to Home',
-                btnAnother: 'Submit Another Case',
-                navBack:    '← Back to Home',
-                copy:       '© 2026 ReclaimGuard Legal. All rights reserved.',
+                docTitle:'Thank You | ReclaimGuard Legal',
+                title:'Your case has been received',
+                subtitle:'Thank you. Our SRA-regulated team has your details and will review them right away.',
+                waHeading:'Want a faster response?',
+                waText:'Message us on WhatsApp now and speak with a specialist directly.',
+                waBtn:'Chat on WhatsApp',
+                waCall:'or call us on ',
+                nextTitle:'What happens next',
+                s1t:'We review your case',
+                s1d:'A specialist reviews the details you provided and assesses whether your funds can be traced and recovered.',
+                s2t:'We contact you within 24 hours',
+                s2d:'We reach out by phone or email to discuss your case and the realistic options. Recovery is never guaranteed.',
+                s3t:'You decide, with no obligation',
+                s3d:'If we can help and you want to proceed, it is no win, no fee. No upfront payment, ever.',
+                highlight:'We will never ask you to pay a fee to release your money. If anyone contacts you claiming to be us and asks for an upfront payment, it is not us.',
+                trust1:'SRA-regulated (No. 830575)', trust2:'Reply within 24 hours', trust3:'100% confidential',
+                btnHome:'← Back to home', navBack:'← Back to home',
+                copy:'© 2026 ReclaimGuard Legal. All rights reserved.',
+                privacy:'Privacy Policy', terms:'Terms of Service'
             },
             de: {
-                title:      'Anfrage erhalten',
-                subtitle:   'Vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Falldaten erhalten und unser Team wird diese in Kürze prüfen.',
-                s1t: 'Fallprüfung',
-                s1d: 'Unsere Spezialisten prüfen die von Ihnen angegebenen Details und beurteilen die besten Rückgewinnungsoptionen.',
-                s2t: 'Erstberatung',
-                s2d: 'Wir melden uns innerhalb von 24 Stunden, um Ihren Fall und die nächsten Schritte zu besprechen.',
-                s3t: 'Rückgewinnungsplan',
-                s3d: 'Sie erhalten eine persönliche Rückgewinnungsstrategie, keine Verpflichtung im Voraus erforderlich.',
-                highlight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:15px;height:15px;vertical-align:-2px;margin-right:3px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <strong>Prüfen Sie Ihr E-Mail-Postfach</strong> eine Bestätigung ist unterwegs. Wenn Sie diese nicht innerhalb weniger Minuten sehen, prüfen Sie bitte Ihren Spam-Ordner.',
-                btnHome:    '← Zurück zur Startseite',
-                btnAnother: 'Weiteren Fall einreichen',
-                navBack:    '← Zurück zur Startseite',
-                copy:       '© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+                docTitle:'Vielen Dank | ReclaimGuard Legal',
+                title:'Ihre Anfrage ist eingegangen',
+                subtitle:'Vielen Dank. Unser SRA-reguliertes Team hat Ihre Daten und prüft sie umgehend.',
+                waHeading:'Möchten Sie schneller eine Antwort?',
+                waText:'Schreiben Sie uns jetzt auf WhatsApp und sprechen Sie direkt mit einem Spezialisten.',
+                waBtn:'Auf WhatsApp chatten',
+                waCall:'oder rufen Sie uns an: ',
+                nextTitle:'Wie es weitergeht',
+                s1t:'Wir prüfen Ihren Fall',
+                s1d:'Ein Spezialist prüft die von Ihnen angegebenen Details und beurteilt, ob Ihre Gelder verfolgt und zurückgewonnen werden können.',
+                s2t:'Wir melden uns innerhalb von 24 Stunden',
+                s2d:'Wir kontaktieren Sie per Telefon oder E-Mail, um Ihren Fall und die realistischen Optionen zu besprechen. Eine Rückgewinnung ist nie garantiert.',
+                s3t:'Sie entscheiden, unverbindlich',
+                s3d:'Wenn wir helfen können und Sie fortfahren möchten, gilt: kein Erfolg, keine Gebühr. Niemals eine Vorauszahlung.',
+                highlight:'Wir verlangen niemals eine Zahlung, um Ihr Geld freizugeben. Wenn Sie jemand kontaktiert, der sich als wir ausgibt und eine Vorauszahlung verlangt, sind wir das nicht.',
+                trust1:'SRA-reguliert (Nr. 830575)', trust2:'Antwort innerhalb von 24 Stunden', trust3:'100% vertraulich',
+                btnHome:'← Zurück zur Startseite', navBack:'← Zurück zur Startseite',
+                copy:'© 2026 ReclaimGuard Legal. Alle Rechte vorbehalten.',
+                privacy:'Datenschutz', terms:'AGB'
+            },
+            es: {
+                docTitle:'Gracias | ReclaimGuard Legal',
+                title:'Hemos recibido tu caso',
+                subtitle:'Gracias. Nuestro equipo regulado por la SRA tiene tus datos y los revisará de inmediato.',
+                waHeading:'¿Quieres una respuesta más rápida?',
+                waText:'Escríbenos ahora por WhatsApp y habla directamente con un especialista.',
+                waBtn:'Chatear por WhatsApp',
+                waCall:'o llámanos al ',
+                nextTitle:'Qué ocurre ahora',
+                s1t:'Revisamos tu caso',
+                s1d:'Un especialista revisa los detalles que proporcionaste y evalúa si tus fondos se pueden rastrear y recuperar.',
+                s2t:'Te contactamos en 24 horas',
+                s2d:'Nos pondremos en contacto por teléfono o correo para hablar de tu caso y las opciones realistas. La recuperación nunca está garantizada.',
+                s3t:'Tú decides, sin compromiso',
+                s3d:'Si podemos ayudarte y quieres continuar, es sin ganar no hay honorarios. Nunca un pago por adelantado.',
+                highlight:'Nunca te pediremos un pago para liberar tu dinero. Si alguien te contacta haciéndose pasar por nosotros y pide un pago por adelantado, no somos nosotros.',
+                trust1:'Regulados por la SRA (N.º 830575)', trust2:'Respuesta en 24 horas', trust3:'100% confidencial',
+                btnHome:'← Volver al inicio', navBack:'← Volver al inicio',
+                copy:'© 2026 ReclaimGuard Legal. Todos los derechos reservados.',
+                privacy:'Política de privacidad', terms:'Términos del servicio'
             }
         };
 
-        function applyTY(lang) {
+        function setText(id, v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+
+        function applyTY(lang){
             const d = TY[lang] || TY.en;
             document.documentElement.lang = lang;
-            document.getElementById('tyTitle').textContent     = d.title;
-            document.getElementById('tySubtitle').textContent  = d.subtitle;
-            document.getElementById('tyStep1Title').textContent = d.s1t;
-            document.getElementById('tyStep1Desc').textContent  = d.s1d;
-            document.getElementById('tyStep2Title').textContent = d.s2t;
-            document.getElementById('tyStep2Desc').textContent  = d.s2d;
-            document.getElementById('tyStep3Title').textContent = d.s3t;
-            document.getElementById('tyStep3Desc').textContent  = d.s3d;
-            document.getElementById('tyHighlight').innerHTML    = d.highlight;
-            document.getElementById('tyBtnHome').textContent    = d.btnHome;
-            document.getElementById('tyBtnAnother').textContent = d.btnAnother;
-            document.getElementById('navBack').textContent      = d.navBack;
-            document.getElementById('tyCopy').textContent       = d.copy;
-            document.title = lang === 'de'
-                ? 'Vielen Dank | ReclaimGuard Legal'
-                : 'Thank You | ReclaimGuard Legal';
+            document.title = d.docTitle;
+            setText('tyTitle', d.title);       setText('tySubtitle', d.subtitle);
+            setText('tyWaHeading', d.waHeading); setText('tyWaText', d.waText);
+            setText('tyWaBtnLabel', d.waBtn);
+            setText('tyNextTitle', d.nextTitle);
+            setText('tyStep1Title', d.s1t); setText('tyStep1Desc', d.s1d);
+            setText('tyStep2Title', d.s2t); setText('tyStep2Desc', d.s2d);
+            setText('tyStep3Title', d.s3t); setText('tyStep3Desc', d.s3d);
+            setText('tyHighlightText', d.highlight);
+            setText('tyTrust1', d.trust1); setText('tyTrust2', d.trust2); setText('tyTrust3', d.trust3);
+            setText('tyBtnHome', d.btnHome); setText('navBack', d.navBack);
+            setText('tyCopy', d.copy); setText('tyPrivacy', d.privacy); setText('tyTerms', d.terms);
+            // call link keeps its phone number, only the leading text changes
+            var call=document.getElementById('tyWaCall');
+            if(call) call.innerHTML = d.waCall + '<a href="tel:+447735029656">+44 773 502 9656</a>';
+            var sel=document.getElementById('tyLang'); if(sel) sel.value=lang;
         }
 
-        // -- Language detection (same logic as main site) ------------------
-        const GERMAN_COUNTRIES = ['DE', 'AT', 'CH'];
+        const GERMAN_COUNTRIES  = ['DE','AT','CH'];
+        const SPANISH_COUNTRIES = ['ES','MX','AR','CO','CL','PE','VE','EC','GT','CU','BO','DO','HN','PY','SV','NI','CR','PA','UY','PR'];
 
-        async function detectLang() {
-            // 1. Respect previously saved preference
-            const saved = localStorage.getItem('rg_lang');
-            if (saved) { applyTY(saved); return; }
+        function browserLang(){
+            const langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+            for(const l of langs){ const ll=(l||'').toLowerCase(); if(ll.startsWith('de'))return 'de'; if(ll.startsWith('es'))return 'es'; }
+            return null;
+        }
 
-            // 2. Try Vercel geo header via /api/geo
-            try {
-                const res = await fetch('/api/geo');
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.country && GERMAN_COUNTRIES.includes(data.country)) {
-                        applyTY('de');
-                        return;
-                    }
-                    applyTY('en');
-                    return;
+        async function detectLang(){
+            const saved=localStorage.getItem('rg_lang');
+            if(saved){ applyTY(saved); return; }
+            const bl=browserLang();
+            if(bl){ applyTY(bl); return; }
+            try{
+                const res=await fetch('/api/geo');
+                if(res.ok){
+                    const {country}=await res.json();
+                    if(country&&GERMAN_COUNTRIES.includes(country)){ applyTY('de'); return; }
+                    if(country&&SPANISH_COUNTRIES.includes(country)){ applyTY('es'); return; }
                 }
-            } catch {}
-
-            // 3. Browser language fallback
-            const langs = (navigator.languages && navigator.languages.length)
-                ? navigator.languages : [navigator.language || 'en'];
-            const isDE = langs.some(l => l.toLowerCase().startsWith('de'));
-            applyTY(isDE ? 'de' : 'en');
+            }catch(e){}
+            applyTY('en');
         }
-
         detectLang();
 
-        function toggleTYLang() {
-            const current = localStorage.getItem('rg_lang') || 'en';
-            const next = current === 'en' ? 'de' : 'en';
-            localStorage.setItem('rg_lang', next);
-            applyTY(next);
-            document.getElementById('tyLangBtn').textContent = next === 'de' ? 'English' : 'Deutsch';
-        }
-
-        // Sync button label after detectLang resolves
-        window.addEventListener('load', () => {
-            const lang = localStorage.getItem('rg_lang') || 'en';
-            const btn = document.getElementById('tyLangBtn');
-            if (btn) btn.textContent = lang === 'de' ? 'English' : 'Deutsch';
+        document.getElementById('tyLang').addEventListener('change', function(){
+            localStorage.setItem('rg_lang', this.value);
+            applyTY(this.value);
         });
 
         // Google Ads conversion: this page is only reached after a successful
@@ -394,5 +304,3 @@
     </script>
 </body>
 </html>
-
-
