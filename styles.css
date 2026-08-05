@@ -285,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 921px) {
     .hero {
         background: linear-gradient(135deg, rgba(27, 43, 68, 0.55) 0%, rgba(15, 26, 43, 0.62) 100%),
-                    url('assets/images/team-hero.png') center center/cover no-repeat;
+                    url('assets/images/team-hero.webp') center center/cover no-repeat;
         padding: 96px 0 76px;
     }
 }
