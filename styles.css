@@ -274,12 +274,20 @@ h1, h2, h3, h4, h5, h6 {
    Hero Section
    ================================ */
 .hero {
-    background: linear-gradient(135deg, rgba(27, 43, 68, 0.4) 0%, rgba(15, 26, 43, 0.5) 100%), 
-                url('assets/images/team-hero.png') center center/cover no-repeat;
-    padding: 100px 0 80px;
+    /* Mobile-first: a rich gradient with NO image, so phones (most ad traffic)
+       never download the 2.4MB team photo. Desktop layers it back below. */
+    background: linear-gradient(135deg, #12283f 0%, #0b1a2e 55%, #103057 100%);
+    padding: 80px 0 64px;
     color: var(--white);
     position: relative;
     overflow: hidden;
+}
+@media (min-width: 921px) {
+    .hero {
+        background: linear-gradient(135deg, rgba(27, 43, 68, 0.55) 0%, rgba(15, 26, 43, 0.62) 100%),
+                    url('assets/images/team-hero.png') center center/cover no-repeat;
+        padding: 96px 0 76px;
+    }
 }
 
 .hero::before {
@@ -541,9 +549,13 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 720px) { .compare-grid { grid-template-columns: 1fr; } }
 
 @media (max-width: 920px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .hero-grid .hero-content { text-align: center; }
-    .hero-grid .hero-trust { justify-content: center; }
+    /* Hide the 4-item trust list on mobile: the form card already carries a
+       trust line, so this keeps the form high on the screen. */
+    .hero-grid .hero-content .hero-trust { display: none; }
+    .hero-grid .hero-badge { margin-bottom: 0.85rem; }
+    .hero-grid .hero-subtitle { margin-bottom: 0.75rem; }
 }
 
 /* ================================
