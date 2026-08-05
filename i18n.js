@@ -1847,7 +1847,7 @@ function applyTranslations() {
     links.forEach((a, i) => { if (footerCompanyKeys[i]) a.textContent = t(footerCompanyKeys[i]); });
   }
   if (footerCols[3]) { const h4 = footerCols[3].querySelector('h4'); if (h4) h4.textContent = t('footer_contact'); }
-  setText('.footer-legal p:first-child', 'footer_copy');
+  setText('.footer-legal p:not(.reg-notice):not(.disclaimer)', 'footer_copy');
   const disclaimerP = document.querySelector('.footer-legal .disclaimer');
   if (disclaimerP) {
     const strong = disclaimerP.querySelector('strong');

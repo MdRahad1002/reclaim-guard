@@ -387,22 +387,26 @@
                             </div>
                             <div class="form-group">
                                 <label for="hero_phone" data-i18n="form_phone">Phone Number *</label>
-                                <div class="hero-phone-row">
-                                    <select id="heroPhoneCode" aria-label="Country code">
-                                        <option value="+44">+44</option>
-                                        <option value="+353">+353</option>
-                                        <option value="+49">+49</option>
-                                        <option value="+34">+34</option>
-                                        <option value="+43">+43</option>
-                                        <option value="+41">+41</option>
-                                        <option value="+1">+1</option>
-                                        <option value="+31">+31</option>
-                                        <option value="+33">+33</option>
-                                        <option value="+39">+39</option>
-                                        <option value="+61">+61</option>
-                                        <option value="+971">+971</option>
-                                    </select>
-                                    <input type="tel" id="hero_phone" name="phone" required autocomplete="tel" placeholder="7xxx xxxxxx">
+                                <div class="phone-group">
+                                    <div class="phone-code-box">
+                                        <img id="heroPhoneFlag" src="/assets/flags/gb.png" alt="GB" class="phone-flag-img">
+                                        <select id="heroPhoneCode" class="phone-code-select" aria-label="Country code">
+                                            <option value="+44" data-iso="gb">+44</option>
+                                            <option value="+353" data-iso="ie">+353</option>
+                                            <option value="+49" data-iso="de">+49</option>
+                                            <option value="+34" data-iso="es">+34</option>
+                                            <option value="+43" data-iso="at">+43</option>
+                                            <option value="+41" data-iso="ch">+41</option>
+                                            <option value="+1" data-iso="us">+1 US</option>
+                                            <option value="+1" data-iso="ca">+1 CA</option>
+                                            <option value="+33" data-iso="fr">+33</option>
+                                            <option value="+31" data-iso="nl">+31</option>
+                                            <option value="+39" data-iso="it">+39</option>
+                                            <option value="+61" data-iso="au">+61</option>
+                                            <option value="+971" data-iso="ae">+971</option>
+                                        </select>
+                                    </div>
+                                    <input type="tel" id="hero_phone" name="phone" required autocomplete="tel" placeholder="Phone number">
                                 </div>
                             </div>
                             <div class="form-group">

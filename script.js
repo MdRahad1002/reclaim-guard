@@ -641,15 +641,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ── Phone flag updates when country code changes ─────────────────────
-    const phoneCodeSel = document.getElementById('phoneCode');
-    const phoneFlagImg = document.getElementById('phoneFlag');
-    if (phoneCodeSel && phoneFlagImg) {
-        phoneCodeSel.addEventListener('change', () => {
-            const iso = phoneCodeSel.options[phoneCodeSel.selectedIndex].dataset.iso;
+    [['phoneCode', 'phoneFlag'], ['heroPhoneCode', 'heroPhoneFlag']].forEach(([selId, flagId]) => {
+        const sel = document.getElementById(selId);
+        const flag = document.getElementById(flagId);
+        if (!sel || !flag) return;
+        sel.addEventListener('change', () => {
+            const iso = sel.options[sel.selectedIndex].dataset.iso;
             if (iso) {
-                phoneFlagImg.src = `/assets/flags/${iso}.png`;
-                phoneFlagImg.alt = iso.toUpperCase();
+                flag.src = `/assets/flags/${iso}.png`;
+                flag.alt = iso.toUpperCase();
             }
         });
-    }
+    });
 });
