@@ -16,7 +16,7 @@
   'use strict';
 
   // ---- CONFIG (replace these) ----------------------------------------
-  var GA4_MEASUREMENT_ID    = 'G-P2X60KB60Z';
+  var GA4_MEASUREMENT_ID    = ''; // GA4 disabled: G-P2X60KB60Z was a deleted property (gtag/js 404). Put a valid G-XXXXXXXXXX here to re-enable.
   var GOOGLE_ADS_ID         = 'AW-18360624527';
   var LEAD_CONVERSION_LABEL   = 'NCyXCLTNitkcEI_Lg7NE'; // "Page view conversion"
   var LEAD_CONVERSION_LABEL_2 = 'vy2sCJ6ttdkcEI_Lg7NE'; // "Sign-up conversion"
