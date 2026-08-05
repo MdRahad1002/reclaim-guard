@@ -166,6 +166,35 @@ if (heroForm) {
     });
 }
 
+// Hero form: two-step navigation (case details -> contact details).
+(function () {
+    const form = document.getElementById('heroForm');
+    if (!form) return;
+    const step1 = form.querySelector('.form-step[data-step="1"]');
+    const step2 = form.querySelector('.form-step[data-step="2"]');
+    if (!step1 || !step2) return;
+    const ind1 = form.querySelector('.form-step-indicator[data-step="1"]');
+    const ind2 = form.querySelector('.form-step-indicator[data-step="2"]');
+    const fill = document.getElementById('heroProgressFill');
+    const contBtn = form.querySelector('.form-continue-btn');
+    const backBtn = form.querySelector('.form-back-btn');
+    function show(n) {
+        step1.style.display = n === 1 ? '' : 'none';
+        step2.style.display = n === 2 ? '' : 'none';
+        if (ind1) ind1.style.display = n === 1 ? '' : 'none';
+        if (ind2) ind2.style.display = n === 2 ? '' : 'none';
+        if (fill) fill.style.width = n === 2 ? '100%' : '50%';
+    }
+    show(1);
+    if (contBtn) contBtn.addEventListener('click', function () {
+        if (!validateScope(step1)) return;
+        show(2);
+        const f = step2.querySelector('input, select, textarea');
+        if (f) { try { f.focus(); } catch (e) {} }
+    });
+    if (backBtn) backBtn.addEventListener('click', function () { show(1); });
+})();
+
 // ================================
 // Multi-step Contact Form
 // ================================
